@@ -8,7 +8,7 @@ a {
   text-decoration: none;
 }
 .container {
-  height: 100vh;
+  background-size: cover;
   width: 100%;
   background-image: url(../img/1606301.jpg);
 }
