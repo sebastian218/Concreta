@@ -3,20 +3,143 @@
 }
 ul {
   list-style: none;
+  padding:0;
+  margin-bottom: 0;
 }
 a {
-  text-decoration: none;
+text-decoration: none;
 }
-.container {
-  background-size: cover;
-  width: 100%;
+header {
+  background-color: rgb(247, 220, 111);
+}
+ul li {
+  text-align: center;
+}
+ul a {
+  display: inline-block;
+}
+
+.perfiles {
+  background-color: rgba(247, 220, 111);
+}
+.h1-label {
   background-image: url(../img/1606301.jpg);
+  background-size: cover;
+  height: 40vh;
 }
-section label {
-width: 80%;
-margin: 0 auto;
+.cuerpo {
+  background-color: rgb(247, 220, 111);
 }
-section label input {
-  width: 80%;
-  margin: 0 auto;
+h1 {
+    padding: 20px;
+    text-align: center;
+    margin-top: 0;
+}
+h2{
+  text-align: center;
+  text-decoration: underline;
+  background-color: rgb(215, 219, 221);
+}
+label {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width:100%;
+    background-color: rgba(0,0,0,0.5);
+    padding: 6px;
+    display: inline-block;
+    text-align: center;
+}
+
+article.art-perfiles {
+    margin-top: 16px;
+}
+img {
+    border-radius: 15px;
+    width: 78%;
+}
+.logo {
+  width:50%;
+  border-radius: 0;
+}
+.perfiles {
+  text-align: center;
+}
+
+ul li a:not(.a-logo) {
+  color: White;
+  background-color: black;
+  width: 100%;
+  margin-bottom: 2px;
+}
+input#buscador {
+    width: 60%;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border-color: rgba(0,0,0,0.5);
+    padding: 4px;
+    border-width: inherit;
+    border-radius: 8px;
+}
+input#buscador:hover {
+  background-color: rgba(241, 196, 15 , 0.5);
+  color: black;
+}
+.publi {
+  display:none;
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  nav ul {
+    overflow: hidden;
+  }
+  nav ul li {
+    float: right;
+  }
+  .logo {
+    width:100%;
+  }
+  li.li-logo {
+    float:left;
+    width: 30%;
+  }
+  ul li a:not(.a-logo) {
+    background-color: rgba(247, 220, 111);
+    color: black;
+
+  }
+  ul li:not(.li-logo) {
+    margin-right: 3%;
+    margin-top: 44px;
+    font-size: 20px;
+}
+article.art-perfiles {
+    margin-top: 16px;
+    width: 46%;
+    float: left;
+}
+.perfiles {
+  background-color: rgba(247, 220, 111);
+}
+@media (min-width:1024px) {
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.publi {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(215, 219, 221);
+}
+.a-publi {
+  float: left;
+  width: 22.5%;
+  margin-left: 2%;
+  margin-top: 30px;
+
+}
+
 }
