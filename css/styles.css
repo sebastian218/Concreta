@@ -63,6 +63,7 @@ img {
 }
 .perfiles {
   text-align: center;
+      
 }
 
 ul li a:not(.a-logo) {
@@ -122,6 +123,7 @@ article.art-perfiles {
 }
 .perfiles {
   background-color: rgba(247, 220, 111);
+  overflow: hidden;
 }
 @media (min-width:1024px) {
   .container {
