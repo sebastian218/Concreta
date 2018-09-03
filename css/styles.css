@@ -8,6 +8,8 @@ ul {
 }
 body {
   font-family: 'Roboto', sans-serif;
+  background-image: url(../img/background-brick-bricks-220182.jpg);
+  background-size: cover;
 }
 a {
 text-decoration: none;
@@ -26,7 +28,7 @@ ul a {
   background-color: rgba(247, 220, 111);
 }
 .h1-label {
-  background-image: url(../img/1606301.jpg);
+  background-image: url(../img/construction-grinder-man-1216544.jpg);
   background-size: cover;
   height: 40vh;
 }
@@ -34,9 +36,10 @@ ul a {
   background-color: rgb(247, 220, 111);
 }
 h1 {
-    padding: 20px;
+    padding: 43px;
     text-align: center;
     margin-top: 0;
+    color: white;
 }
 h2{
   text-align: center;
@@ -136,7 +139,7 @@ article.art-perfiles {
 }
 @media (min-width:1024px) {
   .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 h1 {
