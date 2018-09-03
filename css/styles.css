@@ -6,6 +6,9 @@ ul {
   padding:0;
   margin-bottom: 0;
 }
+body {
+  font-family: 'Roboto', sans-serif;
+}
 a {
 text-decoration: none;
 }
@@ -63,7 +66,7 @@ img {
 }
 .perfiles {
   text-align: center;
-      
+
 }
 
 ul li a:not(.a-logo) {
@@ -106,6 +109,12 @@ input#buscador:hover {
     float:left;
     width: 30%;
   }
+  h1 {
+    padding: 76px;
+  }
+  .h1-label {
+    height: 71vh;
+  }
   ul li a:not(.a-logo) {
     background-color: rgba(247, 220, 111);
     color: black;
@@ -130,6 +139,9 @@ article.art-perfiles {
     max-width: 900px;
     margin: 0 auto;
 }
+h1 {
+  font-size: 40px;
+}
 .publi {
     display: block;
     width: 100%;
@@ -143,5 +155,15 @@ article.art-perfiles {
   margin-top: 30px;
 
 }
+ul li a:not(.a-logo) {
+    font-size: 25px;
+}
+input#buscador {
+
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
+
 
 }
