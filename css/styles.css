@@ -5,17 +5,19 @@ ul {
   list-style: none;
   padding:0;
   margin-bottom: 0;
+  margin-top: 0;
 }
 body {
   font-family: 'Roboto', sans-serif;
   background-image: url(../img/background-brick-bricks-220182.jpg);
   background-size: cover;
+  margin: 0;
 }
 a {
 text-decoration: none;
 }
 header {
-  background-color: rgb(247, 220, 111);
+  background-color: rgba(247, 220, 111);
 }
 ul li {
   text-align: center;
@@ -31,28 +33,31 @@ ul a {
   background-image: url(../img/construction-grinder-man-1216544.jpg);
   background-size: cover;
   height: 40vh;
+
 }
 .cuerpo {
   background-color: rgb(247, 220, 111);
 }
 h1 {
-    padding: 43px;
-    text-align: center;
+    padding: 50px;
+    text-align: center ;
     margin-top: 0;
     color: white;
+    margin-bottom: 0;
+    font-size: 20px;
+
 }
 h2{
   text-align: center;
   text-decoration: underline;
-  background-color: rgb(215, 219, 221);
+  background-color: rgba(215, 219, 221,0.5);
 }
 label {
-    margin-bottom: 20px;
-    margin-top: 20px;
+
     width:100%;
     background-color: rgba(0,0,0,0.5);
     padding: 6px;
-    display: inline-block;
+    display: block;
     text-align: center;
 }
 
@@ -79,13 +84,15 @@ ul li a:not(.a-logo) {
   margin-bottom: 2px;
 }
 input#buscador {
-    width: 60%;
+    width: 80%;
     background-color: rgba(0,0,0,0.5);
     color: white;
     border-color: rgba(0,0,0,0.5);
     padding: 4px;
     border-width: inherit;
     border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
 }
 input#buscador:hover {
   background-color: rgba(241, 196, 15 , 0.5);
@@ -96,7 +103,7 @@ input#buscador:hover {
 }
 @media (min-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 90%;
     margin: 0 auto;
   }
   nav ul {
@@ -104,6 +111,9 @@ input#buscador:hover {
   }
   nav ul li {
     float: right;
+  }
+  header {
+    height: 70px;
   }
   .logo {
     width:100%;
@@ -113,7 +123,9 @@ input#buscador:hover {
     width: 30%;
   }
   h1 {
-    padding: 76px;
+    padding: 96px;
+    margin-bottom: 0;
+    font-size: 44px;
   }
   .h1-label {
     height: 71vh;
@@ -125,8 +137,8 @@ input#buscador:hover {
   }
   ul li:not(.li-logo) {
     margin-right: 3%;
-    margin-top: 44px;
     font-size: 20px;
+
 }
 article.art-perfiles {
     margin-top: 16px;
@@ -139,17 +151,21 @@ article.art-perfiles {
 }
 @media (min-width:1024px) {
   .container {
-    max-width: 1000px;
+    max-width: 90%;
     margin: 0 auto;
 }
+header {
+  height: 100px;
+}
 h1 {
-  font-size: 40px;
+  font-size: 60px;
+  padding: 120px;
 }
 .publi {
     display: block;
     width: 100%;
     overflow: hidden;
-    background-color: rgba(215, 219, 221);
+    background-color: rgba(215, 219, 221,0.5);
 }
 .a-publi {
   float: left;
@@ -160,6 +176,7 @@ h1 {
 }
 ul li a:not(.a-logo) {
     font-size: 25px;
+
 }
 input#buscador {
 
@@ -167,6 +184,4 @@ input#buscador {
     border-radius: 10px;
     font-size: 30px;
     text-align: center;
-
-
 }

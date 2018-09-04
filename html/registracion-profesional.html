@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> PERFIL PROFESIONAL</title>
   </head>
@@ -12,20 +12,20 @@
     </header>
     <section>
       <div class="Registro">
-        <h1>COMPLETA TU PERFIL PROFESIONAL</h1>
+        <h1 class= "registr-prof">COMPLETA TU PERFIL PROFESIONAL</h1>
 
-        <label for=""> DNI</label>
-        <input type="number" name="DNI" id="DNI" value="" required>
+        <label for="DNI">DNI</label>
+        <input type="text" name="DNI" id="DNI" value="" required>
         <label for=""> Zona de trabajo </label>
           <div class="zona">
-            <input type="checkbox" name="zona norte" value="ZN">
-            <input type="checkbox" name="zona sur" value="ZS">
-            <input type="checkbox" name="zona este" value="ZE">
-            <input type="checkbox" name="zona oeste" value="ZO">
-            <input type="checkbox" name="zona centro" value="ZC">
-          </div>
+            <input type="checkbox" name="zona" value="ZN">Zona Norte<br>
+            <input type="checkbox" name="zona" value="ZS">Zona Sur<br>
+            <input type="checkbox" name="zona" value="ZE">Zona Este<br>
+            <input type="checkbox" name="zona" value="ZO">Zona Oeste<br>
+            <input type="checkbox" name="zona" value="ZC">Zona Centro
 
-        <label for=""> RUBRO PRINCIPAL </label>
+
+        <label for="RUBRO"> RUBRO PRINCIPAL </label>
           <select class="select" name="RUBRO">
             <option value="">Albañeria</option>
             <option value="">Gas</option>
