@@ -10,7 +10,7 @@ ul {
 body {
   font-family: 'Roboto', sans-serif;
   background-image: url(../img/background-brick-bricks-220182.jpg);
-  background-size: cover;
+  background-size: contain;
   margin: 0;
 }
 a {
@@ -32,8 +32,6 @@ ul a {
 .h1-label {
   background-image: url(../img/construction-grinder-man-1216544.jpg);
   background-size: cover;
-  height: 40vh;
-
 }
 .cuerpo {
   background-color: rgb(247, 220, 111);
@@ -45,9 +43,8 @@ h1 {
     color: white;
     margin-bottom: 0;
     font-size: 20px;
-
 }
-h2{
+h2.tit-perf{
   text-align: center;
   text-decoration: underline;
   background-color: rgba(215, 219, 221,0.5);
@@ -62,18 +59,21 @@ label {
 }
 
 article.art-perfiles {
-    margin-top: 16px;
+        width: 90%;
 }
 img {
     border-radius: 15px;
-    width: 78%;
+    width: 100%;
 }
 .logo {
   width:50%;
   border-radius: 0;
 }
 .perfiles {
-  text-align: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
 }
 
@@ -113,7 +113,7 @@ input#buscador:hover {
     float: right;
   }
   header {
-    height: 70px;
+
   }
   .logo {
     width:100%;
@@ -128,7 +128,7 @@ input#buscador:hover {
     font-size: 44px;
   }
   .h1-label {
-    height: 71vh;
+
   }
   ul li a:not(.a-logo) {
     background-color: rgba(247, 220, 111);
@@ -141,21 +141,30 @@ input#buscador:hover {
 
 }
 article.art-perfiles {
-    margin-top: 16px;
-    width: 46%;
-    float: left;
+  width: 80%;
+  display: flex;
+  flex-flow: wrap row;
+
+}
+div.foto-nombre {
+  width: 30%;
+}
+div.datos-rubro-boton {
+  width: 70%;
 }
 .perfiles {
   background-color: rgba(247, 220, 111);
   overflow: hidden;
 }
+}
+
 @media (min-width:1024px) {
   .container {
     max-width: 90%;
     margin: 0 auto;
 }
 header {
-  height: 100px;
+
 }
 h1 {
   font-size: 60px;
@@ -184,4 +193,5 @@ input#buscador {
     border-radius: 10px;
     font-size: 30px;
     text-align: center;
+}
 }
