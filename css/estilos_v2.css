@@ -84,7 +84,7 @@ display: block;
   height:5vh;
   /*background-color: rgb(166, 166, 166);*/
 }
-.container{
+.container_reg_doble{
   position: relative;
   height: 150vh;
 }
@@ -248,6 +248,9 @@ footer{
   }
 .publicidad_vertical{
   display:none;
+}
+.container{
+  height: 120vh;
 }
 }
 @media (min-width: 768px) /*tablet*/
