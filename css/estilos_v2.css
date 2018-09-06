@@ -17,6 +17,14 @@ a {
 text-decoration: none;
 display: block;
 }
+.container_reg_doble{
+  position: relative;
+  height: 150vh;
+}
+.container_formularios_gral{
+  position:relative;
+  height: 120vh
+}
 .header_completo{
 }
 .barra_principal{
@@ -84,10 +92,7 @@ display: block;
   height:5vh;
   /*background-color: rgb(166, 166, 166);*/
 }
-.container_reg_doble{
-  position: relative;
-  height: 150vh;
-}
+
 .menu_registro{
   text-align: center;
   margin:1.5vh;
