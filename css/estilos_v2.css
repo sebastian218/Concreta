@@ -15,7 +15,6 @@ body {
 }
 a {
 text-decoration: none;
-display: block;
 }
 .container_reg_doble{
   position: relative;
@@ -307,6 +306,76 @@ label{
 .registracion_cliente{
 
 }
+/*Cambios en Perfiles.Seba */
+.perfiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 94%;
+    margin: 0 auto;
+}
+.datos-rubro-boton a {
+    background-color: #E74C3C;
+    text-align: center;
+    width: 70%;
+    padding: 2px;
+    color: white;
+    border: grey groove;
+    border-radius: 7px;
+    align-self: flex-end;
+}
+.foto-nombre img.cara-perf {
+    width: 70%;
+    border-radius: 70%;
+}
+.foto-nombre img {
+    width: 80%;
+}
+.foto-nombre {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    justify-content: space-between;
+}
+article.art-perfiles {
+    display: flex;
+    flex-flow: row;
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 4px;
+}
+
+p.perf-zona {
+    display: inline-block;
+    margin: 0;
+    width: 36%;
+    margin-top: 11px;
+}
+h2.rubro-perf {
+    display: inline-block;
+    margin: 0;
+    width: 60%;
+    margin-top: 6px;
+}
+.datos-rubro-boton {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: self-start;
+    width: 80%;
+    justify-content: space-between;
+}
+p.perf-descript {
+    font-size: 12px;
+}
+/* agrego el p tipo subt.Seba */
+p.subtit {
+    text-align: center;
+    font-size: 20px;
+}
+/*Banner decker.Seba*/
+img.banner-decker {
+    width: 80%;
+} 
 @media (max-width:767px) /*cel grande*/
 {
 .links_footer_tablet{
@@ -383,8 +452,35 @@ label{
     margin: auto;
     margin-top: 2vh;
   }
+
+/* Perfiles en tablet*/
+.datos-rubro-boton a {
+    width: 36%;
 }
-
+p.perf-descript {
+    font-size: 13px;
+    display: inline-block;
+    width: 96%;
+}
+.foto-nombre img.cara-perf {
+    width: 90%;
+}
+.foto-nombre img {
+    width: 100%;
+}
+input#buscador {
+  font-size: 20px;
+}
+.h1-label label {
+  padding-bottom: 110px;
+}
+}
 @media (min-width:1024px) /*desktop*/{
-
+/* Perfiles en Desktop */
+p.perf-descript {
+    font-size: 18px;
+}
+.datos-rubro-boton a {
+    width: 25%;
+}
 }
