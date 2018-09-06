@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+  padding:0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url(../img/Textura_fondo_2.jpg);
+  background-size: contain;
+  margin: 0;
+}
+a {
+text-decoration: none;
+display: block;
+}
+.header_completo{
+  height: 50vw;
+  max-height: 35vh;
+  overflow: hidden;
+}
+.barra_principal{
+  display:flex;
+  flex-direction:column;
+  height: 35%
+}
+.barra_ppal_1{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  /*border-bottom:3px solid rgba(0,0,0,0.5);*/
+}
+/*clases de la barra ppal*/
+.menu_contextual{
+  width: 20%;
+  border-right: 3px solid rgba(0,0,0,0.5);
+}
+.hamburger{
+  display: block;
+  margin: auto;
+  width: 35%;
+  padding-top:20%;
+  opacity: 0.6;
+}
+.logo_nombre{
+  width: 35%;
+}
+.logo_tipo{
+  display: block;
+  margin: auto;
+  height: 5vh;
+  margin-top: 2.5vh;
+}
+.busqueda{
+  width: 20%;
+  /*border-left: 3px solid rgba(0,0,0,0.5);*/
+}
+.lupa{
+  display: block;
+  margin: auto;
+  width: 25%;
+  padding-top: 22%;
+  opacity: 0.6;
+}
+.barra_ppal_2{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu_registro{
+  width:50%;
+  text-align: center;
+  padding:3%;
+  background-color: rgba(0,0,0,0.1);
+}
+.botones_registro{
+  font-size: 3vh;
+}
+ul li a {
+  color:rgba(0,0,0,0.5);
+}
+/*Acá empieza el banner*/
+.banner {
+display: flex;
+width: 100%;
+background-image: url(../img/Banner_pintura_pared.jpg);
+background-size: cover;
+background-position-y:15%;
+height: 65%
+}
+.crea_perfil {
+  font-weight: bold;
+  font-size: 9vw;
+  color:rgba(0,0,0,0.2);
+  margin: auto;
+  width:100%;
+  text-align: center;
+  letter-spacing: 2vw;
+  /*background-color:rgba(0,0,0,0.1)*/
+}
+.fondo_banner {
+object-fit: contain;
+}
+/*sección ppal elegir perfiles*/
+.elegir_perfil{
+display: flex;
+width:90vw;
+margin: auto;
+margin-top: 6vh;
+justify-content: space-between;
+}
+.logo_perfil{
+  display:block;
+  width:60%;
+  margin-top:7%;
+}
+.elegir_perfil_cliente{
+  width: 45%;
+  background-color:rgba(255, 255, 255, 0.8);
+  height: 50vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.elegir_perfil_profesional{
+  width: 45%;
+  background-color:rgba(255, 255, 255, 0.8);
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.descrip{
+  font-size: 4vw;
+  text-align: center;
+  margin:0;
+  padding: 3vh;
+}
+.registrarme{
+  font-size: 3vh;
+  text-align: center;
+  margin:0;
+  color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 2vh;
+}
+
+/*footer*/
+.footer_chico{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin:0;
+  position:fixed;
+  bottom:0;
+  background-color: rgba(0,0,0,0.7);
+  width:100%;
+
+}
+.links_footer{
+  font-size: 2vh;
+  line-height: 3vh;
+  color: rgba(255,255,255,0.9);
+}
+.links_footer_tablet{
+  font-size: 2vh;
+  line-height: 3vh;
+  color: rgba(255,255,255,0.9);
+}
+
+@media (max-width:425px) /*cel grande*/
+{
+.links_footer_tablet{
+  display: none;
+}
+.barra_ppal_2{
+  display:none;
+}
+}
+@media (min-width: 768px) /*tablet*/
+  {
+  .menu_contextual
+  {display:none;}
+  .elegir_perfil{
+    width:55%;
+  }
+  .elegir_perfil_cliente{
+    width:30%;
+  }
+  .elegir_perfil_profesional{
+    width:30%;
+  }
+  .descrip{
+    font-size: 2vh;
+    padding: 1vh;
+  }
+
+}
+
+@media (min-width:1024px) /*desktop*/{
+
+}
