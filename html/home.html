@@ -2,43 +2,42 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/estilos_v2.css">
     <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Concreta</title>
   </head>
   <body>
 
-    <div class="container">
+    <div class="container_home">
       <header>
-        <nav class="nav-principal">
-        <ul>
+        <nav class="barra_principal">
+            <ul class="barra_ppal_2">
+             <li class="menu_registro"><a class="botones_registro" href="registracion_intermedio.html">CREAR CUENTA</a></li>
+             <li class="menu_registro"><a class="botones_registro" href="login.html">INICIAR SESIÓN</a></li>
+            </ul>
+            <ul class="barra_ppal_1">
+              <li class="menu_contextual"><a class="botones_cambiar"href="#"><img class="hamburger"src="../img/Hamburger_icon.png" alt=""></a></li>
+              <li class="logo_nombre"><a class="botones_cambiar"href="home.html"><img class="logo_tipo" src="../img/LOGO_FINAL.png" alt=""></a></li>
+              <li class="busqueda"><a class="botones_cambiar" href="#"><img class="lupa" src="../img/search-icon-png-21.png" alt=""></a></li>
+            </ul>
+        </nav>
+        <div class="h1-label">
 
-           <li class="li-logo"> <a class="a-logo" href="#"> <img class = "logo" src="../img/concreta_logo-01.png" alt=""> </a> </li>
-           <li> <a href="#"> Prueba </a> </li>
-           <li> <a href="#"> Registrarse </a> </li>
+                <h1> Buscá servicios <br> para tu hogar o empresa</h1>
 
-
-         </ul>
-       </nav>
-      </header>
-
+            <label  for="buscador">
+              <input id="buscador" type="text" name="buscador" value="¿Qué querés concretar hoy?">
+            </label>
+       </div>
+     </header>
    <section class="cuerpo">
-
-     <div class="h1-label">
-
-             <h1> Buscá servicios <br> para tu hogar o empresa</h1>
-
-         <label  for="buscador">
-           <input id="buscador" type="text" name="buscador" value="¿Qué querés concretar hoy?">
-         </label>
-    </div>
 
       <h2 class="tit-perf" >Perfiles</h2>
 
          <div class="perfiles" >
 
-      
           <article class="art-perfiles">
                <div class="foto-nombre">
                       <img src="" alt="">
@@ -113,7 +112,21 @@
         </div>
 
       </section>
+      <footer>
+        <ul class="footer_alto">
+          <li class=links_footer>Lorem</li>
+          <li class=links_footer>impsum</li>
+          <li class=links_footer>dolor</li>
+          <li class=links_footer>amet</li>
+        </ul>
 
+        <ul class="footer_chico">
+          <li><a class="links_footer" href="#">Quienes Somos</a></li>
+          <li><a class="links_footer_tablet" href="#">F.A.Q.</a></li>
+          <li><a class="links_footer_tablet" href="#">Cookies</a></li>
+          <li><a class="links_footer" href="#">Política de privacidad</a></li>
+        </ul>
+      </footer>
 
   </div>
   </body>

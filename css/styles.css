@@ -9,7 +9,7 @@ ul {
 }
 body {
   font-family: 'Roboto', sans-serif;
-  background-image: url(../img/background-brick-bricks-220182.jpg);
+  /*background-image: url(../img/background-brick-bricks-220182.jpg);*/
   background-size: contain;
   margin: 0;
 }
@@ -61,9 +61,7 @@ label {
 article.art-perfiles {
         width: 90%;
 }
-img {
-    border-radius: 15px;
-    width: 100%;
+
 }
 .logo {
   width:50%;
@@ -74,15 +72,8 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
 }
 
-ul li a:not(.a-logo) {
-  color: White;
-  background-color: black;
-  width: 100%;
-  margin-bottom: 2px;
-}
 input#buscador {
     width: 80%;
     background-color: rgba(0,0,0,0.5);
@@ -106,12 +97,7 @@ input#buscador:hover {
     max-width: 90%;
     margin: 0 auto;
   }
-  nav ul {
-    overflow: hidden;
-  }
-  nav ul li {
-    float: right;
-  }
+
   header {
 
   }
@@ -119,7 +105,6 @@ input#buscador:hover {
     width:100%;
   }
   li.li-logo {
-    float:left;
     width: 30%;
   }
   h1 {
@@ -130,16 +115,7 @@ input#buscador:hover {
   .h1-label {
 
   }
-  ul li a:not(.a-logo) {
-    background-color: rgba(247, 220, 111);
-    color: black;
 
-  }
-  ul li:not(.li-logo) {
-    margin-right: 3%;
-    font-size: 20px;
-
-}
 article.art-perfiles {
   width: 80%;
   display: flex;
@@ -183,10 +159,10 @@ h1 {
   margin-top: 30px;
 
 }
-ul li a:not(.a-logo) {
+/*ul li a:not(.a-logo) {
     font-size: 25px;
 
-}
+}*/
 input#buscador {
 
     padding: 14px;
