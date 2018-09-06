@@ -18,20 +18,16 @@ text-decoration: none;
 }
 .container_reg_doble{
   position: relative;
-  height: 150vh;
 }
 .container_formularios_gral{
   position:relative;
-  height: 150vh;
   width: 100%;
 }
 .container_formularios_prof{
   position: relative;
-  height: 200vh;
 }
 .container_home{
   position: relative;
-  height: 350vh;
 }
 .header_completo{
 }
@@ -215,8 +211,6 @@ justify-content: space-between;
 
 /*footer*/
 footer{
-  position: absolute;
-  bottom:0px;
   width:100%;
 }
 .footer_alto{
@@ -375,7 +369,7 @@ p.subtit {
 /*Banner decker.Seba*/
 img.banner-decker {
     width: 80%;
-} 
+}
 @media (max-width:767px) /*cel grande*/
 {
 .links_footer_tablet{
