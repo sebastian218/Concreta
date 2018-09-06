@@ -23,7 +23,7 @@ display: block;
 }
 .container_formularios_gral{
   position:relative;
-  height: 120vh
+  height: 200vh
 }
 .container_home{
   position: relative;
@@ -246,9 +246,44 @@ footer{
   line-height: 5vh;
   color: rgba(255,255,255,0.9);
 }
-
-
-
+/*css de registración*/
+.formularios{
+  width:90%;
+  margin:auto;
+  display:flex;
+  flex-direction: column;
+}
+.registracion{
+  display:flex;
+  flex-direction: column;
+  width:65%;
+  padding:2%;
+  margin: auto;
+}
+.Registro{
+  display:flex;
+  flex-direction: column;
+  width:65%;
+  padding:2%;
+  margin: auto;
+}
+.registr-prof{
+  text-align: center;
+  opacity: 0.8;
+}
+.seleccion_rub_zon{
+  margin:1vw;
+  margin-top: 2vh;
+}
+label{
+  margin-left: 1vh;
+  margin-top:1vh;
+  opacity: 0.9;
+}
+.enviar_cancelar{
+  margin: auto;
+  margin-top: 2vh;
+}
 @media (max-width:767px) /*cel grande*/
 {
 .links_footer_tablet{
@@ -296,7 +331,35 @@ footer{
     font-size: 2.5vh;
     padding: 1vh;
   }
-
+  /*css de registración*/
+  .formularios{
+    width:90%;
+    max-width: 1000px;
+    flex-direction:row;
+  }
+  .registracion{
+    width:45%;
+    padding:2%;
+  }
+  .Registro{
+    display:flex;
+    flex-direction: column;
+    width:45%;
+    padding:2%;
+    margin: auto;
+  }
+  .registr-prof{
+    text-align: center;
+    opacity: 0.8;
+  }
+  .seleccion_rub_zon{
+    margin:1vw;
+    margin-top: 2vh;
+  }
+  .enviar_cancelar{
+    margin: auto;
+    margin-top: 2vh;
+  }
 }
 
 @media (min-width:1024px) /*desktop*/{
