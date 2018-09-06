@@ -2,30 +2,67 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/estilos_v2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> PERFIL PROFESIONAL</title>
   </head>
   <body>
-    <header>
+    <div class="container_formularios_prof">
+      <header class="header_completo">
+        <nav class="barra_principal">
+            <ul class="barra_ppal_2">
+             <li class="menu_registro"><a class="botones_registro" href="registracion_intermedio.html">CREAR CUENTA</a></li>
+             <li class="menu_registro"><a class="botones_registro" href="login.html">INICIAR SESIÓN</a></li>
+            </ul>
+            <ul class="barra_ppal_1">
+              <li class="menu_contextual"><a class="botones_cambiar"href="#"><img class="hamburger"src="../img/Hamburger_icon.png" alt=""></a></li>
+              <li class="logo_nombre"><a class="botones_cambiar"href="home.html"><img class="logo_tipo" src="../img/LOGO_FINAL.png" alt=""></a></li>
+              <li class="busqueda"><a class="botones_cambiar" href="#"><img class="lupa" src="../img/search-icon-png-21.png" alt=""></a></li>
+            </ul>
+        </nav>
+           <div class="banner_perfiles">
+          <p class="crea_perfil">CREÁ TU PERFIL EN CONCRETA</p>
+          </div>
+      </header>
 
-    </header>
-    <section>
+
+  <section>
+   <div class="formularios">
+
+
+      <form class="registracion">
+       <h1 class="registr-prof">Completá tus datos</h1>
+      <label for="usuario"> Usuario</label>
+      <input type="text" name="usuario" id="usuario" value="Elegir nombre de usuario">
+      <label for="nombre"> Nombre</label>
+      <input type="text" name="nombre" id="nombre" value="">
+      <label for="apellido"> Apellido </label>
+      <input type="text" name="apellido" id="apellido" value="">
+      <label for="email"> Email </label>
+      <input type="email" name="email" id= "email" value="">
+      <label for="DNI">DNI</label>
+      <input type="text" name="DNI" id="DNI" value="" required>
+
+      <label for=""> Password </label>
+      <input type="password" name="password" id= "password" value="">
+      <label for=""> Confirmar Password </label>
+      <input type="password" name="password" id= "password-confirm" value="">
+
+    </form>
+
+
       <div class="Registro">
-        <h1 class= "registr-prof">COMPLETA TU PERFIL PROFESIONAL</h1>
-
-        <label for="DNI">DNI</label>
-        <input type="text" name="DNI" id="DNI" value="" required>
-        <label for=""> Zona de trabajo </label>
+         <h1 class= "registr-prof">Especificá tu rubro y zona de trabajo</h1>
+        <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
           <div class="zona">
             <input type="checkbox" name="zona" value="ZN">Zona Norte<br>
             <input type="checkbox" name="zona" value="ZS">Zona Sur<br>
             <input type="checkbox" name="zona" value="ZE">Zona Este<br>
             <input type="checkbox" name="zona" value="ZO">Zona Oeste<br>
-            <input type="checkbox" name="zona" value="ZC">Zona Centro
+            <input type="checkbox" name="zona" value="ZC">Zona Centro<br>
+          </div>
 
-
-        <label for="RUBRO"> RUBRO PRINCIPAL </label>
+        <label class="seleccion_rub_zon" for="RUBRO"> RUBRO PRINCIPAL </label>
           <select class="select" name="RUBRO">
             <option value="">Albañeria</option>
             <option value="">Gas</option>
@@ -35,10 +72,30 @@
             <option value="">Trasporte, Carga y Descarga</option>
           </select>
 
+         <div class="enviar_cancelar">
 
-        <button type="submit" name="button">Enviar</button>
-        <button type="reset" name="button">Cancelar</button>
+          <button type="submit" name="button">Enviar</button>
+          <button type="reset" name="button">Cancelar</button>
+         </div>
+        </div>
     </section>
 
+
+    <footer>
+      <ul class="footer_alto">
+        <li class=links_footer>Lorem</li>
+        <li class=links_footer>impsum</li>
+        <li class=links_footer>dolor</li>
+        <li class=links_footer>amet</li>
+      </ul>
+
+      <ul class="footer_chico">
+        <li><a class="links_footer" href="#">Quienes Somos</a></li>
+        <li><a class="links_footer_tablet" href="#">F.A.Q.</a></li>
+        <li><a class="links_footer_tablet" href="#">Cookies</a></li>
+        <li><a class="links_footer" href="#">Política de privacidad</a></li>
+      </ul>
+    </footer>
+  </div>
   </body>
 </html>

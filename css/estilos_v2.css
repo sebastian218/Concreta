@@ -17,21 +17,38 @@ a {
 text-decoration: none;
 display: block;
 }
+.container_reg_doble{
+  position: relative;
+  height: 150vh;
+}
+.container_formularios_gral{
+  position:relative;
+  height: 150vh;
+  width: 100%;
+}
+.container_formularios_prof{
+  position: relative;
+  height: 200vh;
+}
+.container_home{
+  position: relative;
+  height: 350vh;
+}
 .header_completo{
-  height: 50vw;
-  max-height: 35vh;
-  overflow: hidden;
 }
 .barra_principal{
   display:flex;
   flex-direction:column;
-  height: 35%
+  height:14vh;
 }
 .barra_ppal_1{
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  position:relative;
+  top:5vh;
+  height:9vh;
   /*border-bottom:3px solid rgba(0,0,0,0.5);*/
 }
 /*clases de la barra ppal*/
@@ -42,18 +59,20 @@ display: block;
 .hamburger{
   display: block;
   margin: auto;
-  width: 35%;
-  padding-top:20%;
   opacity: 0.6;
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+  height: 4vh;
 }
 .logo_nombre{
-  width: 35%;
+  width: 60%;
 }
 .logo_tipo{
   display: block;
   margin: auto;
-  height: 5vh;
-  margin-top: 2.5vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  height: 7vh;
 }
 .busqueda{
   width: 20%;
@@ -62,49 +81,84 @@ display: block;
 .lupa{
   display: block;
   margin: auto;
-  width: 25%;
-  padding-top: 22%;
+  margin-top: 2.5vh;
+  margin-top: 2.5vh;
+  height: 4vh;
   opacity: 0.6;
+}
+.botones_cambiar{
+  display: block;
+  height: 9vh;
 }
 .barra_ppal_2{
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  background-image: url(../img/Textura_fondo_2_osc.jpg);
+  background-size: 100vw;
+  position:fixed;
+  height:5vh;
+  /*background-color: rgb(166, 166, 166);*/
 }
+
 .menu_registro{
-  width:50%;
   text-align: center;
-  padding:3%;
-  background-color: rgba(0,0,0,0.1);
+  margin:1.5vh;
 }
 .botones_registro{
-  font-size: 3vh;
+  display: block;
+  font-size: 2vh;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.8);
 }
 ul li a {
   color:rgba(0,0,0,0.5);
 }
 /*Acá empieza el banner*/
-.banner {
+.banner_perfiles {
 display: flex;
+flex-flow: column;
 width: 100%;
-background-image: url(../img/Banner_pintura_pared.jpg);
+background-image:url(../img/Banner_pintura_pared.jpg);
 background-size: cover;
 background-position-y:15%;
-height: 65%
+height: 50vh;
 }
 .crea_perfil {
-  font-weight: bold;
-  font-size: 9vw;
-  color:rgba(0,0,0,0.2);
+  font-size: 3vw;
+  color:rgba(0,0,0,0.4);
   margin: auto;
   width:100%;
-  text-align: center;
-  letter-spacing: 2vw;
+  text-align: left;
+  margin-left: 40vh;
   /*background-color:rgba(0,0,0,0.1)*/
 }
+.perfil_registrate {
+  font-size: 2vw;
+  color:rgba(0,0,0,0.4);
+  margin: auto;
+  width:100%;
+  text-align: left;
+  margin-left: 40vh;
+  /*background-color:rgba(0,0,0,0.1)*/
+}
+
 .fondo_banner {
 object-fit: contain;
+}
+/*cuerpo_tablet*/
+.cuerpo_tablet{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width:98%;
+  margin: auto;
+}
+.publicidad_vertical{
+  width:15%;
+  background-color: grey;
+  margin-top: 6vh;
 }
 /*sección ppal elegir perfiles*/
 .elegir_perfil{
@@ -121,7 +175,7 @@ justify-content: space-between;
 }
 .elegir_perfil_cliente{
   width: 45%;
-  background-color:rgba(255, 255, 255, 0.8);
+  background-color:rgba(255, 255, 255, 0.1);
   height: 50vh;
   display:flex;
   flex-direction: column;
@@ -131,7 +185,7 @@ justify-content: space-between;
 }
 .elegir_perfil_profesional{
   width: 45%;
-  background-color:rgba(255, 255, 255, 0.8);
+  background-color:rgba(255, 255, 255, 0.1);
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -149,59 +203,186 @@ justify-content: space-between;
   text-align: center;
   margin:0;
   color: rgba(0, 0, 0, 0.5);
-  padding-bottom: 2vh;
+  margin-bottom: 2vh;
+  padding:0.5vh;
+
+}
+.reg_prof{
+  background-color: rgb(61,177,156);
+}
+.reg_const{
+  background-color: rgb(60,185,229);
 }
 
 /*footer*/
+footer{
+  position: absolute;
+  bottom:0px;
+  width:100%;
+}
+.footer_alto{
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  height: 10vh;
+  justify-content: space-around;
+  padding: 4vh;
+  background-color: rgba(0,0,0,0.3);
+}
 .footer_chico{
   display:flex;
   flex-direction: row;
   justify-content: space-around;
   margin:0;
-  position:fixed;
   bottom:0;
   background-color: rgba(0,0,0,0.7);
   width:100%;
+  height: 5vh;
+  background-color: rgba(0,0,0,0.5);
 
 }
 .links_footer{
   font-size: 2vh;
-  line-height: 3vh;
   color: rgba(255,255,255,0.9);
+  line-height: 5vh;
 }
 .links_footer_tablet{
   font-size: 2vh;
-  line-height: 3vh;
+  line-height: 5vh;
   color: rgba(255,255,255,0.9);
 }
+/*css de registración*/
+.formularios{
+  width:90%;
+  margin:auto;
+  display:flex;
+  flex-direction: column;
+}
+.registracion{
+  display:flex;
+  flex-direction: column;
+  width:65%;
+  padding:2%;
+  margin: auto;
+}
+.Registro{
+  display:flex;
+  flex-direction: column;
+  width:65%;
+  padding:2%;
+  margin: auto;
+}
+.Registro_cliente{
+  display:flex;
+  flex-direction: column;
+  width:80%;
+  padding:2%;
+  margin: auto;
+  max-width: 500px;
+}
+.registracion_cliente{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  padding:2%;
+  margin: auto;
+}
+.registr-prof{
+  text-align: center;
+  opacity: 0.8;
+}
+.seleccion_rub_zon{
+  margin:1vw;
+  margin-top: 2vh;
+}
+label{
+  margin-left: 1vh;
+  margin-top:1vh;
+  opacity: 0.9;
+}
+.enviar_cancelar{
+  margin: auto;
+  margin-top: 2vh;
+}
+.registracion_cliente{
 
-@media (max-width:425px) /*cel grande*/
+}
+@media (max-width:767px) /*cel grande*/
 {
 .links_footer_tablet{
   display: none;
-}
-.barra_ppal_2{
+  }
+.banner_perfiles{
   display:none;
+  }
+.publicidad_vertical{
+  display:none;
+}
+.container{
+  height: 120vh;
 }
 }
 @media (min-width: 768px) /*tablet*/
   {
+    .barra_ppal_2{
+      justify-content: flex-end;
+    }
+    .logo_tipo{
+      display: block;
+      margin: auto;
+      height: 8vh;
+    }
+    .logo_nombre{
+      width: 15%;}
+
   .menu_contextual
-  {display:none;}
+  {display:none;
+  }
+  .busqueda {
+    display:none;
+  }
   .elegir_perfil{
     width:55%;
   }
   .elegir_perfil_cliente{
-    width:30%;
+    width:45%
   }
   .elegir_perfil_profesional{
-    width:30%;
+    width:45%;
   }
   .descrip{
-    font-size: 2vh;
+    font-size: 2.5vh;
     padding: 1vh;
   }
-
+  /*css de registración*/
+  .formularios{
+    width:90%;
+    max-width: 1000px;
+    flex-direction:row;
+  }
+  .registracion{
+    width:45%;
+    padding:2%;
+  }
+  .Registro{
+    display:flex;
+    flex-direction: column;
+    width:45%;
+    padding:2%;
+    margin: auto;
+  }
+  .registr-prof{
+    text-align: center;
+    opacity: 0.8;
+  }
+  .seleccion_rub_zon{
+    margin:1vw;
+    margin-top: 2vh;
+  }
+  .enviar_cancelar{
+    margin: auto;
+    margin-top: 2vh;
+  }
 }
 
 @media (min-width:1024px) /*desktop*/{
