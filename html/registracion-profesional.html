@@ -7,7 +7,7 @@
     <title> PERFIL PROFESIONAL</title>
   </head>
   <body>
-    <div class="container_formularios_gral">
+    <div class="container_formularios_prof">
       <header class="header_completo">
         <nav class="barra_principal">
             <ul class="barra_ppal_2">
@@ -21,25 +21,48 @@
             </ul>
         </nav>
            <div class="banner_perfiles">
-          <p class="crea_perfil">Completá tu perfil</p>
+          <p class="crea_perfil">CREÁ TU PERFIL EN CONCRETA</p>
           </div>
       </header>
-    <section>
-      <div class="Registro">
-        <h1 class= "registr-prof">COMPLETA TU PERFIL PROFESIONAL</h1>
 
-        <label for="DNI">DNI</label>
-        <input type="text" name="DNI" id="DNI" value="" required>
-        <label for=""> Zona de trabajo </label>
+
+  <section>
+   <div class="formularios">
+
+
+      <form class="registracion">
+       <h1 class="registr-prof">Completá tus datos</h1>
+      <label for="usuario"> Usuario</label>
+      <input type="text" name="usuario" id="usuario" value="Elegir nombre de usuario">
+      <label for="nombre"> Nombre</label>
+      <input type="text" name="nombre" id="nombre" value="">
+      <label for="apellido"> Apellido </label>
+      <input type="text" name="apellido" id="apellido" value="">
+      <label for="email"> Email </label>
+      <input type="email" name="email" id= "email" value="">
+      <label for="DNI">DNI</label>
+      <input type="text" name="DNI" id="DNI" value="" required>
+
+      <label for=""> Password </label>
+      <input type="password" name="password" id= "password" value="">
+      <label for=""> Confirmar Password </label>
+      <input type="password" name="password" id= "password-confirm" value="">
+
+    </form>
+
+
+      <div class="Registro">
+         <h1 class= "registr-prof">Especificá tu rubro y zona de trabajo</h1>
+        <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
           <div class="zona">
             <input type="checkbox" name="zona" value="ZN">Zona Norte<br>
             <input type="checkbox" name="zona" value="ZS">Zona Sur<br>
             <input type="checkbox" name="zona" value="ZE">Zona Este<br>
             <input type="checkbox" name="zona" value="ZO">Zona Oeste<br>
-            <input type="checkbox" name="zona" value="ZC">Zona Centro
+            <input type="checkbox" name="zona" value="ZC">Zona Centro<br>
+          </div>
 
-
-        <label for="RUBRO"> RUBRO PRINCIPAL </label>
+        <label class="seleccion_rub_zon" for="RUBRO"> RUBRO PRINCIPAL </label>
           <select class="select" name="RUBRO">
             <option value="">Albañeria</option>
             <option value="">Gas</option>
@@ -49,10 +72,15 @@
             <option value="">Trasporte, Carga y Descarga</option>
           </select>
 
+         <div class="enviar_cancelar">
 
-        <button type="submit" name="button">Enviar</button>
-        <button type="reset" name="button">Cancelar</button>
+          <button type="submit" name="button">Enviar</button>
+          <button type="reset" name="button">Cancelar</button>
+         </div>
+        </div>
     </section>
+
+
     <footer>
       <ul class="footer_alto">
         <li class=links_footer>Lorem</li>
