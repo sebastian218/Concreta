@@ -26,19 +26,16 @@ ul a {
   display: inline-block;
 }
 
-.perfiles {
-  background-color: rgba(247, 220, 111);
-}
+
 .h1-label {
   background-image: url(../img/construction-grinder-man-1216544.jpg);
   background-size: cover;
 }
-.cuerpo {
-  background-color: rgb(247, 220, 111);
-}
+
 h1 {
-    padding: 50px;
-    text-align: center ;
+    padding: 16px;
+    padding-top: 48px;
+    text-align: center;
     margin-top: 0;
     color: white;
     margin-bottom: 0;
@@ -50,13 +47,14 @@ h2.tit-perf{
   background-color: rgba(215, 219, 221,0.5);
 }
 label {
-
-    width:100%;
-    background-color: rgba(0,0,0,0.5);
+    width: 100%;
     padding: 6px;
-    display: block;
+    display: inline-block;
     text-align: center;
-}
+    padding-top: 31px;
+    padding-bottom: 41px;
+    margin: 0;
+
 
 article.art-perfiles {
         width: 90%;
@@ -67,15 +65,10 @@ article.art-perfiles {
   width:50%;
   border-radius: 0;
 }
-.perfiles {
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
 
 input#buscador {
-    width: 80%;
+    width: 90%;
     background-color: rgba(0,0,0,0.5);
     color: white;
     border-color: rgba(0,0,0,0.5);
@@ -117,7 +110,7 @@ input#buscador:hover {
   }
 
 article.art-perfiles {
-  width: 80%;
+  width: 48%;
   display: flex;
   flex-flow: wrap row;
 
@@ -128,9 +121,8 @@ div.foto-nombre {
 div.datos-rubro-boton {
   width: 70%;
 }
-.perfiles {
-  background-color: rgba(247, 220, 111);
-  overflow: hidden;
+input#buscador {
+  font-size: 20px;
 }
 }
 
