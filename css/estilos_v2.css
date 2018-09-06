@@ -365,6 +365,15 @@ h2.rubro-perf {
 p.perf-descript {
     font-size: 12px;
 }
+/* agrego el p tipo subt.Seba */
+p.subtit {
+    text-align: center;
+    font-size: 20px;
+}
+/*Banner decker.Seba*/
+img.banner-decker {
+    width: 80%;
+}
 @media (max-width:767px) /*cel grande*/
 {
 .links_footer_tablet{
