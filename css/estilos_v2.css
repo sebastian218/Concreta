@@ -23,7 +23,12 @@ display: block;
 }
 .container_formularios_gral{
   position:relative;
-  height: 200vh
+  height: 150vh;
+  width: 100%;
+}
+.container_formularios_prof{
+  position: relative;
+  height: 200vh;
 }
 .container_home{
   position: relative;
@@ -267,6 +272,21 @@ footer{
   padding:2%;
   margin: auto;
 }
+.Registro_cliente{
+  display:flex;
+  flex-direction: column;
+  width:80%;
+  padding:2%;
+  margin: auto;
+  max-width: 500px;
+}
+.registracion_cliente{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  padding:2%;
+  margin: auto;
+}
 .registr-prof{
   text-align: center;
   opacity: 0.8;
@@ -283,6 +303,9 @@ label{
 .enviar_cancelar{
   margin: auto;
   margin-top: 2vh;
+}
+.registracion_cliente{
+
 }
 @media (max-width:767px) /*cel grande*/
 {

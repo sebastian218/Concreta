@@ -3,21 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>REGISTRACION</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/estilos_v2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div class="container">
-      <header>
+    <div class="container_formularios_gral">
 
+      <header class="header_completo">
+        <nav class="barra_principal">
+            <ul class="barra_ppal_2">
+             <li class="menu_registro"><a class="botones_registro" href="registracion_intermedio.html">CREAR CUENTA</a></li>
+             <li class="menu_registro"><a class="botones_registro" href="login.html">INICIAR SESIÓN</a></li>
+            </ul>
+            <ul class="barra_ppal_1">
+              <li class="menu_contextual"><a class="botones_cambiar"href="#"><img class="hamburger"src="../img/Hamburger_icon.png" alt=""></a></li>
+              <li class="logo_nombre"><a class="botones_cambiar"href="home.html"><img class="logo_tipo" src="../img/LOGO_FINAL.png" alt=""></a></li>
+              <li class="busqueda"><a class="botones_cambiar" href="#"><img class="lupa" src="../img/search-icon-png-21.png" alt=""></a></li>
+            </ul>
+        </nav>
+           <div class="banner_perfiles">
+          <p class="crea_perfil">REGISTRATE EN CONCRETA</p>
+          </div>
       </header>
-      <section>
-        <div class="Registro">
-          <h1>REGISTRACIÓN</h1>
-          <form class="registracion">
 
+      <section>
+        <div class="Registro_cliente">
+
+          <form class="registracion_cliente">
+             <h1>COMPLETÁ TUS DATOS</h1>
           <label for="usuario"> Usuario</label>
-          <input type="text" name="usuario" id="usuario" value="">
+          <input type="text" name="usuario" id="usuario" value="Elegí un nombre de usuario">
           <label for="nombre"> Nombre</label>
           <input type="text" name="nombre" id="nombre" value="">
           <label for="apellido"> Apellido </label>
@@ -25,19 +40,38 @@
           <label for="email"> Email </label>
           <input type="email" name="email" id= "email" value="">
 
-          <label for=""> Password </label>
+          <label for=""> Contraseña </label>
           <input type="password" name="password" id= "password" value="">
-          <label for=""> Confirmar Password </label>
+          <label for=""> Confirmar contraseña </label>
           <input type="password" name="password" id= "password-confirm" value="">
 
+         <div class="enviar_cancelar">
           <button type="submit" name="button">Registrarme</button>
           <button type="reset" name="button">Cancelar</button>
-
-        </form>
-
-
         </div>
+      </form>
+         <div class="foto_lateral">
+
+         </div>
+
+      </div>
       </section>
+
+      <footer>
+        <ul class="footer_alto">
+          <li class=links_footer>Lorem</li>
+          <li class=links_footer>impsum</li>
+          <li class=links_footer>dolor</li>
+          <li class=links_footer>amet</li>
+        </ul>
+
+        <ul class="footer_chico">
+          <li><a class="links_footer" href="#">Quienes Somos</a></li>
+          <li><a class="links_footer_tablet" href="#">F.A.Q.</a></li>
+          <li><a class="links_footer_tablet" href="#">Cookies</a></li>
+          <li><a class="links_footer" href="#">Política de privacidad</a></li>
+        </ul>
+      </footer>
 
     </div>
 
