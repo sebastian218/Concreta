@@ -399,6 +399,9 @@ p.subtit {
 img.banner-decker {
     width: 80%;
 }
+.login-section{
+    margin-bottom: 28vh;
+}
 @media (max-width:767px) /*cel grande*/
 {
 .links_footer_tablet{
