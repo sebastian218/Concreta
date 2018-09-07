@@ -503,6 +503,9 @@ input#buscador {
 .h1-label label {
   padding-bottom: 110px;
 }
+.login-section{
+    margin-bottom: inherit;
+}
 }
 @media (min-width:1024px) /*desktop*/{
 /* Perfiles en Desktop */
@@ -511,5 +514,8 @@ p.perf-descript {
 }
 .datos-rubro-boton a {
     width: 25%;
+}
+.login-section{
+    margin-bottom: inherit;
 }
 }
