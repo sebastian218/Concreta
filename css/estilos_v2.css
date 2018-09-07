@@ -413,6 +413,9 @@ img.banner-decker {
 .container{
   height: 120vh;
 }
+.footer_margin{
+  margin-top:20vh;
+}
 }
 @media (min-width: 768px) /*tablet*/
   {
