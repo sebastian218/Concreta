@@ -334,7 +334,7 @@ label{
 article.art-perfiles {
     display: flex;
     flex-flow: row;
-    background-color: white;
+    background-color: rgba(247, 249, 249,0.5);
     margin-bottom: 20px;
     padding: 4px;
 }
