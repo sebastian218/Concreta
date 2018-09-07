@@ -82,6 +82,9 @@ input#buscador:hover {
   background-color: rgba(241, 196, 15 , 0.5);
   color: black;
 }
+input#buscador::placeholder{
+  color:white;
+}
 .publi {
   display:none;
 }
