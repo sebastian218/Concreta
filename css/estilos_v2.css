@@ -73,6 +73,21 @@ text-decoration: none;
   width: 20%;
   /*border-left: 3px solid rgba(0,0,0,0.5);*/
 }
+.button-form{
+  color: black;
+  font-size: 14px;
+  padding: 10px 25px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #F2F2F2;
+}
+.input-form{
+  color: black;
+  font-size: 12px;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
 .lupa{
   display: block;
   margin: auto;
@@ -306,7 +321,12 @@ label{
   margin: auto;
   margin-top: 2vh;
 }
-.registracion_cliente{
+.login{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  padding:2%;
+  margin: auto;
 
 }
 /*Cambios en Perfiles.Seba */
