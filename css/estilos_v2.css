@@ -154,6 +154,12 @@ object-fit: contain;
   width:15%;
   background-color: grey;
   margin-top: 6vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.publicid{
+  width:100%;
 }
 /*sección ppal elegir perfiles*/
 .elegir_perfil{
