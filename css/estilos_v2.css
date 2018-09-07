@@ -10,7 +10,7 @@ ul {
 body {
   font-family: 'Roboto', sans-serif;
   background-image: url(../img/Textura_fondo_2.jpg);
-  background-size: contain;
+  background-size: cover;
   margin: 0;
 }
 a {
@@ -233,6 +233,9 @@ footer{
   height: 5vh;
   background-color: rgba(0,0,0,0.5);
 
+}
+.footer_sec_corta{
+  margin-top: 15vh;
 }
 .links_footer{
   font-size: 2vh;
