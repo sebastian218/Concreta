@@ -30,7 +30,7 @@
    <div class="formularios">
 
 
-      <form class="registracion">
+      <form class="registracion" action="" method="" >
        <h1 class="registr-prof">Completá tus datos</h1>
       <label for="usuario"> Usuario</label>
       <input class="input-form" type="text" name="usuario" id="usuario" value="Elegir nombre de usuario">
@@ -46,9 +46,8 @@
       <label for=""> Password </label>
       <input class="input-form" type="password" name="password" id= "password" value="">
       <label for=""> Confirmar Password </label>
-      <input class="input-form" type="password" name="password" id= "password-confirm" value="">
+      <input class="input-form" type="password" name="password-confirm" id= "password-confirm" value="">
 
-    </form>
 
 
       <div class="Registro">
@@ -64,12 +63,12 @@
 
         <label class="seleccion_rub_zon" for="RUBRO"> RUBRO PRINCIPAL </label>
           <select class="select" name="RUBRO">
-            <option value="">Albañeria</option>
-            <option value="">Gas</option>
-            <option value="">Electricidad</option>
-            <option value="">Pisos y Revestimientos</option>
-            <option value="">Estructura</option>
-            <option value="">Trasporte, Carga y Descarga</option>
+            <option value="alba">Albañeria</option>
+            <option value="gas">Gas</option>
+            <option value="elect">Electricidad</option>
+            <option value="pisorevest">Pisos y Revestimientos</option>
+            <option value="estruct">Estructura</option>
+            <option value="transpor">Trasporte, Carga y Descarga</option>
           </select>
 
          <div class="enviar_cancelar">
@@ -78,6 +77,7 @@
           <button class="button-form" type="reset" name="button">Cancelar</button>
          </div>
         </div>
+        </form>
     </section>
 
 
