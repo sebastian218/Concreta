@@ -30,11 +30,15 @@ ul a {
 .h1-label {
   background-image: url(../img/construction-grinder-man-1216544.jpg);
   background-size: cover;
+  height: 33vh;
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 h1 {
-    padding: 16px;
-    padding-top: 48px;
+
     text-align: center;
     margin-top: 0;
     color: white;
@@ -47,14 +51,9 @@ h2.tit-perf{
   background-color: rgba(215, 219, 221,0.5);
 }
 label {
-    width: 100%;
-    padding: 6px;
-    display: inline-block;
-    text-align: center;
-    padding-top: 31px;
-    padding-bottom: 41px;
+    width: 80%;
     margin: 0;
-
+}
 
 article.art-perfiles {
         width: 90%;
@@ -68,11 +67,9 @@ article.art-perfiles {
 
 
 input#buscador {
-    width: 90%;
+    width: 100%;
     background-color: rgba(0,0,0,0.5);
     color: white;
-    border-color: rgba(0,0,0,0.5);
-    padding: 4px;
     border-width: inherit;
     border-radius: 8px;
     text-align: center;
@@ -109,7 +106,7 @@ input#buscador::placeholder{
     font-size: 44px;
   }
   .h1-label {
-
+height: 80vh;
   }
 
 article.art-perfiles {
@@ -161,7 +158,7 @@ h1 {
 }*/
 input#buscador {
 
-    padding: 14px;
+    padding: 8px;
     border-radius: 10px;
     font-size: 30px;
     text-align: center;

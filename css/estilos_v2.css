@@ -498,9 +498,6 @@ p.perf-descript {
 input#buscador {
   font-size: 20px;
 }
-.h1-label label {
-  padding-bottom: 110px;
-}
 
 }
 @media (min-width:1024px) /*desktop*/{
