@@ -16,6 +16,65 @@ body {
 a {
 text-decoration: none;
 }
+/*paso lo de styles.css */
+header.header-home {
+  background-color: rgba(247, 220, 111);
+}
+.h1-label {
+  background-image: url(../img/construction-grinder-man-1216544.jpg);
+  background-size: cover;
+  height: 68vh;
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-position-x: 70%;
+}
+
+h2.tit-perf{
+  text-align: center;
+  text-decoration: underline;
+  background-color: rgba(215, 219, 221,0.5);
+}
+
+label.label-home {
+    width: 80%;
+    margin: 0;
+}
+article.art-perfiles {
+        width: 90%;
+}
+
+input#buscador {
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border-width: inherit;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+}
+input#buscador:hover {
+  background-color: rgba(241, 196, 15 , 0.5);
+  color: black;
+}
+input#buscador::placeholder{
+  color:white;
+}
+h1.h1-home {
+
+    text-align: center;
+    margin-top: 0;
+    color: white;
+    margin-bottom: 0;
+    font-size: 28px;
+}
+
+.publi-home {
+  display:none;
+}
+
+
 .container_reg_doble{
   position: relative;
 }
@@ -499,6 +558,28 @@ p.perf-descript {
 input#buscador {
   font-size: 20px;
 }
+/*sigo pasando css*/
+
+h1.h1-home {
+  padding: 96px;
+font-size: 44px;
+}
+.h1-label {
+height: 80vh;
+}
+article.art-perfiles {
+  width: 48%;
+  display: flex;
+  flex-flow: wrap row;
+
+}
+div.foto-nombre {
+  width: 30%;
+}
+div.datos-rubro-boton {
+  width: 70%;
+}
+
 
 }
 @media (min-width:1024px) /*desktop*/{
@@ -508,6 +589,26 @@ p.perf-descript {
 }
 .datos-rubro-boton a {
     width: 25%;
+}
+/*terminando de pasar css*/
+
+h1.h1-home {
+  font-size: 60px;
+  padding: 120px;
+}
+.publi-home {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(215, 219, 221,0.5);
+    text-align: center;
+}
+input#buscador {
+
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
 }
 
 }
