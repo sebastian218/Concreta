@@ -94,6 +94,7 @@ h1.h1-home {
   display:flex;
   flex-direction:column;
   height:14vh;
+  background-color: rgba(247, 220, 111);
 }
 .barra_ppal_1{
   display: flex;
@@ -103,6 +104,7 @@ h1.h1-home {
   position:relative;
   top:5vh;
   height:9vh;
+  background-color: rgba(247, 220, 111);
   /*border-bottom:3px solid rgba(0,0,0,0.5);*/
 }
 /*clases de la barra ppal*/
