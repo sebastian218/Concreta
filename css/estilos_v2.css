@@ -77,6 +77,7 @@ h1.h1-home {
 
 .container_reg_doble{
   position: relative;
+  height: 100vh;
 }
 .container_formularios_gral{
   position:relative;
@@ -170,7 +171,21 @@ h1.h1-home {
   background-size: 100vw;
   position:fixed;
   height:5vh;
+
+
   /*background-color: rgb(166, 166, 166);*/
+}
+/* agrego checkbox */
+
+.control{
+  font-family: "Roboto";
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 3px;
+  padding-top: 5px;
+  cursor: pointer;
+  font-size: 15px;
 }
 
 .menu_registro{
@@ -382,6 +397,7 @@ label{
 .enviar_cancelar{
   margin: auto;
   margin-top: 2vh;
+  margin-left: 1vh;
 }
 .login{
   width:100%;
@@ -477,7 +493,8 @@ img.banner-decker {
   height: 120vh;
 }
 .footer_margin{
-margin-top: 16vh;
+position: absolute;
+bottom: 0px;
 }
 }
 @media (min-width: 768px) /*tablet*/
