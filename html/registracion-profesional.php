@@ -1,3 +1,8 @@
+<?php
+
+var_dump($_POST);
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -14,7 +19,7 @@
         </div>
   <section>
    <div class="formularios">
-      <form class="registracion" action="" method="" >
+      <form class="registracion" action="" method="POST" >
        <h1 class="registr-prof">Completá tus datos</h1>
       <label for="usuario"> Usuario</label>
       <input class="input-form" type="text" name="usuario" id="usuario" value="Elegir nombre de usuario">
@@ -38,11 +43,11 @@
          <h1 class= "registr-prof">Especificá tu rubro y zona de trabajo</h1>
         <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
           <div class="zona">
-            <input class="control" type="checkbox" name="zona" value="ZN">Zona Norte<br>
-            <input class="control" type="checkbox" name="zona" value="ZS">Zona Sur<br>
-            <input class="control" type="checkbox" name="zona" value="ZE">Zona Este<br>
-            <input class="control" type="checkbox" name="zona" value="ZO">Zona Oeste<br>
-            <input class="control"  type="checkbox" name="zona" value="ZC">Zona Centro<br>
+            <input class="control" type="checkbox" name="zona[]" value="ZN">Zona Norte<br>
+            <input class="control" type="checkbox" name="zona[]" value="ZS">Zona Sur<br>
+            <input class="control" type="checkbox" name="zona[]" value="ZE">Zona Este<br>
+            <input class="control" type="checkbox" name="zona[]" value="ZO">Zona Oeste<br>
+            <input class="control"  type="checkbox" name="zona[]" value="ZC">Zona Centro<br>
           </div>
 
         <label class="seleccion_rub_zon" for="RUBRO"> RUBRO PRINCIPAL </label>
