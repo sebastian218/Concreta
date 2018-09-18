@@ -8,24 +8,10 @@
   </head>
   <body>
     <div class="container_formularios_prof">
-      <header class="header_completo">
-        <nav class="barra_principal">
-            <ul class="barra_ppal_2">
-             <li class="menu_registro"><a class="botones_registro" href="registracion_intermedio.html">CREAR CUENTA</a></li>
-             <li class="menu_registro"><a class="botones_registro" href="login.html">INICIAR SESIÓN</a></li>
-            </ul>
-            <ul class="barra_ppal_1">
-              <li class="menu_contextual"><a class="botones_cambiar"href="#"><img class="hamburger"src="../img/Hamburger_icon.png" alt=""></a></li>
-              <li class="logo_nombre"><a class="botones_cambiar"href="home.html"><img class="logo_tipo" src="../img/LOGO_FINAL.png" alt=""></a></li>
-              <li class="busqueda"><a class="botones_cambiar" href="#"><img class="lupa" src="../img/search-icon-png-21.png" alt=""></a></li>
-            </ul>
-        </nav>
-           <div class="banner_perfiles">
-          <p class="crea_perfil">CREÁ TU PERFIL EN CONCRETA</p>
-          </div>
-      </header>
-
-
+      <?php include("header.php") ?>
+      <div class="banner_perfiles">
+        <p class="crea_perfil">CREÁ TU PERFIL EN CONCRETA</p>
+        </div>
   <section>
    <div class="formularios">
       <form class="registracion" action="" method="" >
@@ -79,22 +65,7 @@
 
     </section>
 
-
-    <footer>
-      <ul class="footer_alto">
-        <li class=links_footer>Lorem</li>
-        <li class=links_footer>impsum</li>
-        <li class=links_footer>dolor</li>
-        <li class=links_footer>amet</li>
-      </ul>
-
-      <ul class="footer_chico">
-        <li><a class="links_footer" href="#">Quienes Somos</a></li>
-        <li><a class="links_footer_tablet" href="#">F.A.Q.</a></li>
-        <li><a class="links_footer_tablet" href="#">Cookies</a></li>
-        <li><a class="links_footer" href="#">Política de privacidad</a></li>
-      </ul>
-    </footer>
+<?php include("footer.php") ?>
   </div>
   </body>
 </html>

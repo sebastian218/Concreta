@@ -9,24 +9,12 @@
   </head>
   <body>
     <div class="container_reg_doble">
-      <header class="header_completo">
-        <nav class="barra_principal">
-            <ul class="barra_ppal_2">
-             <li class="menu_registro"><a class="botones_registro" href="registracion_intermedio.html">CREAR CUENTA</a></li>
-             <li class="menu_registro"><a class="botones_registro" href="login.html">INICIAR SESIÓN</a></li>
-            </ul>
-            <ul class="barra_ppal_1">
-              <li class="menu_contextual"><a class="botones_cambiar"href="#"><img class="hamburger"src="../img/Hamburger_icon.png" alt=""></a></li>
-              <li class="logo_nombre"><a class="botones_cambiar"href="home.html"><img class="logo_tipo" src="../img/LOGO_FINAL.png" alt=""></a></li>
-              <li class="busqueda"><a class="botones_cambiar" href="#"><img class="lupa" src="../img/search-icon-png-21.png" alt=""></a></li>
-            </ul>
-        </nav>
-           <div class="banner_perfiles">
-          <p class="crea_perfil">¿Trabajás en la construcción?<br>Creá tu perfil en concreta</p>
-          <p class="perfil_registrate">¿Buscás servicios?<br>Registrate</p>
+    <?php include("header.php") ?>
+    <div class="banner_perfiles">
+      <p class="crea_perfil">¿Trabajás en la construcción?<br>Creá tu perfil en concreta</p>
+      <p class="perfil_registrate">¿Buscás servicios?<br>Registrate</p>
 
-          </div>
-      </header>
+      </div>
     <section class="cuerpo_tablet">
         <div class="publicidad_vertical">
           <img class= "publicid" src="../img/acindar_1.jpg" alt="">
@@ -39,14 +27,14 @@
             <div class="parrafo_descrip_perfil">
           <p class="descrip">Quiero contactar profesionales y buscar servicios en mi área</p>
             </div>
-          <a class="registrarme reg_prof" href="registracion.html"> REGISTRARME </a>
+          <a class="registrarme reg_prof" href="registracion.php"> REGISTRARME </a>
         </div>
         <div class="elegir_perfil_profesional">
           <img class="logo_perfil" src="../img/icono_constructor.png" alt="">
           <div class="parrafo_descrip_perfil">
             <p class="descrip">Quiero ofrecer servicios y recibir ofertas de trabajo</p>
           </div>
-          <a class="registrarme reg_const", class="reg_const" href="registracion-profesional.html"> CREAR MI PERFIL </a>
+          <a class="registrarme reg_const", class="reg_const" href="registracion-profesional.php"> CREAR MI PERFIL </a>
         </div>
       </section>
       <div class="publicidad_vertical">
@@ -56,20 +44,6 @@
       </div>
     </section>
     </div>
-    <footer class="footer_sec_corta">
-      <ul class="footer_alto">
-        <li class=links_footer>Lorem</li>
-        <li class=links_footer>impsum</li>
-        <li class=links_footer>dolor</li>
-        <li class=links_footer>amet</li>
-      </ul>
-
-      <ul class="footer_chico">
-        <li><a class="links_footer" href="#">Quienes Somos</a></li>
-        <li><a class="links_footer_tablet" href="#">F.A.Q.</a></li>
-        <li><a class="links_footer_tablet" href="#">Cookies</a></li>
-        <li><a class="links_footer" href="#">Política de privacidad</a></li>
-      </ul>
-    </footer>
+    <?php include("footer.php") ?>
   </body>
 </html>
