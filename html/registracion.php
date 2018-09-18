@@ -75,8 +75,9 @@ include ("funciones.php");
 
       </div>
       </section>
+      <footer>
 <?php include("footer.php") ?>
-
+      </footer>
     </div>
     </body>
   </html>

@@ -66,8 +66,9 @@
         </form>
 
     </section>
-
-<?php include("footer.php") ?>
+   <footer>
+   <?php include("footer.php") ?>
+   </footer>
   </div>
   </body>
 </html>

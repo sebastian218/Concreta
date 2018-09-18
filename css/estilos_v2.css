@@ -77,7 +77,6 @@ h1.h1-home {
 
 .container_reg_doble{
   position: relative;
-  
 }
 .container_formularios_gral{
   position:relative;
@@ -311,6 +310,9 @@ justify-content: space-between;
 footer{
   width:100%;
 }
+.footer_margin{
+  margin-top: 5vh;
+}
 .footer_alto{
   display:flex;
   flex-direction: row;
@@ -478,7 +480,7 @@ img.banner-decker {
     width: 80%;
 }
 
-@media (max-width:767px) /*cel grande*/
+@media (max-width:767px) /*sólo cels*/
 {
 .links_footer_tablet{
   display: none;
@@ -492,10 +494,18 @@ img.banner-decker {
 .container{
   height: 120vh;
 }
-.footer_margin{
+.footer_login{
 position: absolute;
 bottom: 0px;
+
 }
+.container_login{
+  position: relative;
+  height: 100vh;
+}
+.container_reg_doble{
+  position:relative;
+  height: 100vh;
 }
 @media (min-width: 768px) /*tablet*/
   {

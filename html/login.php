@@ -8,7 +8,7 @@
     <title>CONCRETA</title>
   </head>
   <body>
-    <div class="container_reg_doble">
+    <div class="container_login">
       <?php include("header.php") ?>
       <div class="banner_perfiles">
      <p class="perfil_registrate">¿Buscás servicios?<br>Registrate</p>
@@ -30,7 +30,9 @@
 
         </div>
       </section>
+      <footer class="footer_login">
       <?php include("footer.php") ?>
+      </footer>
     </div>
 
   </body>

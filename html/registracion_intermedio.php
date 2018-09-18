@@ -43,7 +43,10 @@
         <img class= "publicid" src="../img/acindar.png" alt="">
       </div>
     </section>
-    </div>
+    <footer class="footer_login footer_margin">
     <?php include("footer.php") ?>
+    </footer>
+    </div>
+
   </body>
 </html>
