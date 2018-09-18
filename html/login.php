@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>CONCRETA</title>
   </head>
-  <body>
-    <div class="container_login">
+  <body class="container_login">
+    <div>
       <?php include("header.php") ?>
       <div class="banner_perfiles">
      <p class="perfil_registrate">¿Buscás servicios?<br>Registrate</p>

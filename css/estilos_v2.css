@@ -77,6 +77,7 @@ h1.h1-home {
 
 .container_reg_doble{
   position: relative;
+
 }
 .container_formularios_gral{
   position:relative;
@@ -480,8 +481,22 @@ img.banner-decker {
     width: 80%;
 }
 
-@media (max-width:767px) /*sólo cels*/
-{
+@media (max-width:700px) {
+  .container_reg_doble{
+  height:100vh;
+  }
+}
+
+@media (max-width:767px)
+   {
+
+.container_login{
+  height:100vh;
+}
+.container_reg_doble{
+height:100vh;
+}
+
 .links_footer_tablet{
   display: none;
   }
@@ -497,15 +512,8 @@ img.banner-decker {
 .footer_login{
 position: absolute;
 bottom: 0px;
+}
 
-}
-.container_login{
-  position: relative;
-  height: 100vh;
-}
-.container_reg_doble{
-  position:relative;
-  height: 100vh;
 }
 @media (min-width: 768px) /*tablet*/
   {
