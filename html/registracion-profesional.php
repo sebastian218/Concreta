@@ -19,7 +19,7 @@
       <form class="registracion" action="" method="POST" >
        <h1 class="registr-prof">Completá tus datos</h1>
       <label for="usuario"> Usuario</label>
-      <input class="input-form" type="text" name="usuario" id="usuario" value="Elegir nombre de usuario">
+      <input class="input-form" placeholder="Elegí un nombre de usuario - mínimo 8 caracteres" type="text" name="usuario" id="usuario" value="">
       <label  for="nombre"> Nombre</label>
       <input class="input-form" type="text" name="nombre" id="nombre" value="">
       <label for="apellido"> Apellido </label>

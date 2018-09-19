@@ -51,7 +51,7 @@ include ("funciones.php");
 
           <form class="registracion_cliente" action="" method="POST">
           <label for="usuario"> Usuario</label>
-          <input  class="input-form" type="text" name="usuario" id="usuario" value="Elegí un nombre de usuario">
+          <input  class="input-form" placeholder="Mínimo 8 caracteres" type="text" name="usuario" id="usuario" value="">
           <label for="nombre"> Nombre</label>
           <input class="input-form" type="text" name="nombre" id="nombre" value="">
           <label for="apellido"> Apellido </label>
@@ -60,9 +60,9 @@ include ("funciones.php");
           <input class="input-form" type="email" name="email" id= "email" value="">
 
           <label for="password"> Contraseña </label>
-          <input class="input-form" type="password" name="password" id="password" value="">
+          <input class="input-form" placeholder="Mínimo 8 caracteres" type="password" name="password" id="password" value="">
           <label for="password-confirm"> Confirmar contraseña </label>
-          <input class="input-form" type="password" name="password-confirm" id="password-confirm" value="">
+          <input class="input-form" placeholder="Confirmar contraseña" type="password" name="password-confirm" id="password-confirm" value="">
 
          <div class="enviar_cancelar">
           <button class="button-form"  type="submit" name="button">Registrarme</button>
