@@ -481,6 +481,11 @@ img.banner-decker {
     width: 80%;
 }
 
+.mensaje_error{
+  background-color:#BA2D0B;
+}
+input::placeholder
+
 @media (max-width:700px) {
   .container_reg_doble{
   height:100vh;

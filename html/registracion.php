@@ -50,19 +50,67 @@ include ("funciones.php");
           <?php endif; ?>
 
           <form class="registracion_cliente" action="" method="POST">
-          <label for="usuario"> Usuario</label>
-          <input  class="input-form" placeholder="Mínimo 8 caracteres" type="text" name="usuario" id="usuario" value="">
+          <label for="usuario"> Usuario </label>
+          <input
+          <?php if (isset($errores["er_usuario"]) || isset($errores["er_usuario_long"])): ?>
+            placeholder=""
+            class="mensaje_error input-form"
+          <?php endif; ?>
+          class="input-form" type="text" name="usuario" id="usuario"
+          <?php if (($_POST) && isset($errores["er_usuario_long"])==false ):?>
+            value="<?php echo $_POST["usuario"]; ?>"
+          <?php endif; ?>
+          >
+
           <label for="nombre"> Nombre</label>
-          <input class="input-form" type="text" name="nombre" id="nombre" value="">
+          <input
+          <?php if (isset($errores["er_nombre"])): ?>
+            placeholder=""
+            class="mensaje_error input-form"
+          <?php endif; ?>
+          class="input-form" type="text" name="nombre" id="nombre"
+          <?php if (($_POST) && isset($errores["er_nombre"])==false ):?>
+            value="<?php echo $_POST["nombre"]; ?>"
+          <?php endif; ?>
+          >
+
           <label for="apellido"> Apellido </label>
-          <input class="input-form" type="text" name="apellido" id="apellido" value="">
+          <input
+          <?php if (isset($errores["er_apellido"])): ?>
+            class="mensaje_error input-form"
+          <?php endif; ?>
+          class="input-form" type="text" name="apellido" id="apellido"
+          <?php if (($_POST) && isset($errores["er_apellido"])==false):?>
+            value="<?php echo $_POST["apellido"]; ?>"
+          <?php endif; ?>
+          >
+
           <label for="email"> Email </label>
-          <input class="input-form" type="email" name="email" id= "email" value="">
+          <input
+          <?php if (isset($errores["er_email"]) || isset($errores["er_email_inv"])): ?>
+            class="mensaje_error input-form"
+          <?php endif; ?>
+          class="input-form" type="email" name="email" id= "email"
+          <?php if (($_POST) && isset($errores["er_mail_inv"])==false):?>
+            value="<?php echo $_POST["email"]; ?>"
+          <?php endif; ?>
+          >
 
           <label for="password"> Contraseña </label>
-          <input class="input-form" placeholder="Mínimo 8 caracteres" type="password" name="password" id="password" value="">
+          <input
+          <?php if (isset($errores["er_pass"]) || isset($errores["er_pass_8"]) || isset($errores["er_pass_con"])): ?>
+            class="mensaje_error input-form"
+            placeholder="La contraseña no es válida"
+          <?php endif; ?>
+          class="input-form" placeholder="Mínimo 8 caracteres" type="password" name="password" id="password" value="">
+
           <label for="password-confirm"> Confirmar contraseña </label>
-          <input class="input-form" placeholder="Confirmar contraseña" type="password" name="password-confirm" id="password-confirm" value="">
+          <input
+          <?php if (isset($errores["er_pass"]) || isset($errores["er_pass_8"]) || isset($errores["er_pass_con"])): ?>
+            class="mensaje_error input-form"
+            placeholder="La contraseña no es válida"
+          <?php endif; ?>
+          class="input-form" placeholder="Confirmar contraseña" type="password" name="password-confirm" id="password-confirm" value="">
 
          <div class="enviar_cancelar">
           <button class="button-form"  type="submit" name="button">Registrarme</button>
@@ -70,7 +118,6 @@ include ("funciones.php");
         </div>
 
       </form>
-
 
 
       </div>
