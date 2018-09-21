@@ -12,7 +12,7 @@
     <div class="container_formularios_prof">
       <?php include("header.php") ?>
       <div class="banner_perfiles">
-        <p class="crea_perfil">CREÁ TU PERFIL EN CONCRETA</p>
+        <p class="crea_perfil">Creá tu perfil en Concreta</p>
         </div>
   <section>
    <div class="formularios">
