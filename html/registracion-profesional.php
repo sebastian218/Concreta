@@ -1,12 +1,12 @@
 <?php
 
 
-include ("funciones.php");
+include "funciones.php";
   $errores = [];
 $usernameDefault = "";
 $nombreDefault = "";
 $apellidoDefault = "";
-$emailDefualt = "";
+$emailDefault = "";
 $dniDefualt = "";
 
 
@@ -15,7 +15,7 @@ $dniDefualt = "";
     $usernameDefault = $_POST["usuario"];
     $nombreDefault = $_POST["nombre"];
     $apellidoDefault=$_POST["apellido"];
-    $emailDefualt = $_POST["email"];
+    $emailDefault = $_POST["email"];
     $dniDefault = $_POST["DNI"];
 
 
@@ -25,6 +25,10 @@ $dniDefualt = "";
       // Registrarlo
       $usuario = armarUsuario();
       crearUsuario($usuario);
+
+       //subir archivo
+       $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+       move_uploaded_file($_FILES["avatar"]["tmp_name"], "../img/".trim($_POST["email"]).".".$ext);
 
       // Redirigir a la home
       header("location:home.php");exit;
@@ -49,7 +53,7 @@ $dniDefualt = "";
         </div>
   <section>
    <div class="formularios">
-      <form class="registracion" action="" method="POST" >
+      <form class="registracion" action="" method="POST" enctype="multipart/form-data" >
        <h1 class="registr-prof">Completá tus datos</h1>
        <label for="usuario"> Usuario</label>
        <?php if (isset($errores["usuario"])): ?>
@@ -58,6 +62,15 @@ $dniDefualt = "";
          <?php else: ?>
            <input  class="input-form" placeholder="" type="text" name="usuario" id="usuario" value="<?= $usernameDefault ?>">
        <?php endif; ?>
+
+       <label for="avatar">Elegi tu foto de Perfil</label>
+
+          <?php if (isset($errores["avatar"])): ?>
+            <input class="input-form error"  type="file" name="avatar" value="">
+            <p class="p-error"><?=$errores["avatar"]?></p>
+            <?php else: ?>
+            <input  type="file" name="avatar" value="">
+          <?php endif; ?>
 
        <label for="nombre"> Nombre</label>
        <?php if (isset($errores["nombre"])): ?>
@@ -80,7 +93,7 @@ $dniDefualt = "";
          <input  class="input-form error" placeholder="" type="text" name="email" id="usuario" value="">
          <p class="p-error" ><?=$errores["email"]?></p>
          <?php else: ?>
-           <input  class="input-form" placeholder="" type="text" name="email" id="usuario" value="<?= $emailDefualt ?>">
+           <input  class="input-form" placeholder="" type="text" name="email" id="usuario" value="<?= $emailDefault ?>">
        <?php endif; ?>
 
        <label for="DNI">DNI</label>
@@ -125,11 +138,7 @@ $dniDefualt = "";
                  <?php else: ?>
                    <div class="zona">
                      <input class="control" type="checkbox" name="zona" value="ZN"
-                       <?php if ($_POST): ?>
-                       <?php if ($_POST["zona"] == "ZN"): ?>
-                            checked
-                       <?php endif; ?>
-                       <?php endif; ?>>Zona Norte<br>
+                       <?=($_POST && $_POST["zona"] == "ZN") ? "checked" : ""?>>Zona Norte<br>
                      <input class="control" type="checkbox" name="zona" value="ZS"
                       <?php if ($_POST): ?>
                       <?php if ($_POST["zona"] == "ZS"): ?>

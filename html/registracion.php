@@ -1,19 +1,19 @@
 <?php
 
 
-include ("funciones.php");
+include "funciones.php";
   $errores = [];
 $usernameDefault = "";
 $nombreDefault = "";
 $apellidoDefault = "";
-$emailDefualt = "";
+$emailDefault = "";
 
 
   if ($_POST) {
     $usernameDefault = $_POST["usuario"];
     $nombreDefault = $_POST["nombre"];
     $apellidoDefault=$_POST["apellido"];
-    $emailDefualt = $_POST["email"];
+    $emailDefault = $_POST["email"];
 
     // Validar al  usuario
     $errores = validarUsuario($_POST);
@@ -53,113 +53,8 @@ $emailDefualt = "";
         <div class="reg-container">
 
         <div class="Registro_cliente">
-<<<<<<< Updated upstream
-          <?php if (! empty($errores)): ?>
-            <p>Por favor corregí los siguientes campos:</p>
-            <ul>
-              <?php foreach ($errores as $error): ?>
-                <li> <?= $error  ?> </li>
-              <?php endforeach; ?>
-            </ul>
-          <?php endif; ?>
 
-          <form class="registracion_cliente" action="" method="POST">
-
-          <label for="usuario">Usuario</label>
-          <?php if (isset($errores["er_usuario"])) :?>
-            <p class="mensaje_error_par"><?php echo $errores["er_usuario"]  ?></p>
-          <?php endif; ?>
-          <?php if (isset($errores["er_usuario_long"])) :?>
-            <p class="mensaje_error_par"><?php echo $errores["er_usuario_long"]  ?></p>
-          <?php endif; ?>
-          <input
-          <?php if (isset($errores["er_usuario"]) || isset($errores["er_usuario_long"])): ?>
-            placeholder=""
-            class="mensaje_error input-form"
-          <?php endif; ?>
-          class="input-form" type="text" name="usuario" id="usuario"
-          <?php if (($_POST) && isset($errores["er_usuario_long"])==false ):?>
-            value="<?php echo $_POST["usuario"]; ?>"
-          <?php endif; ?>
-          >
-
-          <label for="nombre">Nombre</label>
-          <?php if (isset($errores["er_nombre"])) :?>
-            <p class="mensaje_error_par"><?php echo $errores["er_nombre"]  ?></p>
-          <?php endif; ?>
-          <input
-          <?php if (isset($errores["er_nombre"])): ?>
-            placeholder=""
-            class="mensaje_error input-form"
-          <?php endif; ?>
-          class="input-form" type="text" name="nombre" id="nombre"
-          <?php if (($_POST) && isset($errores["er_nombre"])==false ):?>
-            value="<?php echo $_POST["nombre"]; ?>"
-          <?php endif; ?>
-          >
-
-          <label for="apellido">Apellido</label>
-          <?php if (isset($errores["er_apellido"])) :?>
-            <p class="mensaje_error_par"><?php echo $errores["er_apellido"]  ?></p>
-          <?php endif; ?>
-          <input
-          <?php if (isset($errores["er_apellido"])): ?>
-            class="mensaje_error input-form"
-          <?php endif; ?>
-          class="input-form" type="text" name="apellido" id="apellido"
-          <?php if (($_POST) && isset($errores["er_apellido"])==false):?>
-            value="<?php echo $_POST["apellido"]; ?>"
-          <?php endif; ?>
-          >
-
-          <label for="email">Email </label>
-          <?php if (isset($errores["er_email"])) :?>
-            <p class="mensaje_error_par"><?php echo $errores["er_email"]  ?></p>
-          <?php endif; ?>
-          <?php if (isset($errores["er_email_inv"])) :?>
-            <p class="mensaje_error_par"><?php echo $errores["er_email_inv"]  ?></p>
-          <?php endif; ?>
-          <input
-          <?php if (isset($errores["er_email"]) || isset($errores["er_email_inv"])): ?>
-            class="mensaje_error input-form"
-          <?php endif; ?>
-          class="input-form" type="email" name="email" id= "email"
-          <?php if (($_POST) && isset($errores["er_mail_inv"])==false):?>
-            value="<?php echo $_POST["email"]; ?>"
-          <?php endif; ?>
-          >
-          <br>
-          <label for="password">Contraseña</label>
-          <?php if (isset($errores["er_pass"])) :?>
-            <p class="mensaje_error_par"><?php echo $errores["er_pass"]  ?></p>
-          <?php endif; ?>
-          <?php if (isset($errores["er_pass_8"])) :?>
-            <p class="mensaje_error_par"><?php echo $errores["er_pass_8"]  ?></p>
-          <?php endif; ?>
-          <input
-          <?php if (isset($errores["er_pass"]) || isset($errores["er_pass_8"]) || isset($errores["er_pass_con"]) || isset($errores["er_pass_distintas"])): ?>
-            class="mensaje_error input-form"
-            placeholder="La contraseña no es válida"
-          <?php endif; ?>
-          class="input-form" placeholder="Mínimo 8 caracteres" type="password" name="password" id="password" value="">
-
-          <label for="password-confirm">Confirmar contraseña</label>
-          <?php if (isset($errores["er_pass_con"])) :?>
-            <p class="mensaje_error_par"><?php echo $errores["er_pass_con"]  ?></p>
-          <?php endif; ?>
-          <?php if (isset($errores["er_pass_distintas"])) :?>
-            <p class="mensaje_error_par"><?php echo $errores["er_pass_distintas"]  ?></p>
-          <?php endif; ?>
-
-          <input
-          <?php if (isset($errores["er_pass"]) || isset($errores["er_pass_8"]) || isset($errores["er_pass_con"]) || isset($errores["er_pass_distintas"])): ?>
-            class="mensaje_error input-form"
-          <?php endif; ?>
-          class="input-form" placeholder="Confirmar contraseña" type="password" name="password-confirm" id="password-confirm" value="">
-=======
-
-
-          <form class="registracion_cliente" action="" method="POST">
+          <form class="registracion_cliente" action="" method="POST" enctype="multipart/form-data" >
 
           <label for="usuario"> Usuario</label>
           <?php if (isset($errores["usuario"])): ?>
@@ -190,7 +85,7 @@ $emailDefualt = "";
             <input  class="input-form error" placeholder="" type="text" name="email" id="usuario" value="">
             <p class="p-error" ><?=$errores["email"]?></p>
             <?php else: ?>
-              <input  class="input-form" placeholder="" type="text" name="email" id="usuario" value="<?= $emailDefualt ?>">
+              <input  class="input-form" placeholder="" type="text" name="email" id="usuario" value="<?= $emailDefault ?>">
           <?php endif; ?>
 
 
@@ -209,7 +104,6 @@ $emailDefualt = "";
             <?php else: ?>
               <input  class="input-form" placeholder="" type="password" name="password-confirm" id="usuario" value="">
           <?php endif; ?>
->>>>>>> Stashed changes
 
          <div class="enviar_cancelar">
           <button class="button-form"  type="submit" name="button">Registrarme</button>
