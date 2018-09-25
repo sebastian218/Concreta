@@ -1,1 +1,80 @@
-[{"usuario ":"mbknh","nombre":"sebastian","apellido":"Pascual","email":"carlangas@fidget.com","password":"$2y$10$6ylaaOfGpDwmoiTyueFsMe4HK8hRe.4G5BoLYnxvTRxMdzsiEWAxq"},{"usuario ":"daro","nombre":"caritlos","apellido":"pascual","email":"carlos@fidget.com","password":"$2y$10$v.iI6UDvDTwngsYij2Kgzu68ahNd0F.R5VCEiIrybPgPmS1BfB1i2"},{"usuario ":"pepe","nombre":"Alba","apellido":"pascual","email":"pedro@fidget.com","password":"$2y$10$KksYlNPM8XB3XpQ2oK8bPuYUgc63BoH3fBprp9\/04Dfdk1ynBicJS","zona":"ZS","RUBRO":"elect","DNI":"122345234234"},{"usuario ":"mbknh","nombre":"Alba","apellido":"Pascual","email":"pepe@fidget.com","password":"$2y$10$\/hTeV3PpWSqPZzJpJ4O7.eW9DvZsb3rqe3FggmURmk9Iiu7N7QV0m"},{"usuario ":"asdasdasd","nombre":"pascual","apellido":"asdasdasd","email":"carlos@fidget.com","password":"$2y$10$k23YqZ9GSVk2XCiXdre8DOuo2qtZSr1oknRcGO447z3HzIvQRyx02"},{"usuario ":"Clarita","nombre":"ginger","apellido":"modelo","email":"gingermodel@modeli.com","password":"$2y$10$dsFygcGA7nbl4YavWwj15.TKtjkeYSvcL8KOsBNMG6vedT\/qsVJX.","zona":"ZO","RUBRO":"elect","DNI":"123123123123123"},{"usuario ":"PEDRITO","nombre":"ginger","apellido":"modelo","email":"pedrito@modeli.com","password":"$2y$10$HNDsCmBj2StN9YBf1XEQ5eC14ROiNL6q\/.HD06LDEW4xlgKl.7bym","zona":"ZO","RUBRO":"estruct","DNI":"123123123123123"},{"usuario ":"saragosa","nombre":"ginger","apellido":"modelo","email":"sanarta@gmail.com","password":"$2y$10$Z5JAasus8Xz1wz\/PHQG6Q.\/ncUPb.oWcvd2yDtucGxk4PUcfYEBM2","zona":"ZE","RUBRO":"elect","DNI":"123213123123123"},{"usuario ":"wefwaeraw","nombre":"sarado","apellido":"pepotee","email":"asdasd@gmail.com","password":"$2y$10$JCJ2QS0mDYj3Htl9kxSsY.42zva9\/zOtRMn4GcJGIgYNy5n5myLKG","zona":"ZS","RUBRO":"gas","DNI":"123123123123123123"}]
+[
+  {
+    "usuario ": "mbknh",
+    "nombre": "sebastian",
+    "apellido": "Pascual",
+    "email": "carlangas@fidget.com",
+    "password": "$2y$10$6ylaaOfGpDwmoiTyueFsMe4HK8hRe.4G5BoLYnxvTRxMdzsiEWAxq"
+  },
+  {
+    "usuario ": "daro",
+    "nombre": "caritlos",
+    "apellido": "pascual",
+    "email": "carlos@fidget.com",
+    "password": "$2y$10$v.iI6UDvDTwngsYij2Kgzu68ahNd0F.R5VCEiIrybPgPmS1BfB1i2"
+  },
+  {
+    "usuario ": "pepe",
+    "nombre": "Alba",
+    "apellido": "pascual",
+    "email": "pedro@fidget.com",
+    "password": "$2y$10$KksYlNPM8XB3XpQ2oK8bPuYUgc63BoH3fBprp9/04Dfdk1ynBicJS",
+    "zona": "ZS",
+    "RUBRO": "elect",
+    "DNI": "122345234234"
+  },
+  {
+    "usuario ": "mbknh",
+    "nombre": "Alba",
+    "apellido": "Pascual",
+    "email": "pepe@fidget.com",
+    "password": "$2y$10$/hTeV3PpWSqPZzJpJ4O7.eW9DvZsb3rqe3FggmURmk9Iiu7N7QV0m"
+  },
+  {
+    "usuario ": "asdasdasd",
+    "nombre": "pascual",
+    "apellido": "asdasdasd",
+    "email": "carlos@fidget.com",
+    "password": "$2y$10$k23YqZ9GSVk2XCiXdre8DOuo2qtZSr1oknRcGO447z3HzIvQRyx02"
+  },
+  {
+    "usuario ": "Clarita",
+    "nombre": "ginger",
+    "apellido": "modelo",
+    "email": "gingermodel@modeli.com",
+    "password": "$2y$10$dsFygcGA7nbl4YavWwj15.TKtjkeYSvcL8KOsBNMG6vedT/qsVJX.",
+    "zona": "ZO",
+    "RUBRO": "elect",
+    "DNI": "123123123123123"
+  },
+  {
+    "usuario ": "PEDRITO",
+    "nombre": "ginger",
+    "apellido": "modelo",
+    "email": "pedrito@modeli.com",
+    "password": "$2y$10$HNDsCmBj2StN9YBf1XEQ5eC14ROiNL6q/.HD06LDEW4xlgKl.7bym",
+    "zona": "ZO",
+    "RUBRO": "estruct",
+    "DNI": "123123123123123"
+  },
+  {
+    "usuario ": "saragosa",
+    "nombre": "ginger",
+    "apellido": "modelo",
+    "email": "sanarta@gmail.com",
+    "password": "$2y$10$Z5JAasus8Xz1wz/PHQG6Q./ncUPb.oWcvd2yDtucGxk4PUcfYEBM2",
+    "zona": "ZE",
+    "RUBRO": "elect",
+    "DNI": "123213123123123"
+  },
+  {
+    "usuario ": "wefwaeraw",
+    "nombre": "sarado",
+    "apellido": "pepotee",
+    "email": "asdasd@gmail.com",
+    "password": "$2y$10$JCJ2QS0mDYj3Htl9kxSsY.42zva9/zOtRMn4GcJGIgYNy5n5myLKG",
+    "zona": "ZS",
+    "RUBRO": "gas",
+    "DNI": "123123123123123123"
+  }
+]

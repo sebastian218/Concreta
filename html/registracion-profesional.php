@@ -7,7 +7,7 @@ $usernameDefault = "";
 $nombreDefault = "";
 $apellidoDefault = "";
 $emailDefault = "";
-$dniDefualt = "";
+$dniDefault = "";
 
 
 
@@ -101,7 +101,7 @@ $dniDefualt = "";
           <input class="input-form error" type="text" name="DNI" id="DNI" value="" >
           <p class="p-error"> <?= $errores["DNI"]?></p>
           <?php else: ?>
-            <input class="input-form" type="text" name="DNI" id="DNI" value="<?=$dniDefualt?>" >
+            <input class="input-form" type="text" name="DNI" id="DNI" value="<?=$dniDefault?>" >
        <?php endif; ?>
 
        <label for="password"> Contraseña </label>
