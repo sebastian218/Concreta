@@ -16,6 +16,14 @@ body {
 a {
 text-decoration: none;
 }
+.error {
+  border: 1px solid red;
+}
+
+.p-error{
+  color: red;
+  font-size: 12px;
+}
 /*paso lo de styles.css */
 header.header-home {
   background-color: rgba(247, 220, 111);
