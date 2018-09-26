@@ -105,8 +105,8 @@ $emailDefault = "";
           <?php endif; ?>
 
          <div class="enviar_cancelar">
-           <button class="button-form"  type="reset" name="button">Cancelar</button>
-          <button class="button-form"  type="submit" name="button">Registrarme</button>
+           <button class="boton"  type="reset" name="button">Cancelar</button>
+          <button class="boton"  type="submit" name="button">Registrarme</button>
         </div>
 
       </form>

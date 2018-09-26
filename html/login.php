@@ -22,9 +22,9 @@
             <input class="input-form"  type="password" name="password" id= "password" value="">
             <br>
 
-            <button class="button-form" type="submit" name="button">Iniciar Sesión</button>
+            <button class="boton" type="submit" name="button">Iniciar Sesión</button>
             <br>
-            <button class="button-form" type="reset" name="button">Cancelar</button>
+            <button class="boton" type="reset" name="button">Cancelar</button>
           </form>
 
 

@@ -205,9 +205,9 @@ $dniDefault = "";
         <?php endif; ?>
      </div>
        <div class="enviar_cancelar">
-         <button class="button-form" type="reset" name="button">Cancelar</button>
+         <button class="boton" type="reset" name="button">Cancelar</button>
            <br>
-        <button class="button-form" type="submit" name="button-profesional">Enviar</button>
+        <button class="boton" type="submit" name="button-profesional">Enviar</button>
        </div>
         </form>
       </div>
