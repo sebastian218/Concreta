@@ -122,7 +122,7 @@ $dniDefault = "";
            <input  class="input-form" placeholder="" type="password" name="password-confirm" id="usuario" value="">
        <?php endif; ?>
               </div>
-              
+
       <div class="Registro">
          <h1 class= "registr-prof">Especificá tu rubro y zona de trabajo</h1>
         <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
@@ -192,12 +192,12 @@ $dniDefault = "";
               <option value="transpor">Trasporte, Carga y Descarga</option>
             </select>
         <?php endif; ?>
-         <div class="enviar_cancelar">
-          <button class="button-form" type="submit" name="button-profesional">Enviar</button>
-          <br>
-          <button class="button-form" type="reset" name="button">Cancelar</button>
-         </div>
      </div>
+       <div class="enviar_cancelar">
+         <button class="button-form" type="reset" name="button">Cancelar</button>
+           <br>
+        <button class="button-form" type="submit" name="button-profesional">Enviar</button>
+       </div>
         </form>
       </div>
     </section>

@@ -432,9 +432,9 @@ label{
 .enviar_cancelar{
   margin: auto;
   margin-top: 2vh;
-  margin-left: 1vh;
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
 .login{
   width:100%;
@@ -598,19 +598,27 @@ bottom: 0px;
     max-width: 1000px;
     flex-direction:row;
   }
-
-  .registr-prof{
-    text-align: center;
-    opacity: 0.8;
+  .registracion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
+  .registro_general{
+    width: 45%;
+  }
+  .Registro{
+    width:45%;
+    margin-top: 0px;
+  }
+
   .seleccion_rub_zon{
     margin:1vw;
     margin-top: 2vh;
   }
-  .enviar_cancelar{
-    margin: auto;
-    margin-top: 2vh;
-  }
+ .enviar_cancelar{
+   justify-content: center;
+ }
 
 /* Perfiles en tablet*/
 .datos-rubro-boton a {

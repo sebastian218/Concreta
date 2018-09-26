@@ -12,12 +12,12 @@ function validarUsuario($datos) {
   if (strlen($datosFinales["nombre"]) == 0){
     $errores["nombre"] = "Por favor completá tu nombre";
   } else if (ctype_alpha($datosFinales["nombre"]) == false) {
-         $errores["nombre"] = "Hubo erro en el nombre porque tiene caracteres no alfabeticos";
+         $errores["nombre"] = "Hubo erro en el nombre porque tiene caracteres no alfabéticos";
   }
   if (strlen($datosFinales["apellido"]) == 0){
     $errores["apellido"] = "Por favor completá tu apellido";
   }else if (ctype_alpha($datosFinales["apellido"]) == false) {
-         $errores["apellido"] = "Hubo erro en el apellido porque tiene caracteres no alfabeticos";
+         $errores["apellido"] = "Hubo erro en el apellido porque tiene caracteres no alfabéticos";
   }
   if (strlen($datosFinales["email"]) == 0 ){
    $errores["email"] = "Por favor ingresá un email";
