@@ -45,8 +45,7 @@ $emailDefault = "";
       <?php include("header.php") ?>
       <div class="banner_perfiles">
 
-      <p class="crea_perfil">Completá tu perfil</p>
-      <p class="crea_perfil">REGISTRATE EN CONCRETA</p>
+      <p class="crea_perfil">Completá tu perfil y registrate en Concreta</p>
       </div>
 
       <section>
@@ -106,8 +105,8 @@ $emailDefault = "";
           <?php endif; ?>
 
          <div class="enviar_cancelar">
+           <button class="button-form"  type="reset" name="button">Cancelar</button>
           <button class="button-form"  type="submit" name="button">Registrarme</button>
-          <button class="button-form"  type="reset" name="button">Cancelar</button>
         </div>
 
       </form>

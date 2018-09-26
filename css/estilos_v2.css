@@ -221,19 +221,19 @@ height: 50vh;
 }
 .crea_perfil {
   font-size: 9vh;
-  color:rgba(0,0,0,0.4);
+  color:rgba(0,0,0,0.6);
   margin: auto;
   width:85%;
   display: inline-block;
-  text-align: left;
+  text-align: center;
   /*background-color:rgba(0,0,0,0.1)*/
 }
 .perfil_registrate {
   font-size: 2vw;
-  color:rgba(0,0,0,0.4);
+  color:rgba(0,0,0,0.6);
   margin: auto;
   width:50%;
-  text-align: left;
+  text-align: center;
   display: inline-block;
 
   /*background-color:rgba(0,0,0,0.1)*/
@@ -366,24 +366,47 @@ footer{
 .registracion{
   display:flex;
   flex-direction: column;
-  width:65%;
+  width:100%;
   padding:2%;
   margin: auto;
 }
 .Registro{
   display:flex;
   flex-direction: column;
-  width:65%;
+  width:100%;
+  max-width: 500px;
   padding:2%;
   margin: auto;
+  background-color: rgba(255,255,255,0.5);
+  margin-top: 2vh;
 }
 .Registro_cliente{
   display:flex;
   flex-direction: column;
-  width:80%;
+  width:90%;
   padding:2%;
   margin: auto;
   max-width: 500px;
+}
+.registracion_cliente{
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  padding:2%;
+  margin: auto;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.5);
+
+}
+.registro_general{
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  padding:2%;
+  margin: auto;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
 }
 .registracion_cliente{
   width:100%;
@@ -410,6 +433,8 @@ label{
   margin: auto;
   margin-top: 2vh;
   margin-left: 1vh;
+  display: flex;
+  justify-content: space-around;
 }
 .login{
   width:100%;
@@ -573,17 +598,7 @@ bottom: 0px;
     max-width: 1000px;
     flex-direction:row;
   }
-  .registracion{
-    width:45%;
-    padding:2%;
-  }
-  .Registro{
-    display:flex;
-    flex-direction: column;
-    width:45%;
-    padding:2%;
-    margin: auto;
-  }
+
   .registr-prof{
     text-align: center;
     opacity: 0.8;

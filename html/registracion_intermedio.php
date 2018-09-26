@@ -12,7 +12,7 @@
     <?php include("header.php") ?>
     <div class="banner_perfiles">
       <p class="crea_perfil">¿Trabajás en la construcción?<br>Creá tu perfil en concreta</p>
-      <p class="perfil_registrate">¿Buscás servicios?<br>Registrate</p>
+      <p class="perfil_registrate">¿Buscás servicios? Registrate</p>
 
       </div>
     <section class="cuerpo_tablet">

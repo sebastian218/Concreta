@@ -54,6 +54,8 @@ $dniDefault = "";
   <section>
    <div class="formularios">
       <form class="registracion" action="" method="POST" enctype="multipart/form-data" >
+        <div class="registro_general">
+
        <h1 class="registr-prof">Completá tus datos</h1>
        <label for="usuario"> Usuario</label>
        <?php if (isset($errores["usuario"])): ?>
@@ -119,10 +121,8 @@ $dniDefault = "";
          <?php else: ?>
            <input  class="input-form" placeholder="" type="password" name="password-confirm" id="usuario" value="">
        <?php endif; ?>
-
-
-
-
+              </div>
+              
       <div class="Registro">
          <h1 class= "registr-prof">Especificá tu rubro y zona de trabajo</h1>
         <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
