@@ -53,7 +53,7 @@ $emailDefault = "";
 
         <div class="Registro_cliente">
 
-          <form class="registracion_cliente" action="" method="POST" enctype="multipart/form-data" >
+          <form class="registracion_cliente borde_redondeado" action="" method="POST" enctype="multipart/form-data" >
 
           <label for="usuario"> Usuario</label>
           <?php if (isset($errores["usuario"])): ?>
@@ -106,7 +106,7 @@ $emailDefault = "";
 
          <div class="enviar_cancelar">
            <button class="boton"  type="reset" name="button">Cancelar</button>
-          <button class="boton"  type="submit" name="button">Registrarme</button>
+          <button class="boton enviar"  type="submit" name="button">Registrarme</button>
         </div>
 
       </form>

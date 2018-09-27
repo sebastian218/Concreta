@@ -54,7 +54,7 @@ $dniDefault = "";
   <section>
    <div class="formularios">
       <form class="registracion" action="" method="POST" enctype="multipart/form-data" >
-        <div class="registro_general">
+        <div class="registro_general borde_redondeado">
 
        <h1 class="registr-prof">Completá tus datos</h1>
        <label for="usuario"> Usuario</label>
@@ -123,7 +123,7 @@ $dniDefault = "";
        <?php endif; ?>
               </div>
 
-      <div class="Registro">
+      <div class="Registro borde_redondeado">
          <h1 class= "registr-prof">Especificá tu zona de trabajo y tu rubro</h1>
         <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
                <br>
