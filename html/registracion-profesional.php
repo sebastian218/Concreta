@@ -54,7 +54,7 @@ $dniDefault = "";
   <section>
    <div class="formularios">
       <form class="registracion" action="" method="POST" enctype="multipart/form-data" >
-        <div class="registro_general">
+        <div class="registro_general borde_redondeado">
 
        <h1 class="registr-prof">Completá tus datos</h1>
        <label for="usuario"> Usuario</label>
@@ -123,46 +123,57 @@ $dniDefault = "";
        <?php endif; ?>
               </div>
 
-      <div class="Registro">
-         <h1 class= "registr-prof">Especificá tu rubro y zona de trabajo</h1>
+      <div class="Registro borde_redondeado">
+         <h1 class= "registr-prof">Especificá tu zona de trabajo y tu rubro</h1>
         <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
+               <br>
                <?php if (isset($errores["zona"])): ?>
-                 <div class="zona error">
                  <p class="p-error" ><?= $errores["zona"]?></p>
+                 <div class="zona error">
                  <input class="control" type="checkbox" name="zona" value="ZN">Zona Norte<br>
+                 <br>
                  <input class="control" type="checkbox" name="zona" value="ZS">Zona Sur<br>
+                 <br>
                  <input class="control" type="checkbox" name="zona" value="ZE">Zona Este<br>
+                 <br>
                  <input class="control" type="checkbox" name="zona" value="ZO">Zona Oeste<br>
+                 <br>
                  <input class="control"  type="checkbox" name="zona" value="ZC">Zona Centro<br>
+                 <br>
                </div>
                  <?php else: ?>
                    <div class="zona">
                      <input class="control" type="checkbox" name="zona" value="ZN"
                        <?=($_POST && $_POST["zona"] == "ZN") ? "checked" : ""?>>Zona Norte<br>
+                       <br>
                      <input class="control" type="checkbox" name="zona" value="ZS"
                       <?php if ($_POST): ?>
                       <?php if ($_POST["zona"] == "ZS"): ?>
                            checked
                       <?php endif; ?>
                       <?php endif; ?>>Zona Sur<br>
+                      <br>
                      <input class="control" type="checkbox" name="zona" value="ZE"
                       <?php if ($_POST): ?>
                       <?php if ($_POST["zona"] == "ZE"): ?>
                            checked
                       <?php endif; ?>
                       <?php endif; ?>>Zona Este<br>
+                      <br>
                      <input class="control" type="checkbox" name="zona" value="ZO"
                       <?php if ($_POST): ?>
                       <?php if ($_POST["zona"] == "ZO"): ?>
                            checked
                       <?php endif; ?>
                       <?php endif; ?>>Zona Oeste<br>
+                    <br>
                      <input class="control"  type="checkbox" name="zona" value="ZC"
                       <?php if ($_POST): ?>
                       <?php if ($_POST["zona"] == "ZC"): ?>
                            checked
                       <?php endif; ?>
                       <?php endif; ?>>Zona Centro<br>
+                      <br>
                    </div>
 
                <?php endif; ?>
@@ -194,9 +205,9 @@ $dniDefault = "";
         <?php endif; ?>
      </div>
        <div class="enviar_cancelar">
-         <button class="button-form" type="reset" name="button">Cancelar</button>
+         <button class="boton" type="reset" name="button">Cancelar</button>
            <br>
-        <button class="button-form" type="submit" name="button-profesional">Enviar</button>
+        <button class="boton enviar" type="submit" name="button-profesional">Enviar</button>
        </div>
         </form>
       </div>

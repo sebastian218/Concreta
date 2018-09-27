@@ -143,20 +143,24 @@ h1.h1-home {
   width: 20%;
   /*border-left: 3px solid rgba(0,0,0,0.5);*/
 }
-.button-form{
+.boton{
   color: black;
-  font-size: 14px;
-  padding: 10px 25px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background: #F2F2F2;
+  font-size: 16px;
+  border-radius: 5px;
+  width:40%;
+  margin:1em;
+}
+.enviar:hover{
+background-color: rgba(247, 220, 111);
 }
 .input-form{
   color: black;
   font-size: 12px;
-  padding: 10px 15px;
-  border-radius: 10px;
+  padding: 5px 5px;
+  border-radius: 5px;
+}
+.select{
+  padding:5px;
 }
 .lupa{
   display: block;
@@ -187,7 +191,6 @@ h1.h1-home {
 
 .control{
   font-family: "Roboto";
-  display: block;
   position: relative;
   padding-left: 35px;
   margin-bottom: 3px;
@@ -419,10 +422,19 @@ footer{
 .registr-prof{
   text-align: center;
   opacity: 0.8;
+  font-weight:normal;
+border-style: solid;
+border-width: 1px;
+border-radius: 3px;
+border-color: gray;
+padding:0.5em;
 }
 .seleccion_rub_zon{
   margin:1vw;
   margin-top: 2vh;
+}
+.borde_redondeado{
+  border-radius: 5px;
 }
 label{
   margin-left: 1vh;
@@ -442,8 +454,9 @@ label{
   flex-direction: column;
   padding:2%;
   margin: auto;
-
+  margin-top: 2vh;
 }
+
 /*Cambios en Perfiles.Seba */
 .perfiles {
     display: flex;
