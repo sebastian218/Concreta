@@ -28,7 +28,7 @@ $dniDefault = "";
 
        //subir archivo
        $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
-       move_uploaded_file($_FILES["avatar"]["tmp_name"], "../img/".trim($_POST["email"]).".".$ext);
+       move_uploaded_file($_FILES["avatar"]["tmp_name"], "../img-usuarios/".trim($_POST["email"]).".".$ext);
 
       // Redirigir a la home
       header("location:home.php");exit;
