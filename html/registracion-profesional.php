@@ -124,7 +124,7 @@ $dniDefault = "";
               </div>
 
       <div class="Registro">
-         <h1 class= "registr-prof">Especificá tu rubro y zona de trabajo</h1>
+         <h1 class= "registr-prof">Especificá tu zona de trabajo y tu rubro</h1>
         <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
                <br>
                <?php if (isset($errores["zona"])): ?>

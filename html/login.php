@@ -11,7 +11,6 @@
     <div>
       <?php include("header.php") ?>
       <div class="banner_perfiles">
-     <p class="perfil_registrate">¿Buscás servicios?<br>Registrate</p>
      </div>
       <section >
         <div class="Registro">
@@ -21,10 +20,11 @@
             <label for="pasword"> Contraseña </label>
             <input class="input-form"  type="password" name="password" id= "password" value="">
             <br>
-
+            <div class="enviar_cancelar">
             <button class="boton" type="submit" name="button">Iniciar Sesión</button>
             <br>
             <button class="boton" type="reset" name="button">Cancelar</button>
+            </div>
           </form>
 
 
