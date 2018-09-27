@@ -17,7 +17,7 @@ $usuarios = traerUsuarios();
     <h1>Mis Usuarios</h1>
     <ul>
       <?php foreach ($usuarios as $usuario ): ?>
-        <li><?= $usuario["nombre"]." ".$usuario["apellido"]?></li>
+        <li><a href="detalleUsuario.php?id= <?= $usuario["id"] ?> "> <?= $usuario["nombre"]." ".$usuario["apellido"]?></a></li>
       <?php endforeach; ?>
     </ul>
   </body>

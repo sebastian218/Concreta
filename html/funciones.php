@@ -1,4 +1,5 @@
 <?php
+session_start();
 function validarUsuario($datos) {
   $datosFinales = [];
   $errores = [];
@@ -60,11 +61,22 @@ if ( isset($_POST["button-profesional"])) {
 
   return $errores;
 }
+function proximoId(){
 
+   $json=file_get_contents("usuarios.json");
+   if($json==""){
+     return 1;
+   }
+   $usuarios= json_decode($json, true);
+   $ultimo = array_pop($usuarioa);
+
+     return $utlimo["id"] + 1;
+}
 
  function armarUsuario() {
 
     $usuario = [
+         "id" => proximoId(),
          "usuario " => trim($_POST["usuario"]),
          "nombre"  => trim($_POST["nombre"]),
          "apellido"=>trim($_POST["apellido"]),
@@ -114,6 +126,21 @@ function buscarPorEmail($email) {
   foreach($usuariosArray as $clave => $valor){
 
     if ( $valor["email"] == $email){
+
+      return $valor;
+
+    }
+  }
+   return null;
+}
+function buscarPorId($id) {
+
+    $usuarios = file_get_contents("usuarios.json");
+    $usuariosArray= json_decode($usuarios, true);
+
+  foreach($usuariosArray as $clave => $valor){
+
+    if ( $valor["id"] == $id){
 
       return $valor;
 

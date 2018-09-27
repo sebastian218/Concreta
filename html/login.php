@@ -1,3 +1,13 @@
+<?php
+
+require_once "funciones.php";
+
+if ($_POST) {
+  // code...
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
