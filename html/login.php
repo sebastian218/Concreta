@@ -3,7 +3,7 @@
 require_once "funciones.php";
 
 if (estaLogueado()) {
-	//header("location:home.php");exit; //mandar a perfil indiv
+	header("location:home.php");exit; //mandar a perfil indiv
 }
 
 if ($_POST) {
@@ -13,7 +13,7 @@ if ($_POST) {
 
 		loguear($_POST["email"]);
 		// REDIRIGIRLO
-		//header("location:home.php");exit; //may o min
+		header("location:home.php");exit; //may o min
 	}
   	var_dump($errores);
     var_dump($_POST);
