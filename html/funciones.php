@@ -148,5 +148,52 @@ function buscarPorId($id) {
   }
    return null;
 }
+function loguear($email)  {
+  $_SESSION["usuarioLogueado"] = $email;
+//  $_SESSION["nombre"] = //llamar Nombre
+}
+
+function estaLogueado() {
+  if (isset($_SESSION["usuarioLogueado"])) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+  function traerUsuarioLogueado() {
+    $usuario = buscarPorEmail($_SESSION["usuarioLogueado"]);
+    return $usuario;
+  }
+
+  function validarLogin($datos) {
+    $errores = [];
+
+    if ($datos["email"] == "") {
+      $errores["email"] = "Dejaste el email vacío";
+    }
+    else if (filter_var($datos["email"], FILTER_VALIDATE_EMAIL) == false) {
+      $errores["email"] = "El email ingresado no es un email";
+    }
+    else {
+      $usuario = buscarPorEmail($datos["email"]);
+      if ($usuario == null) {
+        $errores["email"] = "El email no existe";
+      }
+    }
+
+    if ($datos["password"] == "") {
+      $errores["password"] = "Dejaste la pass vacía";
+    }
+    else {
+      if ($usuario != null) {
+        if (password_verify($datos["password"], $usuario["password"]) == false) {
+          $errores["password"] = "Contraseña incorrecta";
+        }
+      }
+    }
+
+    return $errores;
+  }
 
 ?>

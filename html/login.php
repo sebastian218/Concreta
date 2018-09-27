@@ -2,8 +2,22 @@
 
 require_once "funciones.php";
 
+if (estaLogueado()) {
+	//header("location:home.php");exit; //mandar a perfil indiv
+}
+
 if ($_POST) {
-  // code...
+  $errores = validarLogin($_POST); //hacer
+
+  if ( empty($errores) ) {
+
+		loguear($_POST["email"]);
+		// REDIRIGIRLO
+		//header("location:home.php");exit; //may o min
+	}
+  	var_dump($errores);
+    var_dump($_POST);
+    var_dump(buscarPorEmail($_POST["email"]));
 }
 
  ?>
@@ -24,10 +38,10 @@ if ($_POST) {
      </div>
       <section >
         <div class="Registro">
-          <form class="login" action="" method="">
-            <label for="usuario"> Usuario</label>
-            <input class="input-form" type="text" name="usuario" id="usuario" value="">
-            <label for="pasword"> Contraseña </label>
+          <form class="login" action="" method="POST">
+            <label for="email"> Email </label>
+            <input class="input-form" type="email" name="email" id="email" value="">
+            <label for="password"> Contraseña </label>
             <input class="input-form"  type="password" name="password" id= "password" value="">
             <br>
             <div class="enviar_cancelar">

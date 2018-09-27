@@ -97,8 +97,53 @@ h1.h1-home {
 .container_home{
   position: relative;
 }
-.header_completo{
+.seccion_perfil{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  background-color: rgba(255,255,255,0.6);
+  margin: auto;
+  z-index: 0;
 }
+.usuario_basico{
+  width: 100%;
+  height: 70vh;
+  background-color: red;
+  z-index: 1;
+}
+.nombre_foto{
+  background-color: white;
+  width: 65%;
+  margin: auto;
+  margin-top: 3vh;
+  padding-top: 2vh;
+  z-index: 3;
+}
+.foto_perfil{
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+
+.txt_centrado{
+text-align: center;
+}
+.rubro_portada{
+  background-color: blue;
+  width:100%;
+  height:55%;
+  position: relative;
+  top: -15vh;
+  z-index: -1;
+}
+.rubro_seleccionar{
+  position: relative;
+  bottom:-28vh;
+  right:-7vh;
+}
+
 .barra_principal{
   display:flex;
   flex-direction:column;
@@ -538,6 +583,8 @@ img.banner-decker {
   margin: 0.5vh;
   font-size: 2.5vh;
 }
+
+
 
 @media (max-width:700px) {
   .container_reg_doble{
