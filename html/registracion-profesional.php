@@ -128,8 +128,8 @@ $dniDefault = "";
         <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
                <br>
                <?php if (isset($errores["zona"])): ?>
-                 <div class="zona error">
                  <p class="p-error" ><?= $errores["zona"]?></p>
+                 <div class="zona error">
                  <input class="control" type="checkbox" name="zona" value="ZN">Zona Norte<br>
                  <br>
                  <input class="control" type="checkbox" name="zona" value="ZS">Zona Sur<br>
@@ -207,7 +207,7 @@ $dniDefault = "";
        <div class="enviar_cancelar">
          <button class="boton" type="reset" name="button">Cancelar</button>
            <br>
-        <button class="boton" type="submit" name="button-profesional">Enviar</button>
+        <button class="boton enviar" type="submit" name="button-profesional">Enviar</button>
        </div>
         </form>
       </div>
