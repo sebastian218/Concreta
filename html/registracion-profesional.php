@@ -127,6 +127,7 @@ $dniDefault = "";
          <h1 class= "registr-prof">Especificá tu zona de trabajo y tu rubro</h1>
         <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
                <br>
+
                <?php if (isset($errores["zona"])): ?>
                  <p class="p-error" ><?= $errores["zona"]?></p>
                  <div class="zona error">
@@ -147,32 +148,16 @@ $dniDefault = "";
                        <?=($_POST && $_POST["zona"] == "ZN") ? "checked" : ""?>>Zona Norte<br>
                        <br>
                      <input class="control" type="checkbox" name="zona" value="ZS"
-                      <?php if ($_POST): ?>
-                      <?php if ($_POST["zona"] == "ZS"): ?>
-                           checked
-                      <?php endif; ?>
-                      <?php endif; ?>>Zona Sur<br>
+                      <?=($_POST && $_POST["zona"] == "ZS") ? "checked" : ""?>>Zona sur<br>
                       <br>
                      <input class="control" type="checkbox" name="zona" value="ZE"
-                      <?php if ($_POST): ?>
-                      <?php if ($_POST["zona"] == "ZE"): ?>
-                           checked
-                      <?php endif; ?>
-                      <?php endif; ?>>Zona Este<br>
+                    <?=($_POST && $_POST["zona"] == "ZE") ? "checked" : ""?>>Zona Este<br>
                       <br>
                      <input class="control" type="checkbox" name="zona" value="ZO"
-                      <?php if ($_POST): ?>
-                      <?php if ($_POST["zona"] == "ZO"): ?>
-                           checked
-                      <?php endif; ?>
-                      <?php endif; ?>>Zona Oeste<br>
+                      <?=($_POST && $_POST["zona"] == "ZO") ? "checked" : ""?>>Zona Oeste<br>
                     <br>
                      <input class="control"  type="checkbox" name="zona" value="ZC"
-                      <?php if ($_POST): ?>
-                      <?php if ($_POST["zona"] == "ZC"): ?>
-                           checked
-                      <?php endif; ?>
-                      <?php endif; ?>>Zona Centro<br>
+                      <?=($_POST && $_POST["zona"] == "ZC") ? "checked" : ""?>>Zona Centro<br>
                       <br>
                    </div>
 
