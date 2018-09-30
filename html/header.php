@@ -12,7 +12,7 @@ if (estaLogueado()) {
       <ul class="barra_ppal_2">
         <?php if (isset($_SESSION["usuario"])): ?>
           <li class="menu_registro"><a class="botones_registro" href="">Hola <?= $_SESSION["usuario"] ?></a></li>
-          <li class="menu_registro"><a class="botones_registro" href="">CERRAR SESIÓN</a></li>
+          <li class="menu_registro"><a class="botones_registro" href="destruirSession.php">CERRAR SESIÓN</a></li>
         <?php else:?>
        <li class="menu_registro"><a class="botones_registro" href="registracion_intermedio.php">CREAR CUENTA</a></li>
        <li class="menu_registro"><a class="botones_registro" href="login.php">INICIAR SESIÓN</a></li>
