@@ -15,9 +15,6 @@ if ($_POST) {
 		// REDIRIGIRLO
 		header("location:home.php");exit; //may o min
 	}
-  	var_dump($errores);
-    var_dump($_POST);
-    var_dump(buscarPorEmail($_POST["email"]));
 }
 
  ?>

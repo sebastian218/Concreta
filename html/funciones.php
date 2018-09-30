@@ -83,7 +83,7 @@ function proximoId(){
 
     $usuario = [
          "id" => proximoId(),
-         "usuario " => trim($_POST["usuario"]),
+         "usuario" => trim($_POST["usuario"]),
          "nombre"  => trim($_POST["nombre"]),
          "apellido"=>trim($_POST["apellido"]),
          "email" =>trim($_POST["email"]),

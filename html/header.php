@@ -1,9 +1,18 @@
+<?php
+require_once "funciones.php";
+
+if (estaLogueado()) {
+  $usuario = traerUsuarioLogueado();
+  $_SESSION["usuario"] = $usuario["usuario"];
+
+}
+ ?>
 <header class="header_completo">
   <nav class="barra_principal">
       <ul class="barra_ppal_2">
-        <?php if (isset($_SESSION["nombre"])): ?>
-          <li class="menu_registro"><a class="botones_registro" href="registracion_intermedio.php"><?php $_SESSION["nombre"] ?></a></li>
-          <li class="menu_registro"><a class="botones_registro" href="login.php">CERRAR SESIÓN</a></li>
+        <?php if (isset($_SESSION["usuario"])): ?>
+          <li class="menu_registro"><a class="botones_registro" href="">Hola <?= $_SESSION["usuario"] ?></a></li>
+          <li class="menu_registro"><a class="botones_registro" href="">CERRAR SESIÓN</a></li>
         <?php else:?>
        <li class="menu_registro"><a class="botones_registro" href="registracion_intermedio.php">CREAR CUENTA</a></li>
        <li class="menu_registro"><a class="botones_registro" href="login.php">INICIAR SESIÓN</a></li>
