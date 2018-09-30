@@ -1,10 +1,37 @@
 [
   {
     "id": 1,
-    "usuario ": "Clarta2018",
-    "nombre": "Clara",
+    "usuario ": "Clarita 2018",
+    "nombre": "clara",
     "apellido": "Ackeramn",
     "email": "clarita@gmail.com",
-    "password": "$2y$10$Vnt1.VLCNSEhY6pjS/5RV.gKOqi4SyAcI9kQSG1LzWq.u0MPOIE0C"
+    "password": "$2y$10$MvgQzCgmX5q.qur6rGpOre6Ylic36R1IgCdAw3K1WOVGE.OdHQH8."
+  },
+  {
+    "id": 1,
+    "usuario ": "Carlitos81",
+    "nombre": "Carlos",
+    "apellido": "Pascual",
+    "email": "pascual@gmail.com",
+    "password": "$2y$10$plwJJ4Ox2CAciW63dq3Hu.n/tTie4nvV6WOkoR6qbnmN4fL4WBybK",
+    "zona": "ZS",
+    "RUBRO": "pisorevest",
+    "DNI": "123123123123123"
+  },
+  {
+    "id": 1,
+    "usuario ": "Pepe",
+    "nombre": "Pepe",
+    "apellido": "argento",
+    "email": "elpepe@argento.com",
+    "password": "$2y$10$RF/Wps/FyrAJWBRilafvtuACrKLblke9.qLYHtK3E1fiyMNxeHsTO"
+  },
+  {
+    "id": 2,
+    "usuario ": "Pedro12312",
+    "nombre": "Pedro",
+    "apellido": "Aguilar",
+    "email": "pedroaguilar@gmail.com",
+    "password": "$2y$10$VFZkRehLJUDSCdJ546IBneciORmcdUoOlihqp8gcTntrt8vI3KGMe"
   }
 ]

@@ -63,14 +63,20 @@ if ( isset($_POST["button-profesional"])) {
 }
 function proximoId(){
 
-   $json=file_get_contents("usuarios.json");
-   if($json==""){
-     return 1;
-   }
-   $usuarios= json_decode($json, true);
-   $ultimo = array_pop($usuarioa);
+   $json = file_get_contents("usuarios.json");
 
-     return $utlimo["id"] + 1;
+   if ($json == "") {
+
+     return 1;
+   } else {
+
+
+   $usuarios= json_decode($json, true);
+
+   $ultimo = array_pop($usuarios);
+
+     return $ultimo["id"] + 1;
+   }
 }
 
  function armarUsuario() {
@@ -100,13 +106,13 @@ function proximoId(){
  function crearUsuario($usuario) {
 
    $usuarios = file_get_contents("usuarios.json");
-   $usuariosArray = json_decode($usuarios );
+   $usuarios = json_decode($usuarios, true);
    if ($usuarios == NULL) {
        $ususarios = [];
    }
-   $usuariosArray[] = $usuario;
-   $usuariosFinal = json_encode($usuariosArray);
-   file_put_contents("usuarios.json", $usuariosFinal);
+   $usuarios[] = $usuario;
+   $usuarios = json_encode($usuarios);
+   file_put_contents("usuarios.json", $usuarios);
 }
 
 function traerUsuarios(){
