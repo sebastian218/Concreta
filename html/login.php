@@ -37,10 +37,20 @@ if ($_POST) {
       <section >
         <div class="Registro">
           <form class="login" action="" method="POST">
-            <label for="email"> Email </label>
-            <input class="input-form" type="email" name="email" id="email" value="">
-            <label for="password"> Contraseña </label>
-            <input class="input-form"  type="password" name="password" id= "password" value="">
+						<label for="email"> Email</label>
+	          <?php if (isset($errores["email"])): ?>
+	            <input  class="input-form error" placeholder="" type="email" name="email" id="email" value="">
+	            <p class="p-error" ><?=$errores["email"]?></p>
+	            <?php else: ?>
+	              <input  class="input-form" placeholder="" type="text" name="email" id="email" value="">
+	          <?php endif; ?>
+						<label for="password"> Password</label>
+						<?php if (isset($errores["password"])): ?>
+	            <input  class="input-form error" placeholder="" type="password" name="password" id="password" value="">
+	            <p class="p-error" ><?=$errores["password"]?></p>
+	            <?php else: ?>
+	              <input  class="input-form" placeholder="" type="password" name="password" id="password" value="">
+	          <?php endif; ?>
             <br>
             <div class="enviar_cancelar">
             <button class="boton" type="submit" name="button">Iniciar Sesión</button>
