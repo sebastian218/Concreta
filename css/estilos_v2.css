@@ -24,6 +24,11 @@ text-decoration: none;
   color: red;
   font-size: 12px;
 }
+/*para icono de logueado*/
+.far {
+  
+   color: rgba(247, 220, 111);
+}
 /*paso lo de styles.css */
 header.header-home {
   background-color: rgba(247, 220, 111);
