@@ -5,10 +5,7 @@ include "funciones.php";
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/estilos_v2.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <?php  include "head.php"; ?>
     <title>CONCRETA</title>
   </head>
   <body>
@@ -19,7 +16,7 @@ include "funciones.php";
      <div class="usuario_basico">
       <div class="nombre_foto">
 
-        <form class="" action="index.html" method="post">
+        <form class="" action="index.html" method="post" enctype="multipart/form-data">
          <input class="cambiar_foto"  type="file" name="avatar" value="">
          <button type="submit" name="button"></button>
         </form>

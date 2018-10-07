@@ -11,7 +11,7 @@ if (estaLogueado()) {
   <nav class="barra_principal">
       <ul class="barra_ppal_2">
         <?php if (isset($_SESSION["usuario"])): ?>
-          <li class="menu_registro"><a class="botones_registro" href=""><i class="far fa-user"></i> <?= $_SESSION["usuario"] ?></a></li>
+          <li class="menu_registro"><a class="botones_registro" href="perfil_base.php"><i class="far fa-user"></i> <?= $_SESSION["usuario"] ?></a></li>
           <li class="menu_registro"><a class="botones_registro" href="destruirSession.php">CERRAR SESIÓN</a></li>
         <?php else:?>
        <li class="menu_registro"><a class="botones_registro" href="registracion_intermedio.php">CREAR CUENTA</a></li>
