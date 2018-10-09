@@ -202,4 +202,33 @@ function estaLogueado() {
     return $errores;
   }
 
+  function  convertirDatosRubro($usuario) {
+    if ($usuario["RUBRO"] == "alba"){
+      $rubro_completo = "Albañilería";
+    }
+    if ($usuario["RUBRO"] == "gas"){
+      $rubro_completo = "Gas";
+    }
+    if ($usuario["RUBRO"] == "elect"){
+      $rubro_completo = "Electricidad";
+    }
+    if ($usuario["RUBRO"] == "pisorevest"){
+      $rubro_completo = "Colocación de Pisos y Revestimientos";
+    }
+    if ($usuario["RUBRO"] == "estruct"){
+      $rubro_completo = "Estructuras";
+    }
+    if ($usuario["RUBRO"] == "transpor"){
+      $rubro_completo = "Transporte, Carga y Descarga";
+    }
+    return $rubro_completo;
+  }
+
+  function convertirDatosZona($usuario) {
+    if ($usuario["zona"] == "ZN"){
+      $zona_completa = "Zona Norte";
+      return $zona_completa;
+    }  
+  }
+
 ?>

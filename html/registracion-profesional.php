@@ -167,22 +167,22 @@ $dniDefault = "";
         <?php if (isset($errores["RUBRO"])): ?>
           <p class="p-error"><?=$errores["RUBRO"]?></p>
           <select class="select error" name="RUBRO">
-            <option value="null"  selected disabled>Selecciona rubro</option>
-            <option value="alba">Albañeria</option>
+            <option value="null"  selected disabled>Selecciona un rubro</option>
+            <option value="alba">Albañilería</option>
             <option value="gas">Gas</option>
             <option value="elect">Electricidad</option>
             <option value="pisorevest">Pisos y Revestimientos</option>
-            <option value="estruct">Estructura</option>
+            <option value="estruct">Estructuras</option>
             <option value="transpor">Trasporte, Carga y Descarga</option>
           </select>
           <?php else: ?>
             <select class="select" name="RUBRO">
-              <option value="null"  selected disabled>Selecciona rubro</option>
-              <option value="alba">Albañeria</option>
+              <option value="null"  selected disabled>Selecciona un rubro</option>
+              <option value="alba">Albañilería</option>
               <option value="gas">Gas</option>
               <option value="elect">Electricidad</option>
               <option value="pisorevest">Pisos y Revestimientos</option>
-              <option value="estruct">Estructura</option>
+              <option value="estruct">Estructuras</option>
               <option value="transpor">Trasporte, Carga y Descarga</option>
             </select>
         <?php endif; ?>

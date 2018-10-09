@@ -26,7 +26,7 @@ text-decoration: none;
 }
 /*para icono de logueado*/
 .far {
-  
+
    color: rgba(247, 220, 111);
 }
 /*paso lo de styles.css */
@@ -588,8 +588,39 @@ img.banner-decker {
   margin: 0.5vh;
   font-size: 2.5vh;
 }
-
-
+div.avatar{
+  height: 150px;
+  width: 150px;
+  background-color: red;
+  margin-top: 2vh;
+}
+img.avatar{
+  height: 150px;
+  width: 150px;
+}
+.seccion_perfil{
+  display: flex;
+}
+.datos_basicos{
+  width:100%;
+}
+.col_centrado{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+img.puntaje{
+  width:35%;
+}
+.letra_chica{
+  font-size: 12px;
+  line-height: 14px;
+  margin: 0;
+}
+.borde_negro{
+  border: 4px;
+  border-color: black;
+}
 
 @media (max-width:700px) {
   .container_reg_doble{

@@ -1,18 +1,1 @@
-[
-  {
-    "id": 1,
-    "usuario": "Pepe",
-    "nombre": "Pepe",
-    "apellido": "argento",
-    "email": "elpepe@argento.com",
-    "password": "$2y$10$RF/Wps/FyrAJWBRilafvtuACrKLblke9.qLYHtK3E1fiyMNxeHsTO"
-  },
-  {
-    "id": 2,
-    "usuario": "Pedro12312",
-    "nombre": "Pedro",
-    "apellido": "Aguilar",
-    "email": "pedroaguilar@gmail.com",
-    "password": "$2y$10$VFZkRehLJUDSCdJ546IBneciORmcdUoOlihqp8gcTntrt8vI3KGMe"
-  }
-]
+[{"id":1,"usuario":"Pepe","nombre":"Pepe","apellido":"argento","email":"elpepe@argento.com","password":"$2y$10$RF\/Wps\/FyrAJWBRilafvtuACrKLblke9.qLYHtK3E1fiyMNxeHsTO"},{"id":2,"usuario":"Pedro12312","nombre":"Pedro","apellido":"Aguilar","email":"pedroaguilar@gmail.com","password":"$2y$10$VFZkRehLJUDSCdJ546IBneciORmcdUoOlihqp8gcTntrt8vI3KGMe"},{"id":3,"usuario":"Beto1970","nombre":"Beto","apellido":"Velez","email":"Beto19@gmail.com","password":"$2y$10$cuHlmNTThgM3WYcY\/GzHT.t3Q0YNko7cDtJGt\/2tpWLyGE6\/YpJFq","zona":"ZC","RUBRO":"alba","DNI":"10000000"},{"id":4,"usuario":"lalo92","nombre":"Lalo","apellido":"Landa","email":"lalo@gmail.com","password":"$2y$10$evVeWn8.IejwnXemFOtx6eyc5tKly1MCP\/Zm\/60LAd\/gCR78T78Ti","zona":"ZS","RUBRO":"estruct","DNI":"11111111"}]
