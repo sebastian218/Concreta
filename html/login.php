@@ -7,14 +7,17 @@ if (estaLogueado()) {
 }
 
 if ($_POST) {
-  $errores = validarLogin($_POST); //hacer
+  $errores = validarLogin($_POST);
 
-  if ( empty($errores) ) {
+  if (empty($errores)) {
+    loguear($_POST["email"]);
 
-		loguear($_POST["email"]);
-		// REDIRIGIRLO
-		header("location:home.php");exit; //may o min
-	}
+    if (isset($_POST["recordame"])) {
+      setcookie("usuarioLogueado", $_POST["email"], time() + 60 * 60 * 24 * 7);
+    }
+
+    header("Location:home.php");exit;
+  }
 }
 
  ?>
@@ -49,6 +52,9 @@ if ($_POST) {
 	              <input  class="input-form" placeholder="" type="password" name="password" id="password" value="">
 	          <?php endif; ?>
             <br>
+						<div class="form-group">
+							<input type="checkbox" name="recordame" class="control" value=""> Recordame
+						</div>
             <div class="enviar_cancelar">
             <button class="boton" type="submit" name="button">Iniciar Sesión</button>
             <br>
