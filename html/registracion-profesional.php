@@ -133,8 +133,6 @@ $dniDefault = "";
                  <br>
                  <input class="control" type="checkbox" name="zona" value="ZS">Zona Sur<br>
                  <br>
-                 <input class="control" type="checkbox" name="zona" value="ZE">Zona Este<br>
-                 <br>
                  <input class="control" type="checkbox" name="zona" value="ZO">Zona Oeste<br>
                  <br>
                  <input class="control"  type="checkbox" name="zona" value="ZC">Zona Centro<br>
@@ -146,10 +144,7 @@ $dniDefault = "";
                        <?=($_POST && $_POST["zona"] == "ZN") ? "checked" : ""?>>Zona Norte<br>
                        <br>
                      <input class="control" type="checkbox" name="zona" value="ZS"
-                      <?=($_POST && $_POST["zona"] == "ZS") ? "checked" : ""?>>Zona sur<br>
-                      <br>
-                     <input class="control" type="checkbox" name="zona" value="ZE"
-                    <?=($_POST && $_POST["zona"] == "ZE") ? "checked" : ""?>>Zona Este<br>
+                      <?=($_POST && $_POST["zona"] == "ZS") ? "checked" : ""?>>Zona Sur<br>
                       <br>
                      <input class="control" type="checkbox" name="zona" value="ZO"
                       <?=($_POST && $_POST["zona"] == "ZO") ? "checked" : ""?>>Zona Oeste<br>

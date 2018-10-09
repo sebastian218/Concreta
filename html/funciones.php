@@ -108,7 +108,7 @@ function proximoId(){
    $usuarios = file_get_contents("usuarios.json");
    $usuarios = json_decode($usuarios, true);
    if ($usuarios == NULL) {
-       $ususarios = [];
+       $usuarios = [];
    }
    $usuarios[] = $usuario;
    $usuarios = json_encode($usuarios);
@@ -227,8 +227,78 @@ function estaLogueado() {
   function convertirDatosZona($usuario) {
     if ($usuario["zona"] == "ZN"){
       $zona_completa = "Zona Norte";
-      return $zona_completa;
-    }  
+    }
+    if ($usuario["zona"] == "ZS"){
+      $zona_completa = "Zona Sur";
+    }
+    if ($usuario["zona"] == "ZO"){
+      $zona_completa = "Zona Oeste";
+    }
+    if ($usuario["zona"] == "ZC"){
+      $zona_completa = "Zona Centro";
+    }
+    return $zona_completa;
   }
+
+  function menuesRubro($usuario) {
+   $especialidades = [];
+    if ($usuario["RUBRO"] == "alba"){
+      $esp1 = "Yesería";
+      $esp2 = "Durlock";
+      $esp3 = "Revoques";
+      $esp4 = "Muros";
+    }
+    if ($usuario["RUBRO"] == "gas"){
+      $esp1 = "Calefones y Termotanques";
+      $esp2 = "Calderas";
+      $esp3 = "Instalaciones";
+      $esp4 = "Habilitaciones";
+    }
+    if ($usuario["RUBRO"] == "elect"){
+      $esp1 = "Piso y losa radiante";
+      $esp2 = "Pararrayos";
+      $esp3 = "Tableros y disyuntores";
+      $esp4 = "Habilitaciones";
+    }
+    if ($usuario["RUBRO"] == "pisorevest"){
+      $esp1 = "Parquet";
+      $esp2 = "Cerámicos";
+      $esp3 = "Tarquini, revoques cementicios";
+      $esp4 = "Hidrolaqueado";
+    }
+    if ($usuario["RUBRO"] == "estruct"){
+      $esp1 = "Estructuras de aluminio";
+      $esp2 = "Cimientos";
+      $esp3 = "Estructuras de hierro";
+      $esp4 = "Estructuras de hormigón";
+    }
+    if ($usuario["RUBRO"] == "transpor"){
+      $esp1 = "Volquetes";
+      $esp2 = "Corralón";
+      $esp3 = "Lorem";
+      $esp4 = "Ipsum";
+    }
+    $especialidades ["esp1"] = $esp1;
+    $especialidades ["esp2"] = $esp2;
+    $especialidades ["esp3"] = $esp3;
+    $especialidades ["esp4"] = $esp4;
+    return $especialidades;
+  }
+
+  function llamarArray($usuario) {
+    $nro_array == $usuario["id"] - 1;
+    return $nro_array;
+  }
+
+  function agregarEspecialidades($nro_array, $especialidades) {
+
+    $usuarios = file_get_contents("usuarios.json");
+    $usuarios = json_decode($usuarios, true);
+
+    $usuarios[$nro_array]["Especialidades"] = $especialidades;
+    $usuarios = json_encode($usuarios);
+    file_put_contents("usuarios.json", $usuarios);
+ }
+
 
 ?>
