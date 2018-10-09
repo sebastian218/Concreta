@@ -27,7 +27,7 @@ include "funciones.php";
         <p class="letra_chica">Basado en x calificaciones</p>
       </div>
       <div class="zona col_centrado">
-        <p>Zonas de trabajo: <?php echo convertirDatosZona($usuario)?></p>
+        <p>Zona de trabajo: <?php echo convertirDatosZona($usuario)?></p>
       </div>
      </div>
 
@@ -55,7 +55,7 @@ include "funciones.php";
             <label for="esp4"><?php echo $especialidades["esp4"] ?></label>
            </div>
 
-          <button class="boton enviar" type="submit" name="button-profesional">Guardar cambios</button>
+          <button class="" type="submit" name="button-profesional">Guardar cambios</button>
          </form>
 
        </div>

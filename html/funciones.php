@@ -256,7 +256,7 @@ function estaLogueado() {
     }
     if ($usuario["RUBRO"] == "elect"){
       $esp1 = "Piso y losa radiante";
-      $esp2 = "Pararrayos";
+      $esp2 = "Aire acondicionado";
       $esp3 = "Tableros y disyuntores";
       $esp4 = "Habilitaciones";
     }
