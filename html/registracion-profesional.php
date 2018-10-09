@@ -1,6 +1,5 @@
 <?php
-
-
+var_dump($_POST);
 include "funciones.php";
   $errores = [];
 $usernameDefault = "";
@@ -129,27 +128,27 @@ $dniDefault = "";
                <?php if (isset($errores["zona"])): ?>
                  <p class="p-error" ><?= $errores["zona"]?></p>
                  <div class="zona error">
-                 <input class="control" type="checkbox" name="zona" value="ZN">Zona Norte<br>
+                 <input class="control" type="checkbox" name="zona[]" value="ZN">Zona Norte<br>
                  <br>
-                 <input class="control" type="checkbox" name="zona" value="ZS">Zona Sur<br>
+                 <input class="control" type="checkbox" name="zona[]" value="ZS">Zona Sur<br>
                  <br>
-                 <input class="control" type="checkbox" name="zona" value="ZO">Zona Oeste<br>
+                 <input class="control" type="checkbox" name="zona[]" value="ZO">Zona Oeste<br>
                  <br>
-                 <input class="control"  type="checkbox" name="zona" value="ZC">Zona Centro<br>
+                 <input class="control"  type="checkbox" name="zona[]" value="ZC">Zona Centro<br>
                  <br>
                </div>
                  <?php else: ?>
                    <div class="zona">
-                     <input class="control" type="checkbox" name="zona" value="ZN"
+                     <input class="control" type="checkbox" name="zona[]" value="ZN"
                        <?=($_POST && $_POST["zona"] == "ZN") ? "checked" : ""?>>Zona Norte<br>
                        <br>
-                     <input class="control" type="checkbox" name="zona" value="ZS"
+                     <input class="control" type="checkbox" name="zona[]" value="ZS"
                       <?=($_POST && $_POST["zona"] == "ZS") ? "checked" : ""?>>Zona Sur<br>
                       <br>
-                     <input class="control" type="checkbox" name="zona" value="ZO"
+                     <input class="control" type="checkbox" name="zona[]" value="ZO"
                       <?=($_POST && $_POST["zona"] == "ZO") ? "checked" : ""?>>Zona Oeste<br>
                     <br>
-                     <input class="control"  type="checkbox" name="zona" value="ZC"
+                     <input class="control"  type="checkbox" name="zona[]" value="ZC"
                       <?=($_POST && $_POST["zona"] == "ZC") ? "checked" : ""?>>Zona Centro<br>
                       <br>
                    </div>

@@ -4,7 +4,12 @@ function validarUsuario($datos) {
   $datosFinales = [];
   $errores = [];
   foreach ($datos as $key => $dato ) {
-    $datosFinales[$key] = trim($dato);
+    if (is_string($dato)) {
+      $datosFinales[$key] = trim($dato);
+    } else {
+      $datosFinales[$key] = $dato;
+    }
+
   }
 
   if (strlen($datosFinales["usuario"]) == 0) {
@@ -92,8 +97,8 @@ function proximoId(){
 
     if (isset($_POST["button-profesional"])) {
 
-      $usuario["zona"]= trim($_POST["zona"]);
-      $usuario["RUBRO"]= trim($_POST["RUBRO"]);
+      $usuario["zona"]= $_POST["zona"];
+      $usuario["RUBRO"]= $_POST["RUBRO"];
       $usuario["DNI"]= trim($_POST["DNI"]);
 
       }
