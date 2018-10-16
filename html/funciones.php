@@ -1,4 +1,17 @@
 <?php
+
+
+$dsn="mysql:localhost;dbname=CONCRETA;port=3306"
+$usuario= "root";
+$pass= "root";
+
+try {
+  $db = new PDO($dsn,$usuario,$pass);
+} catch (\Exception $e) {
+
+    echo "Hubo un error";exit;
+}
+
 session_start();
 function validarUsuario($datos) {
   $datosFinales = [];
@@ -66,7 +79,7 @@ if ( isset($_POST["button-profesional"])) {
 
   return $errores;
 }
-function proximoId(){
+/*function proximoId(){
 
    $json = file_get_contents("usuarios.json");
 
@@ -82,7 +95,7 @@ function proximoId(){
 
      return $ultimo["id"] + 1;
    }
-}
+}*/
 
  function armarUsuario() {
 
@@ -109,7 +122,7 @@ function proximoId(){
 
 
  function crearUsuario($usuario) {
-
+    $db -> prepare("INSERT into USUARIOS (USER_NAME) values("") )
    $usuarios = file_get_contents("usuarios.json");
    $usuarios = json_decode($usuarios, true);
    if ($usuarios == NULL) {
