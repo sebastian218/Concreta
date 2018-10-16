@@ -1,12 +1,13 @@
 <?php
 
 
-$dsn="mysql:localhost;dbname=CONCRETA;port=3306"
-$usuario= "root";
+$dsn= "mysql:host=localhost;port=3306;dbname=CONCRETA;";
+$user= "root";
 $pass= "root";
 
 try {
-  $db = new PDO($dsn,$usuario,$pass);
+  $db = new PDO($dsn,$user,$pass);
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (\Exception $e) {
 
     echo "Hubo un error";exit;
@@ -127,12 +128,12 @@ if ( isset($_POST["button-profesional"])) {
  function crearUsuario($usuario) {
    global $db;
    $consulta = $db->prepare("INSERT into USUARIOS (ID,USER_NAME,EMAIL,NOMBRE,APELLIDO,DNI,PASS) values (default, :user_name, :email , :nombre, :apellido,  :dni, :pass)");
-   $consulta->bindValue(":user_name", $usuario["usuairo"]);
+   $consulta->bindValue(":user_name", $usuario["usuario"]);
    $consulta->bindValue(":email", $usuario["email"]);
    $consulta->bindValue(":nombre", $usuario["nombre"]);
    $consulta->bindValue(":apellido", $usuario["apellido"]);
    $consulta->bindValue(":dni", $usuario["DNI"]);
-   $consulta->bindValue(":password", $usuario["password"]);
+   $consulta->bindValue(":pass", $usuario["password"]);
    $consulta->bindValue(":email", $usuario["email"]);
 
    $consulta->execute();
