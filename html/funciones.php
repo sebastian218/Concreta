@@ -100,7 +100,6 @@ if ( isset($_POST["button-profesional"])) {
  function armarUsuario() {
 
     $usuario = [
-         "id" => proximoId(),
          "usuario" => trim($_POST["usuario"]),
          "nombre"  => trim($_POST["nombre"]),
          "apellido"=>trim($_POST["apellido"]),
@@ -114,7 +113,11 @@ if ( isset($_POST["button-profesional"])) {
       $usuario["RUBRO"]= $_POST["RUBRO"];
       $usuario["DNI"]= trim($_POST["DNI"]);
 
-      }
+    } else {
+
+      $usuario["DNI"] = null;
+
+    }
 
       return $usuario;
 
@@ -122,55 +125,52 @@ if ( isset($_POST["button-profesional"])) {
 
 
  function crearUsuario($usuario) {
-    $db -> prepare("INSERT into USUARIOS (USER_NAME) values("") )
-   $usuarios = file_get_contents("usuarios.json");
-   $usuarios = json_decode($usuarios, true);
-   if ($usuarios == NULL) {
-       $usuarios = [];
-   }
-   $usuarios[] = $usuario;
-   $usuarios = json_encode($usuarios);
-   file_put_contents("usuarios.json", $usuarios);
+   global $db;
+   $consulta = $db->prepare("INSERT into USUARIOS (ID,USER_NAME,EMAIL,NOMBRE,APELLIDO,DNI,PASS) values (default, :user_name, :email , :nombre, :apellido,  :dni, :pass)");
+   $consulta->bindValue(":user_name", $usuario["usuairo"]);
+   $consulta->bindValue(":email", $usuario["email"]);
+   $consulta->bindValue(":nombre", $usuario["nombre"]);
+   $consulta->bindValue(":apellido", $usuario["apellido"]);
+   $consulta->bindValue(":dni", $usuario["DNI"]);
+   $consulta->bindValue(":password", $usuario["password"]);
+   $consulta->bindValue(":email", $usuario["email"]);
+
+   $consulta->execute();
+
 }
 
 function traerUsuarios(){
 
-  $usuarios = file_get_contents("usuarios.json");
-  $usuarios = json_decode($usuarios, true);
+     global $db;
+     $consulta= $db->prepare("SELECT * FROM USUARIOS");
+     $consulta->execute();
+     $usuarios=$consulta->fetchAll(PDO::FETCH_ASSOC);
 
-  return $usuarios;
 }
 
 
 function buscarPorEmail($email) {
 
-    $usuarios = file_get_contents("usuarios.json");
-    $usuariosArray= json_decode($usuarios, true);
+  global $db;
+  $consulta = $db->prepare("SELECT * FROM usuarios WHERE email = :email");
 
-  foreach($usuariosArray as $clave => $valor){
+  $consulta->bindValue(":email", $email);
 
-    if ( $valor["email"] == $email){
+  $consulta->execute();
 
-      return $valor;
-
-    }
-  }
-   return null;
+  return $consulta->fetch(PDO::FETCH_ASSOC);
 }
 function buscarPorId($id) {
 
-    $usuarios = file_get_contents("usuarios.json");
-    $usuariosArray= json_decode($usuarios, true);
+  global $db;
+  $consulta = $db->prepare("SELECT * FROM usuarios WHERE id = :id");
 
-  foreach($usuariosArray as $clave => $valor){
+  $consulta->bindValue(":id", $id);
 
-    if ( $valor["id"] == $id){
+  $consulta->execute();
 
-      return $valor;
+  return $consulta->fetch(PDO::FETCH_ASSOC);
 
-    }
-  }
-   return null;
 }
 function loguear($email)  {
   $_SESSION["usuarioLogueado"] = $email;
