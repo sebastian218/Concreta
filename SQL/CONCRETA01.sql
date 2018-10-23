@@ -88,7 +88,7 @@ CREATE TABLE `RUBRO` (
   `NOMBRE_RUBRO` varchar(45) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `NOMBRE_UNIQUE` (`NOMBRE_RUBRO`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,6 +97,7 @@ CREATE TABLE `RUBRO` (
 
 LOCK TABLES `RUBRO` WRITE;
 /*!40000 ALTER TABLE `RUBRO` DISABLE KEYS */;
+INSERT INTO `RUBRO` VALUES (1,'Albanileria'),(3,'Electricidad'),(5,'Estructuras'),(2,'Gas'),(4,'Pisos y revestimientos'),(6,'Transporte,cargas,descargas');
 /*!40000 ALTER TABLE `RUBRO` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,15 +110,16 @@ DROP TABLE IF EXISTS `USUARIOS`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USUARIOS` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `USER_NAME` varchar(10) NOT NULL,
+  `USER_NAME` varchar(45) NOT NULL,
   `EMAIL` varchar(45) NOT NULL,
   `NOMBRE` varchar(45) DEFAULT NULL,
   `APELLIDO` varchar(45) DEFAULT NULL,
   `DNI` varchar(45) DEFAULT NULL,
+  `PASS` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `USER_NAME_UNIQUE` (`USER_NAME`),
   UNIQUE KEY `EMAIL_UNIQUE` (`EMAIL`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,6 +128,7 @@ CREATE TABLE `USUARIOS` (
 
 LOCK TABLES `USUARIOS` WRITE;
 /*!40000 ALTER TABLE `USUARIOS` DISABLE KEYS */;
+INSERT INTO `USUARIOS` VALUES (1,'carlangas','pascual@gmail.com','carlos','pascual',NULL,'$2y$10$vkaafuCfpO5RHRXinSs/UuKxtyiWoXEKIQX.4HSNOxsZ3aI3w9bie'),(2,'Pepo','pepe@gmail.com','pepe','argento','12323212','$2y$10$GD6pxdFo3hL7ZUd6fuZJuu.NX2MOvrdipfcfXX3wSUOovMQbk0B/a'),(3,'PEPE123','pepeargento@gmail.com','Pepe','argento','32675273','$2y$10$PFlq9xpJoFH0VuHd7w4gqexCnnlMJvu3qZ38z0/CjZ9NPxJtG161O'),(4,'IJASDJAHS','sanata@gmail.com','CARLOS','SANATA','32123321','$2y$10$CK1xuQ2gGRXMxDrVfXgYOe.JsPyfE/0yuy/OsjmCtLQRQS1utM6Ni'),(5,'IJASDJAHS22','sanatita@gmail.com','CARLA','SANATero','32123354','$2y$10$ikDO1iMxNVMgRB5cVOGaeuQqF5Hps1SRlMnMwWoQYQilbEm7cLLD.'),(6,'IJASDJAHS21','carlos@papas.com','CARLANGAS','SANATero','32123312','$2y$10$dtR5Ye9dgM1P2biwGkqRLuW6rDcJSaFRZYIz0jNRyDicUTN74iAdG'),(7,'Julieta23','julirada@gmail.com','Julieta','Rada','23456786','$2y$10$1G6hR6OLp3fW883EwBPwwuN2qgYm6M2G/gizU0eLuB2sRk5YvtAfC'),(9,'Julietita','julietita@gmail.com','Julieta','Rada','21543765','$2y$10$i4s0cPg.XYMoJX1lv5e.L.NWs4mJowiUi/MpRx9gFk6MkHMFexwUy'),(10,'Pedrito54','elpedrito@gmail.com','Pedro','Grasi','43567765','$2y$10$sUROrEynQUS2HV53Pb6oa.XQ8i85FguAdVkFP1y8YtSj1kfh1gIIm'),(11,'Master32','marianito@gmail.com','Mariano','Caraballo','32720676','$2y$10$M56FuhM6aQwEgZvmzru5f.9C.h27nhmeVX1xQ/snIZ7aHC.z7H/hm');
 /*!40000 ALTER TABLE `USUARIOS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -197,7 +200,7 @@ CREATE TABLE `ZONA` (
   `NOMBRE_ZONA` varchar(45) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `nombre_UNIQUE` (`NOMBRE_ZONA`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,6 +209,7 @@ CREATE TABLE `ZONA` (
 
 LOCK TABLES `ZONA` WRITE;
 /*!40000 ALTER TABLE `ZONA` DISABLE KEYS */;
+INSERT INTO `ZONA` VALUES (4,'Zona centro'),(1,'Zona norte'),(3,'Zona oeste'),(2,'Zona sur ');
 /*!40000 ALTER TABLE `ZONA` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -218,4 +222,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-16 11:53:30
+-- Dump completed on 2018-10-23 19:37:09
