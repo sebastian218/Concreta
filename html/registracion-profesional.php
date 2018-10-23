@@ -1,5 +1,4 @@
 <?php
-var_dump($_POST);
 include "funciones.php";
   $errores = [];
 $usernameDefault = "";
@@ -128,27 +127,27 @@ $dniDefault = "";
                <?php if (isset($errores["zona"])): ?>
                  <p class="p-error" ><?= $errores["zona"]?></p>
                  <div class="zona error">
-                 <input class="control" type="checkbox" name="zona[]" value="ZN">Zona Norte<br>
+                 <input class="control" type="checkbox" name="zona[]" value="1">Zona Norte<br>
                  <br>
-                 <input class="control" type="checkbox" name="zona[]" value="ZS">Zona Sur<br>
+                 <input class="control" type="checkbox" name="zona[]" value="2">Zona Sur<br>
                  <br>
-                 <input class="control" type="checkbox" name="zona[]" value="ZO">Zona Oeste<br>
+                 <input class="control" type="checkbox" name="zona[]" value="3">Zona Oeste<br>
                  <br>
-                 <input class="control"  type="checkbox" name="zona[]" value="ZC">Zona Centro<br>
+                 <input class="control"  type="checkbox" name="zona[]" value="4">Zona Centro<br>
                  <br>
                </div>
                  <?php else: ?>
                    <div class="zona">
-                     <input class="control" type="checkbox" name="zona[]" value="ZN"
+                     <input class="control" type="checkbox" name="zona[]" value="1"
                        <?=($_POST && $_POST["zona"] == "ZN") ? "checked" : ""?>>Zona Norte<br>
                        <br>
-                     <input class="control" type="checkbox" name="zona[]" value="ZS"
+                     <input class="control" type="checkbox" name="zona[]" value="2"
                       <?=($_POST && $_POST["zona"] == "ZS") ? "checked" : ""?>>Zona Sur<br>
                       <br>
-                     <input class="control" type="checkbox" name="zona[]" value="ZO"
+                     <input class="control" type="checkbox" name="zona[]" value="3"
                       <?=($_POST && $_POST["zona"] == "ZO") ? "checked" : ""?>>Zona Oeste<br>
                     <br>
-                     <input class="control"  type="checkbox" name="zona[]" value="ZC"
+                     <input class="control"  type="checkbox" name="zona[]" value="4"
                       <?=($_POST && $_POST["zona"] == "ZC") ? "checked" : ""?>>Zona Centro<br>
                       <br>
                    </div>
@@ -162,22 +161,22 @@ $dniDefault = "";
           <p class="p-error"><?=$errores["RUBRO"]?></p>
           <select class="select error" name="RUBRO">
             <option value="null"  selected disabled>Selecciona un rubro</option>
-            <option value="alba">Albañilería</option>
-            <option value="gas">Gas</option>
-            <option value="elect">Electricidad</option>
-            <option value="pisorevest">Pisos y Revestimientos</option>
-            <option value="estruct">Estructuras</option>
-            <option value="transpor">Trasporte, Carga y Descarga</option>
+            <option value="1">Albañilería</option>
+            <option value="2">Gas</option>
+            <option value="3">Electricidad</option>
+            <option value="4">Pisos y Revestimientos</option>
+            <option value="5">Estructuras</option>
+            <option value="6">Trasporte, Carga y Descarga</option>
           </select>
           <?php else: ?>
             <select class="select" name="RUBRO">
               <option value="null"  selected disabled>Selecciona un rubro</option>
-              <option value="alba">Albañilería</option>
-              <option value="gas">Gas</option>
-              <option value="elect">Electricidad</option>
-              <option value="pisorevest">Pisos y Revestimientos</option>
-              <option value="estruct">Estructuras</option>
-              <option value="transpor">Trasporte, Carga y Descarga</option>
+              <option value="1">Albañilería</option>
+              <option value="2">Gas</option>
+              <option value="3">Electricidad</option>
+              <option value="4">Pisos y Revestimientos</option>
+              <option value="5">Estructuras</option>
+              <option value="6">Trasporte, Carga y Descarga</option>
             </select>
         <?php endif; ?>
      </div>
