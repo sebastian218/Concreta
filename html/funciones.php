@@ -142,21 +142,26 @@ if ( isset($_POST["button-profesional"])) {
 
    $consulta->execute();
 
-   if (isset($usario["RUBRO"])){
+   $id = $db->lastInsertId();
+   if (isset($usuario["RUBRO"])){
 
-     $dni = $usuario["DNI"];
-     $id = $db -> prepare("SELECT ID from USUARIOS WHERE DNI = :DNI  ");
-     $id -> bindvalue(":DNI",$dni);
-
-     $id->Fetch(PDO::FETCH_ASSOC);
 
      $consultaRubro = $db -> prepare("INSERT into USUARIO_RUBRO values(default,:USUARIO_ID,:RUBRO_ID) ");
      $consultaRubro->bindValue(":USUARIO_ID",$id);
-     $consultaRubro->bindValue(":RUBRO_ID", $usuario["RUBRO"]);
+     $consultaRubro->bindValue(":RUBRO_ID", intval($usuario["RUBRO"]));
 
      $consultaRubro->execute();
 
   }
+  if (isset($usuario["ZONA"])){
+
+    $consultaRubro = $db -> prepare("INSERT into USUARIO_ZONA values(default,:USUARIO_ID,:ZONA_ID) ");
+    $consultaRubro->bindValue(":USUARIO_ID",$id);
+    $consultaRubro->bindValue(":ZONA_ID", intval($usuario["ZONA"]));
+   
+    $consultaRubro->execute();
+
+ }
 
 }
 
