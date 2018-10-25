@@ -153,14 +153,15 @@ if ( isset($_POST["button-profesional"])) {
      $consultaRubro->execute();
 
   }
-  if (isset($usuario["ZONA"])){
+
+  if (isset($usuario["zona"])){
 
     $consultaRubro = $db -> prepare("INSERT into USUARIO_ZONA values(default,:USUARIO_ID,:ZONA_ID) ");
     $consultaRubro->bindValue(":USUARIO_ID",$id);
-    $consultaRubro->bindValue(":ZONA_ID", intval($usuario["ZONA"]));
-   
-    $consultaRubro->execute();
-
+    foreach ($usuario["zona"] as $zona) {
+      $consultaRubro->bindValue(":ZONA_ID", $zona);
+      $consultaRubro->execute();
+    }
  }
 
 }
@@ -249,7 +250,7 @@ function estaLogueado() {
     }
     else {
       if ($usuario != null) {
-        if (password_verify($datos["password"], $usuario["password"]) == false) {
+        if (password_verify($datos["password"], $usuario["PASS"]) == false) {
           $errores["password"] = "Contraseña incorrecta";
         }
       }

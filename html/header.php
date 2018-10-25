@@ -3,7 +3,7 @@ require_once "funciones.php";
 
 if (estaLogueado()) {
   $usuario = traerUsuarioLogueado();
-  $_SESSION["usuario"] = $usuario["usuario"];
+  $_SESSION["usuario"] = $usuario["USER_NAME"];
 
 }
  ?>
