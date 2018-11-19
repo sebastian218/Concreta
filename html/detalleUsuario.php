@@ -1,6 +1,6 @@
 <?php
 
-include_once "funciones.php";
+include_once "mysqldb.php";
 
   $id = $_GET["id"];
 
@@ -17,8 +17,7 @@ $usuario = buscarPorId($id);
   <body>
      <h1>Bienvenido</h1>
      <h2>
-         <?=$usuario["nombre"]?> <?=$usuario["apellido"]?>
+         <?=$usuario->getNombre()?> <?=$usuario->getApellido()?>
      </h2>
-     <img src="img/<?=$usuario["email"]?>.jpeg" alt="">
   </body>
 </html>

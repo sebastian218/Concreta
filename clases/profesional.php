@@ -1,5 +1,5 @@
 <?php
-include_once("clases/usuario.php");
+include_once("../clases/usuario.php");
 
 /**
  *

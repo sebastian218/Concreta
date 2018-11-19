@@ -1,5 +1,6 @@
 <?php
-include "funciones.php";
+require_once("init.php");
+
   $errores = [];
 $usernameDefault = "";
 $nombreDefault = "";
@@ -18,11 +19,11 @@ $dniDefault = "";
 
 
     // Validar al  usuario
-    $errores = validarUsuario($_POST);
+    $errores = $validator->validarUsuario($_POST);
     if (empty($errores)) {
       // Registrarlo
-      $usuario = armarUsuario();
-      crearUsuario($usuario);
+      $usuario = new Profesional($_POST);
+      $db->crearUsuarioProfesional($usuario);
 
        //subir archivo
        $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);

@@ -14,7 +14,6 @@ try {
     echo "Hubo un error";exit;
 }
 
-session_start();
 function validarUsuario($datos) {
   $datosFinales = [];
   $errores = [];

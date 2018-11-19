@@ -11,12 +11,13 @@ class Auth {
    }
 
   }
-  function loguear($email)  {
+  
+  public function loguear($email)  {
     $_SESSION["usuarioLogueado"] = $email;
   //  $_SESSION["nombre"] = //llamar Nombre
   }
 
-  function estaLogueado() {
+  public function estaLogueado() {
     if (isset($_SESSION["usuarioLogueado"])) {
       return true;
     }
@@ -24,7 +25,7 @@ class Auth {
       return false;
     }
   }
-    function traerUsuarioLogueado() {
+    public function traerUsuarioLogueado() {
       $usuario = buscarPorEmail($_SESSION["usuarioLogueado"]);
       return $usuario;
     }

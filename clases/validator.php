@@ -1,7 +1,7 @@
 <?php
 
 class Validator {
-  function validarUsuario($datos) {
+  public function validarUsuario($datos) {
     global $db;
     $datosFinales = [];
     $errores = [];

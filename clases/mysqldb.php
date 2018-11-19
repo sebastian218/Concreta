@@ -1,7 +1,7 @@
 <?php
-include_once("clases/db.php");
-include_once("clases/usuario.php");
-include_once("clases/profesional.php");
+include_once("db.php");
+include_once("usuario.php");
+include_once("profesional.php");
 
 class mysqlDb extends Db {
   protected $dbUsuarios;

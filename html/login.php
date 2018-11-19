@@ -1,16 +1,17 @@
 <?php
 
-require_once "funciones.php";
+require_once("init.php");
 
-if (estaLogueado()) {
+
+if ($auth->estaLogueado()) {
 	header("location:home.php");exit; //mandar a perfil indiv
 }
 
 if ($_POST) {
-  $errores = validarLogin($_POST);
+  $errores = $validator->validarLogin($_POST);
 
   if (empty($errores)) {
-    loguear($_POST["email"]);
+    $auth->loguear($_POST["email"]);
 
     if (isset($_POST["recordame"])) {
       setcookie("usuarioLogueado", $_POST["email"], time() + 60 * 60 * 24 * 7);

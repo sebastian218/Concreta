@@ -1,7 +1,7 @@
 <?php
 
+require_once("init.php");
 
-include "funciones.php";
   $errores = [];
 $usernameDefault = "";
 $nombreDefault = "";
@@ -16,11 +16,11 @@ $emailDefault = "";
     $emailDefault = $_POST["email"];
 
     // Validar al  usuario
-    $errores = validarUsuario($_POST);
+    $errores = $validator->validarUsuario($_POST);
     if (empty($errores)) {
       // Registrarlo
-      $usuario = armarUsuario();
-     crearUsuario($usuario);
+      $usuario = new Usuario($_POST);
+     $db->crearUsuario($usuario);
 
       // Redirigir a la home
       header("location:home.php");exit;

@@ -1,6 +1,6 @@
 <?php
 
-include_once "funciones.php";
+include_once "clases/mysqldb.php";
 
 $usuarios = traerUsuarios();
 
