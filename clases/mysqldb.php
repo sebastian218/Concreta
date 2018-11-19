@@ -4,6 +4,7 @@ include_once("usuario.php");
 include_once("profesional.php");
 
 class mysqlDb extends Db {
+
   protected $dbUsuarios;
 
 public function __construct(){
@@ -31,7 +32,7 @@ public function crearUsuario(Usuario $usuario) {
   $consulta->bindValue(":email", $usuario->getEmail());
   $consulta->bindValue(":nombre", $usuario->getNombre());
   $consulta->bindValue(":apellido", $usuario->getApellido());
-  $consulta->bindValue(":dni", $usuario->getDni());
+  $consulta->bindValue(":dni", null);
   $consulta->bindValue(":pass", $usuario->getPassword());
   $consulta->bindValue(":email", $usuario->getEmail());
 
@@ -51,13 +52,13 @@ public function crearUsuarioProfesional(Profesional $usuario) {
   $consulta->bindValue(":pass", $usuario->getPassword());
   $consulta->bindValue(":email", $usuario->getEmail());
 
-  $consultaRubro = $db -> prepare("INSERT into USUARIO_RUBRO values(default,:USUARIO_ID,:RUBRO_ID) ");
+  $consultaRubro = $db->prepare("INSERT into USUARIO_RUBRO values(default,:USUARIO_ID,:RUBRO_ID) ");
   $consultaRubro->bindValue(":USUARIO_ID",$id);
   $consultaRubro->bindValue(":RUBRO_ID", intval($usuario->getRubro()));
 
   $consultaRubro->execute();
 
-  $consultaZona = $db -> prepare("INSERT into USUARIO_ZONA values(default,:USUARIO_ID,:ZONA_ID) ");
+  $consultaZona = $db->prepare("INSERT into USUARIO_ZONA values(default,:USUARIO_ID,:ZONA_ID) ");
   $consultaZona->bindValue(":USUARIO_ID",$id);
   $consultaZona->bindValue(":ZONA_ID", intval($usuario>getZona()));
 
@@ -109,6 +110,19 @@ public function buscarPorID($id) {
   }
 
   return new Usuario($usuarioArray);
+}
+
+public function buscarPorUsuario($usuario) {
+
+
+  $consulta = $this->dbUsuarios->prepare("SELECT * FROM usuarios WHERE USER_NAME = :user");
+
+  $consulta->bindValue(":user", $usuario);
+
+  $consulta->execute();
+
+  return $consulta->fetch(PDO::FETCH_ASSOC);
+
 }
 
 

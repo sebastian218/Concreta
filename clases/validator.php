@@ -1,5 +1,7 @@
 <?php
 
+include_once("mysqldb.php");
+
 class Validator {
   public function validarUsuario($datos) {
     global $db;
