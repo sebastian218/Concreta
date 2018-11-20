@@ -20,7 +20,8 @@ $emailDefault = "";
     if (empty($errores)) {
       // Registrarlo
       $usuario = new Usuario($_POST);
-     $db->crearUsuario($usuario);
+      var_dump($usuario);exit;
+      $db->crearUsuario($usuario);
 
       // Redirigir a la home
       header("location:home.php");exit;

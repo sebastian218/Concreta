@@ -12,11 +12,13 @@ include_once("model.php");
 
 
     public function __construct(Array $datos) {
+
    if (isset($datos["id"])) {
        $this->id = $datos["id"];
        $this->password = $datos["password"];
    } else {
-       $this->password = password_hash($datos["password"], PASSWORD_DEFAULT);
+
+       $this->password =  password_hash($datos["password"],PASSWORD_DEFAULT);
        $this->id = NULL;
    }
    $this->userName = $datos["usuario"];
@@ -62,7 +64,17 @@ include_once("model.php");
     public function set($password){
       $this->password = $password;
     }
-    
+    public function getId(){
+
+         return $this->id;
+
+    }
+    public function setId($id){
+
+        $this->id = $id;
+
+    }
+
 }
 
 

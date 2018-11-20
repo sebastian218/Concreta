@@ -95,7 +95,7 @@ class Validator {
     }
     else {
       if ($usuario != null) {
-        if (password_verify($datos["password"], $usuario["PASS"]) == false) {
+        if (password_verify($datos["password"], $usuario->getpassword()) == false) {
           $errores["password"] = "Contraseña incorrecta";
         }
       }

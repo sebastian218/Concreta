@@ -10,12 +10,14 @@ class Profesional extends Usuario
   protected $zona=[];
   protected $dni;
 
-  function __construct(array $datos, $dni, $rubro, $zona)
+  function __construct(Array $datos)
   {
-    $this->rubro=$rubro;
-    $this->zona=$zona;
-    $this->dni=$dni;
-    parent::__construct($id,$userName,$nombre,$apellido,$email,$password);
+    $this->rubro[]=$datos["RUBRO"];
+    $this->zona[]=$datos["zona"];
+    $this->dni=$datos["DNI"];
+
+    parent::__construct( $datos);
+
   }
   public function getRubro(){
     return $this->rubro;

@@ -52,17 +52,21 @@ public function crearUsuarioProfesional(Profesional $usuario) {
   $consulta->bindValue(":pass", $usuario->getPassword());
   $consulta->bindValue(":email", $usuario->getEmail());
 
-  $consultaRubro = $db->prepare("INSERT into USUARIO_RUBRO values(default,:USUARIO_ID,:RUBRO_ID) ");
-  $consultaRubro->bindValue(":USUARIO_ID",$id);
+  /* $consultaRubro =$this->dbUsuarios->prepare("INSERT into USUARIO_RUBRO values(default,:USUARIO_ID,:RUBRO_ID) ");
+  $consultaRubro->bindValue(":USUARIO_ID",$usuario->getId());
   $consultaRubro->bindValue(":RUBRO_ID", intval($usuario->getRubro()));
 
   $consultaRubro->execute();
 
-  $consultaZona = $db->prepare("INSERT into USUARIO_ZONA values(default,:USUARIO_ID,:ZONA_ID) ");
-  $consultaZona->bindValue(":USUARIO_ID",$id);
+  $consultaZona = $this->dbUsuarios->prepare("INSERT into USUARIO_ZONA values(default,:USUARIO_ID,:ZONA_ID) ");
+  $consultaZona->bindValue(":USUARIO_ID",$usuario->getId());
   $consultaZona->bindValue(":ZONA_ID", intval($usuario>getZona()));
 
-  $consultaZona->execute();
+  $consultaZona->execute(); */
+
+/* Queda resolver donde meter estas funciones  */
+
+  $consulta->execute();
 }
 
 public function traerUsuarios(){
