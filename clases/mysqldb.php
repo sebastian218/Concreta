@@ -27,7 +27,7 @@ public function __construct(){
 
 public function crearUsuario(Usuario $usuario) {
 
-  $consulta = $this->dbUsuarios->prepare("INSERT into USUARIOS (ID,USER_NAME,EMAIL,NOMBRE,APELLIDO,DNI,PASS) values (default, :user_name, :email , :nombre, :apellido,  :dni, :pass)");
+  $consulta = $this->dbUsuarios->prepare("INSERT into USUARIOS (ID,usuario,EMAIL,nombre,apellido,DNI,password) values (default, :user_name, :email , :nombre, :apellido,  :dni, :pass)");
   $consulta->bindValue(":user_name", $usuario->getUserName());
   $consulta->bindValue(":email", $usuario->getEmail());
   $consulta->bindValue(":nombre", $usuario->getNombre());
@@ -43,7 +43,7 @@ public function crearUsuario(Usuario $usuario) {
 
 public function crearUsuarioProfesional(Profesional $usuario) {
 
-  $consulta = $this->dbUsuarios->prepare("INSERT into USUARIOS (ID,USER_NAME,EMAIL,NOMBRE,APELLIDO,DNI,PASS) values (default, :user_name, :email , :nombre, :apellido,  :dni, :pass)");
+  $consulta = $this->dbUsuarios->prepare("INSERT into USUARIOS (ID,usuario,EMAIL,nombre,apellido,DNI,password) values (default, :user_name, :email , :nombre, :apellido,  :dni, :pass)");
   $consulta->bindValue(":user_name", $usuario->getUserName());
   $consulta->bindValue(":email", $usuario->getEmail());
   $consulta->bindValue(":nombre", $usuario->getNombre());
@@ -119,13 +119,19 @@ public function buscarPorID($id) {
 public function buscarPorUsuario($usuario) {
 
 
-  $consulta = $this->dbUsuarios->prepare("SELECT * FROM usuarios WHERE USER_NAME = :user");
+  $consulta = $this->dbUsuarios->prepare("SELECT * FROM usuarios WHERE usuario = :user");
 
   $consulta->bindValue(":user", $usuario);
 
   $consulta->execute();
 
   return $consulta->fetch(PDO::FETCH_ASSOC);
+
+}
+
+public function traerUsuarioLogueado() {
+
+  return   $this->buscarPorEmail($_SESSION["usuarioLogueado"]);
 
 }
 

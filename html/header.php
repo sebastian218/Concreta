@@ -1,9 +1,9 @@
 <?php
-require_once "funciones.php";
+require_once "init.php";
 
-if (estaLogueado()) {
-  $usuario = traerUsuarioLogueado();
-  $_SESSION["usuario"] = $usuario["USER_NAME"];
+if ($auth->estaLogueado()) {
+  $usuario = $db->traerUsuarioLogueado();
+  $_SESSION["usuario"] = $usuario->getUserName();
 
 }
  ?>
