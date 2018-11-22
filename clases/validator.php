@@ -94,8 +94,11 @@ class Validator {
       $errores["password"] = "Dejaste la pass vacía";
     }
     else {
+
       if ($usuario != null) {
-        if (password_verify($datos["password"], $usuario->getpassword()) == false) {
+        var_dump($usuario->getPassword(), $datos["password"]);
+
+        if (password_verify($datos["password"], $usuario->getPassword()) == false) {
           $errores["password"] = "Contraseña incorrecta";
         }
       }

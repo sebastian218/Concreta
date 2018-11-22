@@ -13,19 +13,23 @@ include_once("model.php");
 
     public function __construct(Array $datos) {
 
-   if (isset($datos["id"])) {
-       $this->id = $datos["id"];
-       $this->password = $datos["password"];
-   } else {
+      $this->userName = $datos["usuario"];
+      $this->nombre = $datos["nombre"];
+      $this->apellido = $datos["apellido"];
+      $this->email = $datos["email"];
 
-       $this->password =  password_hash($datos["password"],PASSWORD_DEFAULT);
-       $this->id = NULL;
-   }
-   $this->userName = $datos["usuario"];
-   $this->nombre = $datos["nombre"];
-   $this->apellido = $datos["apellido"];
-   $this->email = $datos["email"];
-   $this->password = $datos["password"];
+      if (isset($datos["ID"] )) {
+
+           $this->id = $datos["ID"];
+           $this->password = $datos["password"];
+
+       } else {
+           $this->password =  password_hash($datos["password"],PASSWORD_DEFAULT);
+
+           $this->id = NULL;
+//           var_dump($this);exit;
+       }
+
 
 }
 
