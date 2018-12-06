@@ -9,7 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script type="text/javascript" src="/js/concreta.js">
 
+    </script>
   </head>
   <body>
     <header class="header_completo">
@@ -29,9 +31,9 @@
  @endif
   </ul>
   <ul class="barra_ppal_1">
-    <li class="menu_contextual"><a class="botones_cambiar"href="#"><img class="hamburger"src="/img/Hamburger_icon.png" alt=""></a></li>
-    <li class="logo_nombre"><a class="botones_cambiar"href="/index"><img class="logo_tipo" src="/img/LOGO_FINAL.png" alt=""></a></li>
-    <li class="busqueda"><a class="botones_cambiar" href="#"><img class="lupa" src="/img/search-icon-png-21.png" alt=""></a></li>
+    <li class="menu_contextual"><a class="botones_cambiar"href="#"><img class="hamburger"src="/img_app/Hamburger_icon.png" alt=""></a></li>
+    <li class="logo_nombre"><a class="botones_cambiar"href="/index"><img class="logo_tipo" src="/img_app/LOGO_FINAL.png" alt=""></a></li>
+    <li class="busqueda"><a class="botones_cambiar" href="#"><img class="lupa" src="/img_app/search-icon-png-21.png" alt=""></a></li>
   </ul>
 </nav>
 </header>

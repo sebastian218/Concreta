@@ -9,11 +9,26 @@
     <p class="crea_perfil">Completá tu perfil y registrate en Concreta</p>
     </div>
 
-    <section>
+    <section class = "seleccionDePerfil">
       <div class="reg-container">
       <div class="Registro_cliente">
-
-        <form class="registracion_cliente borde_redondeado" action="/register" method="POST" enctype="multipart/form-data" >
+        <section class="elegir_perfil">
+<div class="elegir_perfil_cliente">
+ <img class="logo_perfil" src="/img_app/icono_cliente.png" alt="">
+   <div class="parrafo_descrip_perfil">
+ <p class="descrip">Quiero contactar profesionales y buscar servicios en mi área</p>
+   </div>
+ <a class="registrarme reg_prof"  > REGISTRARME </a>
+</div>
+<div class="elegir_perfil_profesional">
+ <img class="logo_perfil" src="/img_app/icono_constructor.png" alt="">
+ <div class="parrafo_descrip_perfil">
+   <p class="descrip">Quiero ofrecer servicios y recibir ofertas de trabajo</p>
+ </div>
+ <a class="registrarme reg_const", class="reg_const"  > CREAR MI PERFIL </a>
+</div>
+</section>
+        <form class="registracion_cliente borde_redondeado formulario" style="display:none" action="/register" method="POST" enctype="multipart/form-data" >
         @csrf
         <label for="usuario"> Usuario</label>
         @if ($errors->has("usuario"))
@@ -58,6 +73,7 @@
         <label for="password-confirm"> Confirmar contraseña </label>
         <input  class="input-form" placeholder="" type="password" name="password_confirmation" id="password-confirm" value="" required>
 
+          <input id="esTrabajador" type="number" class="oculto"  name="esTrabajador" value="">
 
        <div class="enviar_cancelar">
          <button class="boton envregister"  type="reset" name="button">Cancelar</button>
