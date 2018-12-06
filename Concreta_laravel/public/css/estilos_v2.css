@@ -154,7 +154,7 @@ header.header-home {
   background-color: rgba(247, 220, 111);
 }
 .h1-label {
-  background-image: url(img_app/construction-grinder-man-1216544.jpg);
+  background-image: url(/img_app/construction-grinder-man-1216544.jpg);
   background-size: cover;
   height: 68vh;
   display: flex;
@@ -390,7 +390,7 @@ ul li a {
 display: flex;
 flex-flow: column;
 width: 100%;
-background-image:url(../img/Banner_pintura_pared.jpg);
+background-image:url(/img_app/Banner_pintura_pared.jpg);
 background-size: cover;
 background-position-y:15%;
 height: 50vh;

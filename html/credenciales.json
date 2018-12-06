@@ -1,0 +1,5 @@
+{
+  "usuario":"root",
+  "password":"root",
+  "dsn":"mysql:dbname=CONCRETA;host=localhost;port:8889"
+}
