@@ -64,12 +64,13 @@
           @endif
         </div>
         <div class="zon">
+          <p class="px16">Área de trabajo:</p>
           <p class="px14 texto_gris">
           @foreach ($zonas as $zona)
                {{$zona->NOMBRE_ZONA . " "}}
           @endforeach
           </p>
-          
+
         </div>
 
       </div>

@@ -111,5 +111,14 @@ class User extends Authenticatable
       return  $cant;
     }
 
+    public function guardarAvatar($avatar){
+
+      $path = $avatar->store('public');
+      $nombreArchivo = basename($path);
+
+      $this->avatar = $nombreArchivo;
+      $this->save();
+    }
+
 
 }

@@ -38,7 +38,10 @@ class UsuariosController extends Controller
       //RUBRO
       //Foto
       //trabajos realizados
-      return view('perfil_usuario', compact('usuario'));
+      $zonas = $usuario->zonas;
+      //RUBRO
+      $rubros = $usuario->rubros;
+      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
     }
 
     public function guardarCambios(Request $req) {
@@ -47,15 +50,14 @@ class UsuariosController extends Controller
       //Storage::putFile('avatar', new File('/storage/app/public'));
 // Manually specify a file name...
 //Storage::putFileAs('avatar', new File('/storage/app/public'), $id'.jpg');
-      $path = $req->file('avatar')->store('public');
-      $nombreArchivo = basename($path);
       $id = $req->identificador;
       $usuario = User::findOrFail($id);
-      $usuario->avatar = $nombreArchivo;
-      $usuario->save();
+      $zonas = $usuario->zonas();
+      $rubros = $usuario->rubros();
 
-
-      return view('perfil_usuario', compact('usuario'));
+      $avatar = $req->file('avatar');
+      $usuario->guardarAvatar($avatar);
+      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
     }
 
 }
