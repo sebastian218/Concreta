@@ -14,12 +14,6 @@
 
   <body>
 
-    @if(Illuminate\Support\Facades\Auth::check())
-      Está logueado/traer usuario
-    @else
-      No está logueado
-    @endif
-
     <header class="header_completo">
       <nav class="barra_principal">
           <ul class="barra_ppal_2">

@@ -4,7 +4,6 @@ require_once "init.php";
 if ($auth->estaLogueado()) {
   $usuario = $db->traerUsuarioLogueado();
   $_SESSION["usuario"] = $usuario->getUserName();
-
 }
  ?>
 <header class="header_completo">

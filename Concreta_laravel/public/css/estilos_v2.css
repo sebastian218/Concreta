@@ -15,7 +15,126 @@ body {
 }
 a {
 text-decoration: none;
+color: black;
 }
+.flex{
+  display: flex;
+}
+.column{
+  flex-direction: column;
+}
+.overflowNo{
+  overflow: hidden;
+}
+.align_center{
+  align-items: center;
+}
+.w90{
+  width:90%;
+}
+.h5{
+  height:5vh;
+}
+.h10{
+  height:10vh;
+}
+.h15{
+  height: 15vh;
+}
+.center{
+  margin:auto;
+}
+.t50{
+  background-color: rgba(255,255,255,0.5);
+}
+.blanco{
+  background-color: rgb(255,255,255);
+}
+.icono{
+  height:50%;
+  margin:auto;
+}
+.texto_gris{
+  color:rgb(111,111,111);
+}
+.px12{
+    font-size: 12px;
+}
+.px14{
+  font-size: 14px;
+}
+.px16{
+  font-size: 16px;
+}
+.px20{
+  font-size: 20px;
+}
+.oculto{
+display: none;
+}
+
+.line_h_14{
+  line-height: 14px;
+}
+.margin0{
+  margin: 0;
+}
+.marginauto{
+  margin: auto;
+}
+.margin1{
+  margin:1vh;
+}
+.margin3vh{
+  margin-top: 3vh;
+}
+.max_min_200px{
+  max-height: 200px;
+  max-width: 200px;
+}
+.container{
+  width:100%;
+  display: flex;
+}
+.banner_rubro{
+  width: 100%;
+  background-color: gray;
+  height: 30vh;
+}
+.lateral_izq{
+  width:25%;
+  min-height: 600px;
+}
+.lateral_der{
+  width:25%;
+  background-color: red;
+}
+.cuerpo_central{
+  width: 50%;
+}
+.foto_nombre{
+  width:40%;
+}
+.rubro_zona{
+  width:60%;
+}
+.pic_perfil{
+  width: 150px;
+  height: 150px;
+  margin-top: 15px;
+}
+.fotos_perf{
+height: 150px;
+width: 150px;
+  align:center;
+}
+.estrellitas{
+  height:60px;
+}
+.cambiar_foto{
+  flex-shrink: 0.5;
+}
+/*fin nuevos*/
 
 .error {
   border: 1px solid red;

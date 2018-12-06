@@ -27,10 +27,11 @@ Route::get('/perfil', function() {
   return view('perfil_usuario');
 });
 
-Route::get('/perfil/ver/{id}', function($id) {
-  return view('perfil_usuario', compact('id'));
-});
-Route::get("/perfil/log/{id}", "UsuariosController@show");
+Route::get('/perfil/log/{id}', "UsuariosController@home");
+
+Route::post('/perfil/log/{id}', "UsuariosController@guardarCambios");
+
+Route::get("/perfil/ver/{id}", "UsuariosController@mostrar");
 
 Route::get('/listado', "UsuariosController@listadoTodos");
 
@@ -41,3 +42,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/plantilla', function() {
   return view('plantilla');
 });
+
+//Route::post('/guardarAvatar','UsuariosController@guardarAvatar');
