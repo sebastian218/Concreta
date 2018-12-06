@@ -61,8 +61,6 @@
           <p class="px20">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
           @if ($usuario->rubroSecundario() != null)
             <p class="px14 texto_gris">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
-          @else
-          form-Agregar rubro secundario
           @endif
         </div>
         <div class="zon">
@@ -71,7 +69,7 @@
                {{$zona->NOMBRE_ZONA . " "}}
           @endforeach
           </p>
-          <p>form-agregar zona</p>
+          
         </div>
 
       </div>
