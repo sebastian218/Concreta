@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -37,9 +37,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-
         $this->middleware('guest');
-
     }
 
     /**
@@ -48,19 +46,14 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-
-
-
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nombre' => ['required', 'string', 'max:255'],
+            'NOMBRE' => ['required', 'string', 'max:255'],
+            'APELLIDO' => ['required', 'string', 'max:255'],
+            'USER_NAME' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            "apellido" => ['required', 'string', 'max:255'],
-            "usuario" => ['required', 'string', 'max:255'],
-          
-
         ]);
     }
 
@@ -72,22 +65,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
-      //if ($data['typeuser'] == 2) {
-      //  return User::create([
-      //      'name' => $data['name'],
-      //      'email' => $data['email'],
-      //      'lastName'=>$data['lastName'],
-      //      'password' => Hash::make($data['password'])
-     //    ]);
-
         return User::create([
-           'USER_NAME' => $data['usuario'],
-            'NOMBRE' => $data['nombre'],
+            'USER_NAME' => $data['USER_NAME'],
+            'NOMBRE' => $data['NOMBRE'],
+            'APELLIDO' => $data['APELLIDO'],
             'email' => $data['email'],
-            'APELLIDO'=>$data['apellido'],
             'password' => Hash::make($data['password']),
-            'esTrabajador'=>$data["esTrabajador"]
+
         ]);
     }
 }

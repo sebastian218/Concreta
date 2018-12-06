@@ -1,105 +1,84 @@
-
 @extends('plantilla')
 
+
 @section('contenido')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+  <div class="container_formularios_gral">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-                        <div class="form-group row">
-                            <label for="NOMBRE" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
+    <div class="banner_perfiles">
 
-                            <div class="col-md-6">
-                                <input id="NOMBRE" type="text" class="form-control{{ $errors->has('NOMBRE') ? ' is-invalid' : '' }}" name="NOMBRE" value="{{ old('NOMBRE') }}" required autofocus>
-
-                                @if ($errors->has('NOMBRE'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('NOMBRE') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="APELLIDO" class="col-md-4 col-form-label text-md-right">{{ __('Apellido') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="APELLIDO" type="text" class="form-control{{ $errors->has('APELLIDO') ? ' is-invalid' : '' }}" name="APELLIDO" value="{{ old('APELLIDO') }}" required autofocus>
-
-                                @if ($errors->has('APELLIDO'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('APELLIDO') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="USER_NAME" class="col-md-4 col-form-label text-md-right">{{ __('Nombre de Usuario') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="USER_NAME" type="text" class="form-control{{ $errors->has('USER_NAME') ? ' is-invalid' : '' }}" name="USER_NAME" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('USER_NAME'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar Contraseña') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <p class="crea_perfil">Completá tu perfil y registrate en Concreta</p>
     </div>
+
+    <section class = "seleccionDePerfil">
+      <div class="reg-container">
+      <div class="Registro_cliente">
+        <section class="elegir_perfil">
+<div class="elegir_perfil_cliente">
+ <img class="logo_perfil" src="/img_app/icono_cliente.png" alt="">
+   <div class="parrafo_descrip_perfil">
+ <p class="descrip">Quiero contactar profesionales y buscar servicios en mi área</p>
+   </div>
+ <a class="registrarme reg_prof"  > REGISTRARME </a>
 </div>
+<div class="elegir_perfil_profesional">
+ <img class="logo_perfil" src="/img_app/icono_constructor.png" alt="">
+ <div class="parrafo_descrip_perfil">
+   <p class="descrip">Quiero ofrecer servicios y recibir ofertas de trabajo</p>
+ </div>
+ <a class="registrarme reg_const", class="reg_const"  > CREAR MI PERFIL </a>
+</div>
+</section>
+        <form class="registracion_cliente borde_redondeado formulario" style="display:none" action="/register" method="POST" enctype="multipart/form-data" >
+        @csrf
+        <label for="usuario"> Usuario</label>
+        @if ($errors->has("usuario"))
+          <input  class="input-form error" placeholder="" type="text" name="usuario" id="usuario" value="">
+          <p class="p-error" >{{$errors->first("usuario")}}</p>
+         @else
+            <input  class="input-form" placeholder="" type="text" name="usuario" id="usuario" value="{{old("usuario")}}">
+        @endif
+
+        <label for="nombre"> Nombre</label>
+        @if ($errors->has("nombre"))
+          <input  class="input-form error" placeholder="" type="text" name="nombre" id="nombre" value="">
+          <p class="p-error" >{{$errors->first("nombre")}}></p>
+        @else
+            <input  class="input-form" placeholder="" type="text" name="nombre" id="nombre" value="{{old("nombre")}}">
+        @endif
+
+        <label for="apellido"> Apellido </label>
+        @if ($errors->has("apellido"))
+          <input  class="input-form error" placeholder="" type="text" name="apellido" id="apellido" value="">
+          <p class="p-error" >{{$errors->first("apellido")}}</p>
+        @else
+            <input  class="input-form" placeholder="" type="text" name="apellido" id="apellido" value="{{old("apellido")}}">
+        @endif
+        <label for="email"> Email </label>
+         @if ($errors->has("email"))
+          <input  class="input-form error" placeholder="" type="text" name="email" id="email" value="">
+          <p class="p-error" >{{$errors->first("email")}}</p>
+        @else
+            <input  class="input-form" placeholder="" type="text" name="email" id="email" value="{{old("email")}}">
+        @endif
+
+
+        <label for="password"> Contraseña </label>
+        @if ($errors->has("password"))
+          <input  class="input-form error" placeholder="" type="password" name="password" id="password" value="">
+          <p class="p-error" >{{$errors->first("password")}}</p>
+        @else
+            <input  class="input-form" placeholder="" type="password" name="password" id="password" value="">
+        @endif
+
+        <label for="password-confirm"> Confirmar contraseña </label>
+        <input  class="input-form" placeholder="" type="password" name="password_confirmation" id="password-confirm" value="" required>
+
+          <input id="esTrabajador" type="number" class="oculto"  name="esTrabajador" value="">
+
+       <div class="enviar_cancelar">
+         <button class="boton envregister"  type="reset" name="button">Cancelar</button>
+         <button class="boton enviar"  type="submit" name="button">Registrarme</button>
+      </div>
+
+    </form>
 @endsection
