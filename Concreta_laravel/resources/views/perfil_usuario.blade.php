@@ -38,8 +38,7 @@
          @endif
        </div>
 
-       <p class="txt_centrado margin1">{{$usuario->NOMBRE}}</p>
-       <p class="txt_centrado margin1">{{$usuario->APELLIDO}}</p>
+       <p class="txt_centrado margin1">{{$usuario->NOMBRE}} {{$usuario->APELLIDO}}</p>
 
        <div class="calificaciones flex column align_center">
          @if ($usuario->cantCalif() > 0)

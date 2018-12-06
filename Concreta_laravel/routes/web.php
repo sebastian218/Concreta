@@ -20,6 +20,8 @@ Route::get('/index', function(){
      return view('index');
 });
 
+
+
 Route::get('/pruebas', function() {
   if(DB::connection()->getDatabaseName())
    {

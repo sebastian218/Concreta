@@ -13,7 +13,7 @@ window.addEventListener("load",function(){
        sectionTipoPerfil.style.display = "none";
 
 
-});
+     });
 botonCliente.addEventListener("click", function(){
 
    document.getElementById('esTrabajador').setAttribute('value', 0);
@@ -21,7 +21,7 @@ botonCliente.addEventListener("click", function(){
    sectionTipoPerfil.style.display = "none";
 
 
-});
+    });
 
 
 
