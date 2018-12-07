@@ -52,12 +52,13 @@ class UsuariosController extends Controller
 //Storage::putFileAs('avatar', new File('/storage/app/public'), $id'.jpg');
       $id = $req->identificador;
       $usuario = User::findOrFail($id);
-      $zonas = $usuario->zonas();
-      $rubros = $usuario->rubros();
+      $zonas = $usuario->zonas;
+      $rubros = $usuario->rubros;
 
       $avatar = $req->file('avatar');
       $usuario->guardarAvatar($avatar);
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
     }
+
 
 }

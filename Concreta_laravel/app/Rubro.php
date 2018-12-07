@@ -5,10 +5,12 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Rubro;
 use App\Especialidade;
+use App\User;
 
 class Rubro extends Model
 {
     //
+    public $primaryKey = 'ID';
     public $timestamps = false;
     public $guarded = [];
 

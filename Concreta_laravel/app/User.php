@@ -80,7 +80,7 @@ class User extends Authenticatable
     }
 
     public function calificaciones() {
-      return $this->hasMany('App\Calificacione', 'calificado');
+      return $this->hasMany('App\Calificacione', 'id_calificado');
     }
 
     public function promedio() {
@@ -90,7 +90,8 @@ class User extends Authenticatable
         $numeros[] = $calificacion['calificacion'];
       }
       $promedio = array_sum($numeros) / count($numeros);
-      return  $promedio;
+      $promedioRound = round($promedio, 2);
+      return  $promedioRound;
     }
 
     public function promedioInt() {
@@ -116,6 +117,13 @@ class User extends Authenticatable
 
       $this->avatar = $nombreArchivo;
       $this->save();
+    }
+
+    public function esTrabajador(){
+      if ($this->esTrabajador == 0) {
+        return true;
+      }
+      else {return false;}
     }
 
 

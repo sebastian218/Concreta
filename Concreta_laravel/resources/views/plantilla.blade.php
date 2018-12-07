@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en" dir="ltr">
 
   <head>
@@ -12,6 +13,7 @@
     <script type="text/javascript" src="/js/concreta.js">
 
     </script>
+
   </head>
   <body>
     <header class="header_completo">

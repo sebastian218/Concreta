@@ -57,6 +57,14 @@ color: black;
 .texto_gris{
   color:rgb(111,111,111);
 }
+label.pointer{
+  cursor: pointer;
+}
+#subir_foto{
+  opacity: 0;
+  z-index: -1;
+  position:absolute;
+}
 .px12{
     font-size: 12px;
 }
@@ -68,6 +76,9 @@ color: black;
 }
 .px20{
   font-size: 20px;
+}
+.bold{
+  font-weight: bold;:
 }
 .oculto{
 display: none;

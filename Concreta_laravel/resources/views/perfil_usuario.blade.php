@@ -1,3 +1,11 @@
+@php
+  use App\User;
+  use App\Mensaje;
+  use App\Rubro;
+  use App\Calificacione;
+  use App\Especialidade;
+  use App\Zona;
+@endphp
 
 @extends('plantilla')
 
@@ -28,6 +36,9 @@
 
   <div class="cuerpo_central">
 
+     <form class="" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
+     {{ csrf_field() }}
+     <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
    <div class="datos flex">
      <div class="foto_nombre flex column align_center t50">
        <div class="pic_perfil overflowNo">
@@ -37,6 +48,8 @@
           <img class="max_min_200px" src="/storage/{{$usuario->avatar}}" alt="">
          @endif
        </div>
+       <label class="px12 t50" for="subir_foto">Cambiar Foto de Perfil</label>
+       <input type="file" name="avatar" value="" id="subir_foto">
 
        <p class="txt_centrado margin1">{{$usuario->NOMBRE}} {{$usuario->APELLIDO}}</p>
 
@@ -55,26 +68,40 @@
        </div>
       </div>
 
+
+
       <div class="rubro_zona t50 flex column">
+
+
+       @if ($usuario->esTrabajador == true)
         <div class="rub">
-          <p class="px20">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
+          <p class="px16 texto_gris margin1">Rubro:</p>
+          <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
           @if ($usuario->rubroSecundario() != null)
-            <p class="px14 texto_gris">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
+            <p class="px14 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
           @endif
         </div>
-        <div class="zon">
-          <p class="px16">Área de trabajo:</p>
-          <p class="px14 texto_gris">
-          @foreach ($zonas as $zona)
-               {{$zona->NOMBRE_ZONA . " "}}
-          @endforeach
-          </p>
 
+        <div class="especialidades">
+          @foreach ($usuario->rubroPrincipal()->especialidades as $especifico)
+            <p class="margin1">{{$especifico->nombre()}}</p>
+          @endforeach
         </div>
+
+        <div class="zon">
+          <p class="px14 texto_gris margin1">Área de trabajo:</p>
+          @foreach ($zonas as $zona)
+            <p class="px16 margin1"> {{$zona->NOMBRE_ZONA . " "}}</p>
+          @endforeach
+        </div>
+
+      @endif
 
       </div>
 
    </div>
+   <button class="margin1" type="submit" name="button">Guardar Cambios</button>
+    </form>
 
    <div class="feed">
 
