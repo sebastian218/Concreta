@@ -77,10 +77,31 @@
         <div class="rub">
           <p class="px16 texto_gris margin1">Rubro:</p>
           <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
+
+          <label class="seleccion_rub_zon" for="RUBRO_P"> RUBRO PRINCIPAL </label>
+            <select class="select" name="RUBRO_P">
+              <option value="1">Albañería</option>
+              <option value="2">Instalaciones de Gas</option>
+              <option value="3">Instalaciones Eléctricas</option>
+              <option value="4">Pisos y Revestimientos</option>
+              <option value="5">Estructuras</option>
+              <option value="6">Trasporte, Carga y Descarga</option>
+            </select>
+
           @if ($usuario->rubroSecundario() != null)
             <p class="px14 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
           @endif
         </div>
+
+        <label class="seleccion_rub_zon" for="RUBRO_S"> RUBRO SECUNDARIO </label>
+          <select class="select" name="RUBRO_S">
+            <option value="1">Albañería</option>
+            <option value="2">Instalaciones de Gas</option>
+            <option value="3">Instalaciones Eléctricas</option>
+            <option value="4">Pisos y Revestimientos</option>
+            <option value="5">Estructuras</option>
+            <option value="6">Trasporte, Carga y Descarga</option>
+          </select>
 
         <div class="especialidades">
           @foreach ($usuario->rubroPrincipal()->especialidades as $especifico)
@@ -94,6 +115,14 @@
             <p class="px16 margin1"> {{$zona->NOMBRE_ZONA . " "}}</p>
           @endforeach
         </div>
+        <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
+          <div class="zona">
+            <input type="checkbox" name="zona" value="ZN">Zona Norte<br>
+            <input type="checkbox" name="zona" value="ZS">Zona Sur<br>
+            <input type="checkbox" name="zona" value="ZE">Zona Este<br>
+            <input type="checkbox" name="zona" value="ZO">Zona Oeste<br>
+            <input type="checkbox" name="zona" value="ZC">Zona Centro<br>
+          </div>
 
       @endif
 

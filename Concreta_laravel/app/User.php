@@ -58,16 +58,13 @@ class User extends Authenticatable
         if ($rubro->pivot->orden == 2) {
           $secundario = $rubro;
         }
-        else {
-          return null;
-        }
+        else {$secundario = null;}
       }
       return $secundario;
     }
 
 
     public function mensajesEnviados() {
-
       return $this->hasMany('App\Mensaje', 'USER_ID_1');
     }
 

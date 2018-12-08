@@ -4,6 +4,8 @@ window.addEventListener("load",function(){
     var sectionTipoPerfil = document.querySelector(".elegir_perfil");
     var botonProfesional = document.querySelector('.elegir_perfil_profesional');
     var botonCliente = document.querySelector('.elegir_perfil_cliente');
+    var onHoverShow = document.querySelector('.onHoverShow');
+    var mostrarRubro = document.querySelector('.mostrarRubro');
 
 
     botonProfesional.addEventListener("click", function(){
@@ -23,7 +25,10 @@ botonCliente.addEventListener("click", function(){
 
     });
 
+mostrarRubro.addEventListener("click", function(){
 
+    document.querySelector('.form_rubro').style.display = "block";
+});
 
 
 
