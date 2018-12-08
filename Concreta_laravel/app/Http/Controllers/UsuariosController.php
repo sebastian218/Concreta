@@ -75,5 +75,4 @@ class UsuariosController extends Controller
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
     }
 
-
 }
