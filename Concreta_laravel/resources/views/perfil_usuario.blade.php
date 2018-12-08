@@ -75,17 +75,26 @@
 
        @if ($usuario->esTrabajador == true)
         <div class="rub">
-          <p class="px16 texto_gris margin1">Rubro:</p>
-          <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
 
           <label class="seleccion_rub_zon" for="RUBRO_P"> RUBRO PRINCIPAL </label>
+          @if ($usuario->rubroPrincipal() != null)
+            <div class="flex flexStart">
+             <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
+             <img class="iconoPegado margin1" src="/img_app/cambiar_icon.png" alt="">
+            </div>
+          @else
+             <p>Elegí un rubro:</p>
+          @endif
+          @php
+            $id_r = $usuario->rubroPrincipal()->ID;
+          @endphp
             <select class="select" name="RUBRO_P">
-              <option value="1">Albañería</option>
-              <option value="2">Instalaciones de Gas</option>
-              <option value="3">Instalaciones Eléctricas</option>
-              <option value="4">Pisos y Revestimientos</option>
-              <option value="5">Estructuras</option>
-              <option value="6">Trasporte, Carga y Descarga</option>
+              <option value="1" {{$id_r == 1 ? 'selected' : '' }}>>Albañería</option>
+              <option value="2" {{$id_r == 2 ? 'selected' : '' }}>Instalaciones de Gas</option>
+              <option value="3" {{$id_r == 3 ? 'selected' : '' }}>Instalaciones Eléctricas</option>
+              <option value="4" {{$id_r == 4 ? 'selected' : '' }}>Pisos y Revestimientos</option>
+              <option value="5" {{$id_r == 5 ? 'selected' : '' }}>Estructuras</option>
+              <option value="6" {{$id_r == 6 ? 'selected' : '' }}>Trasporte, Carga y Descarga</option>
             </select>
 
           @if ($usuario->rubroSecundario() != null)
@@ -123,6 +132,9 @@
             <input type="checkbox" name="zona" value="ZO">Zona Oeste<br>
             <input type="checkbox" name="zona" value="ZC">Zona Centro<br>
           </div>
+
+          <label for="descripcion">Descripción</label>
+          <input type="text" name="" value="">
 
       @endif
 

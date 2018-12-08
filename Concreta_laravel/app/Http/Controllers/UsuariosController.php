@@ -61,16 +61,12 @@ class UsuariosController extends Controller
       $usuario->guardarAvatar($avatar);
        }
 
-      if ($req->RUBRO_P != null || $req->RUBRO_S != null){
+      //Guardar Rubros
+      if ($req->RUBRO_P != null || $req->RUBRO_S != null) {
         $id_rubro_p = $req->RUBRO_P;
         $id_rubro_s = $req->RUBRO_S;
         $usuario->rubros()->sync([$id_rubro_p => ['orden' => '1'], $id_rubro_s => ['orden'=>'2']]);
       }
-
-      //if ($req->RUBRO_S != null){
-        //$id_rubro = $req->RUBRO_S;
-        //$usuario->rubros()->sync([$id_rubro => ['orden' => '2'], 1]);
-      //}
 
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
     }

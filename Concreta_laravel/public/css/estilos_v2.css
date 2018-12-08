@@ -20,6 +20,9 @@ color: black;
 .flex{
   display: flex;
 }
+.flexStart{
+  align-items:flex-start;
+}
 .column{
   flex-direction: column;
 }
@@ -52,7 +55,18 @@ color: black;
 }
 .icono{
   height:50%;
+  max-height: 20px;
   margin:auto;
+}
+
+.iconoPegado{
+  height:50%;
+  max-height: 20px;
+  margin-left: 3px;
+}
+
+.iconoPegado:hover{
+  background-color: white;
 }
 .texto_gris{
   color:rgb(111,111,111);
