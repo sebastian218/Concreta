@@ -7,6 +7,13 @@ window.addEventListener("load",function(){
     var onHoverShow = document.querySelector('.onHoverShow');
     var mostrarRubroP = document.getElementById('mostrarRubroP');
     var mostrarRubroS = document.getElementById('mostrarRubroS');
+    var agregarRubroS = document.getElementById('agregarRubroS');
+
+    if (agregarRubroS) {
+      agregarRubroS.addEventListener("click", function(){
+          document.getElementById('form_rubro_S').classList.remove('oculto');
+      });
+    };
 
     if (mostrarRubroS){
     mostrarRubroS.addEventListener("click", function(){
@@ -16,7 +23,7 @@ window.addEventListener("load",function(){
 
     if (mostrarRubroP) {
       mostrarRubroP.addEventListener("click", function(){
-          document.getElementById('form_rubro_P').setAttribute('class', "margin1");
+          document.getElementById('form_rubro_P').classList.remove('oculto');
       });
     };
 

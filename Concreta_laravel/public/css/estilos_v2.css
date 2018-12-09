@@ -65,7 +65,7 @@ color: black;
   margin-left: 3px;
 }
 
-.iconoPegado:hover{
+.hoverBlanco:hover{
   background-color: white;
 }
 .texto_gris{
@@ -81,6 +81,8 @@ label.pointer{
 }
 .px12{
     font-size: 12px;
+    min-height: 3vh;
+    max-height: 4vh;
 }
 .px14{
   font-size: 14px;
@@ -92,7 +94,10 @@ label.pointer{
   font-size: 20px;
 }
 .bold{
-  font-weight: bold;:
+  font-weight: bold;
+}
+.boldHover:hover{
+  font-weight: bold;
 }
 .oculto{
 display: none;
@@ -149,8 +154,10 @@ display: none;
   margin-top: 15px;
 }
 .fotos_perf{
-height: 150px;
-width: 150px;
+height: 200px;
+width: 200px;
+min-width: 150px;
+min-height: 150px;
   align:center;
 }
 .estrellitas{

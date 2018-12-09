@@ -11,6 +11,12 @@
   if ($usuario->rubroPrincipal() == null){
     $id_r = 0;
   }
+  if ($usuario->rubroSecundario() != null){
+    $id_rs = $usuario->rubroSecundario()->ID;
+  }
+  if ($usuario->rubroSecundario() == null){
+    $id_rs = 0;
+  }
 
 @endphp
 
@@ -87,7 +93,7 @@
           @if ($usuario->rubroPrincipal() != null)
             <div class="flex flexStart">
              <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
-             <img id="mostrarRubroP" class="iconoPegado margin1" src="/img_app/cambiar_icon.png" alt="">
+             <img id="mostrarRubroP" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
             </div>
           @else
              <p>Elegí un rubro:</p>
@@ -113,8 +119,12 @@
         @if ($usuario->rubroSecundario() != null)
           <div class="flex flexStart">
           <p class="px14 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
-          <img id="mostrarRubroS" class="iconoPegado margin1" src="/img_app/cambiar_icon.png" alt="">
+          <img id="mostrarRubroS" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
           </div>
+        @endif
+
+        @if ($usuario->rubroSecundario() == null)
+          <p class="px 12 texto_gris boldHover" id="agregarRubroS">Agregar rubro secundario</p>
         @endif
 
           <div id="form_rubro_S" class="oculto">
@@ -122,12 +132,12 @@
         <label class="seleccion_rub_zon" for="RUBRO_S"> RUBRO SECUNDARIO </label>
           <select class="select" name="RUBRO_S">
             <option value="0">Elegir rubro secundario</option>
-            <option value="1">Albañería</option>
-            <option value="2">Instalaciones de Gas</option>
-            <option value="3">Instalaciones Eléctricas</option>
-            <option value="4">Pisos y Revestimientos</option>
-            <option value="5">Estructuras</option>
-            <option value="6">Trasporte, Carga y Descarga</option>
+            <option value="1" {{$id_rs == 1 ? 'selected' : '' }}>Albañería</option>
+            <option value="2" {{$id_rs == 2 ? 'selected' : '' }}>Instalaciones de Gas</option>
+            <option value="3" {{$id_rs == 3 ? 'selected' : '' }}>Instalaciones Eléctricas</option>
+            <option value="4" {{$id_rs == 4 ? 'selected' : '' }}>Pisos y Revestimientos</option>
+            <option value="5" {{$id_rs == 5 ? 'selected' : '' }}>Estructuras</option>
+            <option value="6" {{$id_rs == 6 ? 'selected' : '' }}>Trasporte, Carga y Descarga</option>
           </select>
 
           </div>
