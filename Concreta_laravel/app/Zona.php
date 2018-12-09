@@ -14,4 +14,8 @@ class Zona extends Model
 
       return $this->belongsToMany("App\User", "usuario_zona", "ZONA_ID", "USUARIO_ID");
     }
+
+    public function todas(){
+      return Zona::all();
+    }
 }

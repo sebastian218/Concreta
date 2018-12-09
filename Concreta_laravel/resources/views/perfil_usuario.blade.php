@@ -17,7 +17,7 @@
   if ($usuario->rubroSecundario() == null){
     $id_rs = 0;
   }
-
+  $zonasTodas = App\Zona::all();
 @endphp
 
 @extends('plantilla')
@@ -89,7 +89,7 @@
        @if ($usuario->esTrabajador == true)
         <div class="rub">
 
-          <label class="seleccion_rub_zon" for="RUBRO_P"> RUBRO PRINCIPAL </label>
+          <label class="seleccion_rub_zon" for="RUBRO_P"></label>
           @if ($usuario->rubroPrincipal() != null)
             <div class="flex flexStart">
              <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
@@ -118,7 +118,7 @@
 
         @if ($usuario->rubroSecundario() != null)
           <div class="flex flexStart">
-          <p class="px14 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
+          <p class="px16 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
           <img id="mostrarRubroS" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
           </div>
         @endif
@@ -129,7 +129,7 @@
 
           <div id="form_rubro_S" class="oculto">
 
-        <label class="seleccion_rub_zon" for="RUBRO_S"> RUBRO SECUNDARIO </label>
+        <label class="seleccion_rub_zon" for="RUBRO_S"></label>
           <select class="select" name="RUBRO_S">
             <option value="0">Elegir rubro secundario</option>
             <option value="1" {{$id_rs == 1 ? 'selected' : '' }}>Albañería</option>
@@ -151,22 +151,29 @@
         @endif
 
         <div class="zon">
-          <p class="px14 texto_gris margin1">Área de trabajo:</p>
+
+          <div class="flex flexStart">
+          <p class="px14 margin1">Zona de trabajo:</p>
+          <img id="mostrarZonas" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+          </div>
+
           @foreach ($zonas as $zona)
             <p class="px16 margin1"> {{$zona->NOMBRE_ZONA . " "}}</p>
           @endforeach
-        </div>
-        <label class="seleccion_rub_zon" for=""> ZONA DE TRABAJO </label>
-          <div class="zona">
-            <input type="checkbox" name="zona" value="ZN">Zona Norte<br>
-            <input type="checkbox" name="zona" value="ZS">Zona Sur<br>
-            <input type="checkbox" name="zona" value="ZE">Zona Este<br>
-            <input type="checkbox" name="zona" value="ZO">Zona Oeste<br>
-            <input type="checkbox" name="zona" value="ZC">Zona Centro<br>
-          </div>
 
+        </div>
+        <label class="seleccion_rub_zon" for=""></label>
+          <div class="zona">
+          @foreach ($zonasTodas as $zon)
+            
+            <input class="zona_m" type="checkbox" name="zona" value="{{$zon->ID}}">{{$zon->NOMBRE_ZONA}}<br>
+          @endforeach
+        </div>
+
+        <div class="">
           <label for="descripcion">Descripción</label>
-          <input type="text" name="" value="">
+          <textarea name="descripcion" rows="8" cols="80"></textarea>
+       </div>
 
       @endif
 

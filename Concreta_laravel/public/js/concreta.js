@@ -8,6 +8,13 @@ window.addEventListener("load",function(){
     var mostrarRubroP = document.getElementById('mostrarRubroP');
     var mostrarRubroS = document.getElementById('mostrarRubroS');
     var agregarRubroS = document.getElementById('agregarRubroS');
+    var mostrarZonas = document.getElementById('mostrarZonas');
+
+    if (mostrarZonas) {
+      mostrarZonas.addEventListener("click", function(){
+          document.querySelector('zona_m').classList.remove('oculto');
+      });
+    };
 
     if (agregarRubroS) {
       agregarRubroS.addEventListener("click", function(){

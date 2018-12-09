@@ -118,6 +118,9 @@ display: none;
 .margin3vh{
   margin-top: 3vh;
 }
+.textarea{
+  height: 10vh;
+}
 .max_min_200px{
   max-height: 200px;
   max-width: 200px;
