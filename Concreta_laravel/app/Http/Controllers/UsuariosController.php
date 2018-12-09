@@ -62,10 +62,15 @@ class UsuariosController extends Controller
        }
 
       //Guardar Rubros
-      if ($req->RUBRO_P != null || $req->RUBRO_S != null) {
+      if ($req->RUBRO_S != 0) {
         $id_rubro_p = $req->RUBRO_P;
         $id_rubro_s = $req->RUBRO_S;
         $usuario->rubros()->sync([$id_rubro_p => ['orden' => '1'], $id_rubro_s => ['orden'=>'2']]);
+      }
+
+      if ($req->RUBRO_S == 0) {
+        $id_rubro_p = $req->RUBRO_P;
+        $usuario->rubros()->sync([$id_rubro_p => ['orden' => '1']]);
       }
 
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));

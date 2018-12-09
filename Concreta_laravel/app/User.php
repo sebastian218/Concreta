@@ -44,6 +44,7 @@ class User extends Authenticatable
 
     public function rubroPrincipal() {
       $rubros = $this->rubros;
+      $principal = null;
       foreach ($rubros as $rubro) {
         if ($rubro->pivot->orden == 1) {
           $principal = $rubro;
@@ -54,11 +55,11 @@ class User extends Authenticatable
 
     public function rubroSecundario() {
       $rubros = $this->rubros;
+      $secundario = null;
       foreach ($rubros as $rubro) {
         if ($rubro->pivot->orden == 2) {
           $secundario = $rubro;
         }
-        else {$secundario = null;}
       }
       return $secundario;
     }

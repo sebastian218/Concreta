@@ -5,30 +5,40 @@ window.addEventListener("load",function(){
     var botonProfesional = document.querySelector('.elegir_perfil_profesional');
     var botonCliente = document.querySelector('.elegir_perfil_cliente');
     var onHoverShow = document.querySelector('.onHoverShow');
-    var mostrarRubro = document.querySelector('.mostrarRubro');
+    var mostrarRubroP = document.getElementById('mostrarRubroP');
+    var mostrarRubroS = document.getElementById('mostrarRubroS');
 
-
-    botonProfesional.addEventListener("click", function(){
-
-       document.getElementById('esTrabajador').setAttribute('value', 1);
-       document.querySelector('.formulario').style.display = "block";
-       sectionTipoPerfil.style.display = "none";
-
-
-     });
-botonCliente.addEventListener("click", function(){
-
-   document.getElementById('esTrabajador').setAttribute('value', 0);
-   document.querySelector('.formulario').style.display = "block";
-   sectionTipoPerfil.style.display = "none";
-
-
+    if (mostrarRubroS){
+    mostrarRubroS.addEventListener("click", function(){
+        document.getElementById('form_rubro_S').setAttribute('class', "margin1");
     });
+    };
 
-mostrarRubro.addEventListener("click", function(){
+    if (mostrarRubroP) {
+      mostrarRubroP.addEventListener("click", function(){
+          document.getElementById('form_rubro_P').setAttribute('class', "margin1");
+      });
+    };
 
-    document.querySelector('.form_rubro').style.display = "block";
-});
+    if (botonProfesional) {
+      botonProfesional.addEventListener("click", function(){
+
+         document.getElementById('esTrabajador').setAttribute('value', 1);
+         document.querySelector('.formulario').style.display = "block";
+         sectionTipoPerfil.style.display = "none";
+       });
+    };
+
+    if (botonCliente) {
+      botonCliente.addEventListener("click", function(){
+
+     document.getElementById('esTrabajador').setAttribute('value', 0);
+     document.querySelector('.formulario').style.display = "block";
+     sectionTipoPerfil.style.display = "none";
+
+
+      });
+    };
 
 
 

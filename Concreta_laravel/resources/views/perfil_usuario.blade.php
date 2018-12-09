@@ -5,6 +5,13 @@
   use App\Calificacione;
   use App\Especialidade;
   use App\Zona;
+  if ($usuario->rubroPrincipal() != null){
+    $id_r = $usuario->rubroPrincipal()->ID;
+  }
+  if ($usuario->rubroPrincipal() == null){
+    $id_r = 0;
+  }
+
 @endphp
 
 @extends('plantilla')
@@ -80,30 +87,41 @@
           @if ($usuario->rubroPrincipal() != null)
             <div class="flex flexStart">
              <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
-             <img class="iconoPegado margin1" src="/img_app/cambiar_icon.png" alt="">
+             <img id="mostrarRubroP" class="iconoPegado margin1" src="/img_app/cambiar_icon.png" alt="">
             </div>
           @else
              <p>Elegí un rubro:</p>
           @endif
-          @php
-            $id_r = $usuario->rubroPrincipal()->ID;
-          @endphp
-            <select class="select" name="RUBRO_P">
-              <option value="1" {{$id_r == 1 ? 'selected' : '' }}>>Albañería</option>
+
+            <div id="form_rubro_P" class=
+            @if ($usuario->rubroPrincipal() != null)
+              "oculto"
+            @endif
+            >
+
+            <select class="select" name="RUBRO_P" >
+              <option value="1" {{$id_r == 1 ? 'selected' : '' }}>Albañilería</option>
               <option value="2" {{$id_r == 2 ? 'selected' : '' }}>Instalaciones de Gas</option>
               <option value="3" {{$id_r == 3 ? 'selected' : '' }}>Instalaciones Eléctricas</option>
               <option value="4" {{$id_r == 4 ? 'selected' : '' }}>Pisos y Revestimientos</option>
               <option value="5" {{$id_r == 5 ? 'selected' : '' }}>Estructuras</option>
               <option value="6" {{$id_r == 6 ? 'selected' : '' }}>Trasporte, Carga y Descarga</option>
             </select>
-
-          @if ($usuario->rubroSecundario() != null)
-            <p class="px14 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
-          @endif
+              </div>
         </div>
+
+        @if ($usuario->rubroSecundario() != null)
+          <div class="flex flexStart">
+          <p class="px14 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
+          <img id="mostrarRubroS" class="iconoPegado margin1" src="/img_app/cambiar_icon.png" alt="">
+          </div>
+        @endif
+
+          <div id="form_rubro_S" class="oculto">
 
         <label class="seleccion_rub_zon" for="RUBRO_S"> RUBRO SECUNDARIO </label>
           <select class="select" name="RUBRO_S">
+            <option value="0">Elegir rubro secundario</option>
             <option value="1">Albañería</option>
             <option value="2">Instalaciones de Gas</option>
             <option value="3">Instalaciones Eléctricas</option>
@@ -112,11 +130,15 @@
             <option value="6">Trasporte, Carga y Descarga</option>
           </select>
 
+          </div>
+
+        @if ($id_r != 0)
         <div class="especialidades">
           @foreach ($usuario->rubroPrincipal()->especialidades as $especifico)
             <p class="margin1">{{$especifico->nombre()}}</p>
           @endforeach
         </div>
+        @endif
 
         <div class="zon">
           <p class="px14 texto_gris margin1">Área de trabajo:</p>
