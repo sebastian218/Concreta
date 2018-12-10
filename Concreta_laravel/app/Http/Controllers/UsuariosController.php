@@ -20,36 +20,22 @@ class UsuariosController extends Controller
 
     public function home($id){
       $usuario = User::findOrFail($id);
-      //Zona
       $zonas = $usuario->zonas;
-      //RUBRO
       $rubros = $usuario->rubros;
-      //Mensajes mensajesRecibidos
       $mensajesRecibidos = $usuario->mensajesRecibidos;
-      //Foto
-      //posteos
 
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'mensajesRecibidos'));
     }
 
     public function mostrar($id){
       $usuario = User::findOrFail($id);
-      //Zona
-      //RUBRO
-      //Foto
-      //trabajos realizados
       $zonas = $usuario->zonas;
-      //RUBRO
       $rubros = $usuario->rubros;
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
     }
 
     public function guardarCambios(Request $req) {
 
-// Automatically generate a unique ID for file name...
-      //Storage::putFile('avatar', new File('/storage/app/public'));
-// Manually specify a file name...
-//Storage::putFileAs('avatar', new File('/storage/app/public'), $id'.jpg');
       $id = $req->identificador;
       $usuario = User::findOrFail($id);
       $zonas = $usuario->zonas;
@@ -82,6 +68,11 @@ class UsuariosController extends Controller
       }
 
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
+    }
+
+    public function buscadorAvanzado(Request $req) {
+      $usuarios = User::all();
+      return view('/buscador', compact('usuarios'));
     }
 
 }

@@ -115,6 +115,10 @@ display: none;
 .margin1{
   margin:1vh;
 }
+.margin2vh{
+  margin-top: 2vh;
+  margin-right: 2vh;
+}
 .margin3vh{
   margin-top: 3vh;
   margin-bottom: 3vh;
@@ -158,14 +162,16 @@ display: none;
   margin-top: 15px;
 }
 .fotos_perf{
-height: 200px;
-width: 200px;
 min-width: 150px;
 min-height: 150px;
   align:center;
 }
 .estrellitas{
-  height:60px;
+
+}
+.sin_avatar{
+  height:100%;
+  width:100%;
 }
 .cambiar_foto{
   flex-shrink: 0.5;

@@ -50,4 +50,8 @@ Route::get('/plantilla', function() {
   return view('plantilla');
 });
 
+Route::get('/buscador', 'UsuariosController@buscadorAvanzado');
+
+Route::post('/buscador', 'UsuariosController@buscadorAvanzado');
+
 //Route::post('/guardarAvatar','UsuariosController@guardarAvatar');
