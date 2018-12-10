@@ -74,7 +74,11 @@ class UsuariosController extends Controller
       }
 
       if ($req->zona != null) {
-          $usuario->zonas()->sync($req->zona);        
+          $usuario->zonas()->sync($req->zona);
+      }
+      if ($req->descripcion != null) {
+         $usuario->descripcion = $req->descripcion;
+         $usuario->save();
       }
 
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));

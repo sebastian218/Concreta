@@ -53,6 +53,7 @@
      <form class="" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
      {{ csrf_field() }}
      <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
+
    <div class="datos flex">
      <div class="foto_nombre flex column align_center t50">
        <div class="pic_perfil overflowNo">
@@ -85,7 +86,6 @@
 
 
       <div class="rubro_zona t50 flex column">
-
 
        @if ($usuario->esTrabajador == true)
         <div class="rub">
@@ -143,15 +143,13 @@
         </div>
         @endif
 
-        <div class="zon">
-
+        <div class="zon margin3vh">
           <div class="flex flexStart">
           <p class="px14 margin1">Zona de trabajo:</p>
           <img id="mostrarZonas" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
           </div>
-
-
         </div>
+
           <div class="zonas">
           @foreach ($zonasTodas as $zon)
             @php
@@ -173,16 +171,15 @@
           @endforeach
         </div>
 
-        <div class="">
+        <div class="margin3vh">
           <label for="descripcion">Descripción</label>
-          <textarea name="descripcion" rows="8" cols="80"></textarea>
+          <textarea name="descripcion" rows="8" cols="80" placeholder="Agregá una descripción"></textarea>
        </div>
-
-      @endif
-
+       @endif
       </div>
 
    </div>
+
    <button class="margin1" type="submit" name="button">Guardar Cambios</button>
     </form>
 
@@ -195,27 +192,5 @@
 
   </div>
 </div>
-
-
-
-
-
-@if ($usuario->cantCalif() > 0)
-@for ($i=0; $i < $usuario->promedioInt(); $i++)
-  <img class="logo_tipo" src="/img_app/Yellow_Star.png" alt="">
-@endfor
-<p>{{$usuario->promedio()}}/5 en base a {{$usuario->cantCalif()}} calificaciones</p>
-@else
-<p>No hay suficientes calificaciones</p>
-@endif
-
-
-
-<form class="" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
-{{ csrf_field() }}
-<input type="file" name="avatar" value="">
-<input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
-<button type="submit" name="button">Guardar Cambios</button>
-</form>
 
 @stop
