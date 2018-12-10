@@ -24,4 +24,5 @@ class Rubro extends Model
       return $this->hasMany('App\Especialidade', 'id_rubro');
     }
 
+
 }

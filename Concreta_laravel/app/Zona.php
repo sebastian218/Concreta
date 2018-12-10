@@ -18,4 +18,13 @@ class Zona extends Model
     public function todas(){
       return Zona::all();
     }
+
+    public function estaEn($coleccion) {
+      $id = $this->ID;
+      return $coleccion->contains('ID', $id);
+    }
+
+
+
+
 }

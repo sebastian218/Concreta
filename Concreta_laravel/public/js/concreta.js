@@ -12,7 +12,10 @@ window.addEventListener("load",function(){
 
     if (mostrarZonas) {
       mostrarZonas.addEventListener("click", function(){
-          document.querySelector('zona_m').classList.remove('oculto');
+          var els = document.querySelectorAll(".zona_ch");
+          for (var i=0; i < els.length; i++){
+            els[i].setAttribute('class', "margin1");
+          }
       });
     };
 

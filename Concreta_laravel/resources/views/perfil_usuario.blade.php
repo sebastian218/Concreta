@@ -18,6 +18,7 @@
     $id_rs = 0;
   }
   $zonasTodas = App\Zona::all();
+  $rubrosTodos = App\Rubro::all();
 @endphp
 
 @extends('plantilla')
@@ -106,12 +107,9 @@
             >
 
             <select class="select" name="RUBRO_P" >
-              <option value="1" {{$id_r == 1 ? 'selected' : '' }}>Albañilería</option>
-              <option value="2" {{$id_r == 2 ? 'selected' : '' }}>Instalaciones de Gas</option>
-              <option value="3" {{$id_r == 3 ? 'selected' : '' }}>Instalaciones Eléctricas</option>
-              <option value="4" {{$id_r == 4 ? 'selected' : '' }}>Pisos y Revestimientos</option>
-              <option value="5" {{$id_r == 5 ? 'selected' : '' }}>Estructuras</option>
-              <option value="6" {{$id_r == 6 ? 'selected' : '' }}>Trasporte, Carga y Descarga</option>
+              @foreach ($rubrosTodos as $rubro)
+                <option value="{{$rubro->ID}}" {{$id_r == $rubro->ID ? 'selected' : '' }}>{{$rubro->NOMBRE_RUBRO}}</option>
+              @endforeach
             </select>
               </div>
         </div>
@@ -128,18 +126,13 @@
         @endif
 
           <div id="form_rubro_S" class="oculto">
-
-        <label class="seleccion_rub_zon" for="RUBRO_S"></label>
+          <label class="seleccion_rub_zon" for="RUBRO_S"></label>
           <select class="select" name="RUBRO_S">
             <option value="0">Elegir rubro secundario</option>
-            <option value="1" {{$id_rs == 1 ? 'selected' : '' }}>Albañería</option>
-            <option value="2" {{$id_rs == 2 ? 'selected' : '' }}>Instalaciones de Gas</option>
-            <option value="3" {{$id_rs == 3 ? 'selected' : '' }}>Instalaciones Eléctricas</option>
-            <option value="4" {{$id_rs == 4 ? 'selected' : '' }}>Pisos y Revestimientos</option>
-            <option value="5" {{$id_rs == 5 ? 'selected' : '' }}>Estructuras</option>
-            <option value="6" {{$id_rs == 6 ? 'selected' : '' }}>Trasporte, Carga y Descarga</option>
+            @foreach ($rubrosTodos as $rubro)
+              <option value="{{$rubro->ID}}" {{$id_r == $rubro->ID ? 'selected' : '' }}>{{$rubro->NOMBRE_RUBRO}}</option>
+            @endforeach
           </select>
-
           </div>
 
         @if ($id_r != 0)
@@ -157,16 +150,26 @@
           <img id="mostrarZonas" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
           </div>
 
-          @foreach ($zonas as $zona)
-            <p class="px16 margin1"> {{$zona->NOMBRE_ZONA . " "}}</p>
-          @endforeach
 
         </div>
-        <label class="seleccion_rub_zon" for=""></label>
           <div class="zona">
           @foreach ($zonasTodas as $zon)
-            
-            <input class="zona_m" type="checkbox" name="zona" value="{{$zon->ID}}">{{$zon->NOMBRE_ZONA}}<br>
+            @php
+              $esta = $zon->estaEn($zonas);
+            @endphp
+            <div class="zona_ch
+            @if ($esta == false)
+            oculto
+            @endif
+            "
+            >
+            <input class="zona_ch oculto" type="checkbox" name="zona" value="{{$zon->ID}}"
+            @if ($esta == true)
+              checked
+            @endif
+              >
+            <label for="zona">{{$zon->NOMBRE_ZONA}}</label>
+            </div>
           @endforeach
         </div>
 
