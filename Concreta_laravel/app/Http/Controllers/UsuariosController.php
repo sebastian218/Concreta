@@ -73,6 +73,10 @@ class UsuariosController extends Controller
         $usuario->rubros()->sync([$id_rubro_p => ['orden' => '1']]);
       }
 
+      if ($req->zona != null) {
+          $usuario->zonas()->sync($req->zona);        
+      }
+
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
     }
 

@@ -14,7 +14,7 @@ window.addEventListener("load",function(){
       mostrarZonas.addEventListener("click", function(){
           var els = document.querySelectorAll(".zona_ch");
           for (var i=0; i < els.length; i++){
-            els[i].setAttribute('class', "margin1");
+            els[i].setAttribute('class', "margin0");
           }
       });
     };

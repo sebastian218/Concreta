@@ -152,7 +152,7 @@
 
 
         </div>
-          <div class="zona">
+          <div class="zonas">
           @foreach ($zonasTodas as $zon)
             @php
               $esta = $zon->estaEn($zonas);
@@ -163,7 +163,7 @@
             @endif
             "
             >
-            <input class="zona_ch oculto" type="checkbox" name="zona" value="{{$zon->ID}}"
+            <input class="zona_ch oculto" type="checkbox" name="zona[]" value="{{$zon->ID}}"
             @if ($esta == true)
               checked
             @endif
