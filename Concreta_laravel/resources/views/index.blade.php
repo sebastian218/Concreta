@@ -85,7 +85,7 @@
                          <div class="datos-rubro-boton">
                                <h2 class="rubro-perf">¿Prestás Servicios?</h2>
                                <p class="perf-descript">CREANDO TU PERFIL EN CONCRETA PODÉS RECIBIR OFERTAS DE CLIENTES POTENCIALES, COTIZAR PRESUPUESTOS Y MUCHO MAS</p>
-                               <a href="#">Ver mas</a>
+                               <a href="/register">Ver mas</a>
                          </div>
                        </article>
 

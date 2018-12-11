@@ -18,14 +18,14 @@
    <div class="parrafo_descrip_perfil">
  <p class="descrip">Quiero contactar profesionales y buscar servicios en mi área</p>
    </div>
- <a class="registrarme reg_prof"  > REGISTRARME </a>
+ <a class="registrarme reg_prof"  style="cursor:pointer" > REGISTRARME </a>
 </div>
 <div class="elegir_perfil_profesional">
  <img class="logo_perfil" src="/img_app/icono_constructor.png" alt="">
  <div class="parrafo_descrip_perfil">
    <p class="descrip">Quiero ofrecer servicios y recibir ofertas de trabajo</p>
  </div>
- <a class="registrarme reg_const", class="reg_const"  > CREAR MI PERFIL </a>
+ <a class="registrarme reg_const", class="reg_const" style="cursor:pointer" > CREAR MI PERFIL </a>
 </div>
 </section>
         <form class="registracion_cliente borde_redondeado formulario" style="display:none" action="/register" method="POST" enctype="multipart/form-data" >
