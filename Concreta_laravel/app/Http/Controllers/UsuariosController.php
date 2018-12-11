@@ -77,7 +77,7 @@ class UsuariosController extends Controller
 
     public function buscadorTodos() {
       $usuarios = User::trabajador();
-      $cantidad = $usuarios->total();
+      $cantidad = $usuarios->count();
       $usuarios = $usuarios->paginate(10);
 
      return view('/buscador', compact('usuarios', 'cantidad'));
@@ -100,9 +100,11 @@ class UsuariosController extends Controller
          $array_u = DB::table('usuario_rubro')->where('RUBRO_ID', $id_r_buscado)->pluck('USUARIO_ID');
          //$usuarios = DB::table('users')->whereIn('ID', $array_u)->get();
          $usuarios = $todos->whereIn('ID', $array_u)->whereIn('ID', $relacionesZona);
+         $cantidad = $usuarios->count();
+
          $usuarios = $usuarios->paginate(1);
 
-         $cantidad = $usuarios->total();
+
 
 
       return view('/buscador', compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado'));
