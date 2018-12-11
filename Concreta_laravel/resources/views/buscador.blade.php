@@ -5,6 +5,7 @@
   use App\Calificacione;
   use App\Especialidade;
   use App\Zona;
+  use App\Usuario_zona;
 
   $zonasTodas = App\Zona::all();
   $rubrosTodos = App\Rubro::all();
@@ -29,7 +30,7 @@
 
       <div class="buscar_rubro margin2vh">
       <label for="RUBRO_BUSCAR">Elegí un rubro:</label>
-      <select class="select" name="RUBRO_BUSCAR" >
+      <select class="select" name="id_rubro_buscado" >
         @foreach ($rubrosTodos as $rubro)
           <option value="{{$rubro->ID}}">{{$rubro->NOMBRE_RUBRO}}</option>
         @endforeach
@@ -37,13 +38,13 @@
       </div>
 
       <div class="buscar_zona flex column margin2vh">
-        <p>Elegí una o más zonas:</p>
-        @foreach ($zonasTodas as $zon)
-          <div class="">
-          <input class="" type="checkbox" name="zona_buscar[]" value="{{$zon->ID}}">
-          <label for="zona_buscar">{{$zon->NOMBRE_ZONA}}</label>
-          </div>
-        @endforeach
+        <label for="ZONA_BUSCAR">Elegí un rubro:</label>
+        <select class="select" name="id_zona_buscado">
+          @foreach ($zonasTodas as $zona)
+            <option value="{{$zona->ID}}">{{$zona->NOMBRE_ZONA}}</option>
+          @endforeach
+        </select>
+
       </div>
 
      </div>
@@ -102,13 +103,18 @@
              <p>{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
              @endif
            </div>
+           <div class="zon flex column t50">
+             @foreach ($usuario->zonas as $zona)
+               {{$zona->NOMBRE_ZONA}}
+             @endforeach
+           </div>
 
          </div>
 
       </div>
     @endforeach
     <div class="paginas flex t50">
-      {{$usuarios->links()}}
+      $usuarios->links()
     </div>
 
     </div>

@@ -50,7 +50,7 @@ Route::get('/plantilla', function() {
   return view('plantilla');
 });
 
-Route::get('/buscador', 'UsuariosController@buscadorAvanzado');
+Route::get('/buscador', 'UsuariosController@buscadorTodos');
 
 Route::post('/buscador', 'UsuariosController@buscadorAvanzado');
 

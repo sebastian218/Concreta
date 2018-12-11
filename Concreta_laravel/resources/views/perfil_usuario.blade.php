@@ -58,9 +58,9 @@
      <div class="foto_nombre flex column align_center t50">
        <div class="pic_perfil overflowNo">
          @if ($usuario->avatar == null)
-           <img class="fotos_perf" src="/img_app/icono_casco.png" alt="">
+           <img class="sin_avatar" src="/img_app/icono_casco.png" alt="">
          @else
-          <img class="max_min_200px" src="/storage/{{$usuario->avatar}}" alt="">
+          <img class="" src="/storage/{{$usuario->avatar}}" alt="">
          @endif
        </div>
        <label class="px12 t50" for="subir_foto">Cambiar Foto de Perfil</label>

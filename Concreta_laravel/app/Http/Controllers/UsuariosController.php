@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Zona;
 use App\Rubro;
+use App\Usuario_zona;
+use App\Usuario_rubro;
+use DB;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
@@ -70,22 +73,34 @@ class UsuariosController extends Controller
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
     }
 
+    public function buscadorTodos() {
+      $usuarios = User::trabajador();
+      $cantidad = $usuarios->count();
+      $usuarios = $usuarios->paginate(10);
+
+     return view('/buscador', compact('usuarios', 'cantidad'));
+    }
+
     public function buscadorAvanzado(Request $req) {
 
-      if ($req =! null) {
-         $usuarios = User::trabajador();
+         $todos = User::trabajador();
 
-         //recibo array de id de rubros
-         //donde ->rubros tiene
+         $id_r_buscado = $req->id_rubro_buscado;
+         $id_z_buscado = $req->id_zona_buscado;
+         //
+
+         $usuzona = Usuario_zona::all();
+         $relacionesZona = $usuzona->where('ZONA_ID', $id_z_buscado)->pluck('USUARIO_ID');
+         //var_dump($relaciones);
+         //exit;
+         //$usuarios = $todos->whereIn('ID', $relacionesZona)->get();
+         $array_u = DB::table('usuario_rubro')->where('RUBRO_ID', $id_r_buscado)->pluck('USUARIO_ID');
+         //$usuarios = DB::table('users')->whereIn('ID', $array_u)->get();
+         $usuarios = $todos->whereIn('ID', $array_u)->whereIn('ID', $relacionesZona)->get();
 
          $cantidad = $usuarios->count();
-         $usuarios = $usuarios->paginate(10);
-      }
-      else {
-         $usuarios = User::trabajador();
-         $cantidad = $usuarios->count();
-         $usuarios = $usuarios->paginate(10);
-       }
+         //$usuarios = $usuarios->paginate(10);
+
 
       return view('/buscador', compact('usuarios', 'cantidad'));
     }
