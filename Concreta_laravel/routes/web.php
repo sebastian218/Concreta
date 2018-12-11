@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('/index');
 });
 
+ // Esta ruta la estoy armando para que aparezcan perfiles profesionales en la home.Seba
+// Route::get('/index', "UsuariosController@getProfesionales");
+
 Route::get('/index', function(){
 
      return view('index');

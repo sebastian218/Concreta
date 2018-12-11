@@ -9,10 +9,13 @@
         <div class="h1-label">
 
                 <h1 class="h1-home"> Buscá servicios <br> para tu hogar o empresa</h1>
-
-            <label class="label-home"  for="buscador">
-              <input placeholder="Ej : Plomeros Zona Oeste" id="buscador" type="text" name="buscador" value="">
-            </label>
+            <form class="buscadorHome" action="/index" method="post">
+              {{ csrf_field() }}
+              <label class="label-home"  for="buscador">
+                <input placeholder="Ej : Plomeros Zona Oeste" id="buscador" type="text" name="buscador" value="">
+                <input type="hidden" name="enviar" value="">
+              </label>
+            </form>
        </div>
 
    <section class="cuerpo">
@@ -78,9 +81,9 @@
                     </article>
                     <article class="art-perfiles crear-perfil">
                          <div class="foto-nombre">
-                                <img class="cara-perf" src="../img/icono_constructor.png" alt="">
+                                <img class="cara-perf" src="/img_app/icono_constructor.png" alt="">
                                 <p class="nombre-perf">Creá Tu Perfil !</p>
-                                <img src="../img/cinco_estrellitas.png" alt="">
+                                <img src="/img_app/cinco_estrellitas.png" alt="">
                          </div>
                          <div class="datos-rubro-boton">
                                <h2 class="rubro-perf">¿Prestás Servicios?</h2>
@@ -95,7 +98,7 @@
         <div class="publi-home">
 
           <div class="a-publi">
-            <a href="#"> <img class="banner-decker" src="../img/banner_black_decker.jpg" alt=""> </a>
+            <a href="#"> <img class="banner-decker" src="/img_publicidad/banner_black_decker.jpg" alt=""> </a>
           </div>
 
 
