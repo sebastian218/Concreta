@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Muro;
 
 class Zona extends Model
 {
@@ -22,6 +23,10 @@ class Zona extends Model
     public function estaEn($coleccion) {
       $id = $this->ID;
       return $coleccion->contains('ID', $id);
+    }
+    public function posteo() {
+
+      return $this->hasMany('App\Muro', 'zona_id');
     }
 
 

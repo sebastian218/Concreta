@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Rubro;
 use App\Especialidade;
 use App\User;
+use App\Muro;
 
 class Rubro extends Model
 {
@@ -22,6 +23,10 @@ class Rubro extends Model
     public function especialidades() {
 
       return $this->hasMany('App\Especialidade', 'id_rubro');
+    }
+    public function posteo() {
+
+      return $this->hasMany('App\Muro', 'rubro_id');
     }
 
 
