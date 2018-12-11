@@ -1,3 +1,4 @@
+Esta en la branch
 @php
   use App\User;
   use App\Mensaje;
@@ -146,7 +147,7 @@
           @endforeach
 
           <div class="especialidades">
-            <div class="">
+            <div class="flex">
               <p>Subcategorías</p>
               <img id="mostrarRubroS" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
             </div>
