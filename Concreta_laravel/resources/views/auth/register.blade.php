@@ -2,17 +2,58 @@
 
 
 @section('contenido')
-  <div class="container_formularios_gral">
+
+<div class="container_reg_doble registerIntermedio">
+  <div class="banner_perfiles">
+    <p class="crea_perfil">¿Trabajás en la construcción?<br>Creá tu perfil en concreta</p>
+    <p class="perfil_registrate">¿Buscás servicios? Registrate</p>
+
+    </div>
+  <section class="cuerpo_tablet">
+      <div class="publicidad_vertical">
+        <img class= "publicid" src="/img_publicidad/acindar_1.jpg" alt="">
+        <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
+        <img class= "publicid" src="/img_publicidad/acindar.png" alt="">
+      </div>
+    <section class="elegir_perfil">
+      <div class="elegir_perfil_cliente">
+        <img class="logo_perfil" src="/img_app/icono_cliente.png" alt="">
+          <div class="parrafo_descrip_perfil">
+        <p class="descrip">Quiero contactar profesionales y buscar servicios en mi área</p>
+          </div>
+        <a class="registrarme reg_prof" style="cursor:pointer"> REGISTRARME </a>
+      </div>
+      <div class="elegir_perfil_profesional">
+        <img class="logo_perfil" src="/img_app/icono_constructor.png" alt="">
+        <div class="parrafo_descrip_perfil">
+          <p class="descrip">Quiero ofrecer servicios y recibir ofertas de trabajo</p>
+        </div>
+        <a class="registrarme reg_const", class="reg_const" style="cursor:pointer"> CREAR MI PERFIL </a>
+      </div>
+    </section>
+    <div class="publicidad_vertical">
+      <img class= "publicid" src="/img_publicidad/acindar_1.jpg" alt="">
+      <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
+      <img class= "publicid" src="/img_publicidad/acindar.png" alt="">
+    </div>
+  </section>
+
+  </div>
+
+
+
+  <div class="container_formularios_gral formUsuarios" style="display:none">
 
     <div class="banner_perfiles">
 
     <p class="crea_perfil">Completá tu perfil y registrate en Concreta</p>
     </div>
 
-    <section class = "seleccionDePerfil">
+  <!--  <section class = "seleccionDePerfil">
       <div class="reg-container">
       <div class="Registro_cliente">
-        <section class="elegir_perfil">
+
+       <section class="elegir_perfil">
 <div class="elegir_perfil_cliente">
  <img class="logo_perfil" src="/img_app/icono_cliente.png" alt="">
    <div class="parrafo_descrip_perfil">
@@ -27,8 +68,9 @@
  </div>
  <a class="registrarme reg_const", class="reg_const" style="cursor:pointer" > CREAR MI PERFIL </a>
 </div>
-</section>
-        <form class="registracion_cliente borde_redondeado formulario" style="display:none" action="/register" method="POST" enctype="multipart/form-data" >
+</section> -->
+
+        <form class="registracion_cliente borde_redondeado formulario"  action="/register" method="POST" enctype="multipart/form-data" >
         @csrf
         <label for="usuario"> Usuario</label>
         @if ($errors->has("usuario"))
@@ -81,4 +123,5 @@
       </div>
 
     </form>
+</div>
 @endsection
