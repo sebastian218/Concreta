@@ -41,7 +41,7 @@ window.addEventListener("load",function(){
       botonProfesional.addEventListener("click", function(){
 
          document.getElementById('esTrabajador').setAttribute('value', 1);
-         document.querySelector('.formulario').style.display = "block";
+         document.querySelector('.formulario').style.display = "flex";
          sectionTipoPerfil.style.display = "none";
        });
     };
@@ -50,7 +50,7 @@ window.addEventListener("load",function(){
       botonCliente.addEventListener("click", function(){
 
      document.getElementById('esTrabajador').setAttribute('value', 0);
-     document.querySelector('.formulario').style.display = "block";
+     document.querySelector('.formulario').style.display = "flex";
      sectionTipoPerfil.style.display = "none";
 
 
