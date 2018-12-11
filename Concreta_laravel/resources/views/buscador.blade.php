@@ -23,7 +23,7 @@
 
   <div class="lateral_izq">
 
-    <form class="" action="/buscador" method="post">
+    <form class="" action="/buscadorA" method="get">
       {{ csrf_field() }}
 
       <div class="buscar_basico flex column margin1">
@@ -113,8 +113,10 @@
 
       </div>
     @endforeach
-    <div class="paginas flex t50">
-      $usuarios->links()
+    <div class="paginas t50">
+      @if (isset($id_r_buscado))
+      {{$usuarios->appends(["id_rubro_buscado" => $id_r_buscado, "id_zona_buscado" => $id_z_buscado])->links()}}
+      @endif
     </div>
 
     </div>

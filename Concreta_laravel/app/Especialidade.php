@@ -17,4 +17,12 @@ class Especialidade extends Model
   public function nombre(){
     return $this->nombre;
   }
+  public function usuarios(){
+    return $this->BelongsToMany('App\User', 'especialidades_usuario', 'especialidad_id', 'usuario_id');
+  }
+
+  public function estaEn($coleccion){
+    $id = $this->ID;
+    return $coleccion->contains('ID', $id);
+  }
 }

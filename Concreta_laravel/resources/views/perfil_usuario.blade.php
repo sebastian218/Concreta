@@ -49,7 +49,11 @@
   </div>
 
   <div class="cuerpo_central">
-
+      @if (session("status"))
+        <div class="">
+          {{session("status")}}
+        </div>
+      @endif
      <form class="" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
      {{ csrf_field() }}
      <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
@@ -130,16 +134,44 @@
           <select class="select" name="RUBRO_S">
             <option value="0">Elegir rubro secundario</option>
             @foreach ($rubrosTodos as $rubro)
-              <option value="{{$rubro->ID}}" {{$id_r == $rubro->ID ? 'selected' : '' }}>{{$rubro->NOMBRE_RUBRO}}</option>
+            <option value="{{$rubro->ID}}" {{$id_rs == $rubro->ID ? 'selected' : '' }}>{{$rubro->NOMBRE_RUBRO}}</option>
             @endforeach
           </select>
           </div>
 
         @if ($id_r != 0)
-        <div class="especialidades">
-          @foreach ($usuario->rubroPrincipal()->especialidades as $especifico)
+        <div class="e">
+          @foreach ($usuario->especialidades as $especifico)
             <p class="margin1">{{$especifico->nombre()}}</p>
           @endforeach
+
+          <div class="especialidades">
+            <div class="">
+              <p>Subcategorías</p>
+              <img id="mostrarRubroS" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+            </div>
+
+
+
+            @foreach ($usuario->especialidades as $esp)
+              @php
+                $esta = $esp->estaEn($usuario->especialidades);
+              @endphp
+              <div class="esp_ch
+              @if ($esta == false)
+              oculto
+              @endif
+              "
+              >
+              <input class="esp_ch oculto" type="checkbox" name="especialidades[]" value="{{$esp->ID}}"
+              @if ($esta == true)
+                checked
+              @endif
+                >
+              <label for="especialidades[]">{{$esp->nombre}}</label>
+              </div>
+            @endforeach
+          </div>
         </div>
         @endif
 
@@ -150,7 +182,7 @@
           </div>
         </div>
 
-          <div class="zonas">
+        <div class="zonas">
           @foreach ($zonasTodas as $zon)
             @php
               $esta = $zon->estaEn($zonas);
