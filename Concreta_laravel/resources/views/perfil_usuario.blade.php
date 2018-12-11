@@ -142,9 +142,7 @@ Esta en la branch
 
         @if ($id_r != 0)
         <div class="e">
-          @foreach ($usuario->especialidades as $especifico)
-            <p class="margin1">{{$especifico->nombre()}}</p>
-          @endforeach
+
 
           <div class="especialidades">
             <div class="flex">
@@ -152,26 +150,6 @@ Esta en la branch
               <img id="mostrarRubroS" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
             </div>
 
-
-
-            @foreach ($usuario->especialidades as $esp)
-              @php
-                $esta = $esp->estaEn($usuario->especialidades);
-              @endphp
-              <div class="esp_ch
-              @if ($esta == false)
-              oculto
-              @endif
-              "
-              >
-              <input class="esp_ch oculto" type="checkbox" name="especialidades[]" value="{{$esp->ID}}"
-              @if ($esta == true)
-                checked
-              @endif
-                >
-              <label for="especialidades[]">{{$esp->nombre}}</label>
-              </div>
-            @endforeach
           </div>
         </div>
         @endif
