@@ -15,7 +15,7 @@ class muroController extends Controller
   //  $muro->usuario_id = $req->idUsuario;
     $muro->zona_id = $req->zona;
     $muro->rubro_id = $req->rubro;
-    $muro->mensaje =$req->text;
+    $muro->mensaje = $req->text;
     //  $foto = $req->foto;
 
     $muro->save();

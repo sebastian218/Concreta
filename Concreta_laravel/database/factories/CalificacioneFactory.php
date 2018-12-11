@@ -8,7 +8,7 @@ $factory->define(Calificacione::class, function (Faker $faker) {
   $usuarios = App\User::all();
 
 return [
-  'calificacion' => rand(0,5),
+  'calificacion' => rand(3,5),
   'id_calificado' => $usuarios->shuffle()[0]->ID,
   'id_calificador' => $usuarios->shuffle()[0]->ID,
   'comentario' => $faker->realText(250),

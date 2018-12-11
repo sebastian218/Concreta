@@ -1,4 +1,4 @@
-Esta en la branch
+
 @php
   use App\User;
   use App\Mensaje;
@@ -147,7 +147,7 @@ Esta en la branch
           <div class="especialidades">
             <div class="flex">
               <p>Subcategorías</p>
-              <img id="mostrarRubroS" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+              <img id="mostrarEsp_1" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
             </div>
 
           </div>
