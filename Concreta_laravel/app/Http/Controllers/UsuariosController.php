@@ -71,8 +71,25 @@ class UsuariosController extends Controller
     }
 
     public function buscadorAvanzado(Request $req) {
-      $usuarios = User::all();
-      return view('/buscador', compact('usuarios'));
+
+      if ($req =! null) {
+         $usuarios = User::trabajador();
+
+         //recibo array de id de rubros
+         //donde ->rubros tiene
+
+         $cantidad = $usuarios->count();
+         $usuarios = $usuarios->paginate(10);
+      }
+      else {
+         $usuarios = User::trabajador();
+         $cantidad = $usuarios->count();
+         $usuarios = $usuarios->paginate(10);
+       }
+
+      return view('/buscador', compact('usuarios', 'cantidad'));
     }
+
+
 
 }

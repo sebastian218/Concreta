@@ -22,7 +22,7 @@
 
   <div class="lateral_izq">
 
-    <form class="" action="index.html" method="post">
+    <form class="" action="/buscador" method="post">
       {{ csrf_field() }}
 
       <div class="buscar_basico flex column margin1">
@@ -40,8 +40,8 @@
         <p>Elegí una o más zonas:</p>
         @foreach ($zonasTodas as $zon)
           <div class="">
-          <input class="" type="checkbox" name="zona[]" value="{{$zon->ID}}">
-          <label for="zona">{{$zon->NOMBRE_ZONA}}</label>
+          <input class="" type="checkbox" name="zona_buscar[]" value="{{$zon->ID}}">
+          <label for="zona_buscar">{{$zon->NOMBRE_ZONA}}</label>
           </div>
         @endforeach
       </div>
@@ -58,6 +58,7 @@
 
 
   <div class="cuerpo_central">
+    <p class="txt_centrado">Hay {{$cantidad}} resultados</p>
 
     <div class="resultados flex column">
     @foreach ($usuarios as $usuario)
@@ -106,6 +107,10 @@
 
       </div>
     @endforeach
+    <div class="paginas flex t50">
+      {{$usuarios->links()}}
+    </div>
+
     </div>
 
   </div>

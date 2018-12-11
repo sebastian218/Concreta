@@ -124,5 +124,9 @@ class User extends Authenticatable
       else {return false;}
     }
 
+    public function scopeTrabajador($query) {
+      return $query->where('esTrabajador', '1');
+    }
+
 
 }
