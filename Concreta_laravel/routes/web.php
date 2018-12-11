@@ -38,6 +38,10 @@ Route::get('/perfil/log/{id}', "UsuariosController@home");
 
 Route::post('/perfil/log/{id}', "UsuariosController@guardarCambios");
 
+Route::get('/muro', "muroController@posteos");
+
+Route::post('/muro', "muroController@guardarPosteo");
+
 Route::get("/perfil/ver/{id}", "UsuariosController@mostrar");
 
 Route::get('/listado', "UsuariosController@listadoTodos");
@@ -52,6 +56,6 @@ Route::get('/plantilla', function() {
 
 Route::get('/buscador', 'UsuariosController@buscadorTodos');
 
-Route::get('/buscadorA', 'UsuariosController@buscadorAvanzado');
+Route::post('/buscador', 'UsuariosController@buscadorAvanzado');
 
 //Route::post('/guardarAvatar','UsuariosController@guardarAvatar');
