@@ -51,11 +51,11 @@ class UsuariosController extends Controller
        }
 
       //Guardar Rubros
-      if ($req->RUBRO_S != 0) {
+
         $id_rubro_p = $req->RUBRO_P;
         $id_rubro_s = $req->RUBRO_S;
         $usuario->rubros()->sync([$id_rubro_p => ['orden' => '1'], $id_rubro_s => ['orden'=>'2']]);
-      }
+
 
       if ($req->RUBRO_S == 0) {
         $id_rubro_p = $req->RUBRO_P;
@@ -69,13 +69,15 @@ class UsuariosController extends Controller
          $usuario->descripcion = $req->descripcion;
          $usuario->save();
       }
-
-      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
+      //return redirect()->route('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
+      return redirect("/perfil/log/" . $id)->with([
+        "status" => "Usuario actualizado correctamente"
+      ]);
     }
 
     public function buscadorTodos() {
       $usuarios = User::trabajador();
-      $cantidad = $usuarios->count();
+      $cantidad = $usuarios->total();
       $usuarios = $usuarios->paginate(10);
 
      return view('/buscador', compact('usuarios', 'cantidad'));
@@ -85,8 +87,9 @@ class UsuariosController extends Controller
 
          $todos = User::trabajador();
 
+         if (isset($id_r_buscado) == false) {
          $id_r_buscado = $req->id_rubro_buscado;
-         $id_z_buscado = $req->id_zona_buscado;
+         $id_z_buscado = $req->id_zona_buscado;}
          //
 
          $usuzona = Usuario_zona::all();
@@ -96,13 +99,13 @@ class UsuariosController extends Controller
          //$usuarios = $todos->whereIn('ID', $relacionesZona)->get();
          $array_u = DB::table('usuario_rubro')->where('RUBRO_ID', $id_r_buscado)->pluck('USUARIO_ID');
          //$usuarios = DB::table('users')->whereIn('ID', $array_u)->get();
-         $usuarios = $todos->whereIn('ID', $array_u)->whereIn('ID', $relacionesZona)->get();
+         $usuarios = $todos->whereIn('ID', $array_u)->whereIn('ID', $relacionesZona);
+         $usuarios = $usuarios->paginate(1);
 
-         $cantidad = $usuarios->count();
-         //$usuarios = $usuarios->paginate(10);
+         $cantidad = $usuarios->total();
 
 
-      return view('/buscador', compact('usuarios', 'cantidad'));
+      return view('/buscador', compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado'));
     }
 
 
