@@ -178,6 +178,54 @@ align:center;
 .cambiar_foto{
   flex-shrink: 0.5;
 }
+/*Estilos Para muro en mobile */
+
+div.containerMuro {
+
+width: 80%;
+margin: 0 auto;
+height: 71vh;
+display: flex;
+flex-flow: column;
+justify-content: space-evenly;
+border-radius: 9px;
+background-color: rgba(255, 255, 255, 0.5);
+padding: 10px;
+
+
+}
+
+form.formPosteoMuro{
+
+display: flex;
+flex-flow: column;
+
+}
+
+div.botonesMuroPosteo{
+
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+
+}
+
+button.botonMuro{
+
+ padding: 7px;
+ font-size: 12px;
+ border-radius: 7px;
+
+}
+
+label.labelMuro{
+
+font-size: 19px;
+margin-bottom: 8px;
+margin-top: 4px;
+
+}
+
 /*fin nuevos*/
 
 .error {
@@ -960,6 +1008,15 @@ input#buscador {
     border-radius: 10px;
     font-size: 30px;
     text-align: center;
+}
+
+
+
+div.containerMuro {
+    width: 40%;
+    max-width: 500px;
+    padding: 2%;
+
 }
 
 }

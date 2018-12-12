@@ -110,6 +110,28 @@ class UsuariosController extends Controller
       return view('/buscador', compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado'));
     }
 
+   public function getProfesionales(){
+
+      $profesionales = User::where("esTrabajador","!=" , "0")->get();
+
+     $profPromAlto = [];
+
+   foreach ($profesionales as $profesional) {
+
+   //if($profesional->promedioInt() > 3){
+
+        $profPromAlto[] = $profesional->esTrabajador;
+
+      }
+
+    dd($profPromAlto);
+
+
+}
+
+
+
+
 
 
 }
