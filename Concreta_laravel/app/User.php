@@ -92,9 +92,12 @@ class User extends Authenticatable
       foreach ($calificaciones as $calificacion) {
         $numeros[] = $calificacion['calificacion'];
       }
-      $promedio = array_sum($numeros) / count($numeros);
-      $promedioRound = round($promedio, 2);
-      return  $promedioRound;
+      if (count($numeros)!= 0) {
+        $promedio = array_sum($numeros) / count($numeros);
+        $promedioRound = round($promedio, 2);
+        return  $promedioRound;
+      }
+
     }
 
     public function promedioInt() {

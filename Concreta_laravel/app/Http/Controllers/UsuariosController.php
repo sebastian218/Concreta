@@ -112,20 +112,18 @@ class UsuariosController extends Controller
 
    public function getProfesionales(){
 
-      $profesionales = User::where("esTrabajador","!=" , "0")->get();
+    $profesionales = User::where("esTrabajador","!=" , "0")->get();
 
      $profPromAlto = [];
 
+
    foreach ($profesionales as $profesional) {
 
-   //if($profesional->promedioInt() > 3){
-
-        $profPromAlto[] = $profesional->esTrabajador;
-
+     if ($profesional->promedioInt()>=3) {
+        $profPromAlto[] = $profesional;
+     }
       }
-
-    dd($profPromAlto);
-
+      return $profPromAlto;
 
 }
 
