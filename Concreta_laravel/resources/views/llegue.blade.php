@@ -10,10 +10,16 @@ use App\Especialidade;
 use App\Zona;
 use App\Usuario_zona;
 use App\Usuario_especialidades;
+use App\Usuario_rubro;
+
 
   //factory(User::class, 50)->create();
   //factory(Muro::class, 100)->create();
   //factory(Usuario_zona::class, 50)->create();
   factory(Usuario_especialidades::class, 50)->create();
+//  factory(Usuario_rubro::class, 30)->create();
+
+
+
 @endphp
 <p>LLegué</p>

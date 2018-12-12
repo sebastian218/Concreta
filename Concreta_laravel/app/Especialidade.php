@@ -12,7 +12,7 @@ class Especialidade extends Model
   public $table = 'especialidades';
 
   public function rubro() {
-    return $this->belongsTo('App\Rubro', 'id_rubro');
+    return $this->belongsTo('App\Rubro', 'ID_RUBRO');
   }
   public function nombre(){
     return $this->nombre;
@@ -25,4 +25,6 @@ class Especialidade extends Model
     $id = $this->ID;
     return $coleccion->contains('ID', $id);
   }
+
+
 }
