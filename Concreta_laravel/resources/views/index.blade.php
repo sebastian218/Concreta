@@ -43,9 +43,15 @@
                   <div class="foto-nombre">
                          <img class="cara-perf" src="/img_usuarios/{{$profesional->avatar}}" alt="">
                          <p class="nombre-perf">{{$profesional->NOMBRE}}</p>
-                         <div class="calificStars">
-                             {{-- Acá hay que insertar img de estrellitas en base al Metodo promedioInt() con un for tradicional--}}
-                         </div>
+
+
+                          <div class="calificStars"  style="display:flex">
+
+                            @for ($i=0; $i < $profesional->promedioInt(); $i++)
+                              <img class="icono" src="/img_app/Yellow_Star.png" alt="">
+                            @endfor
+
+                          </div>
 
                   </div>
                   <div class="datos-rubro-boton">
