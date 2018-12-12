@@ -25,73 +25,37 @@
 
          <div class="perfiles" >
 
-          <article class="art-perfiles">
-               <div class="foto-nombre">
-                      <img class="cara-perf" src="../img/plomero2.jpg" alt="">
-                      <p class="nombre-perf">Nombre</p>
-                      <img src="../img/cinco_estrellitas.png" alt="">
-               </div>
-               <div class="datos-rubro-boton">
-                     <h2 class="rubro-perf">Rubro</h2>
-                     <p class="perf-zona">Zona</p>
-                     <p class="perf-descript">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                     <a href="#">Ver mas</a>
-               </div>
-             </article>
+           <article class="art-perfiles crear-perfil">
+                <div class="foto-nombre">
+                       <img class="cara-perf" src="/img_app/icono_constructor.png" alt="">
+                       <p class="nombre-perf">Creá Tu Perfil !</p>
+                       <img src="/img_app/cinco_estrellitas.png" alt="">
+                </div>
+                <div class="datos-rubro-boton">
+                      <h2 class="rubro-perf">¿Prestás Servicios?</h2>
+                      <p class="perf-descript">CREANDO TU PERFIL EN CONCRETA PODÉS RECIBIR OFERTAS DE CLIENTES POTENCIALES, COTIZAR PRESUPUESTOS Y MUCHO MAS</p>
+                      <a href="/register">Ver mas</a>
+                </div>
+              </article>
+
+           @foreach ($profPromAlto as $profesional)
              <article class="art-perfiles">
                   <div class="foto-nombre">
-                         <img class="cara-perf" src="../img/plomero2.jpg" alt="">
-                         <p class="nombre-perf">Nombre</p>
-                         <img src="../img/cinco_estrellitas.png" alt="">
+                         <img class="cara-perf" src="/img_usuarios/{{$profesional->avatar}}" alt="">
+                         <p class="nombre-perf">{{$profesional->NOMBRE}}</p>
+                         <div class="calificStars">
+                             {{-- Acá hay que insertar img de estrellitas en base al Metodo promedioInt() con un for tradicional--}}
+                         </div>
+
                   </div>
                   <div class="datos-rubro-boton">
-                        <h2 class="rubro-perf">Rubro</h2>
-                        <p class="perf-zona">Zona</p>
-                        <p class="perf-descript">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="#">Ver mas</a>
+                        <h2 class="rubro-perf">{{$profesional->rubroPrincipal()["NOMBRE_RUBRO"]}}</h2>
+                        <p class="perf-zona"> <!-- todavía no se como acceder a el nombre de las zonas del usuario -->   </p>
+                        <p class="perf-descript">{{$profesional->descripcion}}</p>
+                        <a href=" {{-- Acá deberia enviarnos a una pagina de detalle del Trabajador....Queda definir --}} ">Ver mas</a>
                   </div>
                 </article>
-                <article class="art-perfiles">
-                     <div class="foto-nombre">
-                            <img class="cara-perf" src="../img/plomero2.jpg" alt="">
-                            <p class="nombre-perf">Nombre</p>
-                            <img src="../img/cinco_estrellitas.png" alt="">
-                     </div>
-                     <div class="datos-rubro-boton">
-                           <h2 class="rubro-perf">Rubro</h2>
-                           <p class="perf-zona">Zona</p>
-                           <p class="perf-descript">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                           <a href="#">Ver mas</a>
-                     </div>
-                   </article>
-                   <article class="art-perfiles">
-                        <div class="foto-nombre">
-                               <img class="cara-perf" src="../img/plomero2.jpg" alt="">
-                               <p class="nombre-perf">Nombre</p>
-                               <img src="../img/cinco_estrellitas.png" alt="">
-                        </div>
-                        <div class="datos-rubro-boton">
-                              <h2 class="rubro-perf">Rubro</h2>
-                              <p class="perf-zona">Zona</p>
-                              <p class="perf-descript">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                              <a href="#">Ver mas</a>
-                        </div>
-                      </article>
-
-                    </article>
-                    <article class="art-perfiles crear-perfil">
-                         <div class="foto-nombre">
-                                <img class="cara-perf" src="/img_app/icono_constructor.png" alt="">
-                                <p class="nombre-perf">Creá Tu Perfil !</p>
-                                <img src="/img_app/cinco_estrellitas.png" alt="">
-                         </div>
-                         <div class="datos-rubro-boton">
-                               <h2 class="rubro-perf">¿Prestás Servicios?</h2>
-                               <p class="perf-descript">CREANDO TU PERFIL EN CONCRETA PODÉS RECIBIR OFERTAS DE CLIENTES POTENCIALES, COTIZAR PRESUPUESTOS Y MUCHO MAS</p>
-                               <a href="/register">Ver mas</a>
-                         </div>
-                       </article>
-
+           @endforeach
 
         </div>
 

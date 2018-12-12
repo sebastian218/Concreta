@@ -122,8 +122,10 @@ class UsuariosController extends Controller
      if ($profesional->promedioInt()>=3) {
         $profPromAlto[] = $profesional;
      }
+
       }
-      return $profPromAlto;
+
+       return view('/index',compact('profPromAlto'));
 
 }
 

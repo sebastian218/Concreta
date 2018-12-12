@@ -11,17 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/index');
+ Route::get('/', function () {
+    return redirect('/index');
 });
 
  // Esta ruta la estoy armando para que aparezcan perfiles profesionales en la home.Seba
- Route::get('/index2', "UsuariosController@getProfesionales");
+ Route::get('/index', "UsuariosController@getProfesionales");
 
-Route::get('/index', function(){
+//Route::get('/index', function(){
 
-     return view('index');
-});
+    // return view('index');
+//});
 
 
 
