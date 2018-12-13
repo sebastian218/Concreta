@@ -17,6 +17,7 @@ $factory->define(Muro::class, function (Faker $faker) {
       'mensaje' => $faker->realText(140),
       'created_at' => $faker->datetime(),
       'updated_at' => $faker->datetime(),
+      'foto'=> '["VnkOf1UNUAH6bV0ESXJLTHeSQM8VtLxIH8mAZoHH.png","zyF0mWAtRvxFx4dcLb3KuIzfkl7ul3WrhnRvWtdw.jpeg","9TsqHCLeNRhYuldSIqH4B4moWz2BJwi9xSb6GOOl.jpeg","yMTymsrpl37cnubcM3kPEkVqmnJQ06jKxebHh31O.jpeg"]'
 
     ];
 });

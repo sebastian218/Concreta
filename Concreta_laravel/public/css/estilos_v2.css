@@ -143,7 +143,11 @@ display: none;
   border-left: 2px solid black;
 }
 .bordeNegro{
+<<<<<<< HEAD
 
+=======
+  border: 1px solid black;
+>>>>>>> 98bc3f5b348d2067102aea2c7e16169fd7c31dc5
 }
 .textarea{
   height: 10vh;
@@ -1081,6 +1085,11 @@ div.containerMuro {
     width: 40%;
     max-width: 500px;
     padding: 2%;
+
+}
+.foto-muro{
+  width: 150px;
+  height: 150px;
 
 }
 

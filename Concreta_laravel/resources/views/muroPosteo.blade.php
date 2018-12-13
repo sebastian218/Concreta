@@ -52,7 +52,7 @@
       <button class="boton" type="reset" name="buttonReset" style="cursor:pointer">Cancelar</button>
     </div>
  </form>
- 
+
  <div class="t50">
    <p class="txt_centrado t90">Últimas Posteos :</p>
    @foreach ($posteos as $post)
@@ -62,9 +62,20 @@
        <p>
        {{$post->mensaje}}
        </p>
+
+       @if ($post->foto != null)
+
+         @foreach (json_decode($post->foto, true) as $foto)
+
+              <img class="foto-muro" src="storage/{{$foto}}" alt="">
+
+          @endforeach
+       @endif
+
+
      </div>
    @endforeach
-
+{{$posteos->links()}}
  </div>
 </div>
 

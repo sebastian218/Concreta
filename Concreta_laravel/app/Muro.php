@@ -26,5 +26,10 @@ class Muro extends Model
       return $this->belongsTo('App\Rubro', 'rubro_id');
     }
 
+    public function mostrarFotos(){
+      $fotos= json_decode($this->foto,true);
+      return $fotos;
+    }
+
 
 }

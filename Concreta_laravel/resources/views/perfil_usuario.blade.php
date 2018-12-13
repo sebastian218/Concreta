@@ -102,7 +102,7 @@ $('.my-image').croppie();
 
         @if ($usuario->esTrabajador == true)
 
-     <div class="container_rubros column flex ">
+     <div class="container_rubros column flex bordeNegro padding1 blanco" style="width:80%; margin-top:3vh; margin-right:2vw;">
 
         <div class="rub">
           <label class="seleccion_rub_zon" for="RUBRO_P"></label>
@@ -185,7 +185,9 @@ $('.my-image').croppie();
         </div>
         @endif
 
-      </div>
+     </div>
+
+     <div class="container_zonas column flex bordeNegro padding1 blanco" style="width:80%; margin-top:2vh; margin-right:2vw; margin-bottom:2vh;">
 
         <div class="zon margin3vh">
           <div class="flex flexStart">
@@ -220,42 +222,42 @@ $('.my-image').croppie();
           @endforeach
         </div>
 
-        <div class="margin3vh">
-
-          <div class="">
-            <div class="flex">
-              <p>Acerca de mí:</p>
-              <img id="modificar_descrip" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
-            </div>
-            @if ($usuario->descripcion)
-            <div class="t50 mostrar">
-              {{$usuario->descripcion}}
-            </div>
-            @endif
-          </div>
-
-
-
-          @if ($usuario->descripcion == null)
-          <label for="descripcion">Agregá una descripción:</label>
-          @endif
-          <textarea class="mostrar
-          @if ($usuario->descripcion ==! null)
-          oculto
-          @endif
-          "
-          name="descripcion" rows="8" cols="45">
-           @if ($usuario->descripcion != null)
-             {{$usuario->descripcion}}
-           @endif
-          </textarea>
-
-       </div>
-       @endif
+     </div>
 
       </div>
 
+
    </div>
+   <div class="descri margin3vh t90 padding1 blanco">
+
+     <div class="">
+       <div class="flex">
+         <p>Acerca de mí:</p>
+         <img id="modificar_descrip" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
+       </div>
+       @if ($usuario->descripcion)
+       <div class="t50 mostrar">
+         {{$usuario->descripcion}}
+       </div>
+       @endif
+     </div>
+
+     @if ($usuario->descripcion == null)
+     <label for="descripcion">Agregá una descripción personalizada:</label>
+     @endif
+     <textarea class="mostrar
+     @if ($usuario->descripcion ==! null)
+     oculto
+     @endif
+     "
+     name="descripcion" rows="8" cols="80">
+      @if ($usuario->descripcion != null)
+        {{$usuario->descripcion}}
+      @endif
+     </textarea>
+
+  </div>
+  @endif
 
    <button class="margin1 manoHover" type="submit" name="button">Guardar Cambios</button>
     </form>
