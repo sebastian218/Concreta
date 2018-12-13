@@ -11,6 +11,7 @@ window.addEventListener("load",function(){
     var mostrarZonas = document.getElementById('mostrarZonas');
     var mostrarEsp = document.getElementById('mostrarEsp_1');
     var mostrarDescrip = document.getElementById('modificar_descrip');
+    
 
     if (mostrarDescrip) {
       mostrarDescrip.addEventListener("click", function() {
