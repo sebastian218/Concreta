@@ -35,13 +35,17 @@
   <div class="lateral_izq ">
     <div class="w90 center t50 flex column">
        <div class="blanco flex h10">
-         <img class="icono" src="/img_app/logo_mensaje.png" alt="">
-         <p class="txt_centrado px14 marginauto">Últimos Mensajes</p>
+         <div class="flex" style="width: 25%;">
+         <img class="padding1 center" style="width:60%" src="/img_app/logo_mensaje.png" alt="">
+         </div>
+         <div class="bordeLateral flex">
+         <p class="txt_centrado px14 center padding1 bold">Últimos Mensajes</p>
+         </div>
        </div>
        @foreach ($usuario->mensajesRecibidos as $mensaje)
-      <div class="blanco flex column h15 margin3vh">
-        <p class="px12 line_h_14 margin1">De: {{$emisor = $mensaje->emisor->USER_NAME}}</p>
-        <p class="texto_gris px12 line_h_14 margin1">{{substr($mensaje->MENSAJE, 0, 70)}}...</p>
+      <div class="blanco flex column h15 margin1">
+        <p class="px12 line_h_14 padding1 margin0 bordeAbajo">De: {{$emisor = $mensaje->emisor->USER_NAME}}</p>
+        <p class="texto_gris px12 line_h_14 padding1 margin0">{{substr($mensaje->MENSAJE, 0, 70)}}...</p>
       </div>
        @endforeach
        <div class="blanco flex h10 margin3vh">
@@ -66,7 +70,10 @@
          @if ($usuario->avatar == null)
            <img class="sin_avatar" src="/img_app/icono_casco.png" alt="">
          @else
-          <img class="" src="/storage/{{$usuario->avatar}}" alt="">
+          <img class="my-image" id="item" src="/storage/{{$usuario->avatar}}" />
+<script>
+$('.my-image').croppie();
+</script>
          @endif
        </div>
        <label class="px12 t50" for="subir_foto">Cambiar Foto de Perfil</label>
@@ -100,7 +107,7 @@
           @if ($usuario->rubroPrincipal() != null)
             <div class="flex flexStart">
              <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
-             <img id="mostrarRubroP" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+             <img id="mostrarRubroP" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
             </div>
           @else
              <p>Elegí un rubro:</p>
@@ -123,12 +130,12 @@
         @if ($usuario->rubroSecundario() != null)
           <div class="flex flexStart">
           <p class="px16 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
-          <img id="mostrarRubroS" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+          <img id="mostrarRubroS" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
           </div>
         @endif
 
         @if ($usuario->rubroSecundario() == null)
-          <p class="px 12 texto_gris boldHover" id="agregarRubroS">Agregar rubro secundario</p>
+          <p class="px 12 texto_gris boldHover manoHover" id="agregarRubroS">Agregar rubro secundario</p>
         @endif
 
           <div id="form_rubro_S" class="oculto">
@@ -148,7 +155,7 @@
           <div class="especialidades">
             <div class="flex">
               <p>Subcategorías</p>
-              <img id="mostrarEsp_1" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+              <img id="mostrarEsp_1" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
             </div>
 
             <div class="">
@@ -179,7 +186,7 @@
         <div class="zon margin3vh">
           <div class="flex flexStart">
           <p class="px14 margin1">Zona de trabajo:</p>
-          <img id="mostrarZonas" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+          <img id="mostrarZonas" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
           </div>
         </div>
 
@@ -214,7 +221,7 @@
           <div class="">
             <div class="flex">
               <p>Acerca de mí:</p>
-              <img id="modificar_descrip" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+              <img id="modificar_descrip" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
             </div>
             @if ($usuario->descripcion)
             <div class="t50 mostrar">
@@ -246,13 +253,13 @@
 
    </div>
 
-   <button class="margin1" type="submit" name="button">Guardar Cambios</button>
+   <button class="margin1 manoHover" type="submit" name="button">Guardar Cambios</button>
     </form>
 
    <div class="feed">
 
       <div class="t50">
-        <p>Últimas búsquedas relacionadas:</p>
+        <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
         @foreach ($posteosP as $post)
           <div class="t90 margin1">
             <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
