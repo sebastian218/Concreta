@@ -225,7 +225,9 @@ form.formPosteoMuro{
 
 display: flex;
 flex-flow: column;
-
+width: 70%;
+margin: 0 auto;
+padding: 10px;
 }
 
 div.botonesMuroPosteo{
