@@ -93,14 +93,25 @@ color: black;
 label.pointer{
   cursor: pointer;
 }
+.fotosTrabajo{
+  display: flex;
+  flex-flow: column;
+}
 .subirFotoTrabajo{
 
-  z-index: -1;
+
   font-size: 0px;
 }
+.postearTrabajos{
+  display: flex;
+  flex-flow: column;
+
+}
 .formPoseteoTrabajos{
-  width: 90%;
+ width: 90%;
  margin: 0 auto;
+ display: flex;
+ flex-flow: column;
 }
 #subir_foto{
   opacity: 0;
