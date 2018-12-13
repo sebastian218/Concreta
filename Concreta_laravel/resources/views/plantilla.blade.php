@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-
+@php
+use App\Rubro;
+use App\Especialidade;
+  $rubros = App\Rubro::all();
+  $especialidades = App\Especialidade::all();
+@endphp
 <html lang="en" dir="ltr">
 
   <head>
@@ -32,11 +37,31 @@
  @endif
   </ul>
   <ul class="barra_ppal_1">
-    <li class="menu_contextual"><a class="botones_cambiar"href="#"><img class="hamburger"src="/img_app/Hamburger_icon.png" alt=""></a></li>
+    <li class="menu_contextual hamburIcon"><a class="botones_cambiar" style="cursor:pointer"><img class="hamburger"src="/img_app/Hamburger_icon.png" alt=""></a></li>
     <li class="logo_nombre"><a class="botones_cambiar"href="/index"><img class="logo_tipo" src="/img_app/LOGO_FINAL.png" alt=""></a></li>
-    <li class="busqueda"><a class="botones_cambiar" href="#"><img class="lupa" src="/img_app/search-icon-png-21.png" alt=""></a></li>
+    <li class="busqueda lupaIcon"><a class="botones_cambiar" href="#"><img class="lupa" src="/img_app/search-icon-png-21.png" alt=""></a></li>
   </ul>
 </nav>
+
+    <div class="hamburgDesp  oculto">
+      <ul class="desplegableHamubr oculto">
+        <li><a href="">Mis mensajes</a></li>
+        <li><a href="">Escribir mensaje</a></li>
+        <li><a href="">Muro de posteos</a></li>
+        <li><a href="">Link</a></li>
+      </ul>
+    </div>
+
+<div class="lupaDesp oculto">
+  <ul class="desplegableLupa">
+    @foreach ($rubros as $rubro)
+    <li><a href="">{{$rubro->NOMBRE_RUBRO}} </a></li>
+    @endforeach
+
+  </ul>
+</div>
+
+
 </header>
 
    <section>
