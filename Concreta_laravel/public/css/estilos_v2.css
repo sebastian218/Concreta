@@ -50,6 +50,9 @@ color: black;
 .t50{
   background-color: rgba(255,255,255,0.5);
 }
+.t90{
+  background-color: rgba(255,255,255,0.9);
+}
 .blanco{
   background-color: rgb(255,255,255);
 }
@@ -138,7 +141,12 @@ display: none;
   width: 100%;
   background-color: gray;
   height: 30vh;
+  /*overflow: hidden;*/
 }
+.a100 {
+  width:100%;
+}
+
 .lateral_izq{
   width:25%;
   min-height: 600px;

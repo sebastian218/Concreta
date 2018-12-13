@@ -26,7 +26,7 @@
 
 @section('contenido')
   <div class="banner_rubro">
-
+    <img class = "a100" src="/img_app/textura_rubro_{{$id_r}}.jpg" alt="">
   </div>
 
 <div class="container">
@@ -59,7 +59,7 @@
      {{ csrf_field() }}
      <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
 
-   <div class="datos flex">
+   <div class="datos flex t90">
      <div class="foto_nombre flex column align_center t50">
        <div class="pic_perfil overflowNo">
          @if ($usuario->avatar == null)
@@ -232,7 +232,7 @@
           oculto
           @endif
           "
-          name="descripcion" rows="8" cols="80">
+          name="descripcion" rows="8" cols="45">
            @if ($usuario->descripcion != null)
              {{$usuario->descripcion}}
            @endif
@@ -254,11 +254,11 @@
   </div>
 
   <div class="lateral_der flex column">
-
+   <div class="w90 center">
       <img class= "publicid" src="/img_publicidad/acindar_1.jpg" alt="">
       <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
       <img class= "publicid" src="/img_publicidad/acindar.png" alt="">
-
+    </div>
   </div>
 </div>
 
