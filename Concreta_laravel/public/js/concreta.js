@@ -9,31 +9,52 @@ window.addEventListener("load",function(){
     var mostrarRubroS = document.getElementById('mostrarRubroS');
     var agregarRubroS = document.getElementById('agregarRubroS');
     var mostrarZonas = document.getElementById('mostrarZonas');
+    var mostrarEsp = document.getElementById('mostrarEsp_1');
+    var mostrarDescrip = document.getElementById('modificar_descrip');
+
+    if (mostrarDescrip) {
+      mostrarDescrip.addEventListener("click", function() {
+      var els = document.querySelectorAll(".mostrar");
+      for (var i=0; i < els.length; i++) {
+        els[i].classList.toggle('oculto');
+      }
+      });
+    };
+
+    if (mostrarEsp) {
+      mostrarEsp.addEventListener("click", function(){
+          var els = document.querySelectorAll(".mostrar_esp");
+          for (var i=0; i < els.length; i++){
+            els[i].classList.toggle('oculto');
+            //els[i].setAttribute('class', "margin0");
+          }
+      });
+    };
 
     if (mostrarZonas) {
       mostrarZonas.addEventListener("click", function(){
           var els = document.querySelectorAll(".zona_ch");
           for (var i=0; i < els.length; i++){
-            els[i].setAttribute('class', "margin0");
+            els[i].classList.toggle('oculto');
           }
       });
     };
 
     if (agregarRubroS) {
       agregarRubroS.addEventListener("click", function(){
-          document.getElementById('form_rubro_S').classList.remove('oculto');
+          document.getElementById('form_rubro_S').classList.toggle('oculto');
       });
     };
 
     if (mostrarRubroS){
     mostrarRubroS.addEventListener("click", function(){
-        document.getElementById('form_rubro_S').setAttribute('class', "margin1");
+        document.getElementById('form_rubro_S').classList.toggle('oculto');
     });
     };
 
     if (mostrarRubroP) {
       mostrarRubroP.addEventListener("click", function(){
-          document.getElementById('form_rubro_P').classList.remove('oculto');
+          document.getElementById('form_rubro_P').classList.toggle('oculto');
       });
     };
 

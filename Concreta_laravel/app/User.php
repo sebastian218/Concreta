@@ -10,6 +10,7 @@ use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use App\Calificacione;
 use App\Muro;
+use App\Especialidade;
 
 class User extends Authenticatable
 {
@@ -45,6 +46,11 @@ class User extends Authenticatable
     public function rubros() {
 
       return $this->belongsToMany('App\Rubro', 'usuario_rubro', 'USUARIO_ID', 'RUBRO_ID')->withPivot('orden');
+    }
+
+    public function especialidades() {
+
+      return $this->belongsToMany('App\Especialidade', 'especialidades_usuarios', 'usuario_id', 'especialidad_id');
     }
 
     public function rubroPrincipal() {
@@ -134,6 +140,24 @@ class User extends Authenticatable
 
     public function scopeTrabajador($query) {
       return $query->where('esTrabajador', '1');
+    }
+
+    public function traerPosteosRubroP() {
+      if ($this->rubroPrincipal()){
+      $id_rubroP = $this->rubroPrincipal()->ID;
+      $relacionados = Muro::all()->where('rubro_id', $id_rubroP);
+      return $relacionados;
+      }
+      else {return Muro::all();}
+    }
+
+    public function traerPosteosRubroS() {
+      if ($this->rubroSecundario()){
+      $id_rubroP = $this->rubroSecundario()->ID;
+      $relacionados = Muro::all()->where('rubro_id', $id_rubroP);
+      return $relacionados;
+      }
+      else {return Muro::all();}
     }
 
 

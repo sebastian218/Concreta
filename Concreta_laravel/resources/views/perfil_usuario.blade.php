@@ -20,13 +20,14 @@
   }
   $zonasTodas = App\Zona::all();
   $rubrosTodos = App\Rubro::all();
+  $posteosP = $usuario->traerPosteosRubroP();
 @endphp
 
 @extends('plantilla')
 
 @section('contenido')
   <div class="banner_rubro">
-
+    <img class = "a100" src="/img_app/textura_rubro_{{$id_r}}.jpg" alt="">
   </div>
 
 <div class="container">
@@ -34,13 +35,17 @@
   <div class="lateral_izq ">
     <div class="w90 center t50 flex column">
        <div class="blanco flex h10">
-         <img class="icono" src="/img_app/logo_mensaje.png" alt="">
-         <p class="txt_centrado px14 marginauto">Últimos Mensajes</p>
+         <div class="flex" style="width: 25%;">
+         <img class="padding1 center" style="width:60%" src="/img_app/logo_mensaje.png" alt="">
+         </div>
+         <div class="bordeLateral flex">
+         <p class="txt_centrado px14 center padding1 bold">Últimos Mensajes</p>
+         </div>
        </div>
        @foreach ($usuario->mensajesRecibidos as $mensaje)
-      <div class="blanco flex column h15 margin3vh">
-        <p class="px12 line_h_14 margin1">De: {{$emisor = $mensaje->emisor->USER_NAME}}</p>
-        <p class="texto_gris px12 line_h_14 margin1">{{substr($mensaje->MENSAJE, 0, 70)}}...</p>
+      <div class="blanco flex column h15 margin1">
+        <p class="px12 line_h_14 padding1 margin0 bordeAbajo">De: {{$emisor = $mensaje->emisor->USER_NAME}}</p>
+        <p class="texto_gris px12 line_h_14 padding1 margin0">{{substr($mensaje->MENSAJE, 0, 70)}}...</p>
       </div>
        @endforeach
        <div class="blanco flex h10 margin3vh">
@@ -59,13 +64,16 @@
      {{ csrf_field() }}
      <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
 
-   <div class="datos flex">
+   <div class="datos flex t90">
      <div class="foto_nombre flex column align_center t50">
        <div class="pic_perfil overflowNo">
          @if ($usuario->avatar == null)
            <img class="sin_avatar" src="/img_app/icono_casco.png" alt="">
          @else
-          <img class="" src="/storage/{{$usuario->avatar}}" alt="">
+          <img class="my-image" id="item" src="/storage/{{$usuario->avatar}}" />
+<script>
+$('.my-image').croppie();
+</script>
          @endif
        </div>
        <label class="px12 t50" for="subir_foto">Cambiar Foto de Perfil</label>
@@ -99,7 +107,7 @@
           @if ($usuario->rubroPrincipal() != null)
             <div class="flex flexStart">
              <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
-             <img id="mostrarRubroP" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+             <img id="mostrarRubroP" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
             </div>
           @else
              <p>Elegí un rubro:</p>
@@ -122,12 +130,12 @@
         @if ($usuario->rubroSecundario() != null)
           <div class="flex flexStart">
           <p class="px16 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
-          <img id="mostrarRubroS" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+          <img id="mostrarRubroS" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
           </div>
         @endif
 
         @if ($usuario->rubroSecundario() == null)
-          <p class="px 12 texto_gris boldHover" id="agregarRubroS">Agregar rubro secundario</p>
+          <p class="px 12 texto_gris boldHover manoHover" id="agregarRubroS">Agregar rubro secundario</p>
         @endif
 
           <div id="form_rubro_S" class="oculto">
@@ -147,7 +155,28 @@
           <div class="especialidades">
             <div class="flex">
               <p>Subcategorías</p>
-              <img id="mostrarEsp_1" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+              <img id="mostrarEsp_1" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
+            </div>
+
+            <div class="">
+              @foreach (Especialidade::all() as $esp)
+                @php
+                  $esta = $esp->estaEn($usuario->especialidades);
+                @endphp
+                <div class="
+                @if ($esta == false)
+                oculto mostrar_esp
+                @endif
+                "
+                >
+                <input class="oculto mostrar_esp" type="checkbox" name="especialidades[]" value="{{$esp->ID}}"
+                @if ($esta == true)
+                  checked
+                @endif
+                  >
+                <label for="especialidades">{{$esp->nombre}}</label>
+                </div>
+              @endforeach
             </div>
 
           </div>
@@ -157,22 +186,27 @@
         <div class="zon margin3vh">
           <div class="flex flexStart">
           <p class="px14 margin1">Zona de trabajo:</p>
-          <img id="mostrarZonas" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+          <img id="mostrarZonas" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
           </div>
         </div>
 
-        <div class="zonas">
+        <div class="zonas_usu zona_ch">
+          @foreach ($zonas as $zon)
+            <p>{{$zon->NOMBRE_ZONA}}</p>
+          @endforeach
+        </div>
+
+        <div class="zonas_form zona_ch
+          @if ($usuario->zonas =! null)
+            oculto
+          @endif
+           ">
           @foreach ($zonasTodas as $zon)
             @php
               $esta = $zon->estaEn($zonas);
             @endphp
-            <div class="zona_ch
-            @if ($esta == false)
-            oculto
-            @endif
-            "
-            >
-            <input class="zona_ch oculto" type="checkbox" name="zona[]" value="{{$zon->ID}}"
+            <div class="">
+            <input class="" type="checkbox" name="zona[]" value="{{$zon->ID}}"
             @if ($esta == true)
               checked
             @endif
@@ -183,24 +217,69 @@
         </div>
 
         <div class="margin3vh">
-          <label for="descripcion">Descripción</label>
-          <textarea name="descripcion" rows="8" cols="80" placeholder="Agregá una descripción"></textarea>
+
+          <div class="">
+            <div class="flex">
+              <p>Acerca de mí:</p>
+              <img id="modificar_descrip" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
+            </div>
+            @if ($usuario->descripcion)
+            <div class="t50 mostrar">
+              {{$usuario->descripcion}}
+            </div>
+            @endif
+          </div>
+
+
+
+          @if ($usuario->descripcion == null)
+          <label for="descripcion">Agregá una descripción:</label>
+          @endif
+          <textarea class="mostrar
+          @if ($usuario->descripcion ==! null)
+          oculto
+          @endif
+          "
+          name="descripcion" rows="8" cols="45">
+           @if ($usuario->descripcion != null)
+             {{$usuario->descripcion}}
+           @endif
+          </textarea>
+
        </div>
        @endif
+
       </div>
 
    </div>
 
-   <button class="margin1" type="submit" name="button">Guardar Cambios</button>
+   <button class="margin1 manoHover" type="submit" name="button">Guardar Cambios</button>
     </form>
 
    <div class="feed">
 
+      <div class="t50">
+        <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
+        @foreach ($posteosP as $post)
+          <div class="t90 margin1">
+            <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
+            <p>De: {{$post->usuario->USER_NAME}}</p>
+            <p>
+            {{$post->mensaje}}
+            </p>
+          </div>
+        @endforeach
+
+      </div>
    </div>
   </div>
 
-  <div class="lateral_der">
-
+  <div class="lateral_der flex column">
+   <div class="w90 center marginTop1">
+      <img class= "publicid" src="/img_publicidad/acindar_1.jpg" alt="">
+      <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
+      <img class= "publicid" src="/img_publicidad/acindar.png" alt="">
+    </div>
   </div>
 </div>
 

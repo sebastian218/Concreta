@@ -64,5 +64,3 @@ Route::post('/buscador', 'UsuariosController@buscadorAvanzado');
 Route::get('/factory', function() {
   return view('llegue');
 });
-
-//Route::post('/guardarAvatar','UsuariosController@guardarAvatar');

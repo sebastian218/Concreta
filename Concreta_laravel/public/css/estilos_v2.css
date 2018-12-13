@@ -50,12 +50,15 @@ color: black;
 .t50{
   background-color: rgba(255,255,255,0.5);
 }
+.t90{
+  background-color: rgba(255,255,255,0.9);
+}
 .blanco{
   background-color: rgb(255,255,255);
 }
 .icono{
   height:50%;
-  max-height: 20px;
+  max-height: 25px;
   margin:auto;
 }
 
@@ -99,6 +102,9 @@ label.pointer{
 .boldHover:hover{
   font-weight: bold;
 }
+.manoHover:hover{
+  cursor:pointer;
+}
 .oculto{
 display: none;
 }
@@ -115,13 +121,26 @@ display: none;
 .margin1{
   margin:1vh;
 }
+.marginTop1{
+  margin-top: 1vh;
+}
 .margin2vh{
   margin-top: 2vh;
   margin-right: 2vh;
+  margin-left: 2vh;
 }
 .margin3vh{
   margin-top: 3vh;
   margin-bottom: 3vh;
+}
+.padding1{
+  padding: 1vh;
+}
+.bordeAbajo{
+  border-bottom: 2px solid black;
+}
+.bordeLateral{
+  border-left: 2px solid black;
 }
 .textarea{
   height: 10vh;
@@ -138,14 +157,18 @@ display: none;
   width: 100%;
   background-color: gray;
   height: 30vh;
+  /*overflow: hidden;*/
 }
+.a100 {
+  width:100%;
+}
+
 .lateral_izq{
   width:25%;
   min-height: 600px;
 }
 .lateral_der{
   width:25%;
-  background-color: red;
 }
 .cuerpo_central{
   width: 50%;
