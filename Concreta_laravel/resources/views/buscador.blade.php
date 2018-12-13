@@ -26,10 +26,10 @@
     <form class="" action="/buscadorA" method="get">
       {{ csrf_field() }}
 
-      <div class="buscar_basico flex column margin1">
+      <div class="buscar_basico flex column margin1 t90">
 
       <div class="buscar_rubro margin2vh">
-      <label for="RUBRO_BUSCAR">Elegí un rubro:</label>
+      <label for="RUBRO_BUSCAR">ELEGÍ UN RUBRO:</label>
       <select class="select" name="id_rubro_buscado" >
         @foreach ($rubrosTodos as $rubro)
           <option value="{{$rubro->ID}}">{{$rubro->NOMBRE_RUBRO}}</option>
@@ -38,12 +38,24 @@
       </div>
 
       <div class="buscar_zona flex column margin2vh">
-        <label for="ZONA_BUSCAR">Elegí un rubro:</label>
+        <label for="ZONA_BUSCAR">ELEGÍ UNA ZONA:</label>
         <select class="select" name="id_zona_buscado">
+            <option value="0">Todas</option>
           @foreach ($zonasTodas as $zona)
             <option value="{{$zona->ID}}">{{$zona->NOMBRE_ZONA}}</option>
           @endforeach
         </select>
+
+        <div class="buscar_esp flex column margin2vh">
+          <p>ELEGÍ UNO O MÁS SUBRUBROS</p>
+         @foreach (Especialidade::all() as $esp)
+           <div class="flex align_center">
+             <input type="checkbox" name="especialidades[]" value="{{$esp->ID}}">
+             <label for="especialidades">{{$esp->nombre}}</label>
+           </div>
+         @endforeach
+
+        </div>
 
       </div>
 
@@ -59,7 +71,7 @@
 
 
   <div class="cuerpo_central">
-    <p class="txt_centrado">Hay {{$cantidad}} resultados</p>
+    <p class="txt_centrado fondoAmarillo margin2vh padding1">Hay {{$cantidad}} resultados para tu búsqueda</p>
 
     <div class="resultados flex column">
     @foreach ($usuarios as $usuario)
@@ -125,7 +137,11 @@
 
 
   <div class="lateral_der">
-
+    <div class="w90 center marginTop1">
+       <img class= "publicid" src="/img_publicidad/acindar_1.jpg" alt="">
+       <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
+       <img class= "publicid" src="/img_publicidad/acindar.png" alt="">
+     </div>
   </div>
 
 </div>

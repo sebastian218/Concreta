@@ -229,7 +229,7 @@ $('.my-image').croppie();
 
 
    </div>
-   <div class="descri margin3vh t90 padding1 blanco">
+   <div class="descri t90 padding1 blanco">
 
      <div class="">
        <div class="flex align_center">
@@ -260,7 +260,10 @@ $('.my-image').croppie();
   </div>
   @endif
 
-   <button class="margin1 manoHover" type="submit" name="button">Guardar Cambios</button>
+   <div class="buttons">
+      <button class="center manoHover w100" style="background-color:rgba(247, 220, 111); height:5vh;" type="submit" name="button">GUARDAR CAMBIOS</button>
+   </div>
+
     </form>
 
    <div class="feed">
