@@ -150,6 +150,27 @@
               <img id="mostrarEsp_1" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
             </div>
 
+            <div class="">
+              @foreach (Especialidade::all() as $esp)
+                @php
+                  $esta = $esp->estaEn($usuario->especialidades);
+                @endphp
+                <div class="
+                @if ($esta == false)
+                oculto mostrar_esp
+                @endif
+                "
+                >
+                <input class="oculto mostrar_esp" type="checkbox" name="especialidades[]" value="{{$esp->ID}}"
+                @if ($esta == true)
+                  checked
+                @endif
+                  >
+                <label for="especialidades">{{$esp->nombre}}</label>
+                </div>
+              @endforeach
+            </div>
+
           </div>
         </div>
         @endif
@@ -161,18 +182,23 @@
           </div>
         </div>
 
-        <div class="zonas">
+        <div class="zonas_usu zona_ch">
+          @foreach ($zonas as $zon)
+            <p>{{$zon->NOMBRE_ZONA}}</p>
+          @endforeach
+        </div>
+
+        <div class="zonas_form zona_ch
+          @if ($usuario->zonas =! null)
+            oculto
+          @endif
+           ">
           @foreach ($zonasTodas as $zon)
             @php
               $esta = $zon->estaEn($zonas);
             @endphp
-            <div class="zona_ch
-            @if ($esta == false)
-            oculto
-            @endif
-            "
-            >
-            <input class="zona_ch oculto" type="checkbox" name="zona[]" value="{{$zon->ID}}"
+            <div class="">
+            <input class="" type="checkbox" name="zona[]" value="{{$zon->ID}}"
             @if ($esta == true)
               checked
             @endif
@@ -183,10 +209,38 @@
         </div>
 
         <div class="margin3vh">
-          <label for="descripcion">Descripción</label>
-          <textarea name="descripcion" rows="8" cols="80" placeholder="Agregá una descripción"></textarea>
+
+          <div class="">
+            <div class="flex">
+              <p>Acerca de mí:</p>
+              <img id="modificar_descrip" class="iconoPegado margin1 hoverBlanco" src="/img_app/cambiar_icon.png" alt="">
+            </div>
+            @if ($usuario->descripcion)
+            <div class="t50 mostrar">
+              {{$usuario->descripcion}}
+            </div>
+            @endif
+          </div>
+
+
+
+          @if ($usuario->descripcion == null)
+          <label for="descripcion">Agregá una descripción:</label>
+          @endif
+          <textarea class="mostrar
+          @if ($usuario->descripcion ==! null)
+          oculto
+          @endif
+          "
+          name="descripcion" rows="8" cols="80">
+           @if ($usuario->descripcion != null)
+             {{$usuario->descripcion}}
+           @endif
+          </textarea>
+
        </div>
        @endif
+
       </div>
 
    </div>
@@ -199,7 +253,11 @@
    </div>
   </div>
 
-  <div class="lateral_der">
+  <div class="lateral_der flex column">
+
+      <img class= "publicid" src="/img_publicidad/acindar_1.jpg" alt="">
+      <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
+      <img class= "publicid" src="/img_publicidad/acindar.png" alt="">
 
   </div>
 </div>
