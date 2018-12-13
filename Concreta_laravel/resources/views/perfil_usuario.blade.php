@@ -50,8 +50,43 @@
        @endforeach
        <div class="blanco flex h10 margin3vh">
          <a class= "txt_centrado px14 marginauto" href="#">Ver todos mis mensajes</a>
+
        </div>
+       <div class="blanco flex h10 margin3vh botonDesplegarFormTrabajos" style="cursor:pointer" >
+         <a class= "txt_centrado px14 marginauto" >Cargar nuevo trabajo</a>
+       </div>
+
+       <div class="formPoseteoTrabajos t90  oculto">
+         <form class="postearTrabajos" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
+
+                <div class="fotosTrabajo">
+                  <label for="fotos" style="cursor:pointer">Subir fotos : </label>
+                  <input class="subirFotoTrabajo" type="file" name="fotos[]" value="">
+
+                  <input class="subirFotoTrabajo" type="file" name="fotos[]" value="">
+
+                  <input class="subirFotoTrabajo" type="file" name="fotos[]" value="">
+
+                  <input class="subirFotoTrabajo" type="file" name="fotos[]" value="">
+                </div>
+
+
+
+           <label for="texto">Descripción :</label>
+           <textarea name="name" rows="8" cols="22"></textarea>
+
+                    <div class="botonesMuroPosteo">
+                      <button class="boton" type="submit" name="button">Enviar</button>
+                     <button class="boton" type="reset" name="button">Borrar</button>
+                    </div>
+
+         </form>
+       </div>
+
     </div>
+
+
   </div>
 
   <div class="cuerpo_central">

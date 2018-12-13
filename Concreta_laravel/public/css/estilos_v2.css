@@ -77,6 +77,15 @@ color: black;
 label.pointer{
   cursor: pointer;
 }
+.subirFotoTrabajo{
+
+  z-index: -1;
+  font-size: 0px;
+}
+.formPoseteoTrabajos{
+  width: 90%;
+ margin: 0 auto;
+}
 #subir_foto{
   opacity: 0;
   z-index: -1;
@@ -226,7 +235,7 @@ ul.desplegableLupa{
   display: flex;
   flex-flow: column;
   position: absolute;
-  left: 176px;
+  left: 55%;
   z-index: 23;
   justify-content: space-between;
   background-color: rgba(247, 220, 111);
