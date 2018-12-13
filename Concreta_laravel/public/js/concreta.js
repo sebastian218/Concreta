@@ -11,7 +11,8 @@ window.addEventListener("load",function(){
     var mostrarZonas = document.getElementById('mostrarZonas');
     var mostrarEsp = document.getElementById('mostrarEsp_1');
     var mostrarDescrip = document.getElementById('modificar_descrip');
-    
+
+
 
     if (mostrarDescrip) {
       mostrarDescrip.addEventListener("click", function() {
@@ -79,6 +80,32 @@ window.addEventListener("load",function(){
       });
     };
 
+    //Acá arranca script para iconos mobile
+
+   var menuHamb = document.querySelector('.hamburIcon');
+
+   var menuLupa = document.querySelector('.lupaIcon');
+
+   if (menuHamb) {
+
+            menuHamb.addEventListener("click", function(){
+
+            document.querySelector('.hamburgDesp').classList.toggle('oculto');
+
+        });
+
+  };
+
+     if (menuLupa) {
+
+        menuLupa.addEventListener("click", function(){
+
+        document.querySelector('.lupaDesp').classList.toggle('oculto');
+
+
+});
+
+}
 
 
 });

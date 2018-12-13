@@ -153,7 +153,11 @@ display: none;
   border-left: 2px solid black;
 }
 .bordeNegro{
+<<<<<<< HEAD
+
+=======
   border: 1px solid black;
+>>>>>>> 98bc3f5b348d2067102aea2c7e16169fd7c31dc5
 }
 .textarea{
   height: 10vh;
@@ -214,6 +218,43 @@ align:center;
 .cambiar_foto{
   flex-shrink: 0.5;
 }
+/*Estilos navegador Mobile*/
+ul.desplegableHamubr {
+
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  z-index: 23;
+  justify-content: space-between;
+  background-color: rgba(247, 220, 111);
+  width: 45%;
+
+}
+
+ul.desplegableLupa{
+
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  left: 176px;
+  z-index: 23;
+  justify-content: space-between;
+  background-color: rgba(247, 220, 111);
+  width: 45%;
+
+
+}
+ul.desplegableHamubr li {
+  border-color: black;
+  border-bottom: solid 1px;
+
+}
+
+ul.desplegableLupa li {
+    border-color: black;
+    border-bottom: solid 1px;
+}
+
 /*Estilos Para muro en mobile */
 
 div.containerMuro {
@@ -1054,6 +1095,11 @@ div.containerMuro {
     width: 40%;
     max-width: 500px;
     padding: 2%;
+
+}
+.foto-muro{
+  width: 150px;
+  height: 150px;
 
 }
 
