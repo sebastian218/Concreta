@@ -20,6 +20,7 @@
   }
   $zonasTodas = App\Zona::all();
   $rubrosTodos = App\Rubro::all();
+  $posteosP = $usuario->traerPosteosRubroP();
 @endphp
 
 @extends('plantilla')
@@ -250,11 +251,24 @@
 
    <div class="feed">
 
+      <div class="t50">
+        <p>Últimas búsquedas relacionadas:</p>
+        @foreach ($posteosP as $post)
+          <div class="t90 margin1">
+            <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
+            <p>De: {{$post->usuario->USER_NAME}}</p>
+            <p>
+            {{$post->mensaje}}
+            </p>
+          </div>
+        @endforeach
+
+      </div>
    </div>
   </div>
 
   <div class="lateral_der flex column">
-   <div class="w90 center">
+   <div class="w90 center marginTop1">
       <img class= "publicid" src="/img_publicidad/acindar_1.jpg" alt="">
       <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
       <img class= "publicid" src="/img_publicidad/acindar.png" alt="">

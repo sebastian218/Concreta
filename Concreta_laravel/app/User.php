@@ -142,5 +142,11 @@ class User extends Authenticatable
       return $query->where('esTrabajador', '1');
     }
 
+    public function traerPosteosRubroP() {
+      $id_rubroP = $this->rubroPrincipal()->ID;
+      $relacionados = Muro::all()->where('rubro_id', $id_rubroP);
+      return $relacionados;
+    }
+
 
 }

@@ -118,9 +118,13 @@ display: none;
 .margin1{
   margin:1vh;
 }
+.marginTop1{
+  margin-top: 1vh;
+}
 .margin2vh{
   margin-top: 2vh;
   margin-right: 2vh;
+  margin-left: 2vh;
 }
 .margin3vh{
   margin-top: 3vh;
