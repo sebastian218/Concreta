@@ -65,13 +65,19 @@ class UsuariosController extends Controller
       if ($req->zona != null) {
           $usuario->zonas()->sync($req->zona);
       }
+
+      if($req->especialidades != 0) {
+        $usuario->especialidades()->sync($req->especialidades);
+      }
+
       if ($req->descripcion != null) {
          $usuario->descripcion = $req->descripcion;
          $usuario->save();
       }
+
       //return redirect()->route('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
       return redirect("/perfil/log/" . $id)->with([
-        "status" => "Usuario actualizado correctamente"
+        "status" => "Los cambios se actualizaron correctamente!"
       ]);
     }
 

@@ -91,8 +91,8 @@
 
   <div class="cuerpo_central">
       @if (session("status"))
-        <div class="">
-          {{session("status")}}
+        <div class="t90">
+          <p txt_centrado>{{session("status")}}</p>
         </div>
       @endif
      <form class="" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
@@ -140,14 +140,15 @@ $('.my-image').croppie();
      <div class="container_rubros column flex bordeNegro padding1 blanco" style="width:80%; margin-top:3vh; margin-right:2vw;">
 
         <div class="rub">
-          <label class="seleccion_rub_zon" for="RUBRO_P"></label>
+          <p class="px12 margin0" style="margin-bottom:-1.5vh; margin-left:1vh;">RUBRO PRINCIPAL:</p>
+          <label class="seleccion_rub_zon oculto" for="RUBRO_P"></label>
           @if ($usuario->rubroPrincipal() != null)
-            <div class="flex flexStart">
+            <div class="flex align_center" style="margin-bottom:2vh;">
              <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
-             <img id="mostrarRubroP" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
+             <img id="mostrarRubroP" class="hoverAmarillo manoHover icono" src="/img_app/cambiar_icon.png" alt="">
             </div>
           @else
-             <p>Elegí un rubro:</p>
+             <p>Elegí un rubro principal:</p>
           @endif
 
             <div id="form_rubro_P" class=
@@ -165,18 +166,19 @@ $('.my-image').croppie();
         </div>
 
         @if ($usuario->rubroSecundario() != null)
-          <div class="flex flexStart">
+          <p class="px12 margin0" style="margin-bottom:-1.5vh; margin-left:1vh;">RUBRO SECUNDARIO:</p>
+          <div class="flex align_center" style="margin-bottom:2vh;">
           <p class="px16 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
-          <img id="mostrarRubroS" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
+          <img id="mostrarRubroS" class="icono hoverAmarillo manoHover opacity50" src="/img_app/cambiar_icon.png" alt="">
           </div>
         @endif
 
         @if ($usuario->rubroSecundario() == null)
-          <p class="px 12 texto_gris boldHover manoHover" id="agregarRubroS">Agregar rubro secundario</p>
+          <p class="px 12 texto_gris italic boldHover manoHover" id="agregarRubroS">Agregar rubro secundario</p>
         @endif
 
           <div id="form_rubro_S" class="oculto">
-          <label class="seleccion_rub_zon" for="RUBRO_S"></label>
+          <label class="seleccion_rub_zon oculto" for="RUBRO_S"></label>
           <select class="select" name="RUBRO_S">
             <option value="0">Elegir rubro secundario</option>
             @foreach ($rubrosTodos as $rubro)
@@ -187,12 +189,10 @@ $('.my-image').croppie();
 
         @if ($id_r != 0)
         <div class="e">
-
-
           <div class="especialidades">
-            <div class="flex">
-              <p>Subcategorías</p>
-              <img id="mostrarEsp_1" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
+            <div class="flex align_center">
+              <p class="px16 margin1">SUBRUBROS:</p>
+              <img id="mostrarEsp_1" class="icono hoverAmarillo manoHover" src="/img_app/cambiar_icon.png" style="max-height:3vh;" alt="">
             </div>
 
             <div class="">
@@ -211,9 +211,10 @@ $('.my-image').croppie();
                   checked
                 @endif
                   >
-                <label for="especialidades">{{$esp->nombre}}</label>
+                <label class="px14 italic" style="margin-left:1vw;" for="especialidades">{{$esp->nombre}}</label>
                 </div>
               @endforeach
+
             </div>
 
           </div>
@@ -224,16 +225,16 @@ $('.my-image').croppie();
 
      <div class="container_zonas column flex bordeNegro padding1 blanco" style="width:80%; margin-top:2vh; margin-right:2vw; margin-bottom:2vh;">
 
-        <div class="zon margin3vh">
-          <div class="flex flexStart">
-          <p class="px14 margin1">Zona de trabajo:</p>
-          <img id="mostrarZonas" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
+        <div class="zon">
+          <div class="flex flexStart align_center">
+          <p class="px16 margin1">ZONA DE TRABAJO:</p>
+          <img id="mostrarZonas" class="icono hoverAmarillo manoHover" style="max-height:3vh;" src="/img_app/cambiar_icon.png" alt="">
           </div>
         </div>
 
         <div class="zonas_usu zona_ch">
           @foreach ($zonas as $zon)
-            <p>{{$zon->NOMBRE_ZONA}}</p>
+            <p class="px16 margin1" style="margin-left:2vh;">{{$zon->NOMBRE_ZONA}}</p>
           @endforeach
         </div>
 
@@ -266,9 +267,9 @@ $('.my-image').croppie();
    <div class="descri margin3vh t90 padding1 blanco">
 
      <div class="">
-       <div class="flex">
-         <p>Acerca de mí:</p>
-         <img id="modificar_descrip" class="iconoPegado margin1 hoverBlanco manoHover" src="/img_app/cambiar_icon.png" alt="">
+       <div class="flex align_center">
+         <p class="px16 margin1">Acerca de mí:</p>
+         <img id="modificar_descrip" class="icono hoverAmarillo manoHover" style="max-height:3vh;" src="/img_app/cambiar_icon.png" alt="">
        </div>
        @if ($usuario->descripcion)
        <div class="t50 mostrar">
@@ -278,7 +279,7 @@ $('.my-image').croppie();
      </div>
 
      @if ($usuario->descripcion == null)
-     <label for="descripcion">Agregá una descripción personalizada:</label>
+     <label class="italic px14" for="descripcion">Agregá una descripción personalizada:</label>
      @endif
      <textarea class="mostrar
      @if ($usuario->descripcion ==! null)
