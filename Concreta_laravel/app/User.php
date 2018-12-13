@@ -160,5 +160,7 @@ class User extends Authenticatable
       else {return Muro::all();}
     }
 
+    
+
 
 }

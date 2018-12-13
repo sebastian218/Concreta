@@ -143,7 +143,7 @@ display: none;
   border-left: 2px solid black;
 }
 .bordeNegro{
-  
+  border: 1px solid black;
 }
 .textarea{
   height: 10vh;
