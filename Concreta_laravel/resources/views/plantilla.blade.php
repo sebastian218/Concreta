@@ -19,7 +19,7 @@
 <nav class="barra_principal">
   <ul class="barra_ppal_2">
     @if (Auth::check())
-      <li class="menu_registro"><a class="botones_registro" href="perfil_base.php"><i class="far fa-user"></i>  {{Auth::user()->USER_NAME}} </a></li>
+      <li class="menu_registro"><a class="botones_registro" href="/perfil/log/{{Auth::user()->ID}}"><i class="far fa-user"></i>  {{Auth::user()->USER_NAME}} </a></li>
       <li class="menu_registro"><a class="botones_registro" href="{{ route('logout') }}"
          onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();">CERRAR SESIÓN</a></li>
