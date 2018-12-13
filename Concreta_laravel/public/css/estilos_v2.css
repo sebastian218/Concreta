@@ -142,6 +142,9 @@ display: none;
 .bordeLateral{
   border-left: 2px solid black;
 }
+.bordeNegro{
+  
+}
 .textarea{
   height: 10vh;
 }

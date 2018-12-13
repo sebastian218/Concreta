@@ -100,9 +100,11 @@ $('.my-image').croppie();
 
       <div class="rubro_zona t50 flex column">
 
-       @if ($usuario->esTrabajador == true)
-        <div class="rub">
+        @if ($usuario->esTrabajador == true)
 
+     <div class="container_rubros column flex ">
+
+        <div class="rub">
           <label class="seleccion_rub_zon" for="RUBRO_P"></label>
           @if ($usuario->rubroPrincipal() != null)
             <div class="flex flexStart">
@@ -182,6 +184,8 @@ $('.my-image').croppie();
           </div>
         </div>
         @endif
+
+      </div>
 
         <div class="zon margin3vh">
           <div class="flex flexStart">
