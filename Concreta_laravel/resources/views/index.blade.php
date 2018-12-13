@@ -58,7 +58,7 @@
                         <h2 class="rubro-perf">{{$profesional->rubroPrincipal()["NOMBRE_RUBRO"]}}</h2>
                         <p class="perf-zona"> <!-- todavía no se como acceder a el nombre de las zonas del usuario -->   </p>
                         <p class="perf-descript">{{$profesional->descripcion}}</p>
-                        <a href=" {{-- Acá deberia enviarnos a una pagina de detalle del Trabajador....Queda definir --}} ">Ver mas</a>
+                        <a href="/perfil/ver/{{$profesional->ID}} ">Ver mas</a>
                   </div>
                 </article>
            @endforeach

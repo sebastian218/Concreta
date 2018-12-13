@@ -105,7 +105,22 @@ window.addEventListener("load",function(){
 
 });
 
-}
+};
+
+//Evento para Formulario posteo de trabajos
+
+  var botonFomPostTrabjas = document.querySelector('.botonDesplegarFormTrabajos');
+
+    if (botonFomPostTrabjas) {
+
+      botonFomPostTrabjas.addEventListener("click", function(){
+
+                      document.querySelector('.formPoseteoTrabajos').classList.toggle('oculto');
+
+
+      });
+
+    };
 
 
 });

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Calificacione;
 use App\Muro;
 use App\Especialidade;
+use App\TrabajosRealizado;
 
 class User extends Authenticatable
 {
@@ -34,6 +35,12 @@ class User extends Authenticatable
     public $table = "users";
     public $primaryKey = "ID";
     public $timestamps = false;
+
+     public function trabajosRealizados(){
+
+                return $this->hasMay('App\TrabajosRealizado', 'id_usuario');
+
+     }
 
     public function zonas() {
 
@@ -160,7 +167,7 @@ class User extends Authenticatable
       else {return Muro::all();}
     }
 
-    
+
 
 
 }
