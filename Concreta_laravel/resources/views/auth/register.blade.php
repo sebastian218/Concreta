@@ -3,7 +3,9 @@
 
 @section('contenido')
 
-<div class="container_reg_doble registerIntermedio">
+<div class="container_reg_doble registerIntermedio @if (count($errors->all()) > 0)
+          oculto
+@endif " >
   <div class="banner_perfiles">
     <p class="crea_perfil">¿Trabajás en la construcción?<br>Creá tu perfil en concreta</p>
     <p class="perfil_registrate">¿Buscás servicios? Registrate</p>
@@ -42,7 +44,10 @@
 
 
 
-  <div class="container_formularios_gral formUsuarios" style="display:none">
+  <div class="container_formularios_gral formUsuarios  @if (count($errors->all()) == 0)
+                              oculto 
+
+  @endif " >
 
     <div class="banner_perfiles">
 

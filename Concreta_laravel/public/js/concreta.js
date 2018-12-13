@@ -63,8 +63,8 @@ window.addEventListener("load",function(){
       botonProfesional.addEventListener("click", function(){
 
          document.getElementById('esTrabajador').setAttribute('value', 1);
-         document.querySelector('.formUsuarios').style.display = "block";
-         sectionTipoPerfil.style.display = "none";
+         document.querySelector('.formUsuarios').classList.remove('oculto');
+         sectionTipoPerfil.classList.add("oculto");
        });
     };
 
@@ -72,8 +72,8 @@ window.addEventListener("load",function(){
       botonCliente.addEventListener("click", function(){
 
      document.getElementById('esTrabajador').setAttribute('value', 0);
-     document.querySelector('.formUsuarios').style.display = "block";
-     sectionTipoPerfil.style.display = "none";
+     document.querySelector('.formUsuarios').classList.remove('oculto');
+     sectionTipoPerfil.classList.add("oculto");
 
 
       });

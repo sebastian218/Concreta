@@ -10,7 +10,7 @@ use App\Muro;
 
 class muroController extends Controller
 {
-  
+
   public function guardarPosteo(Request $req){
 
 
@@ -29,7 +29,7 @@ class muroController extends Controller
 
     $paths = [];
     foreach ($req->fotos as $foto) {
-       $paths[] = $foto->store('img_fotoAveria');
+       $paths[] = $foto->store('public');
     }
     $nombreArchivos = [];
     foreach ($paths as $path) {
