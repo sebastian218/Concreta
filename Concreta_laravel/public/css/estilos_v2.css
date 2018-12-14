@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 ul {
   list-style: none;
   padding:0;
@@ -103,11 +104,17 @@ label.pointer{
 
   font-size: 0px;
 }
+.w100{
+
+  width: 100%;
+}
+/*
 .postearTrabajos{
   display: flex;
   flex-flow: column;
 
 }
+*/
 .formPoseteoTrabajos{
  width: 90%;
  margin: 0 auto;

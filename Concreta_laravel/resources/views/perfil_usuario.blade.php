@@ -74,7 +74,7 @@
 
 
            <label for="texto">Descripción :</label>
-           <textarea name="name" rows="8" cols="16"></textarea>
+           <textarea class="w100" name="name" rows="8" cols="20" placeholder="Escriba aquí"></textarea>
 
                     <div class="botonesMuroPosteo">
                       <button class="boton" type="submit" name="button">Enviar</button>
