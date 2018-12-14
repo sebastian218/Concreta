@@ -74,7 +74,7 @@
 
 
            <label for="texto">Descripción :</label>
-           <textarea name="name" rows="8" cols="22"></textarea>
+           <textarea name="name" rows="8" cols="16"></textarea>
 
                     <div class="botonesMuroPosteo">
                       <button class="boton" type="submit" name="button">Enviar</button>
@@ -281,7 +281,7 @@ $('.my-image').croppie();
      @if ($usuario->descripcion == null)
      <label class="italic px14" for="descripcion">Agregá una descripción personalizada:</label>
      @endif
-     <textarea class="mostrar
+     <textarea class="mostrar anchoTexMobile
      @if ($usuario->descripcion ==! null)
      oculto
      @endif

@@ -17,6 +17,7 @@ a {
 text-decoration: none;
 color: black;
 }
+
 .flex{
   display: flex;
 }
@@ -1128,5 +1129,48 @@ div.containerMuro {
   height: 150px;
 
 }
+
+}
+@media (max-width: 600px){
+  .lateral_izq {
+      display: none;
+  }
+
+  .lateral_der {
+    display: none;
+}
+.sin_avatar {
+    width: 100%;
+    text-align: center;
+}
+.cuerpo_central {
+    width: 90%;
+    margin: 0 auto;
+}
+.anchoTexMobile {
+  width: 100%;
+}
+.foto_nombre {
+    width: 100%;
+}
+.pic_perfil {
+    width: 100%;
+    height: 170px;
+    margin-top: 15px;
+}
+.container_rubros{
+
+  width: 100%;
+
+}
+.select{
+  width:100%;
+}
+p.margin0{
+
+margin-bottom: 1.5vh;
+
+}
+
 
 }
