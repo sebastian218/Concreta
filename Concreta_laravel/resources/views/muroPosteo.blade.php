@@ -25,19 +25,29 @@
   <div class="cuerpo_central">
     <form class="formPosteoMuro t90" action="/muro" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
-    <label class="labelMuro" for="zona">Zona</label>
-    <select class="" name="zona">
-      @foreach ($zonas as $zona)
-        <option value="{{$zona->ID}}">{{$zona->NOMBRE_ZONA}}</option>
-      @endforeach
-    </select>
+
+
+          <label class="labelMuro" for="zona">Zona</label>
+          <select class="" name="zona">
+            <option value="null" selected disabled>Selecciona una zona</option>
+            @foreach ($zonas as $zona)
+              <option value="{{$zona->ID}}">{{$zona->NOMBRE_ZONA}}</option>
+            @endforeach
+          </select>
+
+
 
     <label class="labelMuro" for="rubro">Rubro</label>
     <select class="" name="rubro">
+      <option value="null" selected disabled>Selecciona un rubro</option>
       @foreach ($rubros as $rubro)
         <option value="{{$rubro->ID}}">{{$rubro->NOMBRE_RUBRO}}</option>
       @endforeach
     </select>
+
+
+
+
     <label class="labelMuro" for="foto">Carga una Foto</label>
     <input type="file" name="fotos[]" value="">
     <input type="file" name="fotos[]" value="">
