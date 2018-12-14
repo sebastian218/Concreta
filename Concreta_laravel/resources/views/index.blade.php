@@ -29,7 +29,8 @@
                 <div class="foto-nombre">
                        <img class="cara-perf" src="/img_app/icono_constructor.png" alt="">
                        <p class="nombre-perf">Creá Tu Perfil !</p>
-                       <img src="/img_app/cinco_estrellitas.png" alt="">
+
+                       {{-- <img src="/img_app/cinco_estrellitas.png" alt="">--}}
                 </div>
                 <div class="datos-rubro-boton">
                       <h2 class="rubro-perf">¿Prestás Servicios?</h2>
@@ -38,30 +39,34 @@
                 </div>
               </article>
 
-           @foreach ($profPromAlto as $profesional)
-             <article class="art-perfiles">
-                  <div class="foto-nombre">
-                         <img class="cara-perf" src="/img_usuarios/{{$profesional->avatar}}" alt="">
-                         <p class="nombre-perf">{{$profesional->NOMBRE}}</p>
+          @foreach ($profPromAlto as $profesional)
+
+            <article class="art-perfiles">
+                 <div class="foto-nombre">
+                        <img class="cara-perf" src="/img_usuarios/{{$profesional->avatar}}" alt="">
+                        <p class="nombre-perf">{{$profesional->NOMBRE}}</p>
+
+                       <div class="calificStars"  style="display:flex">
 
 
-                          <div class="calificStars"  style="display:flex">
+                       @for ($i=0; $i < $profesional->promedioInt(); $i++)
+                             <img class="icono" src="/img_app/Yellow_Star.png" alt="">
+                           @endfor
 
-                            @for ($i=0; $i < $profesional->promedioInt(); $i++)
-                              <img class="icono" src="/img_app/Yellow_Star.png" alt="">
-                            @endfor
+                         </div>
 
-                          </div>
+                 </div>
+                 <div class="datos-rubro-boton">
+                       <h2 class="rubro-perf">{{$profesional->rubroPrincipal()["NOMBRE_RUBRO"]}}</h2>
+                       <p class="perf-zona"> <!-- todavía no se como acceder a el nombre de las zonas del usuario -->   </p>
+                       <p class="perf-descript">{{$profesional->descripcion}}</p>
+                       <a href="/perfil/ver/{{$profesional->ID}} ">Ver mas</a>
+                 </div>
+               </article>
+          @endforeach
 
-                  </div>
-                  <div class="datos-rubro-boton">
-                        <h2 class="rubro-perf">{{$profesional->rubroPrincipal()["NOMBRE_RUBRO"]}}</h2>
-                        <p class="perf-zona"> <!-- todavía no se como acceder a el nombre de las zonas del usuario -->   </p>
-                        <p class="perf-descript">{{$profesional->descripcion}}</p>
-                        <a href="/perfil/ver/{{$profesional->ID}} ">Ver mas</a>
-                  </div>
-                </article>
-           @endforeach
+
+
 
         </div>
 
@@ -73,6 +78,7 @@
 
 
         </div>
+
 
       </section>
 
