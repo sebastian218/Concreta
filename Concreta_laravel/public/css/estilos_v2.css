@@ -262,6 +262,7 @@ ul.desplegableHamubr {
   justify-content: space-between;
   background-color: rgba(247, 220, 111);
   width: 45%;
+  border-top: solid 1px;
 
 }
 
@@ -275,18 +276,31 @@ ul.desplegableLupa{
   justify-content: space-between;
   background-color: rgba(247, 220, 111);
   width: 45%;
+  border-top: solid 1px;
 
 
 }
+ul.desplegableHamubr li:hover {
+
+      background-color: rgba(247, 220, 50);
+
+}
+ul.desplegableLupa li:hover {
+
+      background-color: rgba(247, 220, 50);
+
+}
+
 ul.desplegableHamubr li {
   border-color: black;
   border-bottom: solid 1px;
-
+  cursor: pointer;
 }
 
 ul.desplegableLupa li {
     border-color: black;
     border-bottom: solid 1px;
+    cursor: pointer;
 }
 
 /*Estilos Para muro en mobile */
