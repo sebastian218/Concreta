@@ -1154,7 +1154,7 @@ div.containerMuro {
     width: 100%;
 }
 .pic_perfil {
-    width: 100%;
+    max-width: 125px;
     height: 170px;
     margin-top: 15px;
 }
