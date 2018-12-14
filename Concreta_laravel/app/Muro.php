@@ -27,7 +27,8 @@ class Muro extends Model
     }
 
     public function mostrarFotos(){
-      $fotos= json_decode($this->foto,true);
+
+      $fotos = json_decode($this->foto,true);
       return $fotos;
     }
 

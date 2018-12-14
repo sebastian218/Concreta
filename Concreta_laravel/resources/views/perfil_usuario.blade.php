@@ -52,12 +52,12 @@
          <a class= "txt_centrado px14 marginauto" href="#">Ver todos mis mensajes</a>
 
        </div>
-       <div class="blanco flex h10 margin3vh botonDesplegarFormTrabajos" style="cursor:pointer" >
-         <a class= "txt_centrado px14 marginauto" >Cargar nuevo trabajo</a>
+       <div class="blanco flex h10 margin3vh botonDesplegarFormTrabajos hoverAmarillo" style="cursor:pointer" >
+         <a class= "txt_centrado px14 marginauto " >Cargar nuevo trabajo</a>
        </div>
 
        <div class="formPoseteoTrabajos t90  oculto">
-         <form class="postearTrabajos" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
+         <form class="postearTrabajos" action="/perfil/log/postearTrabajos/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
 
                 <div class="fotosTrabajo">
@@ -77,8 +77,8 @@
            <textarea class="w100" name="name" rows="8" cols="20" placeholder="Escriba aquí"></textarea>
 
                     <div class="botonesMuroPosteo">
-                      <button class="boton" type="submit" name="button">Enviar</button>
-                     <button class="boton" type="reset" name="button">Borrar</button>
+                      <button class="boton hoverAmarillo" type="submit" name="button"style="cursor:pointer" >Enviar</button>
+                     <button class="boton hoverAmarillo" type="reset" name="button"style="cursor:pointer"  >Borrar</button>
                     </div>
 
          </form>
