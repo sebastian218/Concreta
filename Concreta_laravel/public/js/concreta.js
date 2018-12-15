@@ -15,7 +15,7 @@ window.addEventListener("load",function(){
     for (var i = 0; i < 4; i++) {
       var mostrarSelecFotos = document.getElementById('mostrar_' + i);
       mostrarSelecFotos.addEventListener("click", function() {
-      document.getElementById("foto_" + i).classList.toggle('oculto');  
+      document.getElementById("foto_" + i).classList.toggle('oculto');
       });
     }
 
