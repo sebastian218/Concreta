@@ -135,7 +135,13 @@ window.addEventListener("load",function(){
 
           var contadorSlider = 0;
 
+     if (perfilesHome.length > 0) {
+
       perfilesHome[contadorSlider].style ="display:flex";
+
+    }
+
+
 
       if (botonSiguiente) {
 

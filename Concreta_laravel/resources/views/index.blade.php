@@ -29,7 +29,7 @@
 
 <div class="slider-perfiles">
   @foreach ($profPromAlto as $profesional)
-    <article class="art-perfiles artPerfilesIndex oculto" style="display:none"  >
+    <article class="art-perfiles artPerfilesIndex" style="display:none"  >
          <div class="foto-nombre">
                 <img class="cara-perf" src="/img_usuarios/{{$profesional->avatar}}" alt="">
                 <p class="nombre-perf">{{$profesional->NOMBRE}}</p>
