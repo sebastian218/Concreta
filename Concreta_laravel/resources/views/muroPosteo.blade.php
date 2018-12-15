@@ -49,10 +49,18 @@
 
     <label class="labelMuro" for="foto">Carga una imagen</label>
     <p class="italic px12">Agregá hasta cuatro fotos o planos</p>
+    @for ($i=0; $i < 4; $i++)
+      <div class="agregar_fotos margin1" style="background-color:gray; width:3vh; height:3vh;" id="mostrar_{{$i}}">
+        {{--}}<label class="labelMuro marginauto" style="width:100%; height:100%; cursor:pointer;" for="foto_{{$i}}">+</label>{{----}}
+        <input class="oculto" type="file" name="fotos[]" value="" id="foto_{{$i}}">
+      </div>
+    @endfor
+
     <input type="file" name="fotos[]" value="">
     <input type="file" name="fotos[]" value="">
     <input type="file" name="fotos[]" value="">
     <input type="file" name="fotos[]" value="">
+
     <label class="labelMuro" for="text">Agregá una descripción de lo que buscás:</label>
     <textarea name="text" rows="8" cols="80" placeholder="Escriba aqui"></textarea>
     <input type="hidden" name="idUsuario" value="1{{-- Acá va el id de Usuario auth()->ID --}}">

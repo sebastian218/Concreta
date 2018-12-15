@@ -53,15 +53,15 @@
 
        </div>
        <div class="blanco flex h10 margin3vh botonDesplegarFormTrabajos hoverAmarillo" style="cursor:pointer" >
-         <a class= "txt_centrado px14 marginauto " >Cargar nuevo trabajo</a>
+         <a class= "txt_centrado px14 marginauto bold" >Cargar nuevo trabajo realizado</a>
        </div>
 
-       <div class="formPosteoTrabajos t90  oculto">
+       <div class="formPosteoTrabajos t90 oculto padding1">
          <form class="postearTrabajos" action="/perfil/log/postearTrabajos/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
 
                 <div class="fotosTrabajo">
-                  <label for="fotos" style="cursor:pointer">Subir fotos : </label>
+                  <label for="fotos">Subir fotos : </label>
                   <input class="subirFotoTrabajo" type="file" name="fotos[]" value="">
 
                   <input class="subirFotoTrabajo" type="file" name="fotos[]" value="">

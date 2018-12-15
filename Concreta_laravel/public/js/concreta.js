@@ -12,6 +12,12 @@ window.addEventListener("load",function(){
     var mostrarEsp = document.getElementById('mostrarEsp_1');
     var mostrarDescrip = document.getElementById('modificar_descrip');
 
+    for (var i = 0; i < 4; i++) {
+      var mostrarSelecFotos = document.getElementById('mostrar_' + i);
+      mostrarSelecFotos.addEventListener("click", function() {
+      document.getElementById("foto_" + i).classList.toggle('oculto');  
+      });
+    }
 
 
     if (mostrarDescrip) {
