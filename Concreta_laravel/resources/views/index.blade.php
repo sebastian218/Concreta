@@ -21,14 +21,15 @@
    <section class="cuerpo">
 
               <p class="subtit"> Busca entre mas de 1000 trabajadores registrados y conseguí <strong>el mejor presupuesto </strong></p>
-      <h2 class="tit-perf" >Perfiles</h2>
+
+      <h2 class="tit-perf" >Perfiles Destacados</h2>
 
          <div class="perfiles" >
 
 
 <div class="slider-perfiles">
   @foreach ($profPromAlto as $profesional)
-    <article class="art-perfiles artPerfilesIndex oculto" style="display:none"  >
+    <article class="art-perfiles artPerfilesIndex" style="display:none"  >
          <div class="foto-nombre">
                 <img class="cara-perf" src="/img_usuarios/{{$profesional->avatar}}" alt="">
                 <p class="nombre-perf">{{$profesional->NOMBRE}}</p>

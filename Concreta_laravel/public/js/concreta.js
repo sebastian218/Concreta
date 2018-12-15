@@ -141,14 +141,20 @@ window.addEventListener("load",function(){
 
           var contadorSlider = 0;
 
+     if (perfilesHome.length > 0) {
+
       perfilesHome[contadorSlider].style ="display:flex";
+
+    }
+
+
 
       if (botonSiguiente) {
 
             botonSiguiente.addEventListener('click', function(){
 
                            contadorSlider += 1;
-                           if (contadorSlider > perfilesHome.length) {
+                           if (contadorSlider > perfilesHome.length - 1) {
                             contadorSlider = 0;
                            }
                       for (var i = 0; i < perfilesHome.length; i++) {
@@ -171,7 +177,7 @@ window.addEventListener("load",function(){
 
                        contadorSlider -= 1;
                        if (contadorSlider < 0) {
-                        contadorSlider = perfilesHome.length - 1;
+                           contadorSlider = perfilesHome.length - 1;
                        }
                   for (var i = 0; i < perfilesHome.length; i++) {
 
