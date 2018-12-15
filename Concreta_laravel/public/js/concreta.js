@@ -142,7 +142,7 @@ window.addEventListener("load",function(){
             botonSiguiente.addEventListener('click', function(){
 
                            contadorSlider += 1;
-                           if (contadorSlider > perfilesHome.length) {
+                           if (contadorSlider > perfilesHome.length - 1) {
                             contadorSlider = 0;
                            }
                       for (var i = 0; i < perfilesHome.length; i++) {
@@ -165,7 +165,7 @@ window.addEventListener("load",function(){
 
                        contadorSlider -= 1;
                        if (contadorSlider < 0) {
-                        contadorSlider = perfilesHome.length - 1;
+                           contadorSlider = perfilesHome.length - 1;
                        }
                   for (var i = 0; i < perfilesHome.length; i++) {
 

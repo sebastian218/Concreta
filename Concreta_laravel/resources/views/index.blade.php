@@ -21,7 +21,8 @@
    <section class="cuerpo">
 
               <p class="subtit"> Busca entre mas de 1000 trabajadores registrados y conseguí <strong>el mejor presupuesto </strong></p>
-      <h2 class="tit-perf" >Perfiles</h2>
+
+      <h2 class="tit-perf" >Perfiles Destacados</h2>
 
          <div class="perfiles" >
 
