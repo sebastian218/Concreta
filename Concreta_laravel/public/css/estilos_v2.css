@@ -253,6 +253,9 @@ align:center;
   flex-shrink: 0.5;
 }
 /*Estilos navegador Mobile*/
+.artPerfilesIndex{
+  margin: 0 auto;
+}
 ul.desplegableHamubr {
 
   display: flex;
@@ -742,6 +745,10 @@ footer{
   height: 5vh;
   background-color: rgba(0,0,0,0.5);
 
+}
+.slider-perfiles{
+  width: 80%;
+  margin: 0 auto;
 }
 .footer_sec_corta{
   margin-top: 15vh;
