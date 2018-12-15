@@ -9,7 +9,7 @@
 
 <div class="container">
 
-  <div class="lateral_izq ">
+  <div class="lateral_izq">
     <div class="w90 center t50 flex column">
        <div class="blanco flex h10">
          <div class="flex" style="width: 25%;">
@@ -48,12 +48,13 @@
 
 
 
-    <label class="labelMuro" for="foto">Carga una Foto</label>
+    <label class="labelMuro" for="foto">Carga una imagen</label>
+    <p class="italic px12">Agregá hasta cuatro imágenes de fotos y planos</p>
     <input type="file" name="fotos[]" value="">
     <input type="file" name="fotos[]" value="">
     <input type="file" name="fotos[]" value="">
     <input type="file" name="fotos[]" value="">
-    <label class="labelMuro"  for="text">Describe tu necesidad :</label>
+    <label class="labelMuro" for="text">Agregá una descripción de lo que buscás:</label>
     <textarea name="text" rows="8" cols="80" placeholder="Escriba aqui"></textarea>
     <input type="hidden" name="idUsuario" value="{{-- Acá va el id de Usuario auth()->ID --}}">
 

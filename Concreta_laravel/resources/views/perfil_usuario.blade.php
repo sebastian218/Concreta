@@ -56,7 +56,7 @@
          <a class= "txt_centrado px14 marginauto " >Cargar nuevo trabajo</a>
        </div>
 
-       <div class="formPoseteoTrabajos t90  oculto">
+       <div class="formPosteoTrabajos t90  oculto">
          <form class="postearTrabajos" action="/perfil/log/postearTrabajos/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
 

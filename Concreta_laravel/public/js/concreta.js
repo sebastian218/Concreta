@@ -115,7 +115,7 @@ window.addEventListener("load",function(){
 
       botonFomPostTrabjas.addEventListener("click", function(){
 
-                      document.querySelector('.formPoseteoTrabajos').classList.toggle('oculto');
+                      document.querySelector('.formPosteoTrabajos').classList.toggle('oculto');
 
 
       });
