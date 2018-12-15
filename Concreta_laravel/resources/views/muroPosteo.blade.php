@@ -23,10 +23,9 @@
   </div>
 
   <div class="cuerpo_central">
-    <form class="formPosteoMuro t90" action="/muro" method="post" enctype="multipart/form-data">
+    <div class="t90 flex padding1">
+    <form class="" action="/muro" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
-
-
           <label class="labelMuro" for="zona">Zona</label>
           <select class="" name="zona">
             <option value="null" selected disabled>Selecciona una zona</option>
@@ -49,20 +48,21 @@
 
 
     <label class="labelMuro" for="foto">Carga una imagen</label>
-    <p class="italic px12">Agregá hasta cuatro imágenes de fotos y planos</p>
+    <p class="italic px12">Agregá hasta cuatro fotos o planos</p>
     <input type="file" name="fotos[]" value="">
     <input type="file" name="fotos[]" value="">
     <input type="file" name="fotos[]" value="">
     <input type="file" name="fotos[]" value="">
     <label class="labelMuro" for="text">Agregá una descripción de lo que buscás:</label>
     <textarea name="text" rows="8" cols="80" placeholder="Escriba aqui"></textarea>
-    <input type="hidden" name="idUsuario" value="{{-- Acá va el id de Usuario auth()->ID --}}">
+    <input type="hidden" name="idUsuario" value="1{{-- Acá va el id de Usuario auth()->ID --}}">
 
     <div class="botonesMuroPosteo">
-      <button class="boton enviar" type="submit" name="buttonSubmit" style="cursor:pointer">Enviar</button>
       <button class="boton" type="reset" name="buttonReset" style="cursor:pointer">Cancelar</button>
+      <button class="boton enviar" type="submit" name="buttonSubmit" style="cursor:pointer">Enviar</button>
     </div>
  </form>
+ </div>
 
  <div class="t50">
    <p class="txt_centrado t90">Últimas Posteos :</p>
