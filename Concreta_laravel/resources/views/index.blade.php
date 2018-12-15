@@ -27,38 +27,44 @@
          <div class="perfiles" >
 
 
-<div class="slider-perfiles">
-  @foreach ($profPromAlto as $profesional)
-    <article class="art-perfiles artPerfilesIndex" style="display:none"  >
-         <div class="foto-nombre">
-                <img class="cara-perf" src="/img_usuarios/{{$profesional->avatar}}" alt="">
-                <p class="nombre-perf">{{$profesional->NOMBRE}}</p>
 
-               <div class="calificStars"  style="display:flex">
+  <div class="slider-perfiles ">
+
+    <button class=" botonAnterior botonSlide hoverAmarillo " type="button" name="buttonsanterior"> < </button>
+    @foreach ($profPromAlto as $profesional)
+      <article class="art-perfiles artPerfilesIndex" style="display:none"  >
+           <div class="foto-nombre">
+                  <img class="cara-perf" src="/img_usuarios/{{$profesional->avatar}}" alt="">
+                  <p class="nombre-perf">{{$profesional->NOMBRE}}</p>
+
+                 <div class="calificStars"  style="display:flex">
 
 
-               @for ($i=0; $i < $profesional->promedioInt(); $i++)
-                     <img class="icono" src="/img_app/Yellow_Star.png" alt="">
-                   @endfor
+                 @for ($i=0; $i < $profesional->promedioInt(); $i++)
+                       <img class="icono" src="/img_app/Yellow_Star.png" alt="">
+                     @endfor
 
-                 </div>
+                   </div>
 
-         </div>
-         <div class="datos-rubro-boton">
-               <h2 class="rubro-perf">{{$profesional->rubroPrincipal()["NOMBRE_RUBRO"]}}</h2>
-               <p class="perf-zona"> <!-- todavía no se como acceder a el nombre de las zonas del usuario -->   </p>
-               <p class="perf-descript">{{$profesional->descripcion}}</p>
-               <a href="/perfil/ver/{{$profesional->ID}} ">Ver mas</a>
-         </div>
-       </article>
-  @endforeach
+           </div>
+           <div class="datos-rubro-boton">
+                 <h2 class="rubro-perf">{{$profesional->rubroPrincipal()["NOMBRE_RUBRO"]}}</h2>
+                 <p class="perf-zona"> <!-- todavía no se como acceder a el nombre de las zonas del usuario -->   </p>
+                 <p class="perf-descript">{{$profesional->descripcion}}</p>
+                 <a href="/perfil/ver/{{$profesional->ID}} ">Ver mas</a>
+           </div>
+         </article>
+    @endforeach
 
-<div class="botonesMuroPosteo">
-  <button class="boton botonAnterior hoverAmarillo " type="button" name="buttonsanterior">Anterior</button>
-  <button class="boton botonSiguiente hoverAmarillo " type="button" name="buttonsiguiente">Siguiente</button>
-</div>
 
-</div>
+
+    <button class=" botonSiguiente botonSlide hoverAmarillo " type="button" name="buttonsiguiente"> > </button>
+
+
+  </div>
+
+
+
 
 <article class="art-perfiles crear-perfil">
      <div class="foto-nombre">
