@@ -129,6 +129,7 @@ label.pointer{
   z-index: -1;
   position:absolute;
 }
+
 .px12{
     font-size: 12px;
     min-height: 3vh;
