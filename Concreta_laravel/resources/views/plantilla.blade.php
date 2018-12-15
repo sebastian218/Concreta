@@ -45,17 +45,21 @@ use App\Especialidade;
 
     <div class="hamburgDesp  oculto">
       <ul class="desplegableHamubr oculto">
-        <li><a href="">Mis mensajes</a></li>
-        <li><a href="">Escribir mensaje</a></li>
-        <li><a href="">Muro de posteos</a></li>
-        <li><a href="">Link</a></li>
+        <li class=" padding2" style="border-top:1px solid black;" ><a href=""class="gris_oscuro" >Mis mensajes</a></li>
+        <li class=" padding2"><a href=""class="gris_oscuro" >Escribir mensaje</a></li>
+        <li class=" padding2"><a href=""class="gris_oscuro" >Muro de búsquedas</a></li>
+        <li class=" padding2"><a href=""class="gris_oscuro" >Mis calificaciones</a></li>
       </ul>
     </div>
 
 <div class="lupaDesp oculto">
   <ul class="desplegableLupa">
     @foreach ($rubros as $rubro)
-    <li><a href="">{{$rubro->NOMBRE_RUBRO}} </a></li>
+      @if($rubro->NOMBRE_RUBRO != null)
+    <li class="padding2"><a class="gris_oscuro"href="">
+      {{$rubro->NOMBRE_RUBRO}}
+    </a></li>
+     @endif
     @endforeach
 
   </ul>

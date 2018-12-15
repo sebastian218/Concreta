@@ -18,6 +18,9 @@ a {
 text-decoration: none;
 color: black;
 }
+.gris_oscuro{
+  color: rgb(50,50,50);
+}
 
 .flex{
   display: flex;
@@ -115,7 +118,7 @@ label.pointer{
 
 }
 */
-.formPoseteoTrabajos{
+.formPosteoTrabajos{
  width: 100%;
  margin: 0 auto;
  display: flex;
@@ -180,6 +183,9 @@ display: none;
 .padding1{
   padding: 1vh;
 }
+.padding2{
+  padding: 2vh;
+}
 .bordeAbajo{
   border-bottom: 2px solid black;
 }
@@ -192,6 +198,12 @@ display: none;
 =======
   border: 1px solid black;
 >>>>>>> 98bc3f5b348d2067102aea2c7e16169fd7c31dc5
+}
+.borderBlack{
+  border: 1px solid black;
+}
+.borderGray{
+  border: 1px solid gray;
 }
 .textarea{
   height: 10vh;
@@ -265,7 +277,6 @@ ul.desplegableHamubr {
   justify-content: space-between;
   background-color: rgba(247, 220, 111);
   width: 45%;
-  border-top: solid 1px;
 
 }
 
