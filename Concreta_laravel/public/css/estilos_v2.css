@@ -779,6 +779,7 @@ footer{
   margin: auto;
   background-color: rgba(255,255,255,0.5);
   margin-top: 2vh;
+  margin-bottom: 42%;
 }
 .Registro_cliente{
   display:flex;
@@ -998,7 +999,7 @@ height:71vh;
   display:none;
 }
 .container{
-  height: 120vh;
+  /*height: 120vh;*/
 }
 .footer_login{
 position: absolute;
@@ -1193,6 +1194,14 @@ margin-bottom: 1.5vh;
 
 }
 
+.datos{
+  flex-flow: column;
+}
+
+.rubro_zona{
+
+  width:100%;
+}
 
 
 
