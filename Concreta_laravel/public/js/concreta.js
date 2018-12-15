@@ -80,7 +80,7 @@ window.addEventListener("load",function(){
       });
     };
 
-    //Acá arranca script para iconos mobile
+//Acá arranca script para iconos mobile lupa y Hambur
 
    var menuHamb = document.querySelector('.hamburIcon');
 
@@ -106,6 +106,9 @@ window.addEventListener("load",function(){
 });
 
 };
+//fin lupa y Hamburger
+
+
 
 //Evento para Formulario posteo de trabajos
 
@@ -121,6 +124,64 @@ window.addEventListener("load",function(){
       });
 
     };
+
+//fin form posteoTrabajos
+
+//Slider Perfiles Home
+      var contenedorSlider = document.querySelector(".slider-perfiles");
+      var perfilesHome = document.querySelectorAll('.artPerfilesIndex');
+      var botonSiguiente = document.querySelector('.botonSiguiente');
+      var botonAnterior = document.querySelector('.botonAnterior');
+
+          var contadorSlider = 0;
+
+      perfilesHome[contadorSlider].style ="display:flex";
+
+      if (botonSiguiente) {
+
+            botonSiguiente.addEventListener('click', function(){
+
+                           contadorSlider += 1;
+                           if (contadorSlider > perfilesHome.length) {
+                            contadorSlider = 0;
+                           }
+                      for (var i = 0; i < perfilesHome.length; i++) {
+
+                        if (perfilesHome[i] != perfilesHome[contadorSlider]) {
+
+                           perfilesHome[i].style = "display: none";
+                           perfilesHome[contadorSlider].style = "display:flex";
+                        }
+
+                      }
+                });
+
+
+    };
+
+      if (botonAnterior) {
+
+        botonAnterior.addEventListener('click', function(){
+
+                       contadorSlider -= 1;
+                       if (contadorSlider < 0) {
+                        contadorSlider = perfilesHome.length - 1;
+                       }
+                  for (var i = 0; i < perfilesHome.length; i++) {
+
+                    if (perfilesHome[i] != perfilesHome[contadorSlider]) {
+
+                       perfilesHome[i].style = "display: none";
+                       perfilesHome[contadorSlider].style = "display:flex";
+                    }
+                  }
+            });
+
+      };
+
+
+//fin slide home
+
 
 
 });

@@ -99,7 +99,7 @@
      {{ csrf_field() }}
      <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
 
-   <div class="datos flex t90">
+   <div class="datos flex t90 ">
      <div class="foto_nombre flex column align_center t50">
        <div class="pic_perfil overflowNo">
          @if ($usuario->avatar == null)

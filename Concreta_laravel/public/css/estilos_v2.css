@@ -265,6 +265,9 @@ align:center;
   flex-shrink: 0.5;
 }
 /*Estilos navegador Mobile*/
+.artPerfilesIndex{
+  margin: 0 auto;
+}
 ul.desplegableHamubr {
 
   display: flex;
@@ -754,6 +757,10 @@ footer{
   background-color: rgba(0,0,0,0.5);
 
 }
+.slider-perfiles{
+  width: 80%;
+  margin: 0 auto;
+}
 .footer_sec_corta{
   margin-top: 15vh;
 }
@@ -790,6 +797,7 @@ footer{
   margin: auto;
   background-color: rgba(255,255,255,0.5);
   margin-top: 2vh;
+  margin-bottom: 42%;
 }
 .Registro_cliente{
   display:flex;
@@ -1009,7 +1017,7 @@ height:71vh;
   display:none;
 }
 .container{
-  height: 120vh;
+  /*height: 120vh;*/
 }
 .footer_login{
 position: absolute;
@@ -1204,6 +1212,14 @@ margin-bottom: 1.5vh;
 
 }
 
+.datos{
+  flex-flow: column;
+}
+
+.rubro_zona{
+
+  width:100%;
+}
 
 
 
