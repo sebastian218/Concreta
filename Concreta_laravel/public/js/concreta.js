@@ -80,7 +80,7 @@ window.addEventListener("load",function(){
       });
     };
 
-    //Acá arranca script para iconos mobile
+//Acá arranca script para iconos mobile lupa y Hambur
 
    var menuHamb = document.querySelector('.hamburIcon');
 
@@ -106,6 +106,9 @@ window.addEventListener("load",function(){
 });
 
 };
+//fin lupa y Hamburger
+
+
 
 //Evento para Formulario posteo de trabajos
 
@@ -121,6 +124,11 @@ window.addEventListener("load",function(){
       });
 
     };
+
+//fin form posteoTrabajos
+
+
+
 
 
 });
