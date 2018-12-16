@@ -71,7 +71,7 @@
              @endfor
            </div>
                     <div class="botonesMuroPosteo">
-                      <button class=" hoverAmarillo" type="reset" name="button"style="cursor:pointer"  >Borrar</button>
+                    <button class=" hoverAmarillo" type="reset" name="button"style="cursor:pointer"  >Borrar</button>
                      <button class=" hoverAmarillo" type="submit" name="button"style="cursor:pointer" >Enviar</button>
                     </div>
 
