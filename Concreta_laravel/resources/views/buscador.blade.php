@@ -35,7 +35,9 @@
       <select class="select" name="id_rubro_buscado" >
          <option value="0">Todos</option>
         @foreach ($rubrosTodos as $rubro)
-          <option value="{{$rubro->ID}}">{{$rubro->NOMBRE_RUBRO}}</option>
+          @if ($rubro->NOMBRE_RUBRO != null)
+            <option value="{{$rubro->ID}}">{{$rubro->NOMBRE_RUBRO}}</option>
+          @endif
         @endforeach
       </select>
       </div>
@@ -53,8 +55,8 @@
           <p>ELEGÍ UNO O MÁS SUBRUBROS</p>
          @foreach (Especialidade::all() as $esp)
            <div class="flex align_center">
-             <input type="checkbox" name="especialidades[]" value="{{$esp->ID}}">
-             <label for="especialidades">{{$esp->nombre}}</label>
+             <input type="checkbox" name="esp_buscadas[]" value="{{$esp->ID}}">
+             <label for="esp_buscadas">{{$esp->nombre}}</label>
            </div>
          @endforeach
 
@@ -76,9 +78,9 @@
   <div class="cuerpo_central">
     <p class="txt_centrado fondoAmarillo margin2vh padding1">Hay {{$cantidad}} resultados para tu búsqueda</p>
 
-    <div class="resultados flex column">
+    <div class="resultados flex column t50">
     @foreach ($usuarios as $usuario)
-      <div class="resultado flex t50">
+      <div class="resultado flex t90 margin2vh">
 
         <div class="foto_nombre flex column align_center t50">
           <div class="pic_perfil overflowNo margin1 avatar150px">

@@ -102,8 +102,11 @@ class UsuariosController extends Controller
 
          if (isset($id_r_buscado) == false) {
          $id_r_buscado = $req->id_rubro_buscado;
-         $id_z_buscado = $req->id_zona_buscado;}
+         $id_z_buscado = $req->id_zona_buscado;
+         $esp_buscadas = $req->esp_buscadas;
+       }
          //
+         
 
          $usuzona = Usuario_zona::all();
          $relacionesZona = $usuzona->where('ZONA_ID', $id_z_buscado)->pluck('USUARIO_ID');
