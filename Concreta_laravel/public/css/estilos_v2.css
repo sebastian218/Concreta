@@ -124,11 +124,7 @@ label.pointer{
  display: flex;
  flex-flow: column;
 }
-#subir_foto{
-  opacity: 0;
-  z-index: -1;
-  position:absolute;
-}
+
 
 .px12{
     font-size: 12px;

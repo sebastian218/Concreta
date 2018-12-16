@@ -33,6 +33,7 @@
 <div class="container">
 
   <div class="lateral_izq ">
+    @if($soloVista == false)
     <div class="w90 center t50 flex column">
        <div class="blanco flex h10">
          <div class="flex" style="width: 25%;">
@@ -78,6 +79,7 @@
        </div>
 
     </div>
+    @endif
 
 
   </div>
@@ -102,8 +104,10 @@
 
          @endif
        </div>
+       @if ($soloVista == false)
        <label class="px12 t50" for="subir_foto">Cambiar Foto de Perfil</label>
-       <input type="file" name="avatar" value="" id="subir_foto">
+       <input class="oculto" type="file" name="avatar" value="" id="subir_foto">
+       @endif
 
        <p class="txt_centrado margin1">{{$usuario->NOMBRE}} {{$usuario->APELLIDO}}</p>
 
@@ -136,35 +140,45 @@
           @if ($usuario->rubroPrincipal() != null)
             <div class="flex align_center" style="margin-bottom:2vh;">
              <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
+             @if ($soloVista == false)
              <img id="mostrarRubroP" class="hoverAmarillo manoHover icono" src="/img_app/cambiar_icon.png" alt="">
+            @endif
             </div>
-          @else
-             <p>Elegí un rubro principal:</p>
-          @endif
 
-            <div id="form_rubro_P" class=
+            @else
+               @if ($soloVista == false)
+             <p>Elegí un rubro principal:</p>
+               @else
+             <p>No hay Rubro Principal</p>
+               @endif
+            @endif
+
+               @if ($soloVista == false)
+              <div id="form_rubro_P" class=
             @if ($usuario->rubroPrincipal() != null)
               "oculto"
             @endif
             >
-
             <select class="select" name="RUBRO_P" >
               @foreach ($rubrosTodos as $rubro)
                 <option value="{{$rubro->ID}}" {{$id_r == $rubro->ID ? 'selected' : '' }}>{{$rubro->NOMBRE_RUBRO}}</option>
               @endforeach
             </select>
               </div>
+                @endif
         </div>
 
         @if ($usuario->rubroSecundario() != null)
           <p class="px12 margin0" style="margin-bottom:-1.5vh; margin-left:1vh;">RUBRO SECUNDARIO:</p>
           <div class="flex align_center" style="margin-bottom:2vh;">
           <p class="px16 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
+         @if ($soloVista == false)
           <img id="mostrarRubroS" class="icono hoverAmarillo manoHover opacity50" src="/img_app/cambiar_icon.png" alt="">
+         @endif
           </div>
         @endif
 
-        @if ($usuario->rubroSecundario() == null)
+        @if ($usuario->rubroSecundario() == null && $soloVista == false)
           <p class="px 12 texto_gris italic boldHover manoHover" id="agregarRubroS">Agregar rubro secundario</p>
         @endif
 
@@ -178,12 +192,14 @@
           </select>
           </div>
 
-        @if ($id_r != 0)
+
         <div class="e">
           <div class="especialidades">
             <div class="flex align_center">
               <p class="px16 margin1">SUBRUBROS:</p>
+              @if ($soloVista == false)
               <img id="mostrarEsp_1" class="icono hoverAmarillo manoHover" src="/img_app/cambiar_icon.png" style="max-height:3vh;" alt="">
+              @endif
             </div>
 
             <div class="">
@@ -210,7 +226,7 @@
 
           </div>
         </div>
-        @endif
+
 
      </div>
 
@@ -219,7 +235,9 @@
         <div class="zon">
           <div class="flex flexStart align_center">
           <p class="px16 margin1">ZONA DE TRABAJO:</p>
+          @if ($soloVista == false)
           <img id="mostrarZonas" class="icono hoverAmarillo manoHover" style="max-height:3vh;" src="/img_app/cambiar_icon.png" alt="">
+          @endif
           </div>
         </div>
 
@@ -259,21 +277,27 @@
 
      <div class="">
        <div class="flex align_center">
+         @if ($usuario->descripcion ==! null)
          <p class="px16 margin1">Acerca de mí:</p>
+         @endif
+         @if ($soloVista == false)
          <img id="modificar_descrip" class="icono hoverAmarillo manoHover" style="max-height:3vh;" src="/img_app/cambiar_icon.png" alt="">
+         @endif
        </div>
-       @if ($usuario->descripcion)
+
+       @if ($usuario->descripcion ==! null && $soloVista == true)
        <div class="t50 mostrar">
-         {{$usuario->descripcion}}
+         <p>{{$usuario->descripcion}}</p>
        </div>
        @endif
      </div>
 
+   @if ($soloVista == false)
      @if ($usuario->descripcion == null)
      <label class="italic px14" for="descripcion">Agregá una descripción personalizada:</label>
      @endif
      <textarea class="mostrar anchoTexMobile
-     @if ($usuario->descripcion ==! null)
+     @if ($usuario->descripcion != null)
      oculto
      @endif
      "
@@ -282,19 +306,22 @@
         {{$usuario->descripcion}}
       @endif
      </textarea>
+   @endif
 
   </div>
   @endif
-
+    @if ($soloVista == false)
    <div class="buttons">
       <button class="center manoHover w100" style="background-color:rgba(247, 220, 111); height:5vh;" type="submit" name="button">GUARDAR CAMBIOS</button>
    </div>
+    @endif
 
     </form>
 
    <div class="feed">
 
       <div class="t50">
+      @if ($soloVista == false)
         <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
         @foreach ($posteosP as $post)
           <div class="t90 margin1">
@@ -305,7 +332,7 @@
             </p>
           </div>
         @endforeach
-
+     @endif
       </div>
    </div>
   </div>

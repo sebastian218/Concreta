@@ -29,7 +29,7 @@ class UsuariosController extends Controller
       $mensajesRecibidos = $usuario->mensajesRecibidos;
       $soloVista = false;
       if ($id == Auth::ID()){
-      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'mensajesRecibidos', 'modificar'));
+      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'mensajesRecibidos', 'soloVista'));
       }
       else {
         return redirect("/index");
@@ -41,7 +41,7 @@ class UsuariosController extends Controller
       $zonas = $usuario->zonas;
       $rubros = $usuario->rubros;
       $soloVista = true;
-      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'modificar'));
+      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'soloVista'));
     }
 
     public function guardarCambios(Request $req) {
