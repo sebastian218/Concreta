@@ -11,13 +11,15 @@ window.addEventListener("load",function(){
     var mostrarZonas = document.getElementById('mostrarZonas');
     var mostrarEsp = document.getElementById('mostrarEsp_1');
     var mostrarDescrip = document.getElementById('modificar_descrip');
+    
+    var mostrarSelecFotos = document.getElementById('mostrar_' + i);
+    var agarraFoto = document.getElementById('cargar_' + i);
 
-    for (var i = 0; i < 4; i++) {
-      var mostrarSelecFotos = document.getElementById('mostrar_' + i);
-      mostrarSelecFotos.addEventListener("click", function() {
-      document.getElementById("foto_" + i).classList.toggle('oculto');  
-      });
-    }
+
+        mostrarSelecFotos.addEventListener("click", function() {
+          console.log('hasta acá sí');
+      agarraFoto.classList.toggle('oculto');
+        });
 
 
     if (mostrarDescrip) {
