@@ -84,8 +84,8 @@
 
   <div class="cuerpo_central">
       @if (session("status"))
-        <div class="t90">
-          <p txt_centrado>{{session("status")}}</p>
+        <div class="fondoAmarillo padding1">
+          <p class="txt_centrado">{{session("status")}}</p>
         </div>
       @endif
      <form class="" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
@@ -99,9 +99,7 @@
            <img class="sin_avatar" src="/img_app/icono_casco.png" alt="">
          @else
           <img class="my-image" id="item" src="/storage/{{$usuario->avatar}}" />
-<script>
-$('.my-image').croppie();
-</script>
+
          @endif
        </div>
        <label class="px12 t50" for="subir_foto">Cambiar Foto de Perfil</label>

@@ -8,6 +8,7 @@ use App\Zona;
 use App\Rubro;
 use App\Usuario_zona;
 use App\Usuario_rubro;
+use Illuminate\Support\Facades\Auth;
 use DB;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
@@ -26,15 +27,21 @@ class UsuariosController extends Controller
       $zonas = $usuario->zonas;
       $rubros = $usuario->rubros;
       $mensajesRecibidos = $usuario->mensajesRecibidos;
-
-      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'mensajesRecibidos'));
+      $soloVista = false;
+      if ($id == Auth::ID()){
+      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'mensajesRecibidos', 'modificar'));
+      }
+      else {
+        return redirect("/index");
+      }
     }
 
     public function mostrar($id){
       $usuario = User::findOrFail($id);
       $zonas = $usuario->zonas;
       $rubros = $usuario->rubros;
-      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros'));
+      $soloVista = true;
+      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'modificar'));
     }
 
     public function guardarCambios(Request $req) {
