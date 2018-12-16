@@ -12,14 +12,17 @@ window.addEventListener("load",function(){
     var mostrarEsp = document.getElementById('mostrarEsp_1');
     var mostrarDescrip = document.getElementById('modificar_descrip');
 
-    var mostrarSelecFotos = document.getElementById('mostrar_' + i);
-    var agarraFoto = document.getElementById('cargar_' + i);
+    var mostrarSelecFotos = document.querySelector('.mostrar_');
 
-        mostrarSelecFotos.addEventListener("click", function() {
-          console.log('hasta acá sí');
-      agarraFoto.classList.toggle('oculto');
+   if (mostrarSelecFotos) {
+      mostrarSelecFotos.addEventListener("click", function() {
+      var x = event.target.id;
+      console.log(x);
+      var agarroId = 'foto_' + x;
+      var mostrar = document.getElementById(agarroId);
+      mostrar.classList.toggle('oculto');
         });
-
+    };
 
     if (mostrarDescrip) {
       mostrarDescrip.addEventListener("click", function() {

@@ -50,11 +50,10 @@
     <label class="labelMuro" for="foto">Carga una imagen</label>
     <p class="italic px12">Agregá hasta cuatro fotos o planos</p>
 
-    <div class="">
+    <div class="mostrar_">
       @for ($i=0; $i < 4; $i++)
-        <p style="cursor:pointer" id="mostrar_{{$i}}">+</p>
-        {{--}}<label class="labelMuro marginauto" style="width:100%; height:100%; cursor:pointer;" for="foto_{{$i}}" id="mostrar_{{$i}}">+</label>{{---}}
-        <input class="oculto seleccionar" type="file" name="fotos[]" value="" id="cargar_{{$i}}">
+        <p class="signosMas" style="cursor:pointer" id="mostrar_{{$i}}">+</p>
+        <input class="oculto seleccionar" type="file" name="fotos[]" value="" id="foto_mostrar_{{$i}}">
       @endfor
     </div>
 

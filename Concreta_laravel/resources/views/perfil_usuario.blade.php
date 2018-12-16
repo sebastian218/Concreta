@@ -60,25 +60,18 @@
          <form class="postearTrabajos" action="/perfil/log/postearTrabajos/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
 
-                <div class="fotosTrabajo">
-                  <label for="fotos">Subir fotos : </label>
-                  <input class="subirFotoTrabajo" type="file" name="fotos[]" value="">
-
-                  <input class="subirFotoTrabajo" type="file" name="fotos[]" value="">
-
-                  <input class="subirFotoTrabajo" type="file" name="fotos[]" value="">
-
-                  <input class="subirFotoTrabajo" type="file" name="fotos[]" value="">
-                </div>
-
-
-
            <label for="texto">Descripción :</label>
-           <textarea class="w100" name="name" rows="8" cols="20" placeholder="Escriba aquí"></textarea>
-
+           <textarea class="w100" name="name" rows="8" cols="20" placeholder="Agregá una breve descripción del trabajo realizado"></textarea>
+           <p class="px12">Añadí hasta cuatro imágenes del trabajo realizado:</p>
+           <div class="mostrar_">
+             @for ($i=0; $i < 4; $i++)
+               <p class="signosMas" style="cursor:pointer" id="mostrar_{{$i}}">+</p>
+               <input class="oculto seleccionar" type="file" name="fotos[]" value="" id="foto_mostrar_{{$i}}">
+             @endfor
+           </div>
                     <div class="botonesMuroPosteo">
-                      <button class="boton hoverAmarillo" type="submit" name="button"style="cursor:pointer" >Enviar</button>
-                     <button class="boton hoverAmarillo" type="reset" name="button"style="cursor:pointer"  >Borrar</button>
+                      <button class=" hoverAmarillo" type="reset" name="button"style="cursor:pointer"  >Borrar</button>
+                     <button class=" hoverAmarillo" type="submit" name="button"style="cursor:pointer" >Enviar</button>
                     </div>
 
          </form>
