@@ -58,11 +58,11 @@
        </div>
 
        <div class="formPosteoTrabajos t90 oculto padding1">
-         <form class="postearTrabajos" action="/perfil/log/postearTrabajos/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
+         <form class="postearTrabajos" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
-
+           <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
            <label for="texto">Descripción :</label>
-           <textarea class="w100" name="name" rows="8" cols="20" placeholder="Agregá una breve descripción del trabajo realizado"></textarea>
+           <textarea class="w100" name="texto" rows="8" cols="20" placeholder="Agregá una breve descripción del trabajo realizado"></textarea>
            <p class="px12">Añadí hasta cuatro imágenes del trabajo realizado:</p>
            <div class="mostrar_">
              @for ($i=0; $i < 4; $i++)
@@ -71,8 +71,8 @@
              @endfor
            </div>
                     <div class="botonesMuroPosteo">
-                      <button class=" hoverAmarillo" type="reset" name="button"style="cursor:pointer"  >Borrar</button>
-                     <button class=" hoverAmarillo" type="submit" name="button"style="cursor:pointer" >Enviar</button>
+                      <button class=" hoverAmarillo" type="reset" name="button"style="cursor:pointer">Borrar</button>
+                     <button class=" hoverAmarillo" type="submit" name="button"style="cursor:pointer">Enviar</button>
                     </div>
 
          </form>

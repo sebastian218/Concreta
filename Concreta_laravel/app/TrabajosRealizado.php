@@ -9,6 +9,10 @@ use App\user;
 class TrabajosRealizado extends Model
 {
 
+  public $table = "TrabajosRealizados";
+  public $primaryKey = 'id';
+  public $guarded = [];
+
     public function usuario(){
 
 
