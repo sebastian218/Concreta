@@ -28,6 +28,9 @@
 
 
 <div class="slider-perfiles">
+
+  <button class="botonSlider botonAnterior hoverAmarillo " type="button" name="buttonsanterior"> < </button>
+
   @foreach ($profPromAlto as $profesional)
     <article class="art-perfiles artPerfilesIndex" style="display:none"  >
          <div class="foto-nombre">
@@ -53,10 +56,9 @@
        </article>
   @endforeach
 
-<div class="botonesMuroPosteo">
-  <button class="boton botonAnterior hoverAmarillo " type="button" name="buttonsanterior">Anterior</button>
-  <button class="boton botonSiguiente hoverAmarillo " type="button" name="buttonsiguiente">Siguiente</button>
-</div>
+
+  <button class="botonSlider botonSiguiente hoverAmarillo " type="button" name="buttonsiguiente"> > </button>
+
 
 </div>
 

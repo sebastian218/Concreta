@@ -118,6 +118,14 @@ label.pointer{
 
 }
 */
+.botonSlider{
+
+  border-radius: 117px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  
+}
 .formPosteoTrabajos{
  width: 100%;
  margin: 0 auto;
