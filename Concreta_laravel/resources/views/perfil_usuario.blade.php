@@ -58,7 +58,7 @@
        </div>
 
        <div class="formPosteoTrabajos t90 oculto padding1">
-         <form class="postearTrabajos" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
+         <form class="postearTrabajos" action="/perfil/log/trabajos/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
            <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
            <label for="texto">Descripción :</label>

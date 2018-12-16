@@ -28,12 +28,12 @@ class UsuariosController extends Controller
       $rubros = $usuario->rubros;
       $mensajesRecibidos = $usuario->mensajesRecibidos;
       $soloVista = false;
-      if ($id == Auth::ID()){
+      //if ($id == Auth::ID()){
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'mensajesRecibidos', 'soloVista'));
-      }
-      else {
-        return redirect("/index");
-      }
+      //}
+      //else {
+        //return redirect("/index");
+      //}
     }
 
     public function mostrar($id){

@@ -41,7 +41,7 @@ Route::get('/perfil/log/{id}', "UsuariosController@home");
 
 Route::post('/perfil/log/{id}', "UsuariosController@guardarCambios");
 
-Route::post('/perfil/log/{id}', "TrabajosController@guardarNuevoTrabajo");
+Route::post('/perfil/log/trabajos/{id}', "TrabajosController@guardarNuevoTrabajo");
 
 Route::get('/muro', "muroController@posteos");
 
