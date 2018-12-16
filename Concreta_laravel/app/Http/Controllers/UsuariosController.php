@@ -118,8 +118,6 @@ class UsuariosController extends Controller
          $usuarios = $usuarios->paginate(1);
 
 
-
-
       return view('/buscador', compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado'));
     }
 

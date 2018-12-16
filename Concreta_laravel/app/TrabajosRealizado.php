@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\user;
 
-class TrbajosRealizado extends Model
+class TrabajosRealizado extends Model
 {
 
     public function usuario(){
