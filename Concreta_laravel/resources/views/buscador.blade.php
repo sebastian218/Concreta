@@ -16,7 +16,9 @@
 @section('contenido')
 
   <div class="banner_rubro">
-
+    <div class="banner_rubro">
+      <img class = "a100" src="/img_app/textura_rubro_0.jpg" alt="">
+    </div>
   </div>
 
 <div class="container">
@@ -31,6 +33,7 @@
       <div class="buscar_rubro margin2vh">
       <label for="RUBRO_BUSCAR">ELEGÍ UN RUBRO:</label>
       <select class="select" name="id_rubro_buscado" >
+         <option value="0">Todos</option>
         @foreach ($rubrosTodos as $rubro)
           <option value="{{$rubro->ID}}">{{$rubro->NOMBRE_RUBRO}}</option>
         @endforeach
