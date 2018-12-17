@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\muro;
+use App\Http\Resources\Muro as MuroResource;
+
+Route::get('/apiMuro', function () {
+    return MuroResource::collection(Muro::all());
+});
+
 
  Route::get('/', function () {
     return redirect('/index');

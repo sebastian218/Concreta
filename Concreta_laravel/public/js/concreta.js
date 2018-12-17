@@ -209,7 +209,7 @@ window.addEventListener("load",function(){
 
 
 if (formTrabajos) {
-    
+
   formTrabajos.addEventListener("submit",function(event){
 
 
@@ -267,5 +267,19 @@ if (formTrabajos) {
   });
 }
 //fin validación TrabajosRealizados
+
+
+//Cargar posteos nuevos
+   fetch("http://localhost:8000/apiMuro")
+       .then(function(response){
+          return response.json();
+       })
+       .then(function(data){
+
+           console.log(data);
+
+       })
+
+// fin cargar posteos
 
 });
