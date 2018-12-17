@@ -270,6 +270,7 @@ if (formTrabajos) {
 
 
 //Cargar posteos nuevos
+
    fetch("http://localhost:8000/apiMuro")
        .then(function(response){
           return response.json();
