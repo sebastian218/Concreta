@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Zona;
 use App\Rubro;
+use App\Especialidade;
 use App\Usuario_zona;
 use App\Usuario_rubro;
 use Illuminate\Support\Facades\Auth;
 use DB;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
+
 
 class UsuariosController extends Controller
 {
@@ -101,27 +104,37 @@ class UsuariosController extends Controller
          $todos = User::trabajador();
 
          if (isset($id_r_buscado) == false) {
-         $id_r_buscado = $req->id_rubro_buscado;
-         $id_z_buscado = $req->id_zona_buscado;
-         $esp_buscadas = $req->esp_buscadas;
-       }
-         //
-         
+           if($req->id_rubro_buscado == 't'){
+            $id_r_buscado = Rubro::all()->pluck('ID'); }
+            else {$id_r_buscado[] = $req->id_rubro_buscado;}
+           if($req->id_zona_buscado == 't'){
+            $id_z_buscado = Zona::all()->pluck('ID'); }
+            else {$id_z_buscado[] = $req->id_zona_buscado;}
+           if(empty($req->esp_buscadas)) {
+             $esp_buscadas = Especialidade::all()->pluck('ID');}
+             else {$esp_buscadas = $req->esp_buscadas;}
+           }
 
-         $usuzona = Usuario_zona::all();
-         $relacionesZona = $usuzona->where('ZONA_ID', $id_z_buscado)->pluck('USUARIO_ID');
-         //var_dump($relaciones);
-         //exit;
-         //$usuarios = $todos->whereIn('ID', $relacionesZona)->get();
-         $array_u = DB::table('usuario_rubro')->where('RUBRO_ID', $id_r_buscado)->pluck('USUARIO_ID');
-         //$usuarios = DB::table('users')->whereIn('ID', $array_u)->get();
-         $usuarios = $todos->whereIn('ID', $array_u)->whereIn('ID', $relacionesZona);
-         $cantidad = $usuarios->count();
+         $usuarios_id = DB::table('users')
+         ->join('usuario_rubro', 'users.id', '=', 'usuario_rubro.usuario_id')
+         ->join('usuario_zona', 'users.id', '=', 'usuario_zona.USUARIO_ID')
+         ->join('especialidades_usuarios', 'users.id', '=', 'especialidades_usuarios.usuario_id')
+         ->whereIn('usuario_rubro.RUBRO_ID', $id_r_buscado)
+         ->whereIn('usuario_zona.ZONA_ID', $id_z_buscado)
+         ->whereIn('especialidades_usuarios.especialidad_id', $esp_buscadas)
 
-         $usuarios = $usuarios->paginate(1);
+         ->pluck('users.id');
 
 
-      return view('/buscador', compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado'));
+         $usuarios = User::whereIn('ID', $usuarios_id)->paginate(1);
+
+         $cantidad = $usuarios->total();
+
+
+         $vac = compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado');
+
+
+      return view('/buscador', $vac);
     }
 
    public function getProfesionales(){

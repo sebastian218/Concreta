@@ -124,7 +124,7 @@ label.pointer{
   font-weight: bold;
   font-size: 20px;
   cursor: pointer;
-  
+
 }
 .formPosteoTrabajos{
  width: 100%;
@@ -173,8 +173,12 @@ display: none;
 .margin1{
   margin:1vh;
 }
+.margin2{
+  margin:2vh;
+}
 .marginTop1{
   margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 .margin2vh{
   margin-top: 2vh;
