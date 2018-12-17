@@ -11,6 +11,11 @@ window.addEventListener("load",function(){
     var mostrarZonas = document.getElementById('mostrarZonas');
     var mostrarEsp = document.getElementById('mostrarEsp_1');
     var mostrarDescrip = document.getElementById('modificar_descrip');
+    var misTrabajos = document.getElementById('misTrabajos');
+    var trabajosTerminados = document.getElementById('trabajosTerminados');
+    var posteosUsuario = document.getElementById('posteosUsuario');
+
+
 
     var mostrarSelecFotos = document.querySelector('.mostrar_');
 
@@ -278,11 +283,20 @@ if (formTrabajos) {
        .then(function(data){
            var posteosTodos = data.data; // con esto le scao la capa que dice Data;
            for (var i = 0; i < posteosTodos.length; i++) {
-             
+
            }
 
        })
 
 // fin cargar posteos
+
+// mostrar mis trabajos Trabajos realizados en el perfil de usuarios
+if (misTrabajos) {
+  misTrabajos.addEventListener("click", function(){
+
+     trabajosTerminados.classList.remove('oculto');
+     posteosUsuario.classList.add("oculto");
+   });
+};
 
 });

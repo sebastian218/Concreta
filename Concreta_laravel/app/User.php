@@ -166,7 +166,12 @@ class User extends Authenticatable
       }
       else {return Muro::paginate(5);}
     }
+    public function trabajosPorUsuario(){
+      $id_usuario = $this->ID;
+      $relacionados = TrabajosRealizado::where('id_usuario', $id_usuario)->paginate(5);
+      return $relacionados;
 
+    }
 
 
 

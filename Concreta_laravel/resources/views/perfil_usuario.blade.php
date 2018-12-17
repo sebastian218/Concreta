@@ -21,6 +21,7 @@
   $zonasTodas = App\Zona::all();
   $rubrosTodos = App\Rubro::all();
   $posteosP = $usuario->traerPosteosRubroP();
+  $trabajos= $usuario->trabajosPorUsuario();
 @endphp
 
 @extends('plantilla')
@@ -76,6 +77,9 @@
                     </div>
 
          </form>
+       </div>
+       <div class="blanco flex h10 margin3vh">
+         <a class="txt_centrado px14 marginauto bold" id="misTrabajos" href="#">Mis trabajos realizados</a>
        </div>
 
     </div>
@@ -320,7 +324,7 @@
 
    <div class="feed">
 
-      <div class="t50">
+      <div class="t50" id="posteosUsuario">
       @if ($soloVista == false)
         <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
         @foreach ($posteosP as $post)
@@ -335,7 +339,30 @@
         {{$posteosP->links()}}
      @endif
       </div>
+      <div class="oculto" id="trabajosTerminados" >
+        <p class="txt_centrado t90"> Ultimos trabajos</p>
+        @foreach ($trabajos as $tabajo)
+          <div class="t90 margin1">
+            <p>
+            {{$tabajo->descripcion}}
+            </p>
+
+            @if ($tabajo->foto != null)
+
+              @foreach (json_decode($tabajo->foto, true) as $foto)
+
+                   <img class="foto-muro" src="storage/{{$foto}}" alt="">
+
+               @endforeach
+            @endif
+
+
+          </div>
+        @endforeach
+     {{$trabajos->links()}}
+      </div>
    </div>
+
   </div>
 
   <div class="lateral_der flex column">

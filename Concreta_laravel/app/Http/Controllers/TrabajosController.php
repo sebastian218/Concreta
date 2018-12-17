@@ -37,4 +37,6 @@ class TrabajosController extends Controller
       ]);
 
     }
+
+  
 }
