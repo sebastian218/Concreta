@@ -332,6 +332,7 @@
             </p>
           </div>
         @endforeach
+        {{$posteosP->links()}}
      @endif
       </div>
    </div>
