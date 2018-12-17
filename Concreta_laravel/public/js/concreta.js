@@ -275,8 +275,8 @@ if (formTrabajos) {
           return response.json();
        })
        .then(function(data){
-
-           console.log(data);
+           var posteosTodos = data.data; // con esto le scao la capa que dice Data;
+           console.log(posteosTodos);
 
        })
 
