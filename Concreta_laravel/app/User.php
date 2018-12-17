@@ -152,21 +152,26 @@ class User extends Authenticatable
     public function traerPosteosRubroP() {
       if ($this->rubroPrincipal()){
       $id_rubroP = $this->rubroPrincipal()->ID;
-      $relacionados = Muro::all()->where('rubro_id', $id_rubroP);
+      $relacionados = Muro::where('rubro_id', $id_rubroP)->paginate(5);
       return $relacionados;
       }
-      else {return Muro::all();}
+      else {return Muro::paginate(5);}
     }
 
     public function traerPosteosRubroS() {
       if ($this->rubroSecundario()){
       $id_rubroP = $this->rubroSecundario()->ID;
-      $relacionados = Muro::all()->where('rubro_id', $id_rubroP);
+      $relacionados = Muro::where('rubro_id', $id_rubroP)->paginate(5);
       return $relacionados;
       }
-      else {return Muro::all();}
+      else {return Muro::paginate(5);}
     }
+    public function trabajosPorUsuario(){
+      $id_usuario = $this->ID;
+      $relacionados = TrabajosRealizado::where('id_usuario', $id_usuario)->paginate(5);
+      return $relacionados;
 
+    }
 
 
 

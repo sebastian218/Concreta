@@ -21,6 +21,7 @@
   $zonasTodas = App\Zona::all();
   $rubrosTodos = App\Rubro::all();
   $posteosP = $usuario->traerPosteosRubroP();
+  $trabajos= $usuario->trabajosPorUsuario();
 @endphp
 
 @extends('plantilla')
@@ -58,24 +59,27 @@
        </div>
 
        <div class="formPosteoTrabajos t90 oculto padding1">
-         <form class="postearTrabajos" action="/perfil/log/postearTrabajos/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
+         <form class="postearTrabajos" action="/perfil/log/trabajos/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
-
+           <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
            <label for="texto">Descripción :</label>
-           <textarea class="w100" name="name" rows="8" cols="20" placeholder="Agregá una breve descripción del trabajo realizado"></textarea>
+           <textarea class="w100" name="textoTrabajo" rows="8" cols="20" placeholder="Agregá una breve descripción del trabajo realizado"></textarea>
            <p class="px12">Añadí hasta cuatro imágenes del trabajo realizado:</p>
            <div class="mostrar_">
              @for ($i=0; $i < 4; $i++)
                <p class="signosMas" style="cursor:pointer" id="mostrar_{{$i}}">+</p>
-               <input class="oculto seleccionar" type="file" name="fotos[]" value="" id="foto_mostrar_{{$i}}">
+               <input class="oculto seleccionar" type="file" name="fotosTrabajos[]" value="" id="foto_mostrar_{{$i}}">
              @endfor
            </div>
                     <div class="botonesMuroPosteo">
                     <button class=" hoverAmarillo" type="reset" name="button"style="cursor:pointer"  >Borrar</button>
-                     <button class=" hoverAmarillo" type="submit" name="button"style="cursor:pointer" >Enviar</button>
+                     <button class=" hoverAmarillo enviarTrabajos" type="submit" name="button"style="cursor:pointer" >Enviar</button>
                     </div>
 
          </form>
+       </div>
+       <div class="blanco flex h10 margin3vh">
+         <a class="txt_centrado px14 marginauto bold" id="misTrabajos" href="#">Mis trabajos realizados</a>
        </div>
 
     </div>
@@ -296,7 +300,7 @@
      @if ($usuario->descripcion == null)
      <label class="italic px14" for="descripcion">Agregá una descripción personalizada:</label>
      @endif
-     <textarea class="mostrar anchoTexMobile
+     <textarea class="mostrar anchoTexMobile a100
      @if ($usuario->descripcion != null)
      oculto
      @endif
@@ -320,7 +324,7 @@
 
    <div class="feed">
 
-      <div class="t50">
+      <div class="t50" id="posteosUsuario">
       @if ($soloVista == false)
         <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
         @foreach ($posteosP as $post)
@@ -332,9 +336,33 @@
             </p>
           </div>
         @endforeach
+        {{$posteosP->links()}}
      @endif
       </div>
+      <div class="oculto" id="trabajosTerminados" >
+        <p class="txt_centrado t90"> Ultimos trabajos</p>
+        @foreach ($trabajos as $tabajo)
+          <div class="t90 margin1">
+            <p>
+            {{$tabajo->descripcion}}
+            </p>
+
+            @if ($tabajo->foto != null)
+
+              @foreach (json_decode($tabajo->foto, true) as $foto)
+
+                   <img class="foto-muro" src="storage/{{$foto}}" alt="">
+
+               @endforeach
+            @endif
+
+
+          </div>
+        @endforeach
+     {{$trabajos->links()}}
+      </div>
    </div>
+
   </div>
 
   <div class="lateral_der flex column">

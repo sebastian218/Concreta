@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\muro;
+use App\Http\Resources\Muro as MuroResource;
+
+Route::get('/apiMuro', function () {
+    return MuroResource::collection(Muro::all());
+});
+
 
  Route::get('/', function () {
     return redirect('/index');
@@ -40,6 +47,8 @@ Route::get('/perfil', function() {
 Route::get('/perfil/log/{id}', "UsuariosController@home");
 
 Route::post('/perfil/log/{id}', "UsuariosController@guardarCambios");
+
+Route::post('/perfil/log/trabajos/{id}', "TrabajosController@guardarNuevoTrabajo");
 
 Route::get('/muro', "muroController@posteos");
 
