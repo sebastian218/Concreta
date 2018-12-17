@@ -14,11 +14,12 @@ class TrabajosController extends Controller
 
        $trabajoNuevo = new TrabajosRealizado ;
 
-       $trabajoNuevo->descripcion = $req->texto;
+
+       $trabajoNuevo->descripcion = $req->textoTrabajo;
        $trabajoNuevo->id_usuario = $req->identificador;
 
         $paths = [];
-        foreach ($req->fotos as $foto) {
+        foreach ($req->fotosTrabajos as $foto) {
            $paths[] = $foto->store('public');
         }
         $nombreArchivos = [];

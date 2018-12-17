@@ -198,6 +198,74 @@ window.addEventListener("load",function(){
 
 //fin slide home
 
+//validación Form TrabajosRealizados
 
+
+
+    var formTrabajos =  document.querySelector(".postearTrabajos");
+    var enviarTrabajos = document.querySelector('.enviarTrabajos');
+    var fotosTrabajos = document.querySelectorAll("input[name='fotosTrabajos[]']");
+    var textoTrabajo = document.querySelector("textarea[name='textoTrabajo']");
+
+
+if (formTrabajos) {
+    
+  formTrabajos.addEventListener("submit",function(event){
+
+
+
+            var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+            var filePath = [];
+            var wrongFile = 0;
+
+         for (var i = 0; i < fotosTrabajos.length; i++) {
+           if (fotosTrabajos[i].value != "") {
+
+             filePath.push(fotosTrabajos[i].value);
+           };
+
+         };
+         for (var i = 0; i < filePath.length; i++) {
+
+              if(!allowedExtensions.exec(filePath[i])){
+                wrongFile++;
+
+                 }
+         }
+         if (wrongFile > 0) {
+           alert('La extensión de los archivos debe ser .jpeg/.jpg/.png/.gif ');
+            event.preventDefault();
+         }
+
+                     var fotosContador = 0;
+
+                        for (var i = 0; i < fotosTrabajos.length; i++) {
+
+                          if (fotosTrabajos[i].value != "") {
+
+                              fotosContador ++;
+                          };
+                        };
+
+                  if (fotosContador == 0) {
+                        alert('Debes cargar al menos una foto del trabajo realizado');
+                        event.preventDefault();
+                  }
+                  if (textoTrabajo.value.length == ""){
+
+                        alert('El campo descripción no puede quedar vacío');
+
+                         event.preventDefault();
+
+                  } else if(textoTrabajo.value.length < 10){
+
+                       alert('El campo descripción  debe tener mas de 10 letras');
+                       event.preventDefault();
+
+                  }
+
+  });
+}
+//fin validación TrabajosRealizados
 
 });
