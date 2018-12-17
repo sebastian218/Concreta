@@ -18,6 +18,12 @@ a {
 text-decoration: none;
 color: black;
 }
+
+ul.pagination{
+   display: flex;
+   flex-flow: row;
+   justify-content: space-between;
+ }
 .gris_oscuro{
   color: rgb(50,50,50);
 }
