@@ -296,7 +296,7 @@
      @if ($usuario->descripcion == null)
      <label class="italic px14" for="descripcion">Agregá una descripción personalizada:</label>
      @endif
-     <textarea class="mostrar anchoTexMobile
+     <textarea class="mostrar anchoTexMobile a100
      @if ($usuario->descripcion != null)
      oculto
      @endif
