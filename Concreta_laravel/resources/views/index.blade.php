@@ -1,3 +1,10 @@
+@php
+use App\Rubro;
+use App\Especialidade;
+  $rubros = App\Rubro::all();
+  $especialidades = App\Especialidade::all();
+@endphp
+
 @extends('plantilla')
 
 
@@ -12,9 +19,20 @@
             <form class="buscadorHome" action="/index" method="post">
               {{ csrf_field() }}
               <label class="label-home"  for="buscador">
-                <input placeholder="Ej : Plomeros Zona Oeste" id="buscador" type="text" name="buscador" value="">
-                <input type="hidden" name="enviar" value="">
+                <input placeholder="Ej : plomeros zona Norte" id="buscador" style="cursor:pointer" type="text" name="buscador" value="">
               </label>
+              <div class="buscadorDespHome oculto">
+                <ul class="desplegablehome">
+                  @foreach ($rubros as $rubro)
+                    @if($rubro->NOMBRE_RUBRO != null)
+                  <li class="padding2">
+                    {{$rubro->NOMBRE_RUBRO}}
+                  </li>
+                   @endif
+                  @endforeach
+
+                </ul>
+              </div>
             </form>
        </div>
 

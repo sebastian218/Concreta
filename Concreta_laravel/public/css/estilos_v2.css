@@ -434,10 +434,23 @@ form.buscadorHome{
 article.art-perfiles {
         width: 90%;
 }
+.buscadorDespHome{
+color: white;
+background-color: rgba(0,0,0,0.9);
+position: absolute;
+z-index: 100;
+width: 80%;
+
+}
+.buscadorDespHome ul li:hover {
+
+  background-color: rgba(241, 196, 15 , 0.5);
+  color: black;
+}
 
 input#buscador {
     width: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.9);
     color: white;
     border-width: inherit;
     border-radius: 8px;
