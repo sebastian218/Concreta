@@ -124,15 +124,15 @@
           </div>
          </div>
 
-        <div class="zona_rubro flex column margin1" style="justify-content:space-between;">
+        <div class="zona_rubro flex column margin1" style="justify-content:space-between; width:60%">
            <div class="rubros flex column t90">
              @if ($usuario->rubroPrincipal())
              <p class="px16 margin1">RUBRO PRINCIPAL:</p>
-             <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
+             <p class="px20 bold margin05">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
              @endif
              @if ($usuario->rubroSecundario())
              <p class="px16 margin1">RUBRO SECUNDARIO:</p>
-             <p class="px16 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
+             <p class="px16 texto_gris margin05">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
              @endif
            </div>
            <div class="zon flex column t90">
@@ -140,7 +140,7 @@
              <p class="px16 margin1">ZONA DE TRABAJO:</p>
              @foreach ($usuario->zonas as $zona)
                <div class="">
-                 <p class="px14 margin1">.{{$zona->NOMBRE_ZONA}}</p>
+                 <p class="px14 margin05">.{{$zona->NOMBRE_ZONA}}</p>
                </div>
              @endforeach
             @endif
@@ -150,12 +150,12 @@
              <p class="px16 margin1">SUBRUBROS:</p>
              @foreach ($usuario->especialidades as $esp)
                <div class="">
-                 <p class="px14 italic margin1">.{{$esp->nombre}}</p>
+                 <p class="px14 italic margin05">.{{$esp->nombre}}</p>
                </div>
              @endforeach
            @endif
            </div>
-           <div class="margin1 flex w100" style="justify-content:space-between;">
+           <div class="margin1 flex w90" style="justify-content:space-between;">
              <p class="padding1 margin0 pointer
              @if (Auth::guest())
                gris_oscuro no_contactar"
@@ -164,17 +164,22 @@
              @endif
              id = "c_{{$usuario->ID}}"
              >CONTACTAR</p>
-             <a href="/perfil/ver/{{$usuario->ID}}" class="fondoAmarillo padding1" >VER PERFIL</a>
+             <a href="/perfil/ver/{{$usuario->ID}}" class="fondoNaranja padding1" >VER PERFIL</a>
            </div>
          </div>
       </div>
-      <div class="contacto margin2 padding2 t90">
+      <div class="contacto margin2 padding2 t90 oculto fondoAmarillo" id="ver_c_{{$usuario->ID}}">
         <form class="" action="/guardarMensaje" method="post">
                   {{ csrf_field() }}
         <input class="oculto" type="text" name="id_receptor" value="{{$usuario->ID}}">
         <input class="oculto" type="text" name="id_emisor" value="{{Auth::ID()}}">
-        <p>Enviar Mensaje a: {{$usuario->NOMBRE}} {{$usuario->APELLIDO}}</p>
-        <textarea name="name" rows="8" class="w100"></textarea>
+        <p class="margin1">Enviar Mensaje a {{$usuario->NOMBRE}} {{$usuario->APELLIDO}}</p>
+        <textarea name="mensaje" rows="8" class="w100"></textarea>
+        <div class="flex spaceBetween" >
+        <button type="reset" name="button">BORRAR</button>
+        <button class="fondoNaranja" type="submit" name="">ENVIAR</button>
+        </div>
+
         </form>
       </div>
     @endforeach
