@@ -275,18 +275,24 @@ if (formTrabajos) {
 
 
 //Cargar posteos nuevos
+setInterval(function(){
 
-   fetch("http://localhost:8000/apiMuro")
-       .then(function(response){
-          return response.json();
-       })
-       .then(function(data){
-           var posteosTodos = data.data; // con esto le scao la capa que dice Data;
-           for (var i = 0; i < posteosTodos.length; i++) {
+  fetch("http://localhost:8000/apiMuro")
+      .then(function(response){
+         return response.json();
+      })
+      .then(function(muroDatos){
+          var posteosTodos = muroDatos.data; // con esto le scao la capa que dice Data;
+          for (var i = 0; i < posteosTodos.length; i++) {
+                   
+          }
 
-           }
+      })
 
-       })
+
+},10000);
+
+
 
 // fin cargar posteos
 
