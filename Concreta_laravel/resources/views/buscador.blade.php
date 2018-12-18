@@ -165,7 +165,7 @@
 
     <div class="paginas t90 margin2 padding1">
       @if (isset($id_r_buscado))
-      {{$usuarios->appends(["id_rubro_buscado" => $id_r_buscado, "id_zona_buscado" => $id_z_buscado, "esp" => $esp_buscadas])->links('vendor.pagination.semantic-ui')}}
+      {{$usuarios->appends(["id_rubro_buscado" => $id_r_buscado, "id_zona_buscado" => $id_z_buscado])->links('vendor.pagination.semantic-ui')}}
       @else
       {{$usuarios->links('vendor.pagination.semantic-ui')}}
       @endif

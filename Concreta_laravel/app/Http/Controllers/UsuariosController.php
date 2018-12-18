@@ -142,19 +142,49 @@ class UsuariosController extends Controller
           }
       })->pluck('ID');
 
-      //var_dump(empty($zon_b[0]));
-      //exit;
-      $busc_n = ""
-      if(!empty($zon_b[0])){
-      $busc_n = Zona::find($zonas_busc)->first()->NOMBRE_ZONA;}
-
-      if(!empty($rub_b[0])){
-      $busc_r = Rubro::find($rub_b)->first()->NOMBRE_RUBRO;}
-
-      var_dump($busc_n, $busc_r)
+      $esp_b = DB::table('especialidades')
+      ->Where(function($query) use ($palabras) {
+          for ($i = 0; $i <count($palabras); $i++) {
+            $query->orwhere('especialidades.nombre', 'LIKE', '%'.$palabras[$i].'%');
+          }
+      })->pluck('ID');
 
 
+      if(empty($zon_b[0])){
+        $id_z_buscado = Zona::all()->pluck('ID');
+      }
+      else {$id_z_buscado = $zon_b;}
 
+      if(empty($rub_b[0])) {
+        $id_r_buscado = Rubro::all()->pluck('ID');
+      }
+        else {$id_r_buscado = $rub_b;}
+
+      if(empty($esp_b[0])) {
+        $esp_buscadas = Especialidade::all()->pluck('ID');
+      }
+      else {$esp_buscadas = $esp_b;}
+
+               $usuarios_id = DB::table('users')
+               ->join('usuario_rubro', 'users.id', '=', 'usuario_rubro.usuario_id')
+               ->join('usuario_zona', 'users.id', '=', 'usuario_zona.USUARIO_ID')
+               ->join('especialidades_usuarios', 'users.id', '=', 'especialidades_usuarios.usuario_id')
+               ->whereIn('usuario_rubro.RUBRO_ID', $id_r_buscado)
+               ->whereIn('usuario_zona.ZONA_ID', $id_z_buscado)
+               ->whereIn('especialidades_usuarios.especialidad_id', $esp_buscadas)
+
+               ->pluck('users.id');
+
+
+               $usuarios = User::whereIn('ID', $usuarios_id)->paginate(3);
+
+               $cantidad = $usuarios->total();
+
+
+               $vac = compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado');
+
+
+            return view('/buscador', $vac);
 
     }
 
@@ -190,7 +220,7 @@ class UsuariosController extends Controller
          $cantidad = $usuarios->total();
 
 
-         $vac = compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado');
+         $vac = compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado', 'esp_buscadas');
 
 
       return view('/buscador', $vac);
