@@ -32,6 +32,8 @@ class UsuariosController extends Controller
       $mensajesRecibidos = $usuario->mensajesRecibidos;
       $soloVista = false;
       $mostrarTrabajos = isset($req->trabajos);
+
+
       //if ($id == Auth::ID()){
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'mensajesRecibidos', 'soloVista', 'mostrarTrabajos'));
       //}
@@ -40,12 +42,12 @@ class UsuariosController extends Controller
       //}
     }
 
-    public function mostrar($id, Request $req){
+    public function mostrar($id){
       $usuario = User::findOrFail($id);
       $zonas = $usuario->zonas;
       $rubros = $usuario->rubros;
       $soloVista = true;
-      $mostrarTrabajos = isset($req->trabajos);
+      $mostrarTrabajos = false;
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'soloVista','mostrarTrabajos'));
     }
 
