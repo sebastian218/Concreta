@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Zona;
 use App\Rubro;
+use App\Especialidade;
 use App\Usuario_zona;
 use App\Usuario_rubro;
 use Illuminate\Support\Facades\Auth;
 use DB;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
+
 
 class UsuariosController extends Controller
 {
@@ -96,32 +99,131 @@ class UsuariosController extends Controller
      return view('/buscador', compact('usuarios', 'cantidad'));
     }
 
+    public function buscadorPorPalabra(Request $string) {
+      $str = $string->busqueda_string;
+      $palabras = [];
+      $palabras = preg_split('/\s+/', $str);
+
+      /*$zonas_busc = [];
+      foreach ($palabras as $palabra) {
+      $zona_b = DB::table('zonas')
+      ->where('zonas.NOMBRE_ZONA', 'LIKE', '%'.$palabra.'%')
+      ->pluck('ID');
+      $zonas_busc[] = $zona_b;
+      }
+      */
+  /*
+      $zonas_busc = [];
+      $zona_b = DB::table('zonas');
+      foreach ($palabras as $palabra) {
+      $ids = $zona_b->where('zonas.NOMBRE_ZONA', 'LIKE', '%'.$palabra.'%')->pluck('ID');
+      if(!empty($ids)){$zonas_busc[] = $ids;}
+      }
+
+      $rubros_buscar = [];
+      $rub_b = DB::table('rubros');
+      foreach ($palabras as $palabra) {
+      $ids = $rub_b->where('rubros.NOMBRE_RUBRO', 'LIKE', '%'.$palabra.'%')->pluck('ID');
+      if(!empty($ids)){$rubros_buscar[] = $ids;}
+      }
+*/
+
+      $rub_b = DB::table('rubros')
+      ->Where(function($query) use($palabras) {
+          for ($i = 0; $i <count($palabras); $i++) {
+            $query->orwhere('rubros.NOMBRE_RUBRO', 'LIKE', '%'.$palabras[$i].'%');
+          }
+      })->pluck('ID');
+
+      $zon_b = DB::table('zonas')
+      ->Where(function($query) use($palabras) {
+          for ($i = 0; $i <count($palabras); $i++) {
+            $query->orwhere('zonas.NOMBRE_ZONA', 'LIKE', '%'.$palabras[$i].'%');
+          }
+      })->pluck('ID');
+
+      $esp_b = DB::table('especialidades')
+      ->Where(function($query) use ($palabras) {
+          for ($i = 0; $i <count($palabras); $i++) {
+            $query->orwhere('especialidades.nombre', 'LIKE', '%'.$palabras[$i].'%');
+          }
+      })->pluck('ID');
+
+
+      if(empty($zon_b[0])){
+        $id_z_buscado = Zona::all()->pluck('ID');
+      }
+      else {$id_z_buscado = $zon_b;}
+
+      if(empty($rub_b[0])) {
+        $id_r_buscado = Rubro::all()->pluck('ID');
+      }
+        else {$id_r_buscado = $rub_b;}
+
+      if(empty($esp_b[0])) {
+        $esp_buscadas = Especialidade::all()->pluck('ID');
+      }
+      else {$esp_buscadas = $esp_b;}
+
+               $usuarios_id = DB::table('users')
+               ->join('usuario_rubro', 'users.id', '=', 'usuario_rubro.usuario_id')
+               ->join('usuario_zona', 'users.id', '=', 'usuario_zona.USUARIO_ID')
+               ->join('especialidades_usuarios', 'users.id', '=', 'especialidades_usuarios.usuario_id')
+               ->whereIn('usuario_rubro.RUBRO_ID', $id_r_buscado)
+               ->whereIn('usuario_zona.ZONA_ID', $id_z_buscado)
+               ->whereIn('especialidades_usuarios.especialidad_id', $esp_buscadas)
+
+               ->pluck('users.id');
+
+
+               $usuarios = User::whereIn('ID', $usuarios_id)->paginate(3);
+
+               $cantidad = $usuarios->total();
+
+
+               $vac = compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado');
+
+
+            return view('/buscador', $vac);
+
+    }
+
     public function buscadorAvanzado(Request $req) {
 
          $todos = User::trabajador();
 
          if (isset($id_r_buscado) == false) {
-         $id_r_buscado = $req->id_rubro_buscado;
-         $id_z_buscado = $req->id_zona_buscado;
-         $esp_buscadas = $req->esp_buscadas;
-       }
-         //
-         
+           if($req->id_rubro_buscado == 't'){
+            $id_r_buscado = Rubro::all()->pluck('ID'); }
+            else {$id_r_buscado[] = $req->id_rubro_buscado;}
+           if($req->id_zona_buscado == 't'){
+            $id_z_buscado = Zona::all()->pluck('ID'); }
+            else {$id_z_buscado[] = $req->id_zona_buscado;}
+           if(empty($req->esp_buscadas)) {
+             $esp_buscadas = Especialidade::all()->pluck('ID');}
+             else {$esp_buscadas = $req->esp_buscadas;}
+           }
 
-         $usuzona = Usuario_zona::all();
-         $relacionesZona = $usuzona->where('ZONA_ID', $id_z_buscado)->pluck('USUARIO_ID');
-         //var_dump($relaciones);
-         //exit;
-         //$usuarios = $todos->whereIn('ID', $relacionesZona)->get();
-         $array_u = DB::table('usuario_rubro')->where('RUBRO_ID', $id_r_buscado)->pluck('USUARIO_ID');
-         //$usuarios = DB::table('users')->whereIn('ID', $array_u)->get();
-         $usuarios = $todos->whereIn('ID', $array_u)->whereIn('ID', $relacionesZona);
-         $cantidad = $usuarios->count();
+         $usuarios_id = DB::table('users')
+         ->join('usuario_rubro', 'users.id', '=', 'usuario_rubro.usuario_id')
+         ->join('usuario_zona', 'users.id', '=', 'usuario_zona.USUARIO_ID')
+         ->join('especialidades_usuarios', 'users.id', '=', 'especialidades_usuarios.usuario_id')
+         ->whereIn('usuario_rubro.RUBRO_ID', $id_r_buscado)
+         ->whereIn('usuario_zona.ZONA_ID', $id_z_buscado)
+         ->whereIn('especialidades_usuarios.especialidad_id', $esp_buscadas)
 
-         $usuarios = $usuarios->paginate(1);
+         ->pluck('users.id');
 
 
-      return view('/buscador', compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado'));
+         $usuarios = User::whereIn('ID', $usuarios_id)->paginate(1);
+
+         $cantidad = $usuarios->total();
+
+
+         $vac = compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado', 'esp_buscadas');
+
+
+      return view('/buscador', $vac);
     }
 
    public function getProfesionales(){

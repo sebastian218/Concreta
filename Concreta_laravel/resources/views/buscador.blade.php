@@ -32,8 +32,8 @@
 
       <div class="buscar_rubro margin2vh">
       <label for="RUBRO_BUSCAR">ELEGÍ UN RUBRO:</label>
-      <select class="select" name="id_rubro_buscado" >
-         <option value="0">Todos</option>
+      <select class="select w100" name="id_rubro_buscado" >
+         <option value='t'>Todos</option>
         @foreach ($rubrosTodos as $rubro)
           @if ($rubro->NOMBRE_RUBRO != null)
             <option value="{{$rubro->ID}}">{{$rubro->NOMBRE_RUBRO}}</option>
@@ -42,27 +42,35 @@
       </select>
       </div>
 
-      <div class="buscar_zona flex column margin2vh">
+      <div class="buscar_zona margin2vh">
         <label for="ZONA_BUSCAR">ELEGÍ UNA ZONA:</label>
-        <select class="select" name="id_zona_buscado">
-            <option value="0">Todas</option>
+        <select class="select w100" name="id_zona_buscado">
+            <option value="t">Todas</option>
           @foreach ($zonasTodas as $zona)
             <option value="{{$zona->ID}}">{{$zona->NOMBRE_ZONA}}</option>
           @endforeach
         </select>
+        </div>
 
         <div class="buscar_esp flex column margin2vh">
-          <p>ELEGÍ UNO O MÁS SUBRUBROS</p>
-         @foreach (Especialidade::all() as $esp)
-           <div class="flex align_center">
+          <p class="margin1">ELEGÍ UNO O MÁS SUBRUBROS:</p>
+
+           @foreach ($rubrosTodos as $rubro)
+             <div class="t90 borderBlack marginTop1 padding1">
+            <p class="margin1 px14">{{$rubro->NOMBRE_RUBRO}}</p>
+           @foreach ($rubro->especialidades as $esp)
+           <div class="">
              <input type="checkbox" name="esp_buscadas[]" value="{{$esp->ID}}">
-             <label for="esp_buscadas">{{$esp->nombre}}</label>
+             <label class="px12" for="esp_buscadas">{{$esp->nombre}}</label>
            </div>
-         @endforeach
+           @endforeach
+         </div>
+          @endforeach
+
 
         </div>
 
-      </div>
+
 
      </div>
 
@@ -76,6 +84,14 @@
 
 
   <div class="cuerpo_central">
+    <form class="" action="/buscadorPorPalabra" method="get">
+      {{ csrf_field() }}
+      <div class="t90 padding2 margin1">
+        <label for="busqueda_string">Buscar por palabras clave</label>
+        <input type="text" name="busqueda_string" value="">
+        <button type="submit" name="button">Buscar</button>
+      </div>
+    </form>
     <p class="txt_centrado fondoAmarillo margin2vh padding1">Hay {{$cantidad}} resultados para tu búsqueda</p>
 
     <div class="resultados flex column t50">
@@ -108,31 +124,59 @@
           </div>
          </div>
 
-         <div class="">
-
-         </div>
-        <div class="zona_rubro">
-           <div class="rubros flex column t50">
+        <div class="zona_rubro flex column margin1" style="justify-content:space-between;">
+           <div class="rubros flex column t90">
              @if ($usuario->rubroPrincipal())
-             <p>{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
+             <p class="px16 margin1">RUBRO PRINCIPAL:</p>
+             <p class="px20 bold margin1">{{$usuario->rubroPrincipal()->NOMBRE_RUBRO}}</p>
              @endif
              @if ($usuario->rubroSecundario())
-             <p>{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
+             <p class="px16 margin1">RUBRO SECUNDARIO:</p>
+             <p class="px16 texto_gris margin1">{{$usuario->rubroSecundario()->NOMBRE_RUBRO}}</p>
              @endif
            </div>
-           <div class="zon flex column t50">
+           <div class="zon flex column t90">
+             @if ($usuario->zonas)
+             <p class="px16 margin1">ZONA DE TRABAJO:</p>
              @foreach ($usuario->zonas as $zona)
-               {{$zona->NOMBRE_ZONA}}
+               <div class="">
+                 <p class="px14 margin1">.{{$zona->NOMBRE_ZONA}}</p>
+               </div>
              @endforeach
+            @endif
            </div>
-
+           <div class="flex column t90">
+             @if ($usuario->especialidades)
+             <p class="px16 margin1">SUBRUBROS:</p>
+             @foreach ($usuario->especialidades as $esp)
+               <div class="">
+                 <p class="px14 italic margin1">.{{$esp->nombre}}</p>
+               </div>
+             @endforeach
+           @endif
+           </div>
+           <div class="margin1 flex w100" style="justify-content:space-between;">
+             <a href="#" class="cont fondoAmarillo padding1">CONTACTAR</a>
+             <a href="/perfil/ver/{{$usuario->ID}}" class="fondoAmarillo padding1" >VER PERFIL</a>
+           </div>
          </div>
-
+      </div>
+      <div class="contacto margin2 padding2 t90">
+        <form class="" action="/guardarMensaje" method="post">
+                  {{ csrf_field() }}
+        <input class="oculto" type="text" name="id_receptor" value="{{$usuario->ID}}">
+        <input class="oculto" type="text" name="id_emisor" value="{{Auth::ID()}}">
+        <p>Enviar Mensaje a: {{$usuario->NOMBRE}} {{$usuario->APELLIDO}}</p>
+        <textarea name="name" rows="8" class="w100"></textarea>
+        </form>
       </div>
     @endforeach
-    <div class="paginas t50">
+
+    <div class="paginas t90 margin2 padding1">
       @if (isset($id_r_buscado))
-      {{$usuarios->appends(["id_rubro_buscado" => $id_r_buscado, "id_zona_buscado" => $id_z_buscado])->links()}}
+      {{$usuarios->appends(["id_rubro_buscado" => $id_r_buscado, "id_zona_buscado" => $id_z_buscado])->links('vendor.pagination.semantic-ui')}}
+      @else
+      {{$usuarios->links('vendor.pagination.semantic-ui')}}
       @endif
     </div>
 

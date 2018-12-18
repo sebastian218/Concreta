@@ -16,7 +16,6 @@ window.addEventListener("load",function(){
     var posteosUsuario = document.getElementById('posteosUsuario');
 
 
-
     var mostrarSelecFotos = document.querySelector('.mostrar_');
 
    if (mostrarSelecFotos) {
