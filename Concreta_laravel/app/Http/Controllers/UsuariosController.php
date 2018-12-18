@@ -40,12 +40,13 @@ class UsuariosController extends Controller
       //}
     }
 
-    public function mostrar($id){
+    public function mostrar($id, Request $req){
       $usuario = User::findOrFail($id);
       $zonas = $usuario->zonas;
       $rubros = $usuario->rubros;
       $soloVista = true;
-      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'soloVista'));
+      $mostrarTrabajos = isset($req->trabajos);
+      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'soloVista','mostrarTrabajos'));
     }
 
     public function guardarCambios(Request $req) {
