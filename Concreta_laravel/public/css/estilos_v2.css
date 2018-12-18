@@ -40,6 +40,9 @@ ul.pagination{
 .flexEnd{
   align-items: flex-end;
 }
+.spaceBetween{
+  justify-content: space-between;
+}
 .column{
   flex-direction: column;
 }
@@ -104,6 +107,13 @@ ul.pagination{
 .fondoAmarillo{
   background-color: rgba(247, 220, 111);
 }
+.fondoNaranja{
+  background-color: rgb(253, 106,2);
+}
+.borderAmarillo{
+  border:1px solid rgba(247, 220, 111);
+}
+
 label.pointer{
   cursor: pointer;
 }
@@ -181,6 +191,9 @@ display: none;
 }
 .margin1{
   margin:1vh;
+}
+.margin05{
+  margin:0.5vh;
 }
 .margin2{
   margin:2vh;

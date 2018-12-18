@@ -76,11 +76,8 @@ use App\Especialidade;
 
 
 <footer>
-  <ul class="footer_alto">
-    <li class=links_footer>Lorem</li>
-    <li class=links_footer>impsum</li>
-    <li class=links_footer>dolor</li>
-    <li class=links_footer>amet</li>
+  <ul class="footer_alto" style ="margin-top:3vh;">
+
   </ul>
 
   <ul class="footer_chico">

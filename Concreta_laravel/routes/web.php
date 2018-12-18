@@ -85,3 +85,5 @@ Route::get('/factory', function() {
 });
 
 Route::get('/buscadorPorPalabra', 'UsuariosController@buscadorPorPalabra');
+
+Route::post('/guardarMensaje', 'MensajesController@guardarMensaje');
