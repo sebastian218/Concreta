@@ -59,7 +59,7 @@
 
     <label class="labelMuro" for="text">Agregá una descripción de lo que buscás:</label>
     <textarea name="text" rows="8" cols="80" placeholder="Escriba aqui"></textarea>
-    <input type="hidden" name="idUsuario" value="1{{-- Acá va el id de Usuario auth()->ID --}}">
+    <input type="hidden" name="idUsuario" value={{Auth::ID()}} >
 
     <div class="botonesMuroPosteo">
       <button class="boton" type="reset" name="buttonReset" style="cursor:pointer">Cancelar</button>

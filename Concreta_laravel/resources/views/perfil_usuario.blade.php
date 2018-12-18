@@ -326,23 +326,31 @@
 
       <div class="t50" id="posteosUsuario">
       @if ($soloVista == false)
-        <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
+      <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
+
+      <div class="feedPosteosRelacionados">
         @foreach ($posteosP as $post)
-          <div class="t90 margin1">
-            <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
-            <p>De: {{$post->usuario->USER_NAME}}</p>
-            <p>
-            {{$post->mensaje}}
-            </p>
+            <div class="t90 margin1 ">
+              <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
+              <p>De: {{$post->usuario->USER_NAME}}</p>
+              <p>
+              {{$post->mensaje}}
+              </p>
+            </div>
+          @endforeach
+          <script type="text/javascript">
+            var ultimoIdPost = {{$posteosP->first()->id}}
+            var idUsuario = {{$usuario->ID}}
+          </script>
+
           </div>
-        @endforeach
         {{$posteosP->links()}}
      @endif
       </div>
       <div class="oculto" id="trabajosTerminados" >
         <p class="txt_centrado t90"> Ultimos trabajos</p>
         @foreach ($trabajos as $tabajo)
-          <div class="t90 margin1">
+          <div class="t90 margin1 ">
             <p>
             {{$tabajo->descripcion}}
             </p>
@@ -373,5 +381,13 @@
     </div>
   </div>
 </div>
-
+@foreach ($posteosP as $post)
+    <div class="t90 margin1 posteosRelacionados oculto">
+      <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
+      <p>De: {{$post->usuario->USER_NAME}}</p>
+      <p>
+      {{$post->mensaje}}
+      </p>
+    </div>
+  @endforeach
 @stop
