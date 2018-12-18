@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\Zona;
 use App\Rubro;
@@ -56,6 +55,5 @@ class muroController extends Controller
     $vac= compact('zonas','rubros','posteos');
     return view('muroPosteo',$vac);
   }
-  
 
 }

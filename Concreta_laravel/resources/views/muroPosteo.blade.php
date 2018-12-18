@@ -27,44 +27,32 @@
     <form class="" action="/muro" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
           <label class="labelMuro" for="zona">Zona</label>
-          @if ($errors->has("zona"))
-            <p class="p-error" >{{$errors->first("zona")}}</p>
-          @endif
           <select class="" name="zona">
             <option value="null" selected disabled>Selecciona una zona</option>
             @foreach ($zonas as $zona)
-              @if ($zona->ID === old("zona"))
-                <option value="{{$zona->ID}}" selected>{{$zona->NOMBRE_ZONA}}</option>
-              @else
-                <option value="{{$zona->ID}}">{{$zona->NOMBRE_ZONA}}</option>
-              @endif
+              <option value="{{$zona->ID}}">{{$zona->NOMBRE_ZONA}}</option>
             @endforeach
           </select>
 
 
 
-
     <label class="labelMuro" for="rubro">Rubro</label>
-    @if ($errors->has("rubro"))
-      <p class="p-error" >{{$errors->first("rubro")}}</p>
-     @else
     <select class="" name="rubro">
       <option value="null" selected disabled>Selecciona un rubro</option>
       @foreach ($rubros as $rubro)
-        @if ($rubro->ID === old("rubro"))
-        <option value="{{$rubro->ID}}" selected>{{$rubro->NOMBRE_RUBRO}}</option>
-        @else
         <option value="{{$rubro->ID}}">{{$rubro->NOMBRE_RUBRO}}</option>
-        @endif
       @endforeach
     </select>
+<<<<<<< HEAD
   @endif
+=======
+>>>>>>> parent of 437bc99... validacion muro y trabajos realizados
+
+
+
 
     <label class="labelMuro" for="foto">Carga una imagen</label>
     <p class="italic px12">Agregá hasta cuatro fotos o planos</p>
-
-
-
 
     <div class="mostrar_">
       @for ($i=0; $i < 4; $i++)
@@ -74,9 +62,6 @@
     </div>
 
     <label class="labelMuro" for="text">Agregá una descripción de lo que buscás:</label>
-    @if ($errors->has("text"))
-      <p class="p-error" >{{$errors->first("text")}}</p>
-    @endif
     <textarea name="text" rows="8" cols="80" placeholder="Escriba aqui"></textarea>
     <input type="hidden" name="idUsuario" value={{Auth::ID()}} >
 

@@ -25,15 +25,14 @@ class UsuariosController extends Controller
       return view ('listado', compact('usuarios'));
     }
 
-    public function home($id, Request $req){
+    public function home($id){
       $usuario = User::findOrFail($id);
       $zonas = $usuario->zonas;
       $rubros = $usuario->rubros;
       $mensajesRecibidos = $usuario->mensajesRecibidos;
       $soloVista = false;
-      $mostrarTrabajos = isset($req->trabajos);
       //if ($id == Auth::ID()){
-      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'mensajesRecibidos', 'soloVista', 'mostrarTrabajos'));
+      return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'mensajesRecibidos', 'soloVista'));
       //}
       //else {
         //return redirect("/index");

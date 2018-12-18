@@ -322,28 +322,11 @@
 
     </form>
 
-    <div class="feed">
-       @if ($mostrarTrabajos==true)
-         <div class="t50 oculto" id="posteosUsuario">
-      @else
-        <div class="t50" id="posteosUsuario">
-      @endif
-         @if ($soloVista == false)
-           <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
-           @foreach ($posteosP as $post)
-             <div class="t90 margin1">
-               <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
-               <p>De: {{$post->usuario->USER_NAME}}</p>
-               <p>
-               {{$post->mensaje}}
-               </p>
-             </div>
-           @endforeach
-           {{$posteosP->links()}}
-        @endif
+   <div class="feed">
 
       <div class="t50" id="posteosUsuario">
       @if ($soloVista == false)
+<<<<<<< HEAD
       <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
 
       <div class="feedPosteosRelacionados">
@@ -369,8 +352,22 @@
         <div class="t50" id="trabajosTerminados" >
      @else
        <div class="t50 oculto" id="trabajosTerminados" >
+=======
+        <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
+        @foreach ($posteosP as $post)
+          <div class="t90 margin1">
+            <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
+            <p>De: {{$post->usuario->USER_NAME}}</p>
+            <p>
+            {{$post->mensaje}}
+            </p>
+          </div>
+        @endforeach
+        {{$posteosP->links()}}
+>>>>>>> parent of 437bc99... validacion muro y trabajos realizados
      @endif
-
+      </div>
+      <div class="oculto" id="trabajosTerminados" >
         <p class="txt_centrado t90"> Ultimos trabajos</p>
         @foreach ($trabajos as $tabajo)
           <div class="t90 margin1 ">
@@ -378,11 +375,11 @@
             {{$tabajo->descripcion}}
             </p>
 
-            @if ($tabajo->fotos != null)
+            @if ($tabajo->foto != null)
 
-              @foreach (json_decode($tabajo->fotos, true) as $foto)
+              @foreach (json_decode($tabajo->foto, true) as $foto)
 
-                   <img class="foto-muro" src="/storage/{{$foto}}" alt="">
+                   <img class="foto-muro" src="storage/{{$foto}}" alt="">
 
                @endforeach
             @endif
@@ -390,7 +387,7 @@
 
           </div>
         @endforeach
-     {{$trabajos->appends(["trabajos" => "true"])->links()}}
+     {{$trabajos->links()}}
       </div>
    </div>
 
