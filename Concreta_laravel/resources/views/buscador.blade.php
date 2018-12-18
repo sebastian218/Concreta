@@ -156,12 +156,19 @@
            @endif
            </div>
            <div class="margin1 flex w100" style="justify-content:space-between;">
-             <a href="#" class="fondoAmarillo padding1">CONTACTAR</a>
+             <a href="#" class="cont fondoAmarillo padding1">CONTACTAR</a>
              <a href="/perfil/ver/{{$usuario->ID}}" class="fondoAmarillo padding1" >VER PERFIL</a>
            </div>
          </div>
-
-
+      </div>
+      <div class="contacto margin2 padding2 t90">
+        <form class="" action="/guardarMensaje" method="post">
+                  {{ csrf_field() }}
+        <input class="oculto" type="text" name="id_receptor" value="{{$usuario->ID}}">
+        <input class="oculto" type="text" name="id_emisor" value="{{Auth::ID()}}">
+        <p>Enviar Mensaje a: {{$usuario->NOMBRE}} {{$usuario->APELLIDO}}</p>
+        <textarea name="name" rows="8" class="w100"></textarea>
+        </form>
       </div>
     @endforeach
 
