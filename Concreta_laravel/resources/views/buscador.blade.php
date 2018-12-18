@@ -156,7 +156,14 @@
            @endif
            </div>
            <div class="margin1 flex w100" style="justify-content:space-between;">
-             <a href="#" class="cont fondoAmarillo padding1">CONTACTAR</a>
+             <p class="padding1 margin0 pointer
+             @if (Auth::guest())
+               gris_oscuro no_contactar"
+             @else
+               fondoAmarillo contactar"
+             @endif
+             id = "c_{{$usuario->ID}}"
+             >CONTACTAR</p>
              <a href="/perfil/ver/{{$usuario->ID}}" class="fondoAmarillo padding1" >VER PERFIL</a>
            </div>
          </div>

@@ -25,7 +25,10 @@ ul.pagination{
    justify-content: space-between;
  }
 .gris_oscuro{
-  color: rgb(50,50,50);
+  background-color: rgb(150,150,150);
+}
+.pointer{
+  cursor:pointer;
 }
 
 .flex{
