@@ -58,7 +58,7 @@
         @endif
       @endforeach
     </select>
-    @endif
+  @endif
 
     <label class="labelMuro" for="foto">Carga una imagen</label>
     <p class="italic px12">Agregá hasta cuatro fotos o planos</p>
