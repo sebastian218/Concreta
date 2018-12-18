@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\Zona;
 use App\Rubro;
@@ -16,7 +17,7 @@ class muroController extends Controller
 
 
     $muro = new Muro;
-  //  $muro->usuario_id = $req->idUsuario;
+  $muro->usuario_id = $req->idUsuario;
   $this->validate($req,
   ["zona" => "required",
   "rubro" => "required",
@@ -50,10 +51,11 @@ class muroController extends Controller
   public function posteos(){
     $zonas=Zona::all();
     $rubros= Rubro::all();
-    $posteos=Muro::paginate(5);
+    $posteos=Muro::orderBy('id',"desc")->paginate(5);
 
     $vac= compact('zonas','rubros','posteos');
     return view('muroPosteo',$vac);
   }
+  
 
 }

@@ -322,37 +322,67 @@
 
     </form>
 
-   <div class="feed">
+    <div class="feed">
+       @if ($mostrarTrabajos==true)
+         <div class="t50 oculto" id="posteosUsuario">
+      @else
+        <div class="t50" id="posteosUsuario">
+      @endif
+         @if ($soloVista == false)
+           <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
+           @foreach ($posteosP as $post)
+             <div class="t90 margin1">
+               <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
+               <p>De: {{$post->usuario->USER_NAME}}</p>
+               <p>
+               {{$post->mensaje}}
+               </p>
+             </div>
+           @endforeach
+           {{$posteosP->links()}}
+        @endif
 
       <div class="t50" id="posteosUsuario">
       @if ($soloVista == false)
-        <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
+      <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
+
+      <div class="feedPosteosRelacionados">
         @foreach ($posteosP as $post)
-          <div class="t90 margin1">
-            <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
-            <p>De: {{$post->usuario->USER_NAME}}</p>
-            <p>
-            {{$post->mensaje}}
-            </p>
+            <div class="t90 margin1 ">
+              <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
+              <p>De: {{$post->usuario->USER_NAME}}</p>
+              <p>
+              {{$post->mensaje}}
+              </p>
+            </div>
+          @endforeach
+          <script type="text/javascript">
+            var ultimoIdPost = {{$posteosP->first()->id}}
+            var idUsuario = {{$usuario->ID}}
+          </script>
+
           </div>
-        @endforeach
         {{$posteosP->links()}}
      @endif
       </div>
+      @if ($mostrarTrabajos==true)
+        <div class="t50" id="trabajosTerminados" >
+     @else
+       <div class="t50 oculto" id="trabajosTerminados" >
+     @endif
 
-      <div class="oculto" id="trabajosTerminados" >
         <p class="txt_centrado t90"> Ultimos trabajos</p>
         @foreach ($trabajos as $tabajo)
-          <div class="t90 margin1">
+          <div class="t90 margin1 ">
             <p>
             {{$tabajo->descripcion}}
             </p>
 
-            @if ($tabajo->foto != null)
+            @if ($tabajo->fotos != null)
 
-              @foreach (json_decode($tabajo->foto, true) as $foto)
+              @foreach (json_decode($tabajo->fotos, true) as $foto)
 
-                   <img class="foto-muro" src="storage/{{$foto}}" alt="">
+                   <img class="foto-muro" src="/storage/{{$foto}}" alt="">
 
                @endforeach
             @endif
@@ -360,7 +390,7 @@
 
           </div>
         @endforeach
-     {{$trabajos->links()}}
+     {{$trabajos->appends(["trabajos" => "true"])->links()}}
       </div>
    </div>
 
@@ -374,5 +404,13 @@
     </div>
   </div>
 </div>
-
+@foreach ($posteosP as $post)
+    <div class="t90 margin1 posteosRelacionados oculto">
+      <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
+      <p>De: {{$post->usuario->USER_NAME}}</p>
+      <p>
+      {{$post->mensaje}}
+      </p>
+    </div>
+  @endforeach
 @stop

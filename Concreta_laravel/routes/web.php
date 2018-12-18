@@ -13,8 +13,17 @@
 use App\muro;
 use App\Http\Resources\Muro as MuroResource;
 
-Route::get('/apiMuro', function () {
-    return MuroResource::collection(Muro::all());
+Route::get('/apiMuro/{idUsuario}/{ultimo}', function ($idUsuario,$ultimo) {
+
+  $posts = \App\User::find($idUsuario)->traerPosteosRubroAll()->where("id", ">", $ultimo);
+
+  foreach ($posts as $post) {
+    $post->usuario;
+    $post->zona;
+    $post->rubro;
+  }
+
+  return $posts;
 });
 
 

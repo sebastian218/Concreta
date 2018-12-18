@@ -21,7 +21,7 @@ use App\Especialidade;
               {{--}}<label class="label-home"  for="busqueda_string">
               </label>{{---}}
               <input type="text" name="busqueda_string" placeholder="Ej : albañil Zona Oeste" id="buscador" style="cursor:pointer">
-              <button type="submit" name="button">Buscar</button>
+              <button class="oculto" type="submit" name="button">Buscar</button>
             </form>
        </div>
 
@@ -39,28 +39,72 @@ use App\Especialidade;
   <button class="botonSlider botonAnterior hoverAmarillo " type="button" name="buttonsanterior"> < </button>
 
   @foreach ($profPromAlto as $profesional)
-    <article class="art-perfiles artPerfilesIndex" style="display:none"  >
-         <div class="foto-nombre">
-                <img class="cara-perf" src="/img_usuarios/{{$profesional->avatar}}" alt="">
-                <p class="nombre-perf">{{$profesional->NOMBRE}}</p>
+    <div class="resultado flex t90 margin2vh artPerfilesIndex" style="display:none">
 
-               <div class="calificStars"  style="display:flex">
+      <div class="foto_nombre flex column align_center t50">
+        <div class="pic_perfil overflowNo margin1 avatar150px">
+          @if ($profesional->avatar == null)
+            <img class="sin_avatar" src="/img_app/icono_casco.png" alt="">
+          @else
+           <img class="fotos_perf" src="/storage/{{$profesional->avatar}}" alt="">
+          @endif
+        </div>
 
+        <p class="txt_centrado margin1">{{$profesional->NOMBRE}} {{$profesional->APELLIDO}}</p>
 
-               @for ($i=0; $i < $profesional->promedioInt(); $i++)
-                     <img class="icono" src="/img_app/Yellow_Star.png" alt="">
-                   @endfor
+        <div class="calificaciones flex column align_center margin1">
+          @if ($profesional->cantCalif() > 0)
+           <div class="estrellitas flex margin1">
+          @for ($i=0; $i < $profesional->promedioInt(); $i++)
+            <img class="icono" src="/img_app/Yellow_Star.png" alt="">
+          @endfor
+           </div>
 
-                 </div>
+          <p class="txt_centrado px12 texto_gris">{{$profesional->promedio()}}/5 en base a {{$profesional->cantCalif()}} calificaciones</p>
+          @else
+          <p class="txt_centrado px12 texto_gris">No hay suficientes calificaciones</p>
+          @endif
+        </div>
+       </div>
 
+      <div class="zona_rubro flex column margin1" style="justify-content:space-between;">
+         <div class="rubros flex column t90">
+           @if ($profesional->rubroPrincipal())
+           <p class="px16 margin1">RUBRO PRINCIPAL:</p>
+           <p class="px20 bold margin1">{{$profesional->rubroPrincipal()->NOMBRE_RUBRO}}</p>
+           @endif
+           @if ($profesional->rubroSecundario())
+           <p class="px16 margin1">RUBRO SECUNDARIO:</p>
+           <p class="px16 texto_gris margin1">{{$profesional->rubroSecundario()->NOMBRE_RUBRO}}</p>
+           @endif
          </div>
-         <div class="datos-rubro-boton">
-               <h2 class="rubro-perf">{{$profesional->rubroPrincipal()["NOMBRE_RUBRO"]}}</h2>
-               <p class="perf-zona"> <!-- todavía no se como acceder a el nombre de las zonas del usuario -->   </p>
-               <p class="perf-descript">{{$profesional->descripcion}}</p>
-               <a href="/perfil/ver/{{$profesional->ID}} ">Ver mas</a>
+         <div class="zon flex column t90">
+           @if ($profesional->zonas)
+           <p class="px16 margin1">ZONA DE TRABAJO:</p>
+           @foreach ($profesional->zonas as $zona)
+             <div class="">
+               <p class="px14 margin1">.{{$zona->NOMBRE_ZONA}}</p>
+             </div>
+           @endforeach
+          @endif
          </div>
-       </article>
+         <div class="flex column t90">
+           @if ($profesional->especialidades)
+           <p class="px16 margin1">SUBRUBROS:</p>
+           @foreach ($profesional->especialidades as $esp)
+             <div class="">
+               <p class="px14 italic margin1">.{{$esp->nombre}}</p>
+             </div>
+           @endforeach
+         @endif
+         </div>
+         <div class="margin1 flex w100" style="justify-content:space-between;">
+
+           <a href="/perfil/ver/{{$profesional->ID}}" class="fondoAmarillo padding1" >VER PERFIL</a>
+         </div>
+       </div>
+    </div>
+
   @endforeach
 
 
