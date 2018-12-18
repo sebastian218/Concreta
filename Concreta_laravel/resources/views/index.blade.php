@@ -16,23 +16,12 @@ use App\Especialidade;
         <div class="h1-label">
 
                 <h1 class="h1-home"> Buscá servicios <br> para tu hogar o empresa</h1>
-            <form class="buscadorHome" action="/index" method="post">
+            <form class="buscadorHome" action="/buscadorPorPalabra" method="get">
               {{ csrf_field() }}
-              <label class="label-home"  for="buscador">
-                <input placeholder="Ej : plomeros zona Norte" id="buscador" style="cursor:pointer" type="text" name="buscador" value="">
-              </label>
-              <div class="buscadorDespHome oculto">
-                <ul class="desplegablehome">
-                  @foreach ($rubros as $rubro)
-                    @if($rubro->NOMBRE_RUBRO != null)
-                  <li class="padding2">
-                    {{$rubro->NOMBRE_RUBRO}}
-                  </li>
-                   @endif
-                  @endforeach
-
-                </ul>
-              </div>
+              {{--}}<label class="label-home"  for="busqueda_string">
+              </label>{{---}}
+              <input type="text" name="busqueda_string" placeholder="Ej : albañil Zona Oeste" id="buscador" style="cursor:pointer">
+              <button type="submit" name="button">Buscar</button>
             </form>
        </div>
 
