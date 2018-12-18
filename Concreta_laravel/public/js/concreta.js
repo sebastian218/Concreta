@@ -14,9 +14,33 @@ window.addEventListener("load",function(){
   var misTrabajos = document.getElementById('misTrabajos');
   var trabajosTerminados = document.getElementById('trabajosTerminados');
   var posteosUsuario = document.getElementById('posteosUsuario');
-
+  var contacto = document.querySelectorAll('.contactar');
+  var noMostrar = document.querySelectorAll('.no_contactar');
 
   var mostrarSelecFotos = document.querySelector('.mostrar_');
+
+  if (noMostrar) {
+    for (var i=0; i < noMostrar.length; i++) {
+      noMostrar[i].addEventListener("click", function() {
+        alert('Debe estar logueado para enviar mensajes');
+        event.preventDefault();
+      });
+    }
+  };
+
+   if (contacto) {
+      for (var i=0; i < contacto.length; i++) {
+        contacto[i].addEventListener("click", function() {
+          console.log('Hola');
+          var x = event.target.id;
+          var agarroId = 'ver_' + x;
+          var mostrar = document.getElementById(agarroId);
+          mostrar.classList.toggle('oculto');
+        }, false);
+      }
+    };
+
+
 
   if (mostrarSelecFotos) {
     mostrarSelecFotos.addEventListener("click", function() {
@@ -308,8 +332,8 @@ if (misTrabajos) {
 
   misTrabajos.addEventListener("click", function(){
        console.log("hola");
-    trabajosTerminados.classList.remove('oculto');
-    posteosUsuario.classList.add("oculto");
+    trabajosTerminados.classList.toggle('oculto');
+    posteosUsuario.classList.toggle("oculto");
   });
 };
 
