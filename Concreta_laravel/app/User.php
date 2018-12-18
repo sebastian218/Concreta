@@ -168,7 +168,7 @@ class User extends Authenticatable
     }
     public function trabajosPorUsuario(){
       $id_usuario = $this->ID;
-      $relacionados = TrabajosRealizado::where('id_usuario', $id_usuario)->paginate(5);
+      $relacionados = TrabajosRealizado::where('id_usuario', $id_usuario)->paginate(2);
       return $relacionados;
 
     }
