@@ -84,6 +84,12 @@
 
 
   <div class="cuerpo_central">
+    <form class="" action="/buscadorPorPalabra" method="get">
+      {{ csrf_field() }}
+      <label for="busqueda_string">Buscador</label>
+      <input type="text" name="busqueda_string" value="">
+      <button type="submit" name="button">Buscar</button>
+    </form>
     <p class="txt_centrado fondoAmarillo margin2vh padding1">Hay {{$cantidad}} resultados para tu búsqueda</p>
 
     <div class="resultados flex column t50">

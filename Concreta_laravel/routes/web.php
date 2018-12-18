@@ -74,3 +74,5 @@ Route::get('/buscadorA', 'UsuariosController@buscadorAvanzado');
 Route::get('/factory', function() {
   return view('llegue');
 });
+
+Route::get('/buscadorPorPalabra', 'UsuariosController@buscadorPorPalabra');

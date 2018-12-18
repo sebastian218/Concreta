@@ -99,6 +99,65 @@ class UsuariosController extends Controller
      return view('/buscador', compact('usuarios', 'cantidad'));
     }
 
+    public function buscadorPorPalabra(Request $string) {
+      $str = $string->busqueda_string;
+      $palabras = [];
+      $palabras = preg_split('/\s+/', $str);
+
+      /*$zonas_busc = [];
+      foreach ($palabras as $palabra) {
+      $zona_b = DB::table('zonas')
+      ->where('zonas.NOMBRE_ZONA', 'LIKE', '%'.$palabra.'%')
+      ->pluck('ID');
+      $zonas_busc[] = $zona_b;
+      }
+      */
+  /*
+      $zonas_busc = [];
+      $zona_b = DB::table('zonas');
+      foreach ($palabras as $palabra) {
+      $ids = $zona_b->where('zonas.NOMBRE_ZONA', 'LIKE', '%'.$palabra.'%')->pluck('ID');
+      if(!empty($ids)){$zonas_busc[] = $ids;}
+      }
+
+      $rubros_buscar = [];
+      $rub_b = DB::table('rubros');
+      foreach ($palabras as $palabra) {
+      $ids = $rub_b->where('rubros.NOMBRE_RUBRO', 'LIKE', '%'.$palabra.'%')->pluck('ID');
+      if(!empty($ids)){$rubros_buscar[] = $ids;}
+      }
+*/
+
+      $rub_b = DB::table('rubros')
+      ->Where(function($query) use($palabras) {
+          for ($i = 0; $i <count($palabras); $i++) {
+            $query->orwhere('rubros.NOMBRE_RUBRO', 'LIKE', '%'.$palabras[$i].'%');
+          }
+      })->pluck('ID');
+
+      $zon_b = DB::table('zonas')
+      ->Where(function($query) use($palabras) {
+          for ($i = 0; $i <count($palabras); $i++) {
+            $query->orwhere('zonas.NOMBRE_ZONA', 'LIKE', '%'.$palabras[$i].'%');
+          }
+      })->pluck('ID');
+
+      //var_dump(empty($zon_b[0]));
+      //exit;
+      $busc_n = ""
+      if(!empty($zon_b[0])){
+      $busc_n = Zona::find($zonas_busc)->first()->NOMBRE_ZONA;}
+
+      if(!empty($rub_b[0])){
+      $busc_r = Rubro::find($rub_b)->first()->NOMBRE_RUBRO;}
+
+      var_dump($busc_n, $busc_r)
+
+
+
+
+    }
+
     public function buscadorAvanzado(Request $req) {
 
          $todos = User::trabajador();
