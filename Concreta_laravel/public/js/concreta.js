@@ -14,9 +14,22 @@ window.addEventListener("load",function(){
     var misTrabajos = document.getElementById('misTrabajos');
     var trabajosTerminados = document.getElementById('trabajosTerminados');
     var posteosUsuario = document.getElementById('posteosUsuario');
-
+    var contacto = document.querySelectorAll('.contactar');
 
     var mostrarSelecFotos = document.querySelector('.mostrar_');
+
+   if (contacto) {
+      for (var i=0; i < contacto.length; i++) {
+        contacto[i].addEventListener("click", function() {
+          console.log('Hola');
+          var x = event.target.id;
+          var agarroId = 'ver_' + x;
+          var mostrar = document.getElementById(agarroId);
+          
+        }, false);
+      }
+    };
+
 
    if (mostrarSelecFotos) {
       mostrarSelecFotos.addEventListener("click", function() {

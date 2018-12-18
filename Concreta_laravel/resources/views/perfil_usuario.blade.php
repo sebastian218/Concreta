@@ -339,6 +339,7 @@
         {{$posteosP->links()}}
      @endif
       </div>
+
       <div class="oculto" id="trabajosTerminados" >
         <p class="txt_centrado t90"> Ultimos trabajos</p>
         @foreach ($trabajos as $tabajo)
