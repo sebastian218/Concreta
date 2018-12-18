@@ -156,8 +156,8 @@
            @endif
            </div>
            <div class="margin1 flex w100" style="justify-content:space-between;">
-             <a href="#" class="cont fondoAmarillo padding1">CONTACTAR</a>
-             <a href="/perfil/ver/{{$usuario->ID}}" class="fondoAmarillo padding1" >VER PERFIL</a>
+             <p class="contactar fondoAmarillo padding1 margin0 pointer" id = "c_{{$usuario->ID}}">CONTACTAR</p>
+             <a href="/perfil/ver/{{$usuario->ID}}" class="fondoAmarillo padding1" id="ver_c_{{$usuario->ID}}">VER PERFIL</a>
            </div>
          </div>
       </div>
@@ -175,6 +175,8 @@
     <div class="paginas t90 margin2 padding1">
       @if (isset($id_r_buscado))
       {{$usuarios->appends(["id_rubro_buscado" => $id_r_buscado, "id_zona_buscado" => $id_z_buscado])->links('vendor.pagination.semantic-ui')}}
+      @elseif (isset($str))
+      {{$usuarios->appends(["busqueda_string" => $str])->links('vendor.pagination.semantic-ui')}}
       @else
       {{$usuarios->links('vendor.pagination.semantic-ui')}}
       @endif

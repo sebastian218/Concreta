@@ -104,6 +104,10 @@ ul.pagination{
 label.pointer{
   cursor: pointer;
 }
+
+.pointer{
+  cursor:pointer;
+}
 .fotosTrabajo{
   display: flex;
   flex-flow: column;

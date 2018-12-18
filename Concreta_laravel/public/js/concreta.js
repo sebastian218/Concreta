@@ -20,6 +20,38 @@ window.addEventListener("load",function(){
 
   if (mostrarSelecFotos) {
     mostrarSelecFotos.addEventListener("click", function() {
+    var sectionTipoPerfil = document.querySelector(".registerIntermedio");
+    var botonProfesional = document.querySelector('.elegir_perfil_profesional');
+    var botonCliente = document.querySelector('.elegir_perfil_cliente');
+    var onHoverShow = document.querySelector('.onHoverShow');
+    var mostrarRubroP = document.getElementById('mostrarRubroP');
+    var mostrarRubroS = document.getElementById('mostrarRubroS');
+    var agregarRubroS = document.getElementById('agregarRubroS');
+    var mostrarZonas = document.getElementById('mostrarZonas');
+    var mostrarEsp = document.getElementById('mostrarEsp_1');
+    var mostrarDescrip = document.getElementById('modificar_descrip');
+    var misTrabajos = document.getElementById('misTrabajos');
+    var trabajosTerminados = document.getElementById('trabajosTerminados');
+    var posteosUsuario = document.getElementById('posteosUsuario');
+    var contacto = document.querySelectorAll('.contactar');
+
+    var mostrarSelecFotos = document.querySelector('.mostrar_');
+
+   if (contacto) {
+      for (var i=0; i < contacto.length; i++) {
+        contacto[i].addEventListener("click", function() {
+          console.log('Hola');
+          var x = event.target.id;
+          var agarroId = 'ver_' + x;
+          var mostrar = document.getElementById(agarroId);
+
+        }, false);
+      }
+    };
+
+
+   if (mostrarSelecFotos) {
+      mostrarSelecFotos.addEventListener("click", function() {
       var x = event.target.id;
       console.log(x);
       var agarroId = 'foto_' + x;

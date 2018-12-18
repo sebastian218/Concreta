@@ -90,6 +90,7 @@ class UsuariosController extends Controller
         "status" => "Los cambios se actualizaron correctamente!"
       ]);
     }
+    
 
     public function buscadorTodos() {
       $usuarios = User::trabajador();
@@ -100,6 +101,7 @@ class UsuariosController extends Controller
     }
 
     public function buscadorPorPalabra(Request $string) {
+
       $str = $string->busqueda_string;
       $palabras = [];
       $palabras = preg_split('/\s+/', $str);
@@ -180,9 +182,7 @@ class UsuariosController extends Controller
 
                $cantidad = $usuarios->total();
 
-
-               $vac = compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado');
-
+               $vac = compact('usuarios', 'str', 'cantidad');
 
             return view('/buscador', $vac);
 
@@ -192,7 +192,6 @@ class UsuariosController extends Controller
 
          $todos = User::trabajador();
 
-         if (isset($id_r_buscado) == false) {
            if($req->id_rubro_buscado == 't'){
             $id_r_buscado = Rubro::all()->pluck('ID'); }
             else {$id_r_buscado[] = $req->id_rubro_buscado;}
@@ -201,8 +200,9 @@ class UsuariosController extends Controller
             else {$id_z_buscado[] = $req->id_zona_buscado;}
            if(empty($req->esp_buscadas)) {
              $esp_buscadas = Especialidade::all()->pluck('ID');}
-             else {$esp_buscadas = $req->esp_buscadas;}
-           }
+             else {$esp_buscadas = $req->esp_buscadas;
+            }
+
 
          $usuarios_id = DB::table('users')
          ->join('usuario_rubro', 'users.id', '=', 'usuario_rubro.usuario_id')
@@ -219,7 +219,8 @@ class UsuariosController extends Controller
 
          $cantidad = $usuarios->total();
 
-
+         $id_r_buscado = $req->id_rubro_buscado;
+         $id_z_buscado = $req->id_zona_buscado;
          $vac = compact('usuarios', 'cantidad', 'id_r_buscado', 'id_z_buscado', 'esp_buscadas');
 
 

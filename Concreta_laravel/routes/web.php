@@ -77,7 +77,8 @@ Route::get('/plantilla', function() {
 
 Route::get('/buscador', 'UsuariosController@buscadorTodos');
 
-Route::post('/buscador', 'UsuariosController@buscadorAvanzado');
+//Route::post('/buscador', 'UsuariosController@buscadorAvanzado');
+
 Route::get('/buscadorA', 'UsuariosController@buscadorAvanzado');
 
 Route::get('/factory', function() {
