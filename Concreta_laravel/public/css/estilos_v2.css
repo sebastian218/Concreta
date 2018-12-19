@@ -1345,6 +1345,15 @@ margin-bottom: 1.5vh;
    margin-right: -29px;
    z-index: 4;
 }
+.perfBuscador{
+
+    flex-flow: column;
+
+}
+.zonRubrobuscador{
+
+  width: 92%;
+}
 
 
 

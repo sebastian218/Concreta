@@ -96,7 +96,7 @@
     <div class="resultados flex column t50">
           <p class="txt_centrado fondoAmarillo margin2vh padding1">Hay {{$cantidad}} resultados para tu búsqueda</p>
     @foreach ($usuarios as $usuario)
-      <div class="resultado flex t90 margin2vh">
+      <div class="resultado flex t90 margin2vh perfBuscador">
 
         <div class="foto_nombre flex column align_center t50">
           <div class="pic_perfil overflowNo margin1 avatar150px">
@@ -124,7 +124,7 @@
           </div>
          </div>
 
-        <div class="zona_rubro flex column margin1" style="justify-content:space-between; width:60%">
+        <div class="zona_rubro flex column margin1 zonRubrobuscador" style="justify-content:space-between; width:60%">
            <div class="rubros flex column t90">
              @if ($usuario->rubroPrincipal())
              <p class="px16 margin1">RUBRO PRINCIPAL:</p>
