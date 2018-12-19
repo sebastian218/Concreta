@@ -402,6 +402,5 @@
       <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
       <img class= "publicid" src="/img_publicidad/acindar.png" alt="">
     </div>
-  </div>
-</div>
+
 @stop
