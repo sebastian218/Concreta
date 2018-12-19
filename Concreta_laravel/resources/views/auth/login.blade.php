@@ -6,9 +6,10 @@
   <body class="container_login">
   <div>
     <div class="banner_perfiles">
+      <p class="TituloLogin">Encontrá lo que necesitas</p>
    </div>
     <section >
-      <div class="Registro">
+      <div class="loginForm">
         <form class="login" action="{{ route('login') }}" method="POST">
           {{ csrf_field() }}
           <label for="email"> Email</label>

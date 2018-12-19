@@ -27,7 +27,7 @@ use App\Especialidade;
 
    <section class="cuerpo">
 
-              <p class="subtit"> Busca entre mas de 1000 trabajadores registrados y conseguí <strong>el mejor presupuesto </strong></p>
+              <p class="subtit t50"> Buscá entre mas de 1000 trabajadores registrados y conseguí <strong> el mejor presupuesto </strong></p>
 
       <h2 class="tit-perf" >Perfiles Destacados</h2>
 
@@ -41,7 +41,7 @@ use App\Especialidade;
   @foreach ($profPromAlto as $profesional)
     <div class="resultado flex t90 margin2vh artPerfilesIndex" style="display:none">
 
-      <div class="foto_nombre flex column align_center t50">
+      <div class="foto_nombreSlide flex column align_center t50">
         <div class="pic_perfil overflowNo margin1 avatar150px">
           @if ($profesional->avatar == null)
             <img class="sin_avatar" src="/img_app/icono_casco.png" alt="">
@@ -67,7 +67,7 @@ use App\Especialidade;
         </div>
        </div>
 
-      <div class="zona_rubro flex column margin1" style="justify-content:space-between;">
+      <div class="zona_rubroSlide flex column margin1" style="justify-content:space-between;">
          <div class="rubros flex column t90">
            @if ($profesional->rubroPrincipal())
            <p class="px16 margin1">RUBRO PRINCIPAL:</p>
@@ -113,7 +113,7 @@ use App\Especialidade;
 
 </div>
 
-<article class="art-perfiles crear-perfil">
+<article class="art-perfiles crear-perfil t50">
      <div class="foto-nombre">
             <img class="cara-perf" src="/img_app/icono_constructor.png" alt="">
             <p class="nombre-perf">Creá Tu Perfil !</p>

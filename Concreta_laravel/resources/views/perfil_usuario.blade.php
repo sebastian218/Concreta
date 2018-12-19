@@ -54,7 +54,11 @@
          <a class= "txt_centrado px14 marginauto" href="#">Ver todos mis mensajes</a>
 
        </div>
-       <div class="blanco flex h10 margin3vh botonDesplegarFormTrabajos hoverAmarillo" style="cursor:pointer" >
+       @if ($usuario->esTrabajador == true)
+         <div class="blanco flex h10 margin3vh botonDesplegarFormTrabajos hoverAmarillo" style="cursor:pointer" >
+        @else
+          <div class="blanco oculto flex h10 margin3vh botonDesplegarFormTrabajos hoverAmarillo" style="cursor:pointer" >
+       @endif
          <a class= "txt_centrado px14 marginauto bold" >Cargar nuevo trabajo realizado</a>
        </div>
 
@@ -78,19 +82,18 @@
 
          </form>
        </div>
-       <div class="blanco flex h10 margin3vh">
+       @if ($usuario->esTrabajador == true)
+        <div class="blanco flex h10 margin3vh">
+          @else
+          <div class="blanco oculto flex h10 margin3vh">
+       @endif
+
          <a class="txt_centrado px14 marginauto bold" id="misTrabajos" style="cursor:pointer">Mis trabajos realizados</a>
        </div>
 
     </div>
     @endif
-    @if ($soloVista == true)
-      <div class="w90 center marginTop1">
-         <img class= "publicid" src="/img_publicidad/acindar_1.jpg" alt="">
-         <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
-         <img class= "publicid" src="/img_publicidad/acindar.png" alt="">
-       </div>
-    @endif
+
 
   </div>
 
@@ -106,12 +109,11 @@
 
    <div class="datos flex t90 ">
      <div class="foto_nombre flex column align_center t50">
-       <div class="overflowNo margin2vh ancho_foto_media" style="margin-top:4vh;">
+       <div class="pic_perfil overflowNo">
          @if ($usuario->avatar == null)
            <img class="sin_avatar" src="/img_app/icono_casco.png" alt="">
          @else
           <img class="f_perfil" id="item" src="/storage/{{$usuario->avatar}}" />
-
          @endif
        </div>
        @if ($soloVista == false)
@@ -168,7 +170,7 @@
             @if ($usuario->rubroPrincipal() != null)
               "oculto"
             @endif
-            >
+
             <select class="select" name="RUBRO_P" >
               @foreach ($rubrosTodos as $rubro)
                 <option value="{{$rubro->ID}}" {{$id_r == $rubro->ID ? 'selected' : '' }}>{{$rubro->NOMBRE_RUBRO}}</option>
@@ -211,6 +213,7 @@
               <img id="mostrarEsp_1" class="icono hoverAmarillo manoHover" src="/img_app/cambiar_icon.png" style="max-height:3vh;" alt="">
               @endif
             </div>
+
 
             <div class="">
               @foreach (Especialidade::all() as $esp)
@@ -272,7 +275,7 @@
               checked
             @endif
               >
-            <label for="zona">.{{$zon->NOMBRE_ZONA}}</label>
+            <label for="zona">{{$zon->NOMBRE_ZONA}}</label>
             </div>
           @endforeach
         </div>
@@ -296,8 +299,8 @@
        </div>
 
        @if ($usuario->descripcion ==! null && $soloVista == true)
-       <div class="t50 mostrar borderGray padding1">
-         <p class="margin1">{{$usuario->descripcion}}</p>
+       <div class="t50 mostrar">
+         <p>{{$usuario->descripcion}}</p>
        </div>
        @endif
      </div>
@@ -386,6 +389,11 @@
 
 </div>
 
+@if (Auth()->user()->esTrabajador == 0)
+</div>
+</div>
+@endif
+
 
 
   <div class="lateral_der flex column">
@@ -394,6 +402,5 @@
       <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
       <img class= "publicid" src="/img_publicidad/acindar.png" alt="">
     </div>
-  </div>
-</div>
+
 @stop
