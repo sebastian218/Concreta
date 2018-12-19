@@ -66,8 +66,10 @@ class UsuariosController extends Controller
 
         $id_rubro_p = $req->RUBRO_P;
         $id_rubro_s = $req->RUBRO_S;
-        $usuario->rubros()->sync([$id_rubro_p => ['orden' => '1'], $id_rubro_s => ['orden'=>'2']]);
 
+        if ($req->RUBRO_S != 0){
+        $usuario->rubros()->sync([$id_rubro_p => ['orden' => '1'], $id_rubro_s => ['orden'=>'2']]);
+       }
 
       if ($req->RUBRO_S == 0) {
         $id_rubro_p = $req->RUBRO_P;

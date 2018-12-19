@@ -323,7 +323,7 @@
     </form>
 
     <div class="feed">
-       @if ($mostrarTrabajos==true)
+      @if ($mostrarTrabajos==true)
          <div class="t50 oculto" id="posteosUsuario">
       @else
          <div class="t50" id="posteosUsuario">
@@ -356,7 +356,7 @@
        <div class="t50 oculto" id="trabajosTerminados" >
      @endif
 
-        <p class="txt_centrado t90"> Ultimos trabajos</p>
+        <p class="txt_centrado t90">Ultimos trabajos</p>
         @foreach ($trabajos as $tabajo)
           <div class="t90 margin1 ">
             <p>
