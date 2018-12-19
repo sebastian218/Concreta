@@ -196,8 +196,7 @@ label.pointer{
 
 .px12{
     font-size: 12px;
-    min-height: 3vh;
-    max-height: 4vh;
+
 }
 .px14{
   font-size: 14px;
@@ -208,6 +207,10 @@ label.pointer{
 .px20{
   font-size: 20px;
 }
+.sinBorde{
+  border:none;
+}
+
 .bold{
   font-weight: bold;
 }
@@ -368,7 +371,7 @@ ul.desplegableLupa{
   left: 55%;
   z-index: 23;
   justify-content: space-between;
-  background-color: rgba(247, 220, 111,0.8);
+  background-color: rgba(247, 220, 111,0.9);
   width: 45%;
   border-top: solid 1px;
 
@@ -856,6 +859,7 @@ justify-content: space-between;
   background-color: rgb(60,185,229);
 }
 
+
 /*footer*/
 footer{
   width:100%;
@@ -1131,9 +1135,20 @@ img.puntaje{
   border-color: black;
 }
 
+  .pic_post{
+    max-width:100%;
+  }
+
+
+
+
 @media (max-width: 600px) {
   .ancho_foto_media{
     width:150px;
+  }
+  .fotos_posteos {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -1271,7 +1286,11 @@ div.foto-nombre {
 div.datos-rubro-boton {
   width: 70%;
 }
+.foto-muro{
+  width: 150px;
+  height: 150px;
 
+}
 
 }
 @media (min-width:1024px) /*desktop*/{

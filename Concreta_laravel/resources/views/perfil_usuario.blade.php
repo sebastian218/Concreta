@@ -88,11 +88,9 @@
           <div class="blanco oculto flex h10 margin3vh">
        @endif
 
-         <a class="txt_centrado px14 marginauto bold" id="misTrabajos" style="cursor:pointer">Mis trabajos realizados</a>
+         <a class="txt_centrado px14 marginauto bold" id="misTrabajos" style="cursor:pointer">Ver mis trabajos realizados</a>
        </div>
-       <div class="blanco flex h10 margin3vh">
-         <a class= "txt_centrado px14 marginauto" href="/muro">Hacé tu publicación</a>
-       </div>
+
     </div>
     @endif
 
@@ -144,7 +142,8 @@
 
       <div class="rubro_zona t50 flex column">
 
-        @if ($usuario->esTrabajador == true)
+
+     @if ($usuario->esTrabajador == true)
 
      <div class="container_rubros column flex bordeNegro padding1 blanco" style="width:80%; margin-top:3vh; margin-right:2vw;">
 
@@ -168,18 +167,18 @@
             @endif
 
                @if ($soloVista == false)
-              <div id="form_rubro_P" class=
+              <div id="form_rubro_P" class="
             @if ($usuario->rubroPrincipal() != null)
-              "oculto">
+              oculto
             @endif
-
-            <select class="select" name="RUBRO_P" >
+             ">
+            <select class="select" name="RUBRO_P">
               @foreach ($rubrosTodos as $rubro)
                 <option value="{{$rubro->ID}}" {{$id_r == $rubro->ID ? 'selected' : '' }}>{{$rubro->NOMBRE_RUBRO}}</option>
               @endforeach
             </select>
               </div>
-                @endif
+               @endif 
         </div>
 
         @if ($usuario->rubroSecundario() != null)
@@ -284,10 +283,12 @@
 
      </div>
 
+
       </div>
 
 
    </div>
+
    <div class="descri t90 padding1 blanco">
 
      <div class="">
@@ -333,21 +334,25 @@
 
     </form>
 
+
     <div class="feed">
-      @if ($mostrarTrabajos==true)
-         <div class="t50 oculto" id="posteosUsuario">
-      @else
-         <div class="t50" id="posteosUsuario">
-      @endif
+
+         <div class="t50
+         @if ($mostrarTrabajos==true)
+         oculto
+          @endif
+         " id="posteosUsuario">
+
+
       @if ($soloVista == false)
-      <p class="txt_centrado t90">Últimas búsquedas relacionadas:</p>
+      <p class="txt_centrado t90 fondoAmarillo padding2">Últimas búsquedas relacionadas con tu rubro:</p>
 
       <div class="feedPosteosRelacionados">
         @foreach ($posteosP as $post)
-            <div class="t90 margin1 ">
-              <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
-              <p>De: {{$post->usuario->USER_NAME}}</p>
-              <p>
+            <div class="t90 margin1 borderGray padding2">
+              <p class="margin1 bold">Rubro: {{$post->rubro->NOMBRE_RUBRO}} / {{$post->zona->NOMBRE_ZONA}}</p>
+              <p class="bordeAbajo margin1">De: {{$post->usuario->USER_NAME}}</p>
+              <p class="magin1">
               {{$post->mensaje}}
               </p>
             </div>
@@ -361,13 +366,13 @@
         {{$posteosP->links()}}
      @endif
       </div>
-      @if ($mostrarTrabajos==true)
-        <div class="t50" id="trabajosTerminados" >
-     @else
-       <div class="t50 oculto" id="trabajosTerminados" >
-     @endif
+        <div class="t50
+        @if ($mostrarTrabajos!=true)
+         oculto
+        @endif
+        " id="trabajosTerminados" >
 
-        <p class="txt_centrado t90 padding2 fondoNaranja">Últimos trabajos</p>
+        <p class="txt_centrado t90 padding2 fondoNaranja">Mis trabajos realizados</p>
         @foreach ($trabajos as $trabajo)
           <div class="t90 margin1 padding2">
             <p class="padding1 borderGray px14">

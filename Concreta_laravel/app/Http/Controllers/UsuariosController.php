@@ -251,4 +251,18 @@ class UsuariosController extends Controller
 
 }
 
+public function homeCopy(){
+  $usuario = Auth::user();
+  $zonas = $usuario->zonas;
+  $rubros = $usuario->rubros;
+  $mensajesRecibidos = $usuario->mensajesRecibidos;
+  $soloVista = false;
+  $mostrarTrabajos = false;
+
+
+  return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'mensajesRecibidos', 'soloVista', 'mostrarTrabajos'));
+  }
+
+
+
 }

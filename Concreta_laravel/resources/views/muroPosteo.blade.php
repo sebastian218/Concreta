@@ -13,11 +13,18 @@
     <div class="w90 center t50 flex column">
        <div class="blanco flex h10">
          <div class="flex" style="width: 25%;">
-         <img class="padding1 center" style="width:60%" src="/img_app/logo_mensaje.png" alt="">
+         <img class="padding1 center" style="width:60%" src="/img_app/search-icon-png-21.png" alt="">
          </div>
          <div class="bordeLateral flex">
-         <p class="txt_centrado px14 center padding1 bold">Últimos Mensajes</p>
+         <p class="txt_centrado px14 center padding1 bold">Tips de búsqueda:</p>
          </div>
+       </div>
+       <div class="">
+
+           <p class= "padding1 margin1 px12 t90">Especificá el rubro al que pertenece el profesional que buscás</p>
+           <p class= "padding1 margin1 px12 t90">Especificá la zona en la que se realizará</p>
+           <p class= "padding1 margin1 px12 t90">Describí el trabajo a realizar</p>
+
        </div>
  </div>
   </div>
@@ -99,27 +106,61 @@
  </div>
 
  <div class="t50">
-   <p class="txt_centrado t90">Últimas Posteos :</p>
+   <div class="fondoNaranja margin2 padding2">
+      <p class="txt_centrado margin0">Últimas búsquedas:</p>
+   </div>
+
    @foreach ($posteos as $post)
-     <div class="t90 margin1">
-       <p>Rubro: {{$post->rubro->NOMBRE_RUBRO}} / Zona: {{$post->zona->NOMBRE_ZONA}}</p>
-       <p>De: {{$post->usuario->USER_NAME}}</p>
-       <p>
-       {{$post->mensaje}}
-       </p>
+     <div class="t90 margin1 borderGray">
+       <div class="t90 margin1 padding2">
+         <p class="margin1 bold">Rubro: {{$post->rubro->NOMBRE_RUBRO}} / {{$post->zona->NOMBRE_ZONA}}</p>
+         <p class="bordeAbajo margin1">De: {{$post->usuario->USER_NAME}}</p>
+         <p class="magin1">
+         {{$post->mensaje}}
+         </p>
+       </div>
 
        @if ($post->foto != null)
-
+         <div class="fotos_posteos flex margin2">
          @foreach (json_decode($post->foto, true) as $foto)
-
-              <img class="foto-muro" src="storage/{{$foto}}" alt="">
-
+             <div class="overflowNo margin2" style="width:200px; height:200px;">
+              <img class="pic_post" src="storage/{{$foto}}" alt="">
+             </div>
           @endforeach
+          </div>
        @endif
+
+       <div class="margin1 flex w90 botonesPerfBuscador">
+         <p class="padding1 margin0 pointer
+         @if (Auth::guest())
+           gris_oscuro no_contactar"
+         @else
+           fondoAmarillo contactar"
+         @endif
+         id = "c_{{$post->usuario_id}}"
+         >CONTACTAR</p>
+         <a href="/perfil/ver/{{$post->usuario_id}}" class="fondoNaranja padding1" >VER PERFIL</a>
+       </div>
+
+       <div class="contacto margin2 padding2 t90 oculto fondoAmarillo" id="ver_c_{{$post->usuario_id}}">
+       <form class="" action="/guardarMensaje" method="post">
+              {{ csrf_field() }}
+       <input class="oculto" type="text" name="id_receptor" value="{{$post->usuario_id}}">
+       <input class="oculto" type="text" name="id_emisor" value="{{Auth::ID()}}">
+       <p class="margin1">Enviar Mensaje a {{$post->usuario->USER_NAME}}</p>
+       <textarea name="mensaje" rows="8" class="w100"></textarea>
+       <div class="flex spaceBetween" >
+       <button type="reset" class="sinBorde" name="button">BORRAR</button>
+       <button class="fondoNaranja" class="sinBorde" type="submit" name="">ENVIAR</button>
+       </div>
+
+       </form>
+       </div>
 
 
      </div>
    @endforeach
+
 {{$posteos->links()}}
  </div>
 </div>

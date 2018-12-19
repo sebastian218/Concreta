@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -28,8 +29,16 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
 
+     protected function authenticated(Request $request, User $user)
+ {
+     return redirect()->intended('/buscador');
+ }
+
+    protected function redirectTo() {
+      $id = Auth::id();
+      return '/irAFormulario';
+    }
     /**
      * Create a new controller instance.
      *
@@ -59,7 +68,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             "apellido" => ['required', 'string', 'max:255'],
             "usuario" => ['required', 'string', 'max:255'],
-          
+
 
         ]);
     }

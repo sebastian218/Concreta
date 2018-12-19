@@ -54,13 +54,22 @@ use App\Especialidade;
 
 <div class="lupaDesp oculto">
   <ul class="desplegableLupa">
-    @foreach ($rubros as $rubro)
-      @if($rubro->NOMBRE_RUBRO != null)
-    <li class="padding2"><a class="txt_gris"href="">
-      {{$rubro->NOMBRE_RUBRO}}
+    <li>
+    <form class="" action="/buscadorPorPalabra" method="get">
+      {{ csrf_field() }}
+      <div class="padding1 margin1">
+        <label class="oculto" for="busqueda_string"></label>
+        <input type="text" style="width:90%; border:none;" class="fondoAmarillo" name="busqueda_string" value="" placeholder="Buscar...">
+      {{--}}  <button type="submit" name="button"><img class="lupa" src="/img_app/search-icon-png-21.png" alt=""></button>{{----}}
+      </div>
+    </form>
+    </li>
+    <li class="padding2"><a class="px12"href="/buscador">
+    Búsqueda Avanzada
     </a></li>
-     @endif
-    @endforeach
+    <li class="padding2"><a class="px12"href="/muro">
+    Muro de Búsquedas
+    </a></li>
 
   </ul>
 </div>

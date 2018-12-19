@@ -84,6 +84,8 @@ Route::get('/factory', function() {
   return view('llegue');
 });
 
+Route::get('/irAFormulario', 'UsuariosController@homeCopy')->middleware('auth');
+
 Route::get('/buscadorPorPalabra', 'UsuariosController@buscadorPorPalabra');
 
 Route::post('/guardarMensaje', 'MensajesController@guardarMensaje');

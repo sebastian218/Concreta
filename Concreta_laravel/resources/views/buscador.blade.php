@@ -176,8 +176,8 @@
         <p class="margin1">Enviar Mensaje a {{$usuario->NOMBRE}} {{$usuario->APELLIDO}}</p>
         <textarea name="mensaje" rows="8" class="w100"></textarea>
         <div class="flex spaceBetween" >
-        <button type="reset" name="button">BORRAR</button>
-        <button class="fondoNaranja" type="submit" name="">ENVIAR</button>
+        <button type="reset" class="sinBorde" name="button">BORRAR</button>
+        <button class="fondoNaranja" class="sinBorde" type="submit" name="">ENVIAR</button>
         </div>
 
         </form>
