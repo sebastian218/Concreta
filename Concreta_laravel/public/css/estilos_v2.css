@@ -18,11 +18,25 @@ a {
 text-decoration: none;
 color: black;
 }
+.foto_nombreSlide{
+  max-width: 50%;
+  min-width: 50%;
+}
 
 ul.pagination{
    display: flex;
    flex-flow: row;
    justify-content: space-between;
+  background-color: rgba(255,255,255,0.9);
+ }
+ li.page-item:hover{
+   background-color: rgba(247, 220, 111);
+ }
+ li.page-item{
+   width: 10%;
+   font-size: 20px;
+   text-align: center;
+   border-radius: 4px
  }
 .gris_oscuro{
   background-color: rgb(150,150,150);
@@ -1280,8 +1294,13 @@ div.containerMuro {
 .anchoTexMobile {
   width: 100%;
 }
-.foto_nombre {
-    width: 100%;
+.foto_nombreSlide {
+
+    max-width: 23%;
+    min-width: 49%;
+}
+.foto_nombre{
+  width:100%;
 }
 .pic_perfil {
     max-width: 125px;

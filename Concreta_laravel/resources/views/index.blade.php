@@ -41,7 +41,7 @@ use App\Especialidade;
   @foreach ($profPromAlto as $profesional)
     <div class="resultado flex t90 margin2vh artPerfilesIndex" style="display:none">
 
-      <div class="foto_nombre flex column align_center t50">
+      <div class="foto_nombreSlide flex column align_center t50">
         <div class="pic_perfil overflowNo margin1 avatar150px">
           @if ($profesional->avatar == null)
             <img class="sin_avatar" src="/img_app/icono_casco.png" alt="">
@@ -67,7 +67,7 @@ use App\Especialidade;
         </div>
        </div>
 
-      <div class="zona_rubro flex column margin1" style="justify-content:space-between;">
+      <div class="zona_rubroSlide flex column margin1" style="justify-content:space-between;">
          <div class="rubros flex column t90">
            @if ($profesional->rubroPrincipal())
            <p class="px16 margin1">RUBRO PRINCIPAL:</p>
