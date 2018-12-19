@@ -756,6 +756,27 @@ height: 50vh;
 
   /*background-color:rgba(0,0,0,0.1)*/
 }
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  padding: 2%;
+  margin: auto;
+  background-color: rgba(255,255,255,0.5);
+  margin-top: 10vh;
+  margin-bottom: 42%;
+}
+.TituloLogin {
+  font-size: 9vh;
+  color:rgba(0,0,0,0.6);
+  margin: auto;
+  margin-top: 100px;
+  width:85%;
+  display: inline-block;
+  text-align: center;
+  /*background-color:rgba(0,0,0,0.1)*/
+}
 
 .fondo_banner {
 object-fit: contain;
