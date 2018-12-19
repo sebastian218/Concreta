@@ -168,7 +168,7 @@
                @if ($soloVista == false)
               <div id="form_rubro_P" class=
             @if ($usuario->rubroPrincipal() != null)
-              "oculto"
+              "oculto">
             @endif
 
             <select class="select" name="RUBRO_P" >

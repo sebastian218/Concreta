@@ -45,7 +45,7 @@
 
 
   <div class="container_formularios_gral formUsuarios  @if (count($errors->all()) == 0)
-                              oculto 
+                              oculto
 
   @endif " >
 
@@ -75,9 +75,9 @@
 </div>
 </section> -->
 
-        <form class="registracion_cliente borde_redondeado formulario"  action="/register" method="POST" enctype="multipart/form-data" >
+        <form class="registracion_cliente borde_redondeado formulario" style="margin-top:2vh;" action="/register" method="POST" enctype="multipart/form-data" >
         @csrf
-        <label for="usuario"> Usuario</label>
+        <label for="usuario"> Nombre de usuario</label>
         @if ($errors->has("usuario"))
           <input  class="input-form error" placeholder="" type="text" name="usuario" id="usuario" value="">
           <p class="p-error" >{{$errors->first("usuario")}}</p>

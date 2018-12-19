@@ -6,7 +6,7 @@
   <body class="container_login">
   <div>
     <div class="banner_perfiles">
-      <p class="TituloLogin">Encontrá lo que necesitas</p>
+      <p class="TituloLogin">Encontrá lo que necesitás</p>
    </div>
     <section >
       <div class="loginForm">
