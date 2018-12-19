@@ -104,7 +104,7 @@
          @if ($usuario->avatar == null)
            <img class="sin_avatar" src="/img_app/icono_casco.png" alt="">
          @else
-          <img class="my-image" id="item" src="/storage/{{$usuario->avatar}}" />
+          <img class="f_perfil" id="item" src="/storage/{{$usuario->avatar}}" />
 
          @endif
        </div>
@@ -356,16 +356,16 @@
        <div class="t50 oculto" id="trabajosTerminados" >
      @endif
 
-        <p class="txt_centrado t90">Ultimos trabajos</p>
-        @foreach ($trabajos as $tabajo)
-          <div class="t90 margin1 ">
-            <p>
-            {{$tabajo->descripcion}}
+        <p class="txt_centrado t90 padding2 fondoNaranja">Últimos trabajos</p>
+        @foreach ($trabajos as $trabajo)
+          <div class="t90 margin1 padding2">
+            <p class="padding1 borderGray px14">
+            {{$trabajo->descripcion}}
             </p>
 
-            @if ($tabajo->fotos != null)
+            @if ($trabajo->fotos != null)
 
-              @foreach (json_decode($tabajo->fotos, true) as $foto)
+              @foreach (json_decode($trabajo->fotos, true) as $foto)
 
                    <img class="foto-muro" src="/storage/{{$foto}}" alt="">
 

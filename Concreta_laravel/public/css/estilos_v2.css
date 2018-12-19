@@ -30,6 +30,12 @@ ul.pagination{
 .pointer{
   cursor:pointer;
 }
+.f_perfil{
+  max-width: 130%;
+  min-width: 100%;
+  max-height: 130%;
+  min-height: 100%;
+}
 
 .flex{
   display: flex;
@@ -251,7 +257,7 @@ display: none;
   width: 100%;
   background-color: gray;
   height: 30vh;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 .a100 {
   width:100%;
