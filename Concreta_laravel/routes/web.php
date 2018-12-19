@@ -53,17 +53,17 @@ Route::get('/perfil', function() {
   return view('perfil_usuario');
 });
 
-Route::get('/perfil/log/{id}', "UsuariosController@home");
+Route::get('/perfil/log/{id}', "UsuariosController@home")->middleware('auth');
 
 Route::post('/perfil/log/{id}', "UsuariosController@guardarCambios");
 
 Route::post('/perfil/log/trabajos/{id}', "TrabajosController@guardarNuevoTrabajo");
 
-Route::get('/muro', "muroController@posteos");
+Route::get('/muro', "muroController@posteos")->middleware('auth');
 
 Route::post('/muro', "muroController@guardarPosteo");
 
-Route::get("/perfil/ver/{id}", "UsuariosController@mostrar");
+Route::get("/perfil/ver/{id}", "UsuariosController@mostrar")->middleware('auth');
 
 Route::get('/listado', "UsuariosController@listadoTodos");
 
