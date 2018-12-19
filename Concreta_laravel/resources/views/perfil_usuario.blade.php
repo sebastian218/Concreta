@@ -389,7 +389,8 @@
 
 </div>
 
-
+</div>
+</div>
 
   <div class="lateral_der flex column">
    <div class="w90 center marginTop1">
@@ -397,6 +398,5 @@
       <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
       <img class= "publicid" src="/img_publicidad/acindar.png" alt="">
     </div>
-  </div>
-</div>
+
 @stop
