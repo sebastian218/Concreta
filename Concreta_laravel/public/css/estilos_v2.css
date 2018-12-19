@@ -1413,7 +1413,10 @@ margin-bottom: 1.5vh;
 text-align: center;
 margin-top: 2vh;
 }
-
+h2.tit-perf{
+  
+      width: 93%;
+}
 
 
 }
