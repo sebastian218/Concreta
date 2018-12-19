@@ -119,6 +119,13 @@ ul.pagination{
 .borderAmarillo{
   border:1px solid rgba(247, 220, 111);
 }
+.botonSiguiente{
+  margin-left: -15px;
+}
+.botonAnterior{
+   margin-right: -15px;
+   z-index: 4;
+}
 
 label.pointer{
   cursor: pointer;
@@ -983,9 +990,9 @@ label{
 article.art-perfiles {
     display: flex;
     flex-flow: row;
-    background-color: rgba(247, 249, 249,0.5);
     margin-bottom: 20px;
     padding: 4px;
+    width: 100%;
 }
 
 p.perf-zona {
@@ -1303,6 +1310,21 @@ margin-bottom: 1.5vh;
 .rubro_zona{
 
   width:100%;
+}
+
+.artPerfilesIndex {
+    margin-top: 20px;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 103vh;
+    min-height: 103vh;
+}
+.botonSiguiente{
+      margin-left: -29px;
+}
+.botonAnterior{
+   margin-right: -29px;
+   z-index: 4;
 }
 
 
