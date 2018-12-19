@@ -13,6 +13,8 @@ body {
   background-image: url(/img_app/Textura_fondo_2.jpg);
   background-size: cover;
   margin: 0;
+  position: absolute;
+  width: 100%;
 }
 a {
 text-decoration: none;
