@@ -90,7 +90,9 @@
 
          <a class="txt_centrado px14 marginauto bold" id="misTrabajos" style="cursor:pointer">Mis trabajos realizados</a>
        </div>
-
+       <div class="blanco flex h10 margin3vh">
+         <a class= "txt_centrado px14 marginauto" href="/muro">Hacé tu publicación</a>
+       </div>
     </div>
     @endif
 
