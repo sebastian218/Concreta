@@ -389,6 +389,11 @@
 
 </div>
 
+@if (Auth()->user()->esTrabajador == 0)
+</div>
+</div>
+@endif
+
 
 
   <div class="lateral_der flex column">
