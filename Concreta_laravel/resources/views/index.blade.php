@@ -27,7 +27,7 @@ use App\Especialidade;
 
    <section class="cuerpo">
 
-              <p class="subtit"> Busca entre mas de 1000 trabajadores registrados y conseguí <strong>el mejor presupuesto </strong></p>
+              <p class="subtit t50"> Buscá entre mas de 1000 trabajadores registrados y conseguí <strong> el mejor presupuesto </strong></p>
 
       <h2 class="tit-perf" >Perfiles Destacados</h2>
 

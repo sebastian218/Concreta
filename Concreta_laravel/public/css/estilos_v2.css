@@ -1074,7 +1074,10 @@ p.perf-descript {
 /* agrego el p tipo subt.Seba */
 p.subtit {
     text-align: center;
-    font-size: 20px;
+
+    font-size: 27px;
+margin-top: 0;
+font-style: italic;
 }
 /*Banner decker.Seba*/
 img.banner-decker {
@@ -1414,8 +1417,13 @@ text-align: center;
 margin-top: 2vh;
 }
 h2.tit-perf{
-  
+
       width: 93%;
+}
+p.subtit{
+      font-size: 101%;
+      padding-top: 18px;
+      height: 15vh;
 }
 
 
