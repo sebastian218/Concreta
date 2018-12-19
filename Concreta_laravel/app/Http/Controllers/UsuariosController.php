@@ -221,7 +221,7 @@ class UsuariosController extends Controller
          ->pluck('users.id');
 
 
-         $usuarios = User::whereIn('ID', $usuarios_id)->paginate(1);
+         $usuarios = User::whereIn('ID', $usuarios_id)->paginate(7);
 
          $cantidad = $usuarios->total();
 

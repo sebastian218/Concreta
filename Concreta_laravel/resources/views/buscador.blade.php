@@ -25,10 +25,20 @@
 
   <div class="lateral_izq">
 
+    <form class="" action="/buscadorPorPalabra" method="get">
+      {{ csrf_field() }}
+      <div class="t90 padding2 margin1">
+        <label for="busqueda_string padding1">BÚSQUEDA RÁPIDA:</label>
+        <input type="text" name="busqueda_string" value="">
+        <button type="submit" name="button">Buscar</button>
+      </div>
+    </form>
+
     <form class="" action="/buscadorA" method="get">
       {{ csrf_field() }}
 
       <div class="buscar_basico flex column margin1 t90">
+        <p class="margin1">BÚSQUEDA AVANZADA:</p>
 
       <div class="buscar_rubro margin2vh">
       <label for="RUBRO_BUSCAR">ELEGÍ UN RUBRO:</label>
@@ -70,11 +80,9 @@
 
         </div>
 
-
-
      </div>
 
-     <div class="botones margin2vh">
+     <div class="botones margin1 t90 padding2">
        <button type="button" name="button">Borrar</button>
        <button type="submit" name="button">Buscar</button>
      </div>
@@ -84,17 +92,9 @@
 
 
   <div class="cuerpo_central">
-    <form class="" action="/buscadorPorPalabra" method="get">
-      {{ csrf_field() }}
-      <div class="t90 padding2 margin1">
-        <label for="busqueda_string">Buscar por palabras clave</label>
-        <input type="text" name="busqueda_string" value="">
-        <button type="submit" name="button">Buscar</button>
-      </div>
-    </form>
-    <p class="txt_centrado fondoAmarillo margin2vh padding1">Hay {{$cantidad}} resultados para tu búsqueda</p>
 
     <div class="resultados flex column t50">
+          <p class="txt_centrado fondoAmarillo margin2vh padding1">Hay {{$cantidad}} resultados para tu búsqueda</p>
     @foreach ($usuarios as $usuario)
       <div class="resultado flex t90 margin2vh">
 

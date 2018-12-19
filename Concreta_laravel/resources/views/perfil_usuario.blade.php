@@ -84,7 +84,13 @@
 
     </div>
     @endif
-
+    @if ($soloVista == true)
+      <div class="w90 center marginTop1">
+         <img class= "publicid" src="/img_publicidad/acindar_1.jpg" alt="">
+         <img class= "publicid" src="/img_publicidad/acindar_2.jpg" alt="">
+         <img class= "publicid" src="/img_publicidad/acindar.png" alt="">
+       </div>
+    @endif
 
   </div>
 
@@ -100,7 +106,7 @@
 
    <div class="datos flex t90 ">
      <div class="foto_nombre flex column align_center t50">
-       <div class="pic_perfil overflowNo">
+       <div class="overflowNo margin2vh ancho_foto_media" style="margin-top:4vh;">
          @if ($usuario->avatar == null)
            <img class="sin_avatar" src="/img_app/icono_casco.png" alt="">
          @else
@@ -266,7 +272,7 @@
               checked
             @endif
               >
-            <label for="zona">{{$zon->NOMBRE_ZONA}}</label>
+            <label for="zona">.{{$zon->NOMBRE_ZONA}}</label>
             </div>
           @endforeach
         </div>
@@ -290,8 +296,8 @@
        </div>
 
        @if ($usuario->descripcion ==! null && $soloVista == true)
-       <div class="t50 mostrar">
-         <p>{{$usuario->descripcion}}</p>
+       <div class="t50 mostrar borderGray padding1">
+         <p class="margin1">{{$usuario->descripcion}}</p>
        </div>
        @endif
      </div>

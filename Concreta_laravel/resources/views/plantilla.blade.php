@@ -45,10 +45,10 @@ use App\Especialidade;
 
     <div class="hamburgDesp  oculto">
       <ul class="desplegableHamubr oculto">
-        <li class=" padding2" style="border-top:1px solid black;" ><a href=""class="gris_oscuro" >Mis mensajes</a></li>
-        <li class=" padding2"><a href=""class="gris_oscuro" >Escribir mensaje</a></li>
-        <li class=" padding2"><a href=""class="gris_oscuro" >Muro de búsquedas</a></li>
-        <li class=" padding2"><a href=""class="gris_oscuro" >Mis calificaciones</a></li>
+        <li class=" padding2" style="border-top:1px solid black;" ><a href=""class="txt_gris" >Mis mensajes</a></li>
+        <li class=" padding2"><a href=""class="txt_gris" >Escribir mensaje</a></li>
+        <li class=" padding2"><a href=""class="txt_gris" >Muro de búsquedas</a></li>
+        <li class=" padding2"><a href=""class="txt_gris" >Mis calificaciones</a></li>
       </ul>
     </div>
 
@@ -56,7 +56,7 @@ use App\Especialidade;
   <ul class="desplegableLupa">
     @foreach ($rubros as $rubro)
       @if($rubro->NOMBRE_RUBRO != null)
-    <li class="padding2"><a class="gris_oscuro"href="">
+    <li class="padding2"><a class="txt_gris"href="">
       {{$rubro->NOMBRE_RUBRO}}
     </a></li>
      @endif

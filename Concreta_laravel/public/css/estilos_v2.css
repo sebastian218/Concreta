@@ -242,6 +242,9 @@ display: none;
 .borderGray{
   border: 1px solid gray;
 }
+.txt_gris{
+  color: rgb(50,50,50);
+}
 .textarea{
   height: 10vh;
 }
@@ -1063,6 +1066,13 @@ img.puntaje{
   border: 4px;
   border-color: black;
 }
+
+@media (max-width: 600px) {
+  .ancho_foto_media{
+    width:150px;
+  }
+}
+
 
 @media (max-width:700px) {
   .container_reg_doble{
