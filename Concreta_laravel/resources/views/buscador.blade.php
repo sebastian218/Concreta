@@ -124,7 +124,7 @@
           </div>
          </div>
 
-        <div class="zona_rubro flex column margin1 zonRubrobuscador" style="justify-content:space-between; width:60%">
+        <div class="zona_rubro flex column margin1 zonRubrobuscador" style="justify-content:space-between;">
            <div class="rubros flex column t90">
              @if ($usuario->rubroPrincipal())
              <p class="px16 margin1">RUBRO PRINCIPAL:</p>
@@ -155,7 +155,7 @@
              @endforeach
            @endif
            </div>
-           <div class="margin1 flex w90" style="justify-content:space-between;">
+           <div class="margin1 flex w90 botonesPerfBuscador" style="justify-content:space-between;">
              <p class="padding1 margin0 pointer
              @if (Auth::guest())
                gris_oscuro no_contactar"
