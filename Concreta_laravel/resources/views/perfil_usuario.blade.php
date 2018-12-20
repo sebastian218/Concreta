@@ -493,7 +493,7 @@
 
               @foreach (json_decode($trabajo->fotos, true) as $foto)
 
-                   <img class="foto-muro" src="/storage/{{$foto}}" alt="">
+                   <img class="foto-muro" style ="max-width:250px;" src="/storage/{{$foto}}" alt="">
 
                @endforeach
             @endif
