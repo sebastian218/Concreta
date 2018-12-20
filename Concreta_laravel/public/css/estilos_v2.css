@@ -74,6 +74,10 @@ ul.pagination{
 .flexEnd{
   align-items: flex-end;
 }
+
+.justifyVariable{
+  justify-content: space-between;
+}
 .spaceBetween{
   justify-content: space-between;
 }
@@ -88,6 +92,9 @@ ul.pagination{
 }
 .w90{
   width:90%;
+}
+.w95{
+  width:95%;
 }
 .w100{
   width:100%;
@@ -1334,6 +1341,9 @@ div.containerMuro {
   width: 150px;
   height: 150px;
 
+}
+.justifyVariable{
+  justify-content: flex-end;
 }
 
 }

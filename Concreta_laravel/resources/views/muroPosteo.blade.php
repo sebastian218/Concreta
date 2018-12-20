@@ -130,7 +130,8 @@
           </div>
        @endif
 
-       <div class="margin1 flex w90 botonesPerfBuscador">
+       <div class="margin1 flex justifyVariable">
+
          <p class="padding1 margin0 pointer
          @if (Auth::guest())
            gris_oscuro no_contactar"
@@ -139,7 +140,9 @@
          @endif
          id = "c_{{$post->usuario_id}}"
          >CONTACTAR</p>
-         <a href="/perfil/ver/{{$post->usuario_id}}" class="fondoNaranja padding1" >VER PERFIL</a>
+
+         <a href="/perfil/ver/{{$post->usuario_id}}" class="fondoNaranja padding1 margin" style="margin-left:2vh;" >VER PERFIL</a>
+
        </div>
 
        <div class="contacto margin2 padding2 t90 oculto fondoAmarillo" id="ver_c_{{$post->usuario_id}}">
