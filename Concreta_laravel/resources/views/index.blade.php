@@ -113,7 +113,9 @@ use App\Especialidade;
 
 </div>
 
-<article class="art-perfiles crear-perfil t50">
+<article class="art-perfiles crear-perfil t50"@if (Auth::ID())
+         style="display:none";
+@endif>
      <div class="foto-nombre">
             <img class="cara-perf" src="/img_app/icono_constructor.png" alt="">
             <p class="nombre-perf">Creá Tu Perfil !</p>
