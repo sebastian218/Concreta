@@ -18,7 +18,7 @@
   <div class="banner_rubro">
     <div class="banner_rubro">
       <div class="fondoNaranja t50 mostrar_buscador" id="mostrar_buscador">
-        <p class="padding2 txt_centrado margin0">Búsqueda Avanzada / Ver Menú</p>
+        <p class="padding2 txt_centrado margin0 pointer">Ver Menú de Búsqueda Avanzada</p>
       </div>
       <img class = "a100" src="/img_app/textura_rubro_0.jpg" alt="">
     </div>

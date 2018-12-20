@@ -33,7 +33,7 @@
 
 <div class="container">
 
-  <div class="lateral_izq ">
+  <div class="lateral_izq" id="lateral_izq">
     @if($soloVista == false)
     <div class="w90 center t50 flex column">
        <div class="blanco flex h10">
@@ -51,7 +51,7 @@
       </div>
        @endforeach
        <div class="blanco flex h10 margin3vh">
-         <a class= "txt_centrado px14 marginauto" href="#">Ver todos mis mensajes</a>
+         <p class= "txt_centrado px14 marginauto pointer">Ver todos mis mensajes</p>
 
        </div>
        @if ($usuario->esTrabajador == true)
@@ -82,6 +82,7 @@
 
          </form>
        </div>
+
        @if ($usuario->esTrabajador == true)
         <div class="blanco flex h10 margin3vh">
           @else
@@ -97,7 +98,7 @@
 
   </div>
 
-  <div class="cuerpo_central">
+  <div class="cuerpo_central" id="cuerpo_central">
       @if (session("status"))
         <div class="fondoAmarillo padding1">
           <p class="txt_centrado">{{session("status")}}</p>
@@ -178,7 +179,7 @@
               @endforeach
             </select>
               </div>
-               @endif 
+               @endif
         </div>
 
         @if ($usuario->rubroSecundario() != null)

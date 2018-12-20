@@ -18,6 +18,18 @@ window.addEventListener("load",function(){
   var noMostrar = document.querySelectorAll('.no_contactar');
   var mostrarBuscador = document.getElementById('mostrar_buscador');
   var mostrarSelecFotos = document.querySelector('.mostrar_');
+  var hamburger = document.getElementById('hamburger');
+
+ if (hamburger) {
+   hamburger.addEventListener("click", function() {
+    var lateral = document.getElementById('lateral_izq');
+    var central = document.getElementById('cuerpo_central');
+    lateral.classList.toggle('lateral_izq');
+    lateral.classList.toggle('w100');
+    central.classList.toggle('oculto');           
+   });
+ };
+
 
   if (mostrarBuscador) {
     mostrarBuscador.addEventListener("click", function() {

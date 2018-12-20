@@ -37,7 +37,7 @@ use App\Especialidade;
  @endif
   </ul>
   <ul class="barra_ppal_1">
-    <li class="menu_contextual hamburIcon"><a class="botones_cambiar" style="cursor:pointer"><img class="hamburger"src="/img_app/Hamburger_icon.png" alt=""></a></li>
+    <li class="menu_contextual hamburIcon" id="hamburger"><a class="botones_cambiar" style="cursor:pointer"><img class="hamburger"src="/img_app/Hamburger_icon.png" alt=""></a></li>
     <li class="logo_nombre"><a class="botones_cambiar"href="/index"><img class="logo_tipo" src="/img_app/LOGO_FINAL.png" alt=""></a></li>
     <li class="busqueda lupaIcon"><a class="botones_cambiar" href="#"><img class="lupa" src="/img_app/search-icon-png-21.png" alt=""></a></li>
   </ul>
@@ -45,10 +45,8 @@ use App\Especialidade;
 
     <div class="hamburgDesp  oculto">
       <ul class="desplegableHamubr oculto">
-        <li class=" padding2" style="border-top:1px solid black;" ><a href=""class="txt_gris" >Mis mensajes</a></li>
-        <li class=" padding2"><a href=""class="txt_gris" >Escribir mensaje</a></li>
-        <li class=" padding2"><a href=""class="txt_gris" >Muro de búsquedas</a></li>
-        <li class=" padding2"><a href=""class="txt_gris" >Mis calificaciones</a></li>
+        <li class=" padding2"><a href="/muro" class="" >Muro de búsquedas</a></li>
+
       </ul>
     </div>
 
