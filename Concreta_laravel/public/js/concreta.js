@@ -347,4 +347,27 @@ if (misTrabajos) {
   });
 };
 
+
+//Mostrar form posteos
+
+var botonMuroMostrar = document.querySelector(".cargarBusqueda");
+var formMuro =  document.querySelector(".formPosteosMuro");
+
+if (botonMuroMostrar) {
+
+      botonMuroMostrar.addEventListener("click", function(){
+
+              formMuro.classList.toggle('oculto');
+
+
+
+      });
+
+};
+
+
+//fin mostar form posteos
+
+
+
 });

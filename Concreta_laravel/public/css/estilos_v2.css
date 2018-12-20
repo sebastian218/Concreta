@@ -20,6 +20,21 @@ a {
 text-decoration: none;
 color: black;
 }
+.formPosteosMuro{
+
+width: 94%;
+margin: 0 auto;
+}
+.cargarBusqueda{
+
+cursor: pointer;
+text-align: center;
+padding: 1px;
+margin-bottom: 15px;
+width: 94%;
+    margin: 0 auto;
+    margin-top: 9px;
+}
 .zonaRubroMuro{
 display: flex;
 flex-flow: row;
