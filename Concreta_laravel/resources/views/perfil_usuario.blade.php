@@ -26,6 +26,7 @@
 
 @extends('plantilla')
 
+
 @section('contenido')
   <div class="banner_rubro">
     <img class = "a100" src="/img_app/textura_rubro_{{$id_r}}.jpg" alt="">

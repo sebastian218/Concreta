@@ -45,10 +45,22 @@ use App\Especialidade;
 
     <div class="hamburgDesp  oculto">
       <ul class="desplegableHamubr oculto">
+        @php
+          $id = Auth::user()->ID
+        @endphp
+
+        @if (url()->current() == ("http://localhost:8000/perfil/log/" . $id))
+
         <li class="padding2 px12" id="ver_trabajos">Mis trabajos</li>
         <li class="padding2 px12" id="ver_posteos">Feed Clasificados</li>
         <li class="padding2 px12" id="ver_mensajes_barra">Mis mensajes</li>
-        <li class="padding2 px12" id="ver_perfil">Mi perfil</li>
+       @endif
+
+          <a class="padding2 px12" href="/perfil/log/{{Auth::user()->ID}}">Mi perfil</a>
+          <li class="padding2"><a class="px12"href="/muro">
+          Muro de Búsquedas
+          </a></li>
+
       </ul>
     </div>
 

@@ -13,6 +13,7 @@
 
 @extends('plantilla')
 
+
 @section('contenido')
 
   <div class="banner_rubro">
