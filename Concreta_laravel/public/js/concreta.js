@@ -16,8 +16,18 @@ window.addEventListener("load",function(){
   var posteosUsuario = document.getElementById('posteosUsuario');
   var contacto = document.querySelectorAll('.contactar');
   var noMostrar = document.querySelectorAll('.no_contactar');
-
+  var mostrarBuscador = document.getElementById('mostrar_buscador');
   var mostrarSelecFotos = document.querySelector('.mostrar_');
+
+  if (mostrarBuscador) {
+    mostrarBuscador.addEventListener("click", function() {
+     var lateral = document.getElementById('lateral_izq');
+     var central = document.getElementById('cuerpo_central');
+     lateral.classList.toggle('lateral_izq');
+     lateral.classList.toggle('w100');
+     central.classList.toggle('oculto');
+   });
+  };
 
   if (noMostrar) {
     for (var i=0; i < noMostrar.length; i++) {

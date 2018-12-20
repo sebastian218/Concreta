@@ -17,13 +17,16 @@
 
   <div class="banner_rubro">
     <div class="banner_rubro">
+      <div class="fondoNaranja t50 mostrar_buscador" id="mostrar_buscador">
+        <p class="padding2 txt_centrado margin0">Búsqueda Avanzada / Ver Menú</p>
+      </div>
       <img class = "a100" src="/img_app/textura_rubro_0.jpg" alt="">
     </div>
   </div>
 
 <div class="container">
 
-  <div class="lateral_izq">
+  <div class="lateral_izq" id="lateral_izq">
 
     <form class="" action="/buscadorPorPalabra" method="get">
       {{ csrf_field() }}
@@ -91,7 +94,8 @@
   </div>
 
 
-  <div class="cuerpo_central">
+  <div class="cuerpo_central" id="cuerpo_central">
+
 
     <div class="resultados flex column t50">
           <p class="txt_centrado fondoAmarillo margin2vh padding1">Hay {{$cantidad}} resultados para tu búsqueda</p>
