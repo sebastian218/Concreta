@@ -104,7 +104,10 @@
           <p class="txt_centrado">{{session("status")}}</p>
         </div>
       @endif
-     <form class="" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
+
+     <form class=""  @if (!auth()->user()->esTrabajador)
+                 action="/perfil/user/log/{{$usuario->ID}}" @else action="/perfil/log/{{$usuario->ID}}"
+     @endif  method="post" enctype="multipart/form-data">
      {{ csrf_field() }}
      <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
 
@@ -186,6 +189,9 @@
           <button class="center manoHover w100" style="background-color:rgba(247, 220, 111); height:5vh;" type="submit" name="button">GUARDAR CAMBIOS</button>
        </div>
         @endif
+      @endif
+      @if (!auth()->user()->esTrabajador)
+      </form>
       @endif
 
 
@@ -383,8 +389,12 @@
       <button class="center manoHover w100" style="background-color:rgba(247, 220, 111); height:5vh;" type="submit" name="button">GUARDAR CAMBIOS</button>
    </div>
     @endif
+@if (auth()->user()->esTrabajador)
+  </form>
+@endif
 
-    </form>
+
+
 
 
     <div class="feed">

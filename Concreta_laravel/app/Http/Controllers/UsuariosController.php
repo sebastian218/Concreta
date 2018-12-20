@@ -50,7 +50,24 @@ class UsuariosController extends Controller
       $mostrarTrabajos = false;
       return view('perfil_usuario', compact('usuario', 'zonas', 'rubros', 'soloVista','mostrarTrabajos'));
     }
+     public function guardarCambiosUsuario(Request $req){
 
+         $id=$req->identificador;
+         $usuario = User::findOrFail($id);
+         if ($req->file('avatar') != null)
+         {
+         $avatar = $req->file('avatar');
+         $usuario->guardarAvatar($avatar);
+          }
+          if ($req->descripcion != null) {
+             $usuario->descripcion = $req->descripcion;
+             $usuario->save();
+          }
+          return redirect("/perfil/log/" . $id)->with([
+            "status" => "Los cambios se actualizaron correctamente!"
+          ]);
+
+}
     public function guardarCambios(Request $req) {
 
       $id = $req->identificador;

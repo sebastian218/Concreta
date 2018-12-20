@@ -57,6 +57,8 @@ Route::get('/perfil/log/{id}', "UsuariosController@home")->middleware('auth');
 
 Route::post('/perfil/log/{id}', "UsuariosController@guardarCambios");
 
+Route::post('/perfil/user/log/{id}', "UsuariosController@guardarCambiosUsuario");
+
 Route::post('/perfil/log/trabajos/{id}', "TrabajosController@guardarNuevoTrabajo");
 
 Route::get('/muro', "muroController@posteos")->middleware('auth');
