@@ -30,7 +30,11 @@
   </div>
 
   <div class="cuerpo_central">
-    <div class="t90 flex padding1 formPosteosMuro">
+    <div class=" cargarBusqueda t90 fondoAmarillo" style="cursor:pointer">
+          <p>Cargá tu Busqueda</p>
+    </div>
+    <div class="t90 flex padding1 formPosteosMuro oculto">
+
     <form class="" action="/muro" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
 
