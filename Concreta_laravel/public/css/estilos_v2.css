@@ -359,8 +359,8 @@ align:center;
 
 }
 .sin_avatar{
-  height:25vh;
-  width:25vh;
+  max-height:100%;
+  max-width:100%;
 }
 .cambiar_foto{
   flex-shrink: 0.5;
@@ -1164,9 +1164,7 @@ img.puntaje{
     max-width:100%;
   }
 
-.mostrar_buscador{
-  display:none;
-}
+
 
 
 @media (max-width: 600px) {
@@ -1194,10 +1192,6 @@ img.puntaje{
 }
 .container_reg_doble{
 height:71vh;
-}
-
-.mostrar_buscador{
-  display:block;
 }
 
 .links_footer_tablet{

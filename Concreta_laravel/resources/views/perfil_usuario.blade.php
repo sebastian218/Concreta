@@ -120,12 +120,19 @@
           <p class="txt_centrado">{{session("status")}}</p>
         </div>
       @endif
-     <form class="" action="/perfil/log/{{$usuario->ID}}" method="post" enctype="multipart/form-data">
+
+     <form class=""  @if (!auth()->user()->esTrabajador)
+                 action="/perfil/user/log/{{$usuario->ID}}" @else action="/perfil/log/{{$usuario->ID}}"
+     @endif  method="post" enctype="multipart/form-data">
      {{ csrf_field() }}
      <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
 
-   <div class="datos flex t90 " id="datos_todos">
-     <div class="foto_nombre flex column align_center t50">
+   <div class="datos flex t90 " @if (!auth()->user()->esTrabajador)
+       style="flex-flow:column"
+   @endif>
+     <div class="foto_nombre flex column align_center t50" @if (!auth()->user()->esTrabajador)
+           style="width:100%"
+     @endif>
        <div class="pic_perfil overflowNo">
          @if ($usuario->avatar == null)
            <img class="sin_avatar" src="/img_app/icono_casco.png" alt="">
@@ -154,10 +161,60 @@
          @endif
        </div>
       </div>
+      @if (!auth()->user()->esTrabajador)
+        <div class="descri t90 padding1 blanco">
+
+          <div class="">
+            <div class="flex align_center">
+              @if ($usuario->descripcion ==! null)
+              <p class="px16 margin1">Acerca de mí:</p>
+              @endif
+              @if ($soloVista == false)
+              <img id="modificar_descrip" class="icono hoverAmarillo manoHover" style="max-height:3vh;" src="/img_app/cambiar_icon.png" alt="">
+              @endif
+            </div>
+
+            @if ($usuario->descripcion ==! null && $soloVista == true)
+            <div class="t50 mostrar">
+              <p>{{$usuario->descripcion}}</p>
+            </div>
+            @endif
+          </div>
+
+        @if ($soloVista == false)
+          @if ($usuario->descripcion == null)
+          <label class="italic px14" for="descripcion">Agregá una descripción personalizada:</label>
+          @endif
+          <textarea class="mostrar anchoTexMobile a100
+          @if ($usuario->descripcion != null)
+          oculto
+          @endif
+          "
+          name="descripcion" rows="8" cols="80">
+           @if ($usuario->descripcion != null)
+             {{$usuario->descripcion}}
+           @endif
+          </textarea>
+        @endif
+
+       </div>
+      @endif
+      @if (!auth()->user()->esTrabajador)
+        @if ($soloVista == false)
+       <div class="buttons">
+          <button class="center manoHover w100" style="background-color:rgba(247, 220, 111); height:5vh;" type="submit" name="button">GUARDAR CAMBIOS</button>
+       </div>
+        @endif
+      @endif
+      @if (!auth()->user()->esTrabajador)
+      </form>
+      @endif
 
 
 
-      <div class="rubro_zona t50 flex column">
+      <div class="rubro_zona t50 flex column" @if (!auth()->user()->esTrabajador)
+           style="display:none"
+      @endif>
 
 
      @if ($usuario->esTrabajador == true)
@@ -348,8 +405,12 @@
       <button class="center manoHover w100" style="background-color:rgba(247, 220, 111); height:5vh;" type="submit" name="button">GUARDAR CAMBIOS</button>
    </div>
     @endif
+@if (auth()->user()->esTrabajador)
+  </form>
+@endif
 
-    </form>
+
+
 
 
     <div class="feed">
