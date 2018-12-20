@@ -46,7 +46,10 @@ use App\Especialidade;
     <div class="hamburgDesp  oculto">
       <ul class="desplegableHamubr oculto">
         @php
-          $id = Auth::user()->ID
+          if (Auth::check()) {
+          $id = Auth::user()->ID;
+         }
+          else {$id = null;}
         @endphp
 
         @if (url()->current() == ("http://localhost:8000/perfil/log/" . $id))
@@ -56,10 +59,12 @@ use App\Especialidade;
         <li class="padding2 px12" id="ver_mensajes_barra">Mis mensajes</li>
        @endif
 
+        @if(Auth::check())
           <a class="padding2 px12" href="/perfil/log/{{Auth::user()->ID}}">Mi perfil</a>
           <li class="padding2"><a class="px12"href="/muro">
           Muro de Búsquedas
           </a></li>
+        @endif  
 
       </ul>
     </div>
