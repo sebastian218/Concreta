@@ -12,6 +12,7 @@ use App\Calificacione;
 use App\Muro;
 use App\Especialidade;
 use App\TrabajosRealizado;
+use DB;
 
 class User extends Authenticatable
 {
@@ -97,6 +98,12 @@ class User extends Authenticatable
 
     public function calificaciones() {
       return $this->hasMany('App\Calificacione', 'id_calificado');
+    }
+
+    public function ultimosMensajes() {
+     $ultimosMensajes = $this->mensajesRecibidos->take(3)->all();
+     return $ultimosMensajes;
+
     }
 
     public function promedio() {

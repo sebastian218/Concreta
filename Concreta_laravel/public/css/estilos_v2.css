@@ -623,6 +623,9 @@ h1.h1-home {
   margin: auto;
 }
 
+#cuerpo_central{
+  min-height: 70vh;
+}
 .txt_centrado{
 text-align: center;
 }

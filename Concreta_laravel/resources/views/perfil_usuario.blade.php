@@ -36,6 +36,9 @@
   <div class="lateral_izq" id="lateral_izq">
     @if($soloVista == false)
     <div class="w90 center t50 flex column">
+
+    <div class="ultimos_m" id="ultimos_mensajes">
+
        <div class="blanco flex h10">
          <div class="flex" style="width: 25%;">
          <img class="padding1 center" style="width:60%" src="/img_app/logo_mensaje.png" alt="">
@@ -44,16 +47,29 @@
          <p class="txt_centrado px14 center padding1 bold">Últimos Mensajes</p>
          </div>
        </div>
+       @foreach ($usuario->ultimosMensajes() as $mensaje)
+      <div class="blanco flex column h15 margin1">
+        <p class="px12 line_h_14 padding1 margin0 bordeAbajo">De: {{$emisor = $mensaje->emisor->USER_NAME}}</p>
+        <p class="texto_gris px12 line_h_14 padding1 margin0">{{substr($mensaje->MENSAJE, 0, 70)}}...</p>
+      </div>
+       @endforeach
+
+    </div>
+
+    <div class="m_todos" >
+       <div class="blanco flex h10 margin3vh pointer" id="ver_mensajes">
+         <p class= "txt_centrado px14 marginauto pointer">Ver todos mis mensajes</p>
+       </div>
+       <div class="oculto" id="todos_mensajes">
        @foreach ($usuario->mensajesRecibidos as $mensaje)
       <div class="blanco flex column h15 margin1">
         <p class="px12 line_h_14 padding1 margin0 bordeAbajo">De: {{$emisor = $mensaje->emisor->USER_NAME}}</p>
         <p class="texto_gris px12 line_h_14 padding1 margin0">{{substr($mensaje->MENSAJE, 0, 70)}}...</p>
       </div>
        @endforeach
-       <div class="blanco flex h10 margin3vh">
-         <p class= "txt_centrado px14 marginauto pointer">Ver todos mis mensajes</p>
+     </div>
+    </div>
 
-       </div>
        @if ($usuario->esTrabajador == true)
          <div class="blanco flex h10 margin3vh botonDesplegarFormTrabajos hoverAmarillo" style="cursor:pointer" >
         @else
@@ -108,7 +124,7 @@
      {{ csrf_field() }}
      <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
 
-   <div class="datos flex t90 ">
+   <div class="datos flex t90 " id="datos_todos">
      <div class="foto_nombre flex column align_center t50">
        <div class="pic_perfil overflowNo">
          @if ($usuario->avatar == null)
@@ -290,7 +306,7 @@
 
    </div>
 
-   <div class="descri t90 padding1 blanco">
+   <div class="descri t90 padding1 blanco" id="descripcion" >
 
      <div class="">
        <div class="flex align_center">
@@ -328,7 +344,7 @@
   </div>
   @endif
     @if ($soloVista == false)
-   <div class="buttons">
+   <div class="buttons" id="guardar_cambios">
       <button class="center manoHover w100" style="background-color:rgba(247, 220, 111); height:5vh;" type="submit" name="button">GUARDAR CAMBIOS</button>
    </div>
     @endif

@@ -19,6 +19,57 @@ window.addEventListener("load",function(){
   var mostrarBuscador = document.getElementById('mostrar_buscador');
   var mostrarSelecFotos = document.querySelector('.mostrar_');
   var hamburger = document.getElementById('hamburger');
+  var verMensajesTodos = document.getElementById('ver_mensajes');
+  var verTrabajos = document.getElementById('ver_trabajos');
+  var verPosteos= document.getElementById('ver_posteos');
+
+if(verPosteos) {
+   verPosteos.addEventListener("click", function() {
+   var mostrarTrabajos = document.getElementById('trabajosTerminados');
+   var lateral = document.getElementById('lateral_izq');
+   var central = document.getElementById('cuerpo_central');
+   var datos = document.getElementById('datos_todos');
+   var posteos = document.getElementById('posteosUsuario');
+   var descrip = document.getElementById('descripcion');
+   var botones = document.getElementById('guardar_cambios');
+   lateral.classList.add('lateral_izq');
+   central.classList.remove('oculto');
+   datos.classList.add('oculto');
+   descrip.classList.add('oculto');
+   botones.classList.add('oculto');
+   posteos.classList.remove('oculto');
+   });
+};
+
+if(verTrabajos)  {
+  verTrabajos.addEventListener("click", function() {
+    console.log('hola');
+    var mostrarTrabajos = document.getElementById('trabajosTerminados');
+    var lateral = document.getElementById('lateral_izq');
+    var central = document.getElementById('cuerpo_central');
+    var datos = document.getElementById('datos_todos');
+    var posteos = document.getElementById('posteosUsuario');
+    var descrip = document.getElementById('descripcion');
+    var botones = document.getElementById('guardar_cambios');
+    lateral.classList.toggle('lateral_izq');
+    central.classList.toggle('oculto');
+    datos.classList.toggle('oculto');
+    posteos.classList.add('oculto');
+    mostrarTrabajos.classList.remove('oculto');
+    descrip.classList.toggle('oculto');
+    botones.classList.toggle('oculto');
+
+  });
+};
+
+if (verMensajesTodos)  {
+  verMensajesTodos.addEventListener("click", function() {
+    var ultimos = document.getElementById('ultimos_mensajes');
+    var todos = document.getElementById('todos_mensajes');
+    ultimos.classList.toggle('oculto');
+    todos.classList.toggle('oculto');
+  });
+};
 
  if (hamburger) {
    hamburger.addEventListener("click", function() {
@@ -26,7 +77,7 @@ window.addEventListener("load",function(){
     var central = document.getElementById('cuerpo_central');
     lateral.classList.toggle('lateral_izq');
     lateral.classList.toggle('w100');
-    central.classList.toggle('oculto');           
+    central.classList.toggle('oculto');
    });
  };
 
