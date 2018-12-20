@@ -127,7 +127,7 @@
      {{ csrf_field() }}
      <input class="oculto" type="text" name="identificador" value="{{$usuario->ID}}">
 
-   <div class="datos flex t90 " @if (!auth()->user()->esTrabajador)
+   <div class="datos flex t90 " id="datos_todos" @if (!auth()->user()->esTrabajador)
        style="flex-flow:column"
    @endif>
      <div class="foto_nombre flex column align_center t50" @if (!auth()->user()->esTrabajador)

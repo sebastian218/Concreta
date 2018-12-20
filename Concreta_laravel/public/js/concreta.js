@@ -18,28 +18,13 @@ window.addEventListener("load",function(){
   var noMostrar = document.querySelectorAll('.no_contactar');
   var mostrarBuscador = document.getElementById('mostrar_buscador');
   var mostrarSelecFotos = document.querySelector('.mostrar_');
-  var hamburger = document.getElementById('hamburger');
+  var mensajes_mostrar = document.getElementById('ver_mensajes_barra');
   var verMensajesTodos = document.getElementById('ver_mensajes');
   var verTrabajos = document.getElementById('ver_trabajos');
   var verPosteos= document.getElementById('ver_posteos');
+  var mostrarPerfil = document.getElementById('ver_perfil');
 
-if(verPosteos) {
-   verPosteos.addEventListener("click", function() {
-   var mostrarTrabajos = document.getElementById('trabajosTerminados');
-   var lateral = document.getElementById('lateral_izq');
-   var central = document.getElementById('cuerpo_central');
-   var datos = document.getElementById('datos_todos');
-   var posteos = document.getElementById('posteosUsuario');
-   var descrip = document.getElementById('descripcion');
-   var botones = document.getElementById('guardar_cambios');
-   lateral.classList.add('lateral_izq');
-   central.classList.remove('oculto');
-   datos.classList.add('oculto');
-   descrip.classList.add('oculto');
-   botones.classList.add('oculto');
-   posteos.classList.remove('oculto');
-   });
-};
+
 
 if(verTrabajos)  {
   verTrabajos.addEventListener("click", function() {
@@ -51,14 +36,32 @@ if(verTrabajos)  {
     var posteos = document.getElementById('posteosUsuario');
     var descrip = document.getElementById('descripcion');
     var botones = document.getElementById('guardar_cambios');
-    lateral.classList.toggle('lateral_izq');
-    central.classList.toggle('oculto');
-    datos.classList.toggle('oculto');
+    lateral.classList.add('lateral_izq');
+    central.classList.remove('oculto');
+    datos.classList.add('oculto');
     posteos.classList.add('oculto');
     mostrarTrabajos.classList.remove('oculto');
-    descrip.classList.toggle('oculto');
-    botones.classList.toggle('oculto');
+    descrip.classList.add('oculto');
+    botones.classList.add('oculto');
+  });
+};
 
+if (verPosteos) {
+  verPosteos.addEventListener("click", function() {
+    var mostrarTrabajos = document.getElementById('trabajosTerminados');
+    var lateral = document.getElementById('lateral_izq');
+    var central = document.getElementById('cuerpo_central');
+    var datos = document.getElementById('datos_todos');
+    var posteos = document.getElementById('posteosUsuario');
+    var descrip = document.getElementById('descripcion');
+    var botones = document.getElementById('guardar_cambios');
+    lateral.classList.add('lateral_izq');
+    central.classList.remove('oculto');
+    datos.classList.add('oculto');
+    posteos.classList.remove('oculto');
+    mostrarTrabajos.classList.add('oculto');
+    descrip.classList.add('oculto');
+    botones.classList.add('oculto');
   });
 };
 
@@ -71,16 +74,33 @@ if (verMensajesTodos)  {
   });
 };
 
- if (hamburger) {
-   hamburger.addEventListener("click", function() {
+ if (mensajes_mostrar) {
+   mensajes_mostrar.addEventListener("click", function() {
     var lateral = document.getElementById('lateral_izq');
     var central = document.getElementById('cuerpo_central');
-    lateral.classList.toggle('lateral_izq');
-    lateral.classList.toggle('w100');
-    central.classList.toggle('oculto');
+    lateral.classList.remove('lateral_izq');
+    lateral.classList.add('w100');
+    central.classList.add('oculto');
    });
  };
 
+ if (mostrarPerfil) {
+   mostrarPerfil.addEventListener("click", function() {
+    var lateral = document.getElementById('lateral_izq');
+    var central = document.getElementById('cuerpo_central');
+    var datos = document.getElementById('datos_todos');
+    var posteos = document.getElementById('posteosUsuario');
+    var descrip = document.getElementById('descripcion');
+    var botones = document.getElementById('guardar_cambios');
+    lateral.classList.add('lateral_izq');
+    lateral.classList.add('w100');
+    central.classList.remove('oculto');
+    datos.classList.remove('oculto');
+    posteos.classList.remove('oculto');
+    descrip.classList.remove('oculto');
+    botones.classList.remove('oculto');
+   });
+ };
 
   if (mostrarBuscador) {
     mostrarBuscador.addEventListener("click", function() {

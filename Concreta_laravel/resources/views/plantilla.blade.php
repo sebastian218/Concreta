@@ -45,9 +45,10 @@ use App\Especialidade;
 
     <div class="hamburgDesp  oculto">
       <ul class="desplegableHamubr oculto">
-        <li class=" padding2"><a href="/muro" class="" >Muro de búsquedas</a></li>
-        <li class="padding2" id="ver_trabajos">Ver mis trabajos</li>
-        <li class="padding2" id="ver_posteos">Ver posteos</li>
+        <li class="padding2 px12" id="ver_trabajos">Mis trabajos</li>
+        <li class="padding2 px12" id="ver_posteos">Feed Clasificados</li>
+        <li class="padding2 px12" id="ver_mensajes_barra">Mis mensajes</li>
+        <li class="padding2 px12" id="ver_perfil">Mi perfil</li>
       </ul>
     </div>
 

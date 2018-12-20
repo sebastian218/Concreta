@@ -1210,6 +1210,9 @@ height:71vh;
 position: absolute;
 bottom: 0px;
 }
+.barra_ppal_1{
+position:fixed;  
+}
 
 }
 @media (min-width: 768px) /*tablet*/
